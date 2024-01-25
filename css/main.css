@@ -8,54 +8,31 @@
 
 body {
   margin: 0;
-  height: 100%;
-}
-
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-  width: 100%;
-  height: 100%;
-}
-
-.inner_img {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  padding: 0px;
   width: 100%;
 }
 
-.main_logo {
-  width: 20%;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+button {
+  cursor: pointer;
 }
 
-/*----- Header text -----*/
-.header_text_container {
-  font-family: "Montserrat";
-  position: absolute;
-  width: 520px;
-  text-align: left;
-  top: 400px;
-  left: 20px;
-
-}
-
-.header_text {
+.gradient-image {
   width: inherit;
-  position: relative;
+  height: inherit;
 }
 
-.header_desc {
-  top: 20px;
-  color: #fff;
-  font-family: "Montserrat";
-  font-size: 24px;
+.learn-more-btn {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-
+  font-weight: 400;
+  font-size: larger;
+  border: 2px solid #fff;
+  border-radius: 65px;
+  padding: 10px;
+  margin: 40px;
+  width: 30%;
+  height: 30%;
+  text-size-adjust: auto;
 }
