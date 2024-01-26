@@ -4,75 +4,156 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/main.css" />
-    <link rel="icon" href="images/icons/divitour_icon.png">
-    <title>DIVITOUR - The premier agency specializing in scuba and water activities in Cuba</title>
+    <link rel="icon" href="images/icons/divitour_icon.png" />
+    <title>
+      DIVITOUR - The premier agency specializing in scuba and water activities
+      in Cuba
+    </title>
   </head>
-  
-  <!--
-    Destinations -> Servicios (Expediciones, Inmersiones, Cursos, Crossover?, Snorkeling, Buceo
-    Eventos -> Campeonatos, Torneos, FotoSub
-    Cursos/Didactico -> Iniciacion al buceo, crossover, certificacion, curso de instructor, Apnea
-    
-    TODO: en destinations mostrar mapa de cuba con location points
-  -->
-  
+
   <body>
-    <!-------------------- Header fixed -------------------->
-    <div style="height: 80px; width: 100%;">
-      <header style="position: fixed; height: inherit; width: inherit; align-items: center; display: flex; background-color: white; z-index: 1;">
-        <img src="images/logos/divitour.png" style="height: 5vh; margin-left: 20px;">
-        <h3 style="margin-left: 20px; text-wrap: nowrap;">The premier agency specializing in scuba diving and water activities in Cuba</h3>
+    <!-------------------- HEADER -------------------->
+    <div style="height: 80px; width: 100%">
+      <header
+        style="
+          position: fixed;
+          height: inherit;
+          width: inherit;
+          align-items: center;
+          display: flex;
+          background-color: white;
+          z-index: 2;
+        "
+      >
+        <img
+          src="images/logos/divitour.png"
+          style="height: 5vh; margin-left: 20px"
+        />
+        <h3 style="margin-left: 20px; text-wrap: nowrap">
+          The premier agency specializing in scuba diving and water activities
+          in Cuba
+        </h3>
+        <button style="position: absolute; right: 20px">User Account</button>
       </header>
     </div>
-      
-    <section class="theme-section">
-      <!-- Theme Slideshow -->
-      <div class="theme_slideshow" style="width: 100%; height: 1000px; background-color: white; display: flex;">
-        <img class="ss-theme-image gradient-image" src="" style="align-items: center; justify-content: center; overflow:hidden; object-fit:cover;">
-        <img class="gradient-box gradient-image" src="images/gradients/gradient-horizontal-box.png" style="position: absolute;">
-
-        <div class="handler_btn" style="width: 100%; position: absolute; height: 50px; vertical-align: middle; top: 70%;">
-          <button id="prev_slide_button" style="position: inherit; left: 0px;">Left</button>
-          <button id="next_slide_button" style="position: inherit; right: 0px;">Right</button>
+    <!--------------------- LOGIN -------------------->
+    <!--
+      <div class="login-form-container" style="position: fixed; top: 10%; left: 50%; z-index: 1;">
+        <div class="form-bg">
+          <h1 style="margin-bottom: 32px; text-align: center; font-size: 1.5rem;">Iniciar sesion</h1>
+          <form class="login-form" action="" method="post">
+            <input type="text" name="firstname" placeholder="Username">
+            <input type="text" name="email" placeholder="E-mail">
+            <input type="password" name="pwd" placeholder="Password">            <input type="submit" value="Ingresar">
+          </form>
+          <p class="signup-divider">o inicia con</p>
+          <div class="socialmedia">
+            <ul class="socialmedia-icons">
+              <li class="google"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+              <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+          </div>
         </div>
-        
-        <!--Theme Description-->
-        <div class="theme_overlay" style="position: absolute; width: 30%; padding: 40px 40px; color: white;">
-          <h1 class="ss-theme-title" style="font-size: 6em; margin: 0px; padding-bottom: 10px;">ThemeTitle</h1>
-          <h2 class="ss-theme-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+        <div class="login">
+          <p>Necesitas una cuenta?<a href="#">Registrate</a></p>
+        </div>
+      </div>
+    -->
+
+    <div class="theme-section">
+      <!-- Ofertas -->
+      <div
+        class="theme_slideshow"
+        style="
+          width: 100%;
+          height: 800px;
+          background-color: white;
+          display: flex;
+        "
+      >
+        <div class="image fade" style="width: inherit; height: inherit">
+          <img
+            class="ss-theme-image gradient-image"
+            src="images/themes_ss/1.png"
+            style="
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+              object-fit: cover;
+            "
+          />
+        </div>
+        <div class="image fade" style="width: inherit; height: inherit">
+          <img
+            class="ss-theme-image gradient-image"
+            src="images/themes_ss/2.png"
+            style="
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+              object-fit: cover;
+            "
+          />
+        </div>
+        <div class="image fade" style="width: inherit; height: inherit">
+          <img
+            class="ss-theme-image gradient-image"
+            src="images/themes_ss/3.png"
+            style="
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+              object-fit: cover;
+            "
+          />
+        </div>
+
+        <img
+          class="gradient-box gradient-image"
+          src="images/gradients/gradient-horizontal-box.png"
+          style="position: absolute"
+        />
+
+        <div
+          class="theme_overlay"
+          style="
+            position: absolute;
+            width: 30%;
+            padding: 40px 40px;
+            color: white;
+          "
+        >
+          <h1
+            class="ss-theme-title"
+            style="font-size: 6em; margin: 0px; padding-bottom: 10px"
+          >
+            ThemeTitle
+          </h1>
+          <h2 class="ss-theme-desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </h2>
           <button class="learn-more-btn">Saber mas...</button>
-          
         </div>
-      </section>
-
-
-      <section class="novedades-section">
-        <h1>Novedades</h1>
-        <button id="redirect_btn" name="cayo-largo" onclick="">Cayo Largo</button>
-        <div class="banner" style="height: 500px;">
-          <img class="new-banner banner" src="" alt="">
-          <img class="gradient-box" src="images/gradients/gradient-horizontal-box.png">
-        </div>
-      </section>
-      <!-- 
-        <button>
-          <img class="handler_btn_icon" src="images/icons/left.png">
-        </button>
-        <button >
-          <img class="handler_btn_icon" src="images/icons/right.png">
-        </button>
-        <img class="background_img" src="images/diver-parallax-background.png" alt="">
-        <img class="inner_img" src="images/diver-parallax-rocks.png" alt=""> 
-        
-        
-        <div class="header_text_container">
-          <h3>Dive into a world of unparalleled beauty with Divitour, where crystal-clear waters and vibrant marine life await. Whether you’re a seasoned diver or a beginner, our expert team ensures an unforgettable experience at Cuba’s top scuba diving destinations. Join us in exploring the hidden treasures beneath the waves and make your underwater adventure with Divitour a journey to remember.</h3>
-        </div>
-      -->
-      
+      </div>
     </div>
-  </header>
-</body>
+
+    <div
+      class="planning-panel-container"
+      style="width: 100%; height: fit-content"
+    >
+      <div class="planning-bar" style="height: 100px"></div>
+
+      <!-- DON'T show this if user is NOT logged in -->
+      <div
+        class="plan-body"
+        style="background-color: antiquewhite; height: fit-content"
+      >
+        <div></div>
+      </div>
+    </div>
+  </body>
 </html>
 
 <script src="script/app.js" defer></script>

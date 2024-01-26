@@ -1,9 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+:root {
+  --font-primary: "Montserrat", "Arial", sans-serif;
+  --font-body: "Lato", "Arial", sans-serif;
+  --color-primary: #8d6cc7;
+  --color-primary-dark: darken($color-primary, 3%);
+  --color-light-gray: #dae2f1;
+}
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Arial", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,7 +20,8 @@ body {
   width: 100%;
 }
 
-button {
+button,
+li {
   cursor: pointer;
 }
 
@@ -35,4 +44,165 @@ button {
   width: 30%;
   height: 30%;
   text-size-adjust: auto;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/******* Formulario de Inicio de Sesion *******/
+.login-form-container {
+  position: absolute;
+  height: 100%;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-bg {
+  background: #fff;
+  width: 420px;
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.login-form {
+  text-transform: capitalize;
+  font-family: "Lato", "Arial", sans-serif;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  border: 1px solid;
+  padding: 15px 20px;
+  color: #8498af;
+  font-size: 0.9rem;
+  transition: 0.4s;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+[type="submit"] {
+  border-radius: 30px;
+  padding: 16px 30px;
+  width: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  transition: 0.4s;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.signup-divider {
+  text-align: center;
+  color: #c4c8d4;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  padding: 24px 0;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 27%;
+    margin-right: 5%;
+    height: 1px;
+    vertical-align: middle;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 27%;
+    margin-left: 5%;
+    height: 1px;
+    vertical-align: middle;
+  }
+}
+
+.socialmedia-icons {
+  text-align: center;
+  color: #fff;
+
+  & li {
+    margin-right: 10px;
+    list-style: none;
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 0.8rem;
+    transition: 0.3s;
+    display: relative;
+    padding-top: 15px;
+  }
+
+  & li a {
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    top: 10px;
+  }
+}
+
+li.google {
+  background: #ea5859;
+  &:hover {
+    background: darken(#ea5859, 6%);
+  }
+}
+
+li.facebook {
+  background: #527ed5;
+  &:hover {
+    background: darken(#527ed5, 6%);
+  }
+}
+
+li.twitter {
+  background: #61bded;
+  &:hover {
+    background: darken(#61bded, 6%);
+  }
+}
+
+.login {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.8rem;
+
+  & a {
+    margin-left: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  & a:hover {
+    /*color primary dark*/
+  }
 }
