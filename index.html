@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="style/main.css" />
     <link rel="icon" href="images/icons/divitour_icon.png">
     <title>DIVITOUR - The premier agency specializing in scuba and water activities in Cuba</title>
   </head>
@@ -17,8 +17,8 @@
   -->
   
   <body>
-    
-    <div style="height: 125px; width: 100%;">
+    <!-------------------- Header fixed -------------------->
+    <div style="height: 80px; width: 100%;">
       <header style="position: fixed; height: inherit; width: inherit; align-items: center; display: flex; background-color: white; z-index: 1;">
         <img src="images/logos/divitour.png" style="height: 5vh; margin-left: 20px;">
         <h3 style="margin-left: 20px; text-wrap: nowrap;">The premier agency specializing in scuba diving and water activities in Cuba</h3>
@@ -28,19 +28,27 @@
     <section class="theme-section">
       <!-- Theme Slideshow -->
       <div class="theme_slideshow" style="width: 100%; height: 1000px; background-color: white; display: flex;">
-        <img class="ss-theme-image gradient-image" src="images/themes_ss/pexels-francesco-ungaro-3635910.jpg" style="align-items: center; justify-content: center; overflow:hidden; object-fit:cover;">
+        <img class="ss-theme-image gradient-image" src="" style="align-items: center; justify-content: center; overflow:hidden; object-fit:cover;">
         <img class="gradient-box gradient-image" src="images/gradients/gradient-horizontal-box.png" style="position: absolute;">
 
+        <div class="handler_btn" style="width: 100%; position: absolute; height: 50px; vertical-align: middle; top: 70%;">
+          <button id="prev_slide_button" style="position: inherit; left: 0px;">Left</button>
+          <button id="next_slide_button" style="position: inherit; right: 0px;">Right</button>
+        </div>
+        
         <!--Theme Description-->
         <div class="theme_overlay" style="position: absolute; width: 30%; padding: 40px 40px; color: white;">
           <h1 class="ss-theme-title" style="font-size: 6em; margin: 0px; padding-bottom: 10px;">ThemeTitle</h1>
           <h2 class="ss-theme-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
           <button class="learn-more-btn">Saber mas...</button>
+          
         </div>
       </section>
 
+
       <section class="novedades-section">
         <h1>Novedades</h1>
+        <button id="redirect_btn" name="cayo-largo" onclick="">Cayo Largo</button>
         <div class="banner" style="height: 500px;">
           <img class="new-banner banner" src="" alt="">
           <img class="gradient-box" src="images/gradients/gradient-horizontal-box.png">

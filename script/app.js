@@ -2,6 +2,40 @@ const ssTitle = document.querySelector(".ss-theme-title");
 const ssDescription = document.querySelector(".ss-theme-desc");
 const ssImage = document.querySelector(".ss-theme-image");
 
+const prevSlideBtn = document.getElementById("prev_slide_button");
+const nextSlideBtn = document.getElementById("next_slide_button");
+
+let currSlideIndex = 0;
+
+prevSlideBtn.addEventListener("click", function (e) {
+  setCurrentSlide((currSlideIndex -= 1));
+});
+nextSlideBtn.addEventListener("click", function (e) {
+  setCurrentSlide((currSlideIndex += 1));
+});
+
+function setCurrentSlide(idx) {
+  let slides = [
+    "images/themes_ss/0.jpg",
+    "images/themes_ss/1.jpg",
+    "images/themes_ss/2.jpg",
+  ];
+  if (idx > slides.length - 1) {
+    currSlideIndex = 0;
+  } else if (idx < 0) {
+    currSlideIndex = slides.length - 1;
+  }
+  console.log(currSlideIndex);
+  ssImage.setAttribute("src", slides[currSlideIndex]);
+}
+
+setCurrentSlide(0);
+
+const redirectBtn = document.getElementById("redirect_btn");
+redirectBtn.addEventListener("click", function (e) {
+  window.location.href = "../destino.html";
+});
+
 //TODO: make a dictionary: slideshowTitle:Description:Image:link
 //TODO: save in json file
 
