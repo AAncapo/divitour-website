@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="author" content="AAncapo" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/main.css" />
-    <link rel="icon" href="images/icons/divitour_icon.png" />
+    <link rel="icon" href="images/icons/divitour-icon.png" />
     <title>
       DIVITOUR - The premier agency specializing in scuba and water activities
       in Cuba
@@ -12,46 +13,79 @@
   </head>
 
   <body>
-    <!-------------------- HEADER -------------------->
+    <!----------------- HEADER --------------->
     <div style="height: 80px; width: 100%">
-      <header
-        style="
-          position: fixed;
-          height: inherit;
-          width: inherit;
-          align-items: center;
-          display: flex;
-          background-color: white;
-          z-index: 2;
-        "
-      >
-        <img
-          src="images/logos/divitour.png"
-          style="height: 5vh; margin-left: 20px"
-        />
-        <h3 style="margin-left: 20px; text-wrap: nowrap">
+      <header>
+        <img class="header-logo" src="images/logos/divitour-full.png" />
+        <!-- <h3 style="margin-left: 20px; text-wrap: nowrap">
           The premier agency specializing in scuba diving and water activities
           in Cuba
-        </h3>
-        <button style="position: absolute; right: 20px">User Account</button>
+        </h3> -->
+        <button class="account-btn">
+          <img src="images/icons/account-icon.png" />
+          <span>Login</span>
+        </button>
       </header>
     </div>
-    <!--------------------- LOGIN -------------------->
-    <!--
-      <div class="login-form-container" style="position: fixed; top: 10%; left: 50%; z-index: 1;">
+
+    <div class="top-body">
+      <!--------------- OFFERS -------------->
+      <div class="offers_slideshow">
+        <img class="offer-image" src="images/themes_ss/1.png" />
+        <div class="offer-description">
+          <h2>Special Offers</h2>
+          <h1>Offer Name</h1>
+          <h3>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </h3>
+          <div class="create-reservation">
+            <span>Plan your experience with us</span>
+            <button class="goto-reservation-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+      <!---------------- LOGIN --------------->
+      <div class="account-tools">
         <div class="form-bg">
-          <h1 style="margin-bottom: 32px; text-align: center; font-size: 1.5rem;">Iniciar sesion</h1>
+          <h1
+            style="margin-bottom: 32px; text-align: center; font-size: 1.5rem"
+          >
+            Iniciar sesion
+          </h1>
           <form class="login-form" action="" method="post">
-            <input type="text" name="firstname" placeholder="Username">
-            <input type="text" name="email" placeholder="E-mail">
-            <input type="password" name="pwd" placeholder="Password">            <input type="submit" value="Ingresar">
+            <input
+              class="login-input"
+              type="text"
+              name="firstname"
+              placeholder="Username"
+            />
+            <input
+              class="login-input"
+              type="text"
+              name="email"
+              placeholder="E-mail"
+            />
+            <input
+              class="login-input"
+              type="password"
+              name="pwd"
+              placeholder="Password"
+            />
+            <input type="submit" value="Ingresar" />
           </form>
           <p class="signup-divider">o inicia con</p>
           <div class="socialmedia">
             <ul class="socialmedia-icons">
-              <li class="google"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-              <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li class="google">
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+              </li>
+              <li class="facebook">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li class="twitter">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
             </ul>
           </div>
         </div>
@@ -59,98 +93,105 @@
           <p>Necesitas una cuenta?<a href="#">Registrate</a></p>
         </div>
       </div>
-    -->
-
-    <div class="theme-section">
-      <!-- Ofertas -->
-      <div
-        class="theme_slideshow"
-        style="
-          width: 100%;
-          height: 800px;
-          background-color: white;
-          display: flex;
-        "
-      >
-        <div class="image fade" style="width: inherit; height: inherit">
-          <img
-            class="ss-theme-image gradient-image"
-            src="images/themes_ss/1.png"
-            style="
-              align-items: center;
-              justify-content: center;
-              overflow: hidden;
-              object-fit: cover;
-            "
-          />
-        </div>
-        <div class="image fade" style="width: inherit; height: inherit">
-          <img
-            class="ss-theme-image gradient-image"
-            src="images/themes_ss/2.png"
-            style="
-              align-items: center;
-              justify-content: center;
-              overflow: hidden;
-              object-fit: cover;
-            "
-          />
-        </div>
-        <div class="image fade" style="width: inherit; height: inherit">
-          <img
-            class="ss-theme-image gradient-image"
-            src="images/themes_ss/3.png"
-            style="
-              align-items: center;
-              justify-content: center;
-              overflow: hidden;
-              object-fit: cover;
-            "
-          />
-        </div>
-
-        <img
-          class="gradient-box gradient-image"
-          src="images/gradients/gradient-horizontal-box.png"
-          style="position: absolute"
-        />
-
-        <div
-          class="theme_overlay"
-          style="
-            position: absolute;
-            width: 30%;
-            padding: 40px 40px;
-            color: white;
-          "
-        >
-          <h1
-            class="ss-theme-title"
-            style="font-size: 6em; margin: 0px; padding-bottom: 10px"
-          >
-            ThemeTitle
-          </h1>
-          <h2 class="ss-theme-desc">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </h2>
-          <button class="learn-more-btn">Saber mas...</button>
-        </div>
-      </div>
     </div>
 
+    <!------------------ PLANNING ------------------->
     <div
       class="planning-panel-container"
-      style="width: 100%; height: fit-content"
+      style="width: 100%; height: fit-content; display: flex"
     >
-      <div class="planning-bar" style="height: 100px"></div>
+      <div class="filter-bar">
+        <div class="personas filter">
+          <label for="personas">Personas</label>
+          <input type="number" value="1" />
+        </div>
 
-      <!-- DON'T show this if user is NOT logged in -->
-      <div
-        class="plan-body"
-        style="background-color: antiquewhite; height: fit-content"
-      >
-        <div></div>
+        <div class="destination filter">
+          <label for="destination">Destino</label>
+          <select name="destinations" id="dest_sel">
+            <option value="dest0">Selecciona un lugar</option>
+            <option value="dest1">Cayo Largo del Sur</option>
+            <option value="dest2">Varadero</option>
+            <option value="dest3">La Habana</option>
+            <option value="dest4">Santiago de Cuba</option>
+          </select>
+        </div>
+
+        <div class="hotel filter">
+          <label for="hotel">Hotel</label>
+          <select name="hotels" id="hotels_sel">
+            <option value="hotel0">Selecciona un hotel</option>
+            <option value="hotel1">Hotel 1</option>
+            <option value="hotel2">Hotel 2</option>
+            <option value="hotel3">Hotel 3</option>
+          </select>
+        </div>
+
+        <div class="activity filter">
+          <label for="activities">Special Offers</label>
+          <div>
+            <input type="checkbox" name="act1" id="act1" />
+            <label for="act1">Activity 1</label>
+          </div>
+          <div>
+            <input type="checkbox" name="act2" id="act2" />
+            <label for="act2">Activity 2</label>
+          </div>
+          <div>
+            <input type="checkbox" name="act3" id="act3" />
+            <label for="act3">Activity 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="filtered-descriptions">
+        <div class="selected-destination" style="width: 100%">
+          <h2 class="dest-name">Cayo Largo del Sur</h2>
+          <p class="dest-descr">
+            Cayo Largo is a paradise destination for diving enthusiasts. Located
+            in the Canarreos Archipelago, Cuba, this cay offers a unique and
+            thrilling underwater experience. Its turquoise and crystal-clear
+            waters are home to a great diversity of marine life and spectacular
+            coral reefs. Divers can explore impressive vertical walls covered in
+            coral, underwater caves, canyons, and vibrant coral gardens. The
+            visibility in the waters of Cayo Largo is exceptional, easily
+            reaching 30 meters or more. This allows for detailed appreciation of
+            the beauty of the corals, as well as the observation of brightly
+            colored tropical fish, sea turtles, rays, sharks, and other
+            fascinating species. In addition to the reefs, Cayo Largo features
+            several shipwrecks that offer exciting exploration opportunities.
+            These submerged wrecks provide a unique habitat for a variety of
+            marine species and add an element of adventure to the dives. Diving
+            centers in Cayo Largo have expert and certified staff and offer a
+            wide range of options for divers of all levels, from beginners to
+            experienced divers. Certification courses and specialized dive
+            programs can also be undertaken.
+          </p>
+          <img
+            src="images/destinos/cayo-largo/cayolargo1.png"
+            alt="Cayo Largo"
+            style="width: inherit"
+          />
+        </div>
+        <div class="selected-hotel" style="width: 100%">
+          <h2 class="hotel-name">Grand Memories Cayo Largo</h2>
+          <p class="hotel-descr">
+            Situado en la isla de Cayo Largo del Sur, en el archipiélago de los
+            Canarreos, Grand Memories Cayo Largo es el lugar perfecto para unas
+            soleadas vacaciones en familia. Esta propiedad todo incluido es
+            ideal para huéspedes de todas las edades, ya que cuenta con
+            habitaciones cómodas y modernas, una variada oferta culinaria y la
+            proximidad a lugares de interés que permiten a los viajeros
+            relajarse y disfrutar del paraíso.
+          </p>
+          <img
+            src="images/destinos/cayo-largo/hotels/hotel-preview-zoomed.png"
+            alt="Grand Memories - Cayo Largo"
+            style="width: inherit"
+          />
+        </div>
+        <div class="selected-activities" style="width: 100%">
+          <h1>Actividades:</h1>
+        </div>
       </div>
     </div>
   </body>

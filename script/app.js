@@ -13,7 +13,7 @@ const ssImage = document.querySelector(".ss-theme-image");
 */
 
 let index = 0;
-displayImages();
+//displayImages();
 function displayImages() {
   let i;
   const images = document.getElementsByClassName("image");
