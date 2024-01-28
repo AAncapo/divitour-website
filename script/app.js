@@ -1,6 +1,16 @@
-const ssTitle = document.querySelector(".ss-theme-title");
-const ssDescription = document.querySelector(".ss-theme-desc");
-const ssImage = document.querySelector(".ss-theme-image");
+const accountButton = document.getElementById("account-btn");
+const accountTools = document.querySelector(".account-tools");
+
+let isAccountToolsVisible = false;
+accountButton.addEventListener("click", function (e) {
+  if (!isAccountToolsVisible) {
+    isAccountToolsVisible = true;
+    accountTools.style.right = 0 + "px";
+  } else {
+    accountTools.style.right = -420 + "px";
+    isAccountToolsVisible = false;
+  }
+});
 
 //Parallax effect (descartado)
 /*window.addEventListener("scroll", function (e) {
