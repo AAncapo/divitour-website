@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/main.css" />
     <link rel="icon" href="images/icons/divitour-icon.png" />
-    <meta name="description" content="The premier agency specializing in scuba and water activities
-      in Cuba">
+    <meta
+      name="description"
+      content="The premier agency specializing in scuba and water activities
+      in Cuba"
+    />
     <title>
       DIVITOUR - The premier agency specializing in scuba and water activities
       in Cuba
@@ -22,24 +25,33 @@
         The premier agency specializing in scuba diving and water activities in
         Cuba
       </h3>
-      <button id="account-btn">
-        <img src="images/icons/account-icon.png" />
-        <span>Login</span>
-      </button>
+      <div class="header-buttons">
+        <button id="lang-btn">
+          <img src="images/icons/lang.png" alt="Language" />
+        </button>
+        <button id="account-btn">
+          <img src="images/icons/account-icon.png" />
+        </button>
+      </div>
     </div>
 
-    <div class="top-body">
+    <main>
       <!--------------- OFFERS -------------->
       <div class="offers_slideshow">
         <img class="offer-image" src="images/offers/1.png" />
         <div class="offer-description">
-          <h2>Special Offers</h2>
-          <h1>Offer Name</h1>
+          <h2>Ofertas Especiales</h2>
+          <h1>Lorem, ipsum dolor</h1>
           <h3>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </h3>
-          <div class="create-reservation">
+          <div
+            class="create-reservation"
+            as="a"
+            href="#filterbar"
+            variant="primary"
+          >
             <span>Plan your experience with us</span>
             <button class="goto-reservation-btn">Book Now</button>
           </div>
@@ -89,106 +101,57 @@
           <p>Necesitas una cuenta?<a href="#">Registrate</a></p>
         </div>
       </div>
-    </div>
+    </main>
 
-    <!------------------ PLANNING ------------------->
+    <!--------------- FILTERS ---------------->
     <div
       class="planning-panel-container"
-      style="width: 100%; height: fit-content; display: flex"
+      style="width: 100%; height: fit-content; display: block"
     >
-      <div class="filter-bar">
+      <div id="filterbar" class="filter-bar">
         <div class="personas filter">
-          <label for="personas">Personas</label>
-          <input type="number" value="1" />
+          <label>Personas</label>
+          <input type="number" value="1" style="width: 50px" />
         </div>
 
-        <div class="destination filter">
-          <label for="destination">Destino</label>
-          <select name="destinations" id="dest_sel">
-            <option value="dest0">Selecciona un lugar</option>
-            <option value="dest1">Cayo Largo del Sur</option>
-            <option value="dest2">Varadero</option>
-            <option value="dest3">La Habana</option>
-            <option value="dest4">Santiago de Cuba</option>
-          </select>
-        </div>
-
-        <div class="hotel filter">
-          <label for="hotel">Hotel</label>
-          <select name="hotels" id="hotels_sel">
-            <option value="hotel0">Selecciona un hotel</option>
-            <option value="hotel1">Hotel 1</option>
-            <option value="hotel2">Hotel 2</option>
-            <option value="hotel3">Hotel 3</option>
-          </select>
-        </div>
-
-        <div class="activity filter">
-          <label for="activities">Special Offers</label>
-          <div>
-            <input type="checkbox" name="act1" id="act1" />
-            <label for="act1">Activity 1</label>
-          </div>
-          <div>
-            <input type="checkbox" name="act2" id="act2" />
-            <label for="act2">Activity 2</label>
-          </div>
-          <div>
-            <input type="checkbox" name="act3" id="act3" />
-            <label for="act3">Activity 3</label>
-          </div>
-        </div>
+        <button class="destinos filter">Destinos</button>
+        <button class="hotel filter">Hoteles</button>
+        <button class="service filter">Ofertas</button>
       </div>
-      <div class="filtered-descriptions">
-        <div class="selected-destination" style="width: 100%">
-          <h2 class="dest-name">Cayo Largo del Sur</h2>
-          <p class="dest-descr">
-            Cayo Largo is a paradise destination for diving enthusiasts. Located
-            in the Canarreos Archipelago, Cuba, this cay offers a unique and
-            thrilling underwater experience. Its turquoise and crystal-clear
-            waters are home to a great diversity of marine life and spectacular
-            coral reefs. Divers can explore impressive vertical walls covered in
-            coral, underwater caves, canyons, and vibrant coral gardens. The
-            visibility in the waters of Cayo Largo is exceptional, easily
-            reaching 30 meters or more. This allows for detailed appreciation of
-            the beauty of the corals, as well as the observation of brightly
-            colored tropical fish, sea turtles, rays, sharks, and other
-            fascinating species. In addition to the reefs, Cayo Largo features
-            several shipwrecks that offer exciting exploration opportunities.
-            These submerged wrecks provide a unique habitat for a variety of
-            marine species and add an element of adventure to the dives. Diving
-            centers in Cayo Largo have expert and certified staff and offer a
-            wide range of options for divers of all levels, from beginners to
-            experienced divers. Certification courses and specialized dive
-            programs can also be undertaken.
-          </p>
-          <img
-            src="images/destinos/cayo-largo/cayolargo1.png"
-            alt="Cayo Largo"
-            style="width: inherit"
-          />
+
+      <section class="filtered-content">
+        <h2>Recomendaciones</h2>
+        <div id="rec-hotel" class="image-slideshow">
+          <div class="images" style="width: inherit; height: inherit">
+            <img src="" />
+          </div>
+          <div hidden class="item-card">
+            <h3>Eget arcu dictum</h3>
+            <h4>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </h4>
+            <p>$0.00</p>
+          </div>
+          <!-- Skip Buttons -->
+          <div style="width: 100%; display: flex; position: absolute">
+            <button
+              class="skip-button btn-left"
+              name="rec-hotel"
+              style="left: 60px"
+            >
+              <img src="images/icons/left-arrow.png" alt="Previous" />
+            </button>
+            <button
+              class="skip-button btn-right"
+              name="rec-hotel"
+              style="right: 60px"
+            >
+              <img src="images/icons/right-arrow.png" alt="Next" />
+            </button>
+          </div>
         </div>
-        <div class="selected-hotel" style="width: 100%">
-          <h2 class="hotel-name">Grand Memories Cayo Largo</h2>
-          <p class="hotel-descr">
-            Situado en la isla de Cayo Largo del Sur, en el archipiélago de los
-            Canarreos, Grand Memories Cayo Largo es el lugar perfecto para unas
-            soleadas vacaciones en familia. Esta propiedad todo incluido es
-            ideal para huéspedes de todas las edades, ya que cuenta con
-            habitaciones cómodas y modernas, una variada oferta culinaria y la
-            proximidad a lugares de interés que permiten a los viajeros
-            relajarse y disfrutar del paraíso.
-          </p>
-          <img
-            src="images/destinos/cayo-largo/hotels/hotel-preview-zoomed.png"
-            alt="Grand Memories - Cayo Largo"
-            style="width: inherit"
-          />
-        </div>
-        <div class="selected-activities" style="width: 100%">
-          <h1>Actividades:</h1>
-        </div>
-      </div>
+      </section>
     </div>
   </body>
 </html>
