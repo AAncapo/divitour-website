@@ -1,1 +1,1 @@
-Sitio web creado en vanilla javascript para la empresa cubana Divitour
+Sitio web creado en vanilla javascript para la agencia cubana Divitour
