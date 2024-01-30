@@ -1,3 +1,9 @@
+const destBtn = document.getElementById("dest-btn");
+
+destBtn.addEventListener("click", () => {
+  //show result in filtered-content.container
+});
+
 // (in HTML) all skip-buttons must be "connected" to a .image-slideshow with the prop "id"=(the skip-button's "name")
 let currIndex = 0;
 

@@ -37,23 +37,18 @@
 
     <main>
       <!--------------- OFFERS -------------->
-      <div class="offers_slideshow">
-        <img class="offer-image" src="images/offers/1.png" />
-        <div class="offer-description">
+      <div class="offers image-slideshow">
+        <img src="images/offers/1.png" />
+        <div class="description">
           <h2>Ofertas Especiales</h2>
           <h1>Lorem, ipsum dolor</h1>
           <h3>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </h3>
-          <div
-            class="create-reservation"
-            as="a"
-            href="#filterbar"
-            variant="primary"
-          >
+          <div class="book-now">
             <span>Plan your experience with us</span>
-            <button class="goto-reservation-btn">Book Now</button>
+            <a href="#booking-area">Book Now</a>
           </div>
         </div>
       </div>
@@ -102,38 +97,41 @@
         </div>
       </div>
     </main>
-
     <!--------------- FILTERS ---------------->
     <div
-      class="planning-panel-container"
-      style="width: 100%; height: fit-content; display: block"
+      class="booking-panel-container"
+      style="width: 100%; height: fit-content"
     >
-      <div id="filterbar" class="filter-bar">
+      <div id="booking-area" class="filters-container">
         <div class="personas filter">
           <label>Personas</label>
           <input type="number" value="1" style="width: 50px" />
         </div>
 
-        <button class="destinos filter">Destinos</button>
-        <button class="hotel filter">Hoteles</button>
-        <button class="service filter">Ofertas</button>
+        <button id="dest-btn" class="destinos filter">Destinos</button>
+        <button id="hotel-btn" class="hotel filter">Hoteles</button>
+        <button id="serv-btn" class="service filter">Ofertas</button>
+        <button id="excursion-btn" class="filter">Excursiones</button>
       </div>
 
       <section class="filtered-content">
-        <h2>Recomendaciones</h2>
+        <h2>Content</h2>
+        <div class="container">
+          <button class="result-card">
+            <img
+              src="images/destinos/varadero/royalton-hicacos/varadero-hotel-royalton-hicacos2.jpeg"
+              alt=""
+            />
+            <div class="rcard-footer">
+              <p>Result card footer</p>
+            </div>
+          </button>
+        </div>
+        <!-- <h2>Recomendaciones</h2>
         <div id="rec-hotel" class="image-slideshow">
           <div class="images" style="width: inherit; height: inherit">
             <img src="" />
           </div>
-          <div hidden class="item-card">
-            <h3>Eget arcu dictum</h3>
-            <h4>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </h4>
-            <p>$0.00</p>
-          </div>
-          <!-- Skip Buttons -->
           <div style="width: 100%; display: flex; position: absolute">
             <button
               class="skip-button btn-left"
@@ -150,10 +148,10 @@
               <img src="images/icons/right-arrow.png" alt="Next" />
             </button>
           </div>
-        </div>
+        </div> -->
       </section>
     </div>
   </body>
 </html>
 
-<script src="script/app.js" defer></script>
+<script src="script/app.js"></script>
