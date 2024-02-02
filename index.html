@@ -19,45 +19,217 @@
 
   <body>
     <!----------------- HEADER --------------->
-    <div class="fixed-header">
-      <img class="header-logo" src="images/logos/divitour-full.png" />
-      <h3>
-        The premier agency specializing in scuba diving and water activities in
-        Cuba
-      </h3>
-      <div class="header-buttons">
-        <button id="lang-btn">
-          <img src="images/icons/lang.png" alt="Language" />
-        </button>
-        <button id="account-btn">
-          <img src="images/icons/account-icon.png" />
-        </button>
+    <header>
+      <div class="navbar">
+        <img class="header-logo" src="images/logos/divitour-full.png" />
+        <span>
+          The premier agency specializing in scuba diving and water activities
+          in Cuba
+        </span>
+        <div class="header-buttons">
+          <a class="nav-anchor-btn" href="#">Book Now!</a>
+          <a class="nav-btn" href="#HOME">Home</a>
+          <a class="nav-btn" href="#TOURS">Tours</a>
+          <a class="nav-btn" href="#EXCURSIONS">Excursions</a>
+          <a class="nav-btn" href="#COURSES">Courses</a>
+          <a class="nav-btn" href="#CONTACT">Contact Us</a>
+          <button id="lang-btn" style="padding-left: 20px">
+            <img src="images/icons/lang.png" alt="Language" />
+          </button>
+          <button id="account-btn">
+            <img src="images/icons/account-icon.png" />
+          </button>
+        </div>
       </div>
-    </div>
 
-    <main>
-      <!--------------- OFFERS -------------->
-      <div class="offers image-slideshow">
-        <img src="images/offers/1.png" />
+      <div id="HOME" class="offers image-slideshow">
+        <img class="header-img" src="images/header-img.jpg" />
         <div class="description">
-          <h2>Ofertas Especiales</h2>
-          <h1>Lorem, ipsum dolor</h1>
-          <h3>
+          <!-- <h2>Divitour</h2> -->
+          <h1 class="desc1">
+            The premier agency specializing in scuba diving and water activities
+            in Cuba
+          </h1>
+          <p class="desc2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </h3>
+          </p>
           <div class="book-now">
             <span>Plan your experience with us</span>
-            <a href="#booking-area">Book Now</a>
+            <a class="anchor-button" href="#booking-area">Book Now</a>
           </div>
         </div>
       </div>
-      <!---------------- LOGIN --------------->
-      <div class="account-tools">
-        <div class="form-bg">
-          <h1 style="text-align: center; font-size: 1.5rem">Iniciar sesion</h1>
-          <form class="login-form" action="" method="post">
-            <input
+    </header>
+    <!--------- Upcoming Events ------->
+    <main>
+      <section class="upcoming-events">
+        <h1 class="section-title" style="color: black">Upcoming Events</h1>
+        <div class="event-container">
+          <div class="light-gradient">
+            <div class="ev-desc">
+              <h1 style="color: black">FotoSub International</h1>
+              <article>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Nesciunt laborum pariatur nulla autem adipisci reiciendis veniam
+                dolore ipsa consequuntur, aliquam, quaerat aspernatur officiis
+                asperiores quos voluptas voluptates eligendi voluptatem.
+                Laboriosam?
+              </article>
+              <a class="anchor-button" href="#">See more</a>
+            </div>
+          </div>
+          <div class="ev-img">
+            <img
+              class="ev-poster"
+              src="images/eventos/event-fotosub.jpeg"
+              alt=""
+            />
+            <img class="ev-logo" src="images/eventos/fotosub-logo.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="services">
+        <img class="bg-image" src="" alt="" />
+        <h1 style="margin-bottom: 10px">Popular Destinations</h1>
+        <div class="popular-choices">
+          <!-- all services -->
+          <div class="pop-destinations">
+            <!-- destination container -->
+            <!-- <div class="dest-container">
+              <div class="dest-image">
+                <img src="images/destinos/varadero/varadero2.jpeg" alt="" />
+              </div>
+              <div class="dest-text-bg">
+                <h3 class="dest-name">Varadero</h3>
+                <p class="dest-descr">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolorum quod repudiandae maiores voluptas voluptatibus dolor,
+                  nostrum quam, fugit ex autem repellat ad qui vero veritatis
+                  illo enim, libero soluta eius!
+                </p>
+                
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="our-offers">
+          <h1 style="margin: 0px">Our Services</h1>
+          <div
+            class="serv-container"
+            style="display: flex; padding-bottom: 100px"
+          >
+            <div class="tours serv">
+              <h2>Tours</h2>
+              <div style="height: 300px; display: flex">
+                <div
+                  class="serv-img-c"
+                  style="background-color: rgb(132, 132, 132)"
+                ></div>
+                <div style="margin-left: 20px; display: block">
+                  <p style="margin: 0px; margin-bottom: 20px">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Esse non quaerat tenetur eaque ut in iusto rem dolorem
+                    suscipit natus rerum perferendis corporis ab, adipisci
+                    facilis dolore. Obcaecati, architecto molestiae!
+                  </p>
+                  <a class="anchor-button" style="margin-left: 20px" href="#"
+                    >Learn more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="exped serv">
+              <h2>Expeditions</h2>
+              <div style="height: 300px; display: flex">
+                <div
+                  class="serv-img-c"
+                  style="background-color: rgb(132, 132, 132)"
+                ></div>
+                <div style="margin-left: 20px; display: block">
+                  <p style="margin-left: 20px">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Esse non quaerat tenetur eaque ut in iusto rem dolorem
+                    suscipit natus rerum perferendis corporis ab, adipisci
+                    facilis dolore. Obcaecati, architecto molestiae!
+                  </p>
+                  <a class="anchor-button" style="margin-left: 20px" href="#"
+                    >Learn more</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="courses serv">
+              <h2>Courses</h2>
+              <div style="height: 300px; display: flex">
+                <div
+                  class="serv-img-c"
+                  style="background-color: rgb(132, 132, 132)"
+                ></div>
+                <div style="margin-left: 20px; display: block">
+                  <p style="margin-left: 20px">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Esse non quaerat tenetur eaque ut in iusto rem dolorem
+                    suscipit natus rerum perferendis corporis ab, adipisci
+                    facilis dolore. Obcaecati, architecto molestiae!
+                  </p>
+                  <a class="anchor-button" style="margin-left: 20px" href="#"
+                    >Learn more</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <h1>Our Partners</h1>
+        <div class="partners-links">
+          <div class="logo-container">
+            <img
+              class="p-logo"
+              src="images/logos/partners/cammproductions.png"
+              alt=""
+            />
+          </div>
+          <div class="logo-container">
+            <img
+              class="p-logo"
+              src="images/logos/partners/daiquiri.png"
+              alt=""
+            />
+          </div>
+          <div class="logo-container">
+            <img class="p-logo" src="images/logos/partners/ecotur.png" alt="" />
+          </div>
+          <div class="logo-container">
+            <img
+              class="p-logo"
+              src="images/logos/partners/cubanacan.PNG"
+              alt=""
+            />
+          </div>
+          <div class="logo-container">
+            <img class="p-logo" src="images/logos/partners/marlin.png" alt="" />
+          </div>
+          <div class="logo-container">
+            <img
+              class="p-logo"
+              src="images/logos/partners/bluediamond.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!---------------- LOGIN --------------->
+    <!-- <div class="account-tools">
+          <div class="form-bg">
+            <h1 style="text-align: center; font-size: 1.5rem">Iniciar sesion</h1>
+            <form class="login-form" action="" method="post">
+              <input
               class="login-input"
               type="text"
               name="firstname"
@@ -95,62 +267,7 @@
         <div class="login">
           <p>Necesitas una cuenta?<a href="#">Registrate</a></p>
         </div>
-      </div>
-    </main>
-    <!--------------- FILTERS ---------------->
-    <div
-      class="booking-panel-container"
-      style="width: 100%; height: fit-content"
-    >
-      <div id="booking-area" class="filters-container">
-        <div class="personas filter">
-          <label>Personas</label>
-          <input type="number" value="1" style="width: 50px" />
-        </div>
-
-        <button id="dest-btn" class="destinos filter">Destinos</button>
-        <button id="hotel-btn" class="hotel filter">Hoteles</button>
-        <button id="serv-btn" class="service filter">Ofertas</button>
-        <button id="excursion-btn" class="filter">Excursiones</button>
-      </div>
-
-      <section class="filtered-content">
-        <h2>Content</h2>
-        <div class="container">
-          <button class="result-card">
-            <img
-              src="images/destinos/varadero/royalton-hicacos/varadero-hotel-royalton-hicacos2.jpeg"
-              alt=""
-            />
-            <div class="rcard-footer">
-              <p>Result card footer</p>
-            </div>
-          </button>
-        </div>
-        <!-- <h2>Recomendaciones</h2>
-        <div id="rec-hotel" class="image-slideshow">
-          <div class="images" style="width: inherit; height: inherit">
-            <img src="" />
-          </div>
-          <div style="width: 100%; display: flex; position: absolute">
-            <button
-              class="skip-button btn-left"
-              name="rec-hotel"
-              style="left: 60px"
-            >
-              <img src="images/icons/left-arrow.png" alt="Previous" />
-            </button>
-            <button
-              class="skip-button btn-right"
-              name="rec-hotel"
-              style="right: 60px"
-            >
-              <img src="images/icons/right-arrow.png" alt="Next" />
-            </button>
-          </div>
-        </div> -->
-      </section>
-    </div>
+      </div> -->
   </body>
 </html>
 

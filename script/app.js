@@ -1,87 +1,39 @@
-const destBtn = document.getElementById("dest-btn");
+const popDestContainer = document.querySelector(".pop-destinations");
 
-destBtn.addEventListener("click", () => {
-  //show result in filtered-content.container
-});
+setDestinations("images/destinos/varadero/varadero2.jpeg", "Varadero");
+setDestinations(
+  "images/destinos/cayo-largo/cayolargo1.png",
+  "Cayo Largo del Sur"
+);
+setDestinations("images/destinos/jibacoa.JPG", "Jibacoa");
 
-// (in HTML) all skip-buttons must be "connected" to a .image-slideshow with the prop "id"=(the skip-button's "name")
-let currIndex = 0;
+function setDestinations(imgPath, dstName) {
+  let destContainerDiv = document.createElement("div");
+  destContainerDiv.className = "dest-container";
 
-let sliderImages = [
-  "images/destinos/varadero/royalton-hicacos/varadero-hotel-royalton-hicacos.jpeg",
-  "images/destinos/varadero/royalton-hicacos/varadero-hotel-royalton-hicacos1.jpeg",
-  "images/destinos/varadero/royalton-hicacos/varadero-hotel-royalton-hicacos2.jpeg",
-];
-connectSkipButtons();
-//setSlideshowImage(currIndex);
+  let destImageDiv = document.createElement("div");
+  destImageDiv.className = "dest-image";
+  destContainerDiv.appendChild(destImageDiv);
 
-function connectSkipButtons() {
-  const skipButtons = document.querySelectorAll(".skip-button");
-  const imgSshows = document.querySelectorAll(".image-slideshow");
+  let _img = document.createElement("img");
+  _img.src = imgPath;
+  destImageDiv.appendChild(_img);
 
-  //loop thru all image-slideshows and for each one loop thru all the skipbuttons to find their partner
-  imgSshows.forEach((iss) => {
-    skipButtons.forEach((sb) => {
-      if (sb.name == iss.id) {
-        sb.addEventListener("click", function (e) {
-          let act;
-          sb.className == "btn-left" ? (act = "prev") : (act = "next");
-          setSlideshowImage(iss, act);
-        });
-      }
-    });
-  });
+  let destTextBgDiv = document.createElement("div");
+  destTextBgDiv.className = "dest-text-bg";
+  destContainerDiv.appendChild(destTextBgDiv);
+
+  // name
+  let destNameH = document.createElement("h3");
+  destNameH.innerHTML = dstName;
+  destNameH.className = "dest-name";
+  // description
+  let destDescP = document.createElement("p");
+  destDescP.className = "dest-descr";
+  destDescP.innerHTML =
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum quod repudiandae maiores voluptas voluptatibus dolor, nostrum quam, fugit ex autem repellat ad qui vero veritatis illo enim, libero soluta eius!";
+  destTextBgDiv.appendChild(destNameH);
+  destTextBgDiv.appendChild(destDescP);
+
+  popDestContainer.appendChild(destContainerDiv);
 }
-
-function setSlideshowImage(container, action) {
-  // Animate images
-  currIndex += 1 ? action == "next" : (currIndex -= 1);
-  if (currIndex > sliderImages.length - 1) {
-    currIndex = 0;
-  } else if (currIndex < 0) {
-    currIndex = sliderImages.length;
-  }
-  console.log(currIndex);
-  container.setAttribute("src", sliderImages[currIndex]);
-}
-
-const accountButton = document.getElementById("account-btn");
-const accountTools = document.querySelector(".account-tools");
-
-// Toggle Account button ((TODO: buttons have a toggle prop, dummy))
-let isAccountToolsVisible = false;
-accountButton.addEventListener("click", function (e) {
-  if (!isAccountToolsVisible) {
-    isAccountToolsVisible = true;
-    accountTools.style.right = 0 + "px";
-  } else {
-    accountTools.style.right = -420 + "px";
-    isAccountToolsVisible = false;
-  }
-});
-
-let index = 0;
-//displayImages();
-function displayImages() {
-  let i;
-  const images = document.getElementsByClassName("image");
-  for (i = 0; i < images.length; i++) {
-    images[i].style.display = "none";
-  }
-  index++;
-  if (index > images.length) {
-    index = 1;
-  }
-  images[index - 1].style.display = "block";
-  setTimeout(displayImages, 5000);
-}
-
-//Parallax effect (descartado)
-/*window.addEventListener("scroll", function (e) {
-  //will not work on IE 9
-  var scrolled = this.window.scrollY;
-  //will not work on IE 8
-  const rocks = this.document.querySelector(".novedades-section");
-  rocks.style.top = -(scrolled * 0.2) + "px";
-});
-*/

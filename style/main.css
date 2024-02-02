@@ -10,54 +10,33 @@
   --header-height: 5vh;
   --theme-color: #527ed5;
   --theme-color-light: #7ca2edfe;
+  --event-container-h: 700px;
 }
 
 * {
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
-  box-sizing: border-box;
-}
 
-.fixed-header {
-  top: 0px;
-  position: fixed;
-  min-height: fit-content;
-  height: var(--header-height);
-  width: 100%;
-  align-items: center;
-  display: flex;
-  background-color: #fff;
-  z-index: 2;
-
-  & h3 {
-    font-size: 0.9em;
-    font-weight: 500;
-    margin-left: 20px;
-    text-wrap: pretty;
-    max-width: 50%;
+  button,
+  li {
+    cursor: pointer;
   }
-}
 
-.header-logo {
-  width: 200px;
-  height: 33px;
-  margin-left: 20px;
-}
+  & .anchor-button {
+    text-decoration: none;
+    color: white;
+    background-color: var(--theme-color-light);
+    padding: 10px;
+    margin-left: 50%;
 
-.header-buttons {
-  position: absolute;
-  right: 20px;
-  display: flex;
-  align-items: center;
-}
+    transition-property: background-color;
+    transition-property: padding;
+    transition-duration: 0.2s;
 
-#account-btn,
-#lang-btn {
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-
-  & img {
-    padding-inline: 10px;
+    &:hover {
+      background-color: var(--theme-color);
+      padding: 15px;
+    }
   }
 }
 
@@ -67,183 +46,319 @@ body {
   width: 100%;
 }
 
-button,
-li {
-  cursor: pointer;
-}
+/* ############# Header ############# */
+header {
+  padding-bottom: 80px;
 
-.skip-button {
-  padding: 0px;
-  position: inherit;
-  border: none;
-  background-color: #ffffff9f;
-}
-
-/*############# Slideshow & Booking #############*/
-.offers {
-  margin-top: var(--header-height);
-  max-height: 1080px;
-  width: 100vw;
-  background-color: white;
-  display: flex;
-
-  & img {
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    object-fit: cover;
-  }
-
-  & .description {
-    position: absolute;
-    width: 50%;
-    padding: 40px 40px;
-    color: white;
-    /* font-size: ; */
-  }
-}
-
-.offer-description {
-  & h2 {
-    margin: 0px;
-  }
-  /* Offer Name */
-  & h1 {
-    font-size: 5em;
-    margin: 0px;
-    padding-bottom: 10px;
-  }
-
-  & h3 {
-    max-width: 50%;
-  }
-}
-
-.book-now {
-  padding-top: 100px;
-  & span {
-    color: #fff;
-  }
-  & a {
-    text-decoration: none;
-    margin-left: 20px;
-    padding: 10px;
-    background-color: var(--theme-color-light);
-    color: white;
-    font-family: var(--font-primary);
-    border: none;
-    width: 100px;
-    text-size-adjust: auto;
-
-    transition-property: background-color;
-    transition-duration: 0.1s;
-
-    &:hover {
-      background-color: var(--theme-color);
-    }
-  }
-}
-
-/*################* SEARCH FILTERS *################*/
-.filters-container {
-  width: 100%;
-  position: sticky;
-  height: 100px;
-  display: block;
-  align-items: center;
-  justify-content: center;
-
-  /* Filter Buttons */
-  & .filter {
-    margin-right: 20px;
-    border-radius: 40px;
-    border-width: 3px;
-    background-color: #0000;
-    border-color: var(--theme-color);
-    color: var(--theme-color);
-    font-size: 1em;
-    font-weight: 600;
-    width: 100px;
-    height: 40px;
-    text-align: center;
-    justify-content: center;
-    padding-bottom: 20px;
-
-    transition-property: background-color;
-    transition-property: color;
-    transition-duration: 0.2s;
-
-    &:hover {
-      background-color: var(--theme-color);
-      color: #fff;
-    }
-  }
-}
-
-.filtered-content {
-  & h2 {
-    text-align: center;
-    margin: auto;
-    font-size: 40px;
-  }
-
-  & .container {
-    display: flex;
+  & .navbar {
+    top: 0px;
+    position: fixed;
+    min-height: fit-content;
+    height: var(--header-height);
     width: 100%;
-    height: 300px;
-  }
-
-  & .result-card {
-    width: 200px;
-    height: fit-content;
-    overflow: hidden;
-    display: block;
-
-    & img {
-      height: 160px;
-      width: 100%;
-      background-position: center;
-      object-fit: cover;
-    }
-
-    & .rcard-footer {
-      height: 20%;
-    }
-  }
-
-  & .image-slideshow {
-    margin: auto;
-    width: 90vw;
-    height: 500px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
+    background-color: #fff;
+    z-index: 3;
 
-    & img {
-      overflow: hidden;
-      object-fit: cover;
+    & span {
+      font-size: 0.9em;
+      font-weight: 500;
+      margin-left: 20px;
+      text-wrap: pretty;
+      max-width: 50%;
+      padding-left: 20px;
+    }
+
+    .header-logo {
+      width: 200px;
+      height: 33px;
+      margin-left: 20px;
+    }
+
+    .header-buttons {
+      position: absolute;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      min-width: fit-content;
+
+      .nav-anchor-btn {
+        text-decoration: none;
+        color: white;
+        background-color: var(--theme-color-light);
+        margin-right: 100px;
+        padding: 10px;
+
+        transition-property: background-color;
+        transition-property: padding;
+        transition-duration: 0.2s;
+
+        &:hover {
+          background-color: var(--theme-color);
+          padding: 15px;
+        }
+      }
+
+      .nav-btn {
+        padding-inline: 20px;
+        color: black;
+        text-decoration: none;
+      }
+    }
+
+    #account-btn,
+    #lang-btn {
+      border: none;
+      background-color: rgba(255, 255, 255, 0);
+
+      & img {
+        padding-inline: 10px;
+      }
     }
   }
 
-  & .item-card {
-    position: absolute;
-    height: 95%;
-    width: 400px;
-    background-color: #527ed5;
-    align-items: end;
-    padding-inline: 20px;
+  .offers {
+    font-size: 2em;
 
-    & h3,
-    p {
+    margin-top: var(--header-height);
+    height: 80vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    overflow: hidden;
+
+    .header-img {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      object-fit: cover;
+    }
+
+    & .description {
+      position: absolute;
+      height: inherit;
+      width: 50%;
+      min-width: 550px;
+      padding: 80px 40px;
+      color: white;
+
+      .desc2 {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  .book-now {
+    position: relative;
+    padding-top: 400px;
+    left: 60%;
+    width: 60%;
+
+    & span {
       color: #fff;
     }
-    & h4 {
-      color: #fff;
-      font-weight: 500;
+
+    & a {
+      text-decoration: none;
+      margin-left: 20px;
+      padding: 10px;
+      background-color: var(--theme-color-light);
+      color: white;
+      font-family: var(--font-primary);
+      border: none;
+      width: 100px;
+      text-size-adjust: auto;
     }
   }
 }
+
+/* ######### UpcomingEvents ########## */
+.upcoming-events {
+  padding-bottom: 50px;
+  & .section-title {
+    margin-top: 0px;
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+  }
+
+  & h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  .event-container {
+    display: flex;
+    height: var(--event-container-h);
+    width: 100%;
+    overflow-y: hidden;
+
+    & .light-gradient {
+      background-image: linear-gradient(
+        to right,
+        white 45%,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0)
+      );
+      z-index: 2;
+      position: absolute;
+      width: 50%;
+      height: var(--event-container-h);
+      font-size: 32px;
+      align-items: center;
+    }
+
+    & .ev-desc {
+      width: 70%;
+      height: var(--event-container-h);
+      margin-left: 40px;
+      display: block;
+      align-items: center;
+
+      & article {
+        padding-bottom: 40px;
+      }
+    }
+
+    & .ev-img {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+
+      & .ev-poster {
+        object-fit: fill;
+        width: 100%;
+        margin-right: -40%;
+        padding-bottom: 300px;
+      }
+
+      & .ev-logo {
+        position: absolute;
+        right: 50px;
+      }
+    }
+  }
+}
+
+/* ######### PopularChoices ######### */
+.services {
+  height: 100%;
+  width: 100%;
+
+  & h1 {
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-size: 5em;
+  }
+
+  & .popular-choices {
+    display: block;
+    height: 700px;
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    & .pop-destinations {
+      justify-content: center;
+      display: flex;
+      height: 100%;
+
+      & .dest-container {
+        width: 20%;
+        height: 90%;
+        display: flex;
+        padding-right: 50px;
+
+        transition-property: width;
+        transition-property: height;
+        transition-duration: 0.2s;
+
+        & .dest-image {
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 80%;
+          width: 100%;
+          object-fit: contain;
+          > img {
+            height: 100%;
+            transition-property: height;
+            transition-duration: 1s;
+
+            &:hover {
+              height: 120%;
+            }
+          }
+        }
+
+        & .dest-text-bg {
+          background-image: linear-gradient(to top, black, #ffffff00);
+          position: absolute;
+          display: block;
+          width: inherit;
+          margin-bottom: 0px;
+          padding-top: 430px;
+          opacity: 0%;
+          transition-property: opacity;
+          transition-duration: 0.2s;
+
+          &:hover {
+            opacity: 100%;
+          }
+        }
+
+        & h3 {
+          color: #fff;
+          margin-left: 10px;
+          font-size: 1.5em;
+          margin-bottom: 0px;
+        }
+
+        & .dest-descr {
+          margin-left: 10px;
+          color: #fff;
+          margin-top: 0px;
+          padding-bottom: 0px;
+        }
+      }
+    }
+  }
+
+  & .our-offers {
+    & h2 {
+      margin-inline: 300px;
+      font-size: 2em;
+    }
+  }
+  .serv-container {
+    display: flex;
+    padding-bottom: 100px;
+    justify-content: center;
+
+    .serv {
+      margin-inline: 40px;
+      width: 600px;
+      margin-left: 40px;
+    }
+  }
+
+  & .serv-img-c {
+    width: 800px;
+    height: 100%;
+  }
+}
+
+/*############# SEARCH FILTERS #############*/
 
 /******* User Account Tools *******/
 .account-tools {
@@ -390,5 +505,35 @@ li.twitter {
     margin-left: 4px;
     text-decoration: none;
     transition: 0.3s;
+  }
+}
+
+footer {
+  display: block;
+  width: 100%;
+  height: 300px;
+  background-color: #252525;
+
+  & h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    color: white;
+  }
+
+  & .partners-links {
+    display: flex;
+    justify-content: center;
+    & .logo-container {
+      /* width: 100px;
+      height: 100px; */
+      object-fit: cover;
+      margin-inline: 100px;
+    }
+    & .p-logo {
+      width: 150px;
+      height: 150px;
+      object-fit: scale-down;
+    }
   }
 }
