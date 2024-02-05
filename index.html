@@ -28,11 +28,12 @@
         </span>
         <div class="header-buttons">
           <a class="nav-anchor-btn" href="#">Book Now!</a>
-          <a class="nav-btn" href="#HOME">Home</a>
-          <a class="nav-btn" href="#TOURS">Tours</a>
-          <a class="nav-btn" href="#EXCURSIONS">Excursions</a>
-          <a class="nav-btn" href="#COURSES">Courses</a>
-          <a class="nav-btn" href="#CONTACT">Contact Us</a>
+          <a class="nav-btn" href="#home">Home</a>
+          <a class="nav-btn" href="#destinations">Destinations</a>
+          <a class="nav-btn" href="#tours">Tours</a>
+          <a class="nav-btn" href="#excursions">Excursions</a>
+          <a class="nav-btn" href="#courses">Courses</a>
+          <a class="nav-btn" href="#contacts">Contact Us</a>
           <button id="lang-btn" style="padding-left: 20px">
             <img src="images/icons/lang.png" alt="Language" />
           </button>
@@ -42,7 +43,7 @@
         </div>
       </div>
 
-      <div id="HOME" class="offers image-slideshow">
+      <div id="home" class="offers image-slideshow">
         <img class="header-img" src="images/header-img.jpg" />
         <div class="description">
           <!-- <h2>Divitour</h2> -->
@@ -65,11 +66,19 @@
         </div>
       </div>
     </header>
-    <!--------- Upcoming Events ------->
     <main>
+      <!--------- Upcoming Events ------->
       <section class="upcoming-events">
         <h1 class="section-title" style="color: black">Upcoming Events</h1>
         <div class="event-container">
+          <div class="ev-img">
+            <img
+              class="ev-poster"
+              src="images/eventos/fotosub-banner.jpeg"
+              alt=""
+            />
+            <img class="ev-logo" src="images/eventos/fotosub-logo.png" alt="" />
+          </div>
           <div class="light-gradient">
             <div class="ev-desc">
               <h1 style="color: black">FotoSub International</h1>
@@ -83,110 +92,91 @@
               <a class="anchor-button" href="#">See more</a>
             </div>
           </div>
-          <div class="ev-img">
-            <img
-              class="ev-poster"
-              src="images/eventos/event-fotosub.jpeg"
-              alt=""
-            />
-            <img class="ev-logo" src="images/eventos/fotosub-logo.png" alt="" />
-          </div>
         </div>
       </section>
 
-      <section class="services">
+      <!------------ Destinations ------------>
+      <section class="destinations">
         <img class="bg-image" src="" alt="" />
         <h1 style="margin-bottom: 10px">Popular Destinations</h1>
         <div class="popular-choices">
           <!-- all services -->
           <div class="pop-destinations">
-            <!-- destination container -->
-            <!-- <div class="dest-container">
-              <div class="dest-image">
-                <img src="images/destinos/varadero/varadero2.jpeg" alt="" />
-              </div>
-              <div class="dest-text-bg">
-                <h3 class="dest-name">Varadero</h3>
-                <p class="dest-descr">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Dolorum quod repudiandae maiores voluptas voluptatibus dolor,
-                  nostrum quam, fugit ex autem repellat ad qui vero veritatis
-                  illo enim, libero soluta eius!
-                </p>
-                
-              </div>
-            </div> -->
+            <!-- .dest-container -->
           </div>
         </div>
-        <div class="our-offers">
-          <h1 style="margin: 0px">Our Services</h1>
-          <div
-            class="serv-container"
-            style="display: flex; padding-bottom: 100px"
-          >
-            <div class="tours serv">
-              <h2>Tours</h2>
-              <div style="height: 300px; display: flex">
-                <div
-                  class="serv-img-c"
-                  style="background-color: rgb(132, 132, 132)"
-                ></div>
-                <div style="margin-left: 20px; display: block">
-                  <p style="margin: 0px; margin-bottom: 20px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Esse non quaerat tenetur eaque ut in iusto rem dolorem
-                    suscipit natus rerum perferendis corporis ab, adipisci
-                    facilis dolore. Obcaecati, architecto molestiae!
-                  </p>
-                  <a class="anchor-button" style="margin-left: 20px" href="#"
-                    >Learn more</a
-                  >
-                </div>
+      </section>
+
+      <!------------ Services ------------>
+      <section class="services">
+        <h1 style="margin: 0px">Our Services</h1>
+        <div
+          class="serv-container"
+          style="display: flex; padding-bottom: 100px"
+        >
+          <div class="tours serv">
+            <h2>Tours</h2>
+            <div style="height: 300px; display: flex">
+              <div
+                class="serv-img-c"
+                style="background-color: rgb(132, 132, 132)"
+              ></div>
+              <div style="margin-left: 20px; display: block">
+                <p style="margin: 0px; margin-bottom: 20px">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                  non quaerat tenetur eaque ut in iusto rem dolorem suscipit
+                  natus rerum perferendis corporis ab, adipisci facilis dolore.
+                  Obcaecati, architecto molestiae!
+                </p>
+                <a class="anchor-button" style="margin-left: 20px" href="#"
+                  >Learn more</a
+                >
               </div>
             </div>
-            <div class="exped serv">
-              <h2>Expeditions</h2>
-              <div style="height: 300px; display: flex">
-                <div
-                  class="serv-img-c"
-                  style="background-color: rgb(132, 132, 132)"
-                ></div>
-                <div style="margin-left: 20px; display: block">
-                  <p style="margin-left: 20px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Esse non quaerat tenetur eaque ut in iusto rem dolorem
-                    suscipit natus rerum perferendis corporis ab, adipisci
-                    facilis dolore. Obcaecati, architecto molestiae!
-                  </p>
-                  <a class="anchor-button" style="margin-left: 20px" href="#"
-                    >Learn more</a
-                  >
-                </div>
+          </div>
+          <div class="exped serv">
+            <h2>Expeditions</h2>
+            <div style="height: 300px; display: flex">
+              <div
+                class="serv-img-c"
+                style="background-color: rgb(132, 132, 132)"
+              ></div>
+              <div style="margin-left: 20px; display: block">
+                <p style="margin-left: 20px">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                  non quaerat tenetur eaque ut in iusto rem dolorem suscipit
+                  natus rerum perferendis corporis ab, adipisci facilis dolore.
+                  Obcaecati, architecto molestiae!
+                </p>
+                <a class="anchor-button" style="margin-left: 20px" href="#"
+                  >Learn more</a
+                >
               </div>
             </div>
-            <div class="courses serv">
-              <h2>Courses</h2>
-              <div style="height: 300px; display: flex">
-                <div
-                  class="serv-img-c"
-                  style="background-color: rgb(132, 132, 132)"
-                ></div>
-                <div style="margin-left: 20px; display: block">
-                  <p style="margin-left: 20px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Esse non quaerat tenetur eaque ut in iusto rem dolorem
-                    suscipit natus rerum perferendis corporis ab, adipisci
-                    facilis dolore. Obcaecati, architecto molestiae!
-                  </p>
-                  <a class="anchor-button" style="margin-left: 20px" href="#"
-                    >Learn more</a
-                  >
-                </div>
+          </div>
+          <div class="courses serv">
+            <h2>Courses</h2>
+            <div style="height: 300px; display: flex">
+              <div
+                class="serv-img-c"
+                style="background-color: rgb(132, 132, 132)"
+              ></div>
+              <div style="margin-left: 20px; display: block">
+                <p style="margin-left: 20px">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+                  non quaerat tenetur eaque ut in iusto rem dolorem suscipit
+                  natus rerum perferendis corporis ab, adipisci facilis dolore.
+                  Obcaecati, architecto molestiae!
+                </p>
+                <a class="anchor-button" style="margin-left: 20px" href="#"
+                  >Learn more</a
+                >
               </div>
             </div>
           </div>
         </div>
       </section>
+      <section class="about-us"></section>
       <footer>
         <h1>Our Partners</h1>
         <div class="partners-links">

@@ -46,6 +46,10 @@ body {
   width: 100%;
 }
 
+section {
+  padding-bottom: 100px;
+}
+
 /* ############# Header ############# */
 header {
   padding-bottom: 80px;
@@ -176,7 +180,6 @@ header {
 
 /* ######### UpcomingEvents ########## */
 .upcoming-events {
-  padding-bottom: 50px;
   & .section-title {
     margin-top: 0px;
     font-size: 5em;
@@ -198,11 +201,7 @@ header {
     & .light-gradient {
       background-image: linear-gradient(
         to right,
-        white 45%,
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.2),
+        white,
         rgba(255, 255, 255, 0)
       );
       z-index: 2;
@@ -237,8 +236,8 @@ header {
       & .ev-poster {
         object-fit: fill;
         width: 100%;
-        margin-right: -40%;
-        padding-bottom: 300px;
+        /* margin-left: 100px; */
+        padding-bottom: 400px;
       }
 
       & .ev-logo {
@@ -250,7 +249,7 @@ header {
 }
 
 /* ######### PopularChoices ######### */
-.services {
+.destinations {
   height: 100%;
   width: 100%;
 
@@ -273,42 +272,47 @@ header {
       height: 100%;
 
       & .dest-container {
-        width: 20%;
-        height: 90%;
+        width: 250px;
+        height: 100%;
         display: flex;
-        padding-right: 50px;
+        justify-content: space-between;
+        gap: 50px;
 
         transition-property: width;
         transition-property: height;
         transition-duration: 0.2s;
 
         & .dest-image {
+          position: relative;
           overflow: hidden;
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 80%;
+          height: 100%;
           width: 100%;
-          object-fit: contain;
+
           > img {
             height: 100%;
-            transition-property: height;
+            /* transition-property: height;
             transition-duration: 1s;
 
             &:hover {
               height: 120%;
-            }
+            } */
           }
         }
 
         & .dest-text-bg {
-          background-image: linear-gradient(to top, black, #ffffff00);
+          background-image: linear-gradient(to bottom, black, #ffffff00 50%);
           position: absolute;
           display: block;
           width: inherit;
-          margin-bottom: 0px;
-          padding-top: 430px;
+          height: inherit;
+          top: 0px;
+          /* padding-top: 430px; */
           opacity: 0%;
+          overflow: hidden;
+          justify-content: end;
           transition-property: opacity;
           transition-duration: 0.2s;
 
@@ -317,11 +321,12 @@ header {
           }
         }
 
-        & h3 {
+        & .dest-name {
           color: #fff;
           margin-left: 10px;
           font-size: 1.5em;
           margin-bottom: 0px;
+          padding-bottom: 10px;
         }
 
         & .dest-descr {
@@ -333,18 +338,20 @@ header {
       }
     }
   }
+}
+.services {
+  & h1 {
+    font-size: 48px;
+  }
 
-  & .our-offers {
+  & .serv-container {
+    display: flex;
+    justify-content: center;
+
     & h2 {
       margin-inline: 300px;
       font-size: 2em;
     }
-  }
-  .serv-container {
-    display: flex;
-    padding-bottom: 100px;
-    justify-content: center;
-
     .serv {
       margin-inline: 40px;
       width: 600px;
@@ -357,8 +364,6 @@ header {
     height: 100%;
   }
 }
-
-/*############# SEARCH FILTERS #############*/
 
 /******* User Account Tools *******/
 .account-tools {
