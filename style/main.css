@@ -118,19 +118,24 @@ header {
         color: black;
         text-decoration: none;
 
-        & .nav-drop-li {
+        & a {
+          text-decoration: none;
+        }
+
+        & .nav-drop-ls {
           opacity: 0;
-          background-color: rgba(0, 0, 0, 0.541);
+          background-color: rgba(0, 0, 0, 0.69);
           width: fit-content;
           position: absolute;
-          top: 30px;
+          top: 45px;
+          /* display: block; */
 
-          & li {
+          & a {
+            display: block;
             text-wrap: nowrap;
             height: fit-content;
             text-decoration: none;
-            list-style: none;
-            margin-block: 5px;
+            margin: 10px;
             color: white;
             transition-property: color;
             transition-duration: 0.1s;
@@ -154,7 +159,7 @@ header {
     }
   }
 
-  .offers {
+  .header-image {
     font-size: 2em;
 
     margin-top: var(--header-height);
@@ -164,7 +169,7 @@ header {
     display: flex;
     overflow: hidden;
 
-    .header-img {
+    & img {
       display: flex;
       width: 100%;
       align-items: center;

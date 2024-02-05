@@ -5,19 +5,22 @@ const navBtns = document.querySelectorAll(".nav-btn");
 navBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (btn.firstElementChild) {
-      if (btn.firstElementChild.style.opacity > 0) {
-        btn.firstElementChild.style.opacity = 0;
+      if (btn.lastElementChild.style.opacity > 0) {
+        btn.lastElementChild.style.opacity = 0;
       } else {
-        btn.firstElementChild.style.opacity = 100;
+        btn.lastElementChild.style.opacity = 100;
       }
     }
   });
 });
 
-setDestinations("images/destinos/varadero2.jpeg", "Varadero");
-setDestinations("images/destinos/cayolargo1.png", "Cayo Largo del Sur");
-setDestinations("images/destinos/jibacoa.JPG", "Jibacoa");
-setDestinations("images/destinos/havana.JPG", "Havana");
+setDestinations("images/destinos/varadero/varadero2.jpeg", "Varadero");
+setDestinations(
+  "images/destinos/cayolargo/cayolargo1.png",
+  "Cayo Largo del Sur"
+);
+setDestinations("images/destinos/jibacoa/jibacoa.JPG", "Jibacoa");
+setDestinations("images/destinos/havana/havana.JPG", "Havana");
 setDestinations("", "Santiago de Cuba");
 setDestinations("", "Cayo Levisa");
 setDestinations("", "Peninsula de Zapata");
