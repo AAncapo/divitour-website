@@ -1,4 +1,18 @@
 const popDestContainer = document.querySelector(".pop-destinations");
+const navBtns = document.querySelectorAll(".nav-btn");
+
+// show navbuttons list on click
+navBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.firstElementChild) {
+      if (btn.firstElementChild.style.opacity > 0) {
+        btn.firstElementChild.style.opacity = 0;
+      } else {
+        btn.firstElementChild.style.opacity = 100;
+      }
+    }
+  });
+});
 
 setDestinations("images/destinos/varadero2.jpeg", "Varadero");
 setDestinations("images/destinos/cayolargo1.png", "Cayo Largo del Sur");

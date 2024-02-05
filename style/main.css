@@ -50,6 +50,13 @@ section {
   padding-bottom: 100px;
 }
 
+.section-title {
+  color: black;
+  font-size: 80px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 10px;
+}
+
 /* ############# Header ############# */
 header {
   padding-bottom: 80px;
@@ -105,9 +112,34 @@ header {
       }
 
       .nav-btn {
+        position: relative;
+        display: block;
         padding-inline: 20px;
         color: black;
         text-decoration: none;
+
+        & .nav-drop-li {
+          opacity: 0;
+          background-color: rgba(0, 0, 0, 0.541);
+          width: fit-content;
+          position: absolute;
+          top: 30px;
+
+          & li {
+            text-wrap: nowrap;
+            height: fit-content;
+            text-decoration: none;
+            list-style: none;
+            margin-block: 5px;
+            color: white;
+            transition-property: color;
+            transition-duration: 0.1s;
+
+            &:hover {
+              color: #00d9ff;
+            }
+          }
+        }
       }
     }
 
@@ -341,7 +373,7 @@ header {
 }
 .services {
   & h1 {
-    font-size: 48px;
+    padding-inline: 30%;
   }
 
   & .serv-container {
@@ -352,6 +384,7 @@ header {
       margin-inline: 300px;
       font-size: 2em;
     }
+
     .serv {
       margin-inline: 40px;
       width: 600px;

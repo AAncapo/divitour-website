@@ -1,0 +1,17 @@
+header {
+  height: 30%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dest-header-img {
+  width: 100%;
+}
+
+section {
+  width: 75%;
+  height: 100%;
+}
