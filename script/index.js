@@ -1,7 +1,6 @@
 //import { fs } from "node:fs";
-const fs = require("fs");
+//const fs = require("fs");
 
-consoleLoger();
 const gtoDestBtns = document.querySelectorAll(".goto-dest");
 const popDestContainer = document.querySelector(".pop-destinations");
 const navBtns = document.querySelectorAll(".nav-btn");
@@ -9,7 +8,7 @@ const navBtns = document.querySelectorAll(".nav-btn");
 const imgPathPrefix = "images/destinos/";
 
 //init data.json
-setData();
+//setData();
 
 //add event on goto destination page butttons
 gtoDestBtns.forEach((btn) => {
@@ -27,6 +26,7 @@ gtoDestBtns.forEach((btn) => {
 // toggle show/hide navbuttons list on click
 navBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    let elem;
     if (btn.firstElementChild) {
       if (btn.lastElementChild.style.opacity > 0) {
         btn.lastElementChild.style.opacity = 0;
@@ -43,7 +43,7 @@ setDestination(
   imgPathPrefix + "cayolargo/cayolargo1.png",
   "Cayo Largo del Sur"
 );
-setDestination(imgPathPrefix + "jibacoa/jibacoa.JPG", "Jibacoa");
+setDestination(imgPathPrefix + "jibacoa/jibacoa-1920.png", "Jibacoa");
 setDestination(imgPathPrefix + "havana/havana.JPG", "Havana");
 setDestination("", "Santiago de Cuba");
 setDestination("", "Cayo Levisa");
