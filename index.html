@@ -20,14 +20,19 @@
   <body>
     <!----------------- HEADER --------------->
     <header>
-      <div class="navbar">
-        <img class="header-logo" src="images/logos/divitour-full.png" />
-        <span>
-          The premier agency specializing in scuba diving and water activities
-          in Cuba
-        </span>
+      <nav class="navbar">
+        <div class="logo-header">
+          <img src="images/logos/divitour-full.png" />
+          <span>
+            The premier agency specializing in scuba diving and water activities
+            in Cuba
+          </span>
+        </div>
+        <div class="cta-header">
+          <span class="cta-text">Plan your experience with us </span>
+          <a class="cta-btn" href="#">Book Now!</a>
+        </div>
         <div class="header-buttons">
-          <a class="nav-anchor-btn" href="#">Book Now!</a>
           <a class="nav-btn" href="#home">Home</a>
           <!-- Nav Button Destinos -->
           <div class="nav-btn">
@@ -38,16 +43,9 @@
                 >Cayo Largo del Sur</a
               >
               <a id="dest-varadero" href="./pages/destination.html">Varadero</a>
-              <a id="dest-cayolevisa" href="./pages/destination.html"
-                >Cayo Levisa</a
-              >
+
               <a id="dest-jibacoa" href="./pages/destination.html">Jibacoa</a>
-              <a id="dest-mariagorda" href="../pages/destination.html"
-                >Maria la Gorda</a
-              >
-              <a id="dest-santiago" href="./pages/destination.html"
-                >Santiago de Cuba</a
-              >
+
               <a id="dest-zapata" href="./pages/destination.html"
                 >Peninsula de Zapata</a
               >
@@ -73,10 +71,11 @@
             <img src="images/icons/account-icon.png" />
           </button>
         </div>
-      </div>
+      </nav>
 
       <div id="home" class="header-image">
         <img src="images/header-img.jpg" />
+
         <div class="description">
           <!-- <h2>Divitour</h2> -->
           <h1 class="desc1">
@@ -91,12 +90,57 @@
             Join us in exploring the hidden treasures beneath the waves and make
             your underwater adventure with Divitour a journey to remember.
           </p>
-          <div class="book-now">
+          <!-- <div class="book-now">
             <span>Plan your experience with us</span>
             <a class="anchor-button" href="#booking-area">Book Now</a>
-          </div>
+          </div> -->
         </div>
       </div>
+      <span class="contacts">
+        <h3 style="color: white; font-weight: 300">Contact us:</h3>
+        <span class="contact-item">
+          <img src="images/icons/icons8-teléfono-30.png" alt="" /><a href=""
+            >+53 52529974</a
+          >
+        </span>
+        <span class="contact-item">
+          <img src="images/icons/icons8-dirección-30.png" alt="" /><a
+            style="text-decoration: none"
+            href=""
+            >5ta Avenida e/ 62 & 66, Miramar, La Habana, Cuba</a
+          >
+        </span>
+        <span class="contact-item">
+          <img src="images/icons/icons8-nuevo-post-30.png" alt="" /><a
+            href="info@divitour.com"
+            target="_blank"
+            >info@divitour.com</a
+          >
+        </span>
+        <span class="contact-item">
+          <img src="images/icons/icons8-facebook-nuevo-30.png" alt="" /><a
+            href="https://www.facebook.com/divitourtravel/"
+            target="_blank"
+            >fb: divitourtravel</a
+          >
+        </span>
+        <span class="contact-item">
+          <img src="images/icons/icons8-instagram-30.png" alt="" /><a
+            href="https://www.instagram.com/divitourtravel/"
+            target="_blank"
+            >ig: divitourtravel</a
+          >
+        </span>
+        <script
+          src="https://static.elfsight.com/platform/platform.js"
+          data-use-service-core
+          defer
+        ></script>
+        <div
+          class="elfsight-app-313ebca9-aa4a-4f79-b99d-803f64cb2f5d"
+          data-elfsight-app-lazy
+        ></div>
+      </span>
     </header>
     <main>
       <!--------- Upcoming Events ------->
@@ -121,11 +165,19 @@
                 asperiores quos voluptas voluptates eligendi voluptatem.
                 Laboriosam?
               </article>
-              <a class="anchor-button" href="#">See more</a>
+              <a class="ev-contact-a" href="#contact-form">Contact us</a>
             </div>
           </div>
         </div>
       </section>
+      <!-- <section>
+        <form id="contact-form" action="" method="post">
+          <input type="text" placeholder="First Name" />
+          <input type="email" placeholder="Email" />
+          <textarea type="text" placeholder="Message" />
+          <button type="submit">Send</button>
+        </form>
+      </section> -->
 
       <!------------ Destinations ------------>
       <section id="destinations" class="destinations">
@@ -160,9 +212,9 @@
                   natus rerum perferendis corporis ab, adipisci facilis dolore.
                   Obcaecati, architecto molestiae!
                 </p>
-                <a class="anchor-button" style="margin-left: 20px" href="#"
+                <!-- <a class="anchor-button" style="margin-left: 20px" href="#"
                   >Learn more</a
-                >
+                > -->
               </div>
             </div>
           </div>
@@ -180,9 +232,9 @@
                   natus rerum perferendis corporis ab, adipisci facilis dolore.
                   Obcaecati, architecto molestiae!
                 </p>
-                <a class="anchor-button" style="margin-left: 20px" href="#"
+                <!-- <a class="anchor-button" style="margin-left: 20px" href="#"
                   >Learn more</a
-                >
+                > -->
               </div>
             </div>
           </div>
@@ -200,29 +252,47 @@
                   natus rerum perferendis corporis ab, adipisci facilis dolore.
                   Obcaecati, architecto molestiae!
                 </p>
-                <a class="anchor-button" style="margin-left: 20px" href="#"
+                <!-- <a class="anchor-button" style="margin-left: 20px" href="#"
                   >Learn more</a
-                >
+                > -->
               </div>
             </div>
           </div>
         </div>
       </section>
       <section class="about-us">
-        <h1 class="section-title" style="margin-left: 50px">About Us</h1>
+        <h1 class="section-title" style="margin-left: 50px">Who we are</h1>
         <div class="aboutus-container" style="display: flex">
-          <div
-            style="width: 500px; height: 500px; background-color: cadetblue"
-          ></div>
-          <img src="" alt="" />
+          <div class="aboutus-img">
+            <img src="" alt="" />
+          </div>
           <p style="margin-inline: 50px">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
-            sed voluptate consectetur vel odit doloremque qui repudiandae at,
-            expedita illo aperiam quas ea! Rerum recusandae delectus vero ex at
-            inventore? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Tempora voluptate excepturi provident officiis quos reiciendis atque
-            voluptates minima quae corporis hic repellat vel aperiam magnam,
-            quia neque ipsam totam. Vitae!
+            At Divitour, we take pride in being the leading agency for diving
+            and aquatic activities in Cuba. Founded in 2015, we have been
+            pioneers in developing training programs and educational initiatives
+            for professionals on the island. Our headquarters are strategically
+            located in Cuba, known for its abundant marine biodiversity,
+            stunning coral reefs, and warm, crystal-clear waters. With multiple
+            internationally certified diving centers, top-notch marinas, and
+            high-standard hotels spread along its 5,746 kilometers of coastline,
+            Cuba provides the perfect setting for unforgettable experiences. The
+            Divitour team consists of highly skilled professionals who
+            specialize in our destination and aquatic activities. This expertise
+            allows us to have in-depth knowledge of the activities we offer and
+            stay up-to-date with the latest developments in our destinations.
+            Through our commitment to excellence, we have built trust and
+            established direct partnerships with key service providers and
+            business partners, eliminating intermediaries and ensuring the
+            seamless execution of our aquatic experiences. Our mission is to
+            provide unique and highly satisfying aquatic experiences that meet
+            the highest standards of quality and professional technical rigor.
+            Additionally, we actively contribute to advising and training other
+            entities to foster the development of aquatic activities in Cuba. At
+            Divitour, we are dedicated to creating unforgettable moments and
+            helping you explore the wonders of Cuba's aquatic world. Divitour
+            Global Sponsor and Associate Colaborate - Pipin Ferreras, is a
+            former professional free diver and world-record holder in the sport.
+            He is considered one of the pioneers and legends of free diving.
           </p>
         </div>
       </section>
@@ -267,50 +337,6 @@
       </footer>
     </main>
 
-    <!---------------- LOGIN --------------->
-    <!-- <div class="account-tools">
-          <div class="form-bg">
-            <h1 style="text-align: center; font-size: 1.5rem">Iniciar sesion</h1>
-            <form class="login-form" action="" method="post">
-              <input
-              class="login-input"
-              type="text"
-              name="firstname"
-              placeholder="Username"
-            />
-            <input
-              class="login-input"
-              type="text"
-              name="email"
-              placeholder="E-mail"
-            />
-            <input
-              class="login-input"
-              type="password"
-              name="pwd"
-              placeholder="Password"
-            />
-            <input type="submit" value="Ingresar" />
-          </form>
-          <p class="signup-divider">o inicia con</p>
-          <div class="socialmedia">
-            <ul class="socialmedia-icons">
-              <li class="google">
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-              </li>
-              <li class="facebook">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li class="twitter">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="login">
-          <p>Necesitas una cuenta?<a href="#">Registrate</a></p>
-        </div>
-      </div> -->
-    <script type="module" src="script/index.js"></script>
+    <script src="script/index.js"></script>
   </body>
 </html>
