@@ -10,7 +10,7 @@
   --header-height: 6vh;
   --theme-color: #527ed5;
   --theme-color-light: #7ca2edfe;
-  --event-container-h: 700px;
+  --event-container-h: 650px;
 }
 
 * {
@@ -19,6 +19,25 @@
 
   button {
     cursor: pointer;
+  }
+}
+
+/* Fonts sizing */
+@media (max-width: 1920px) {
+  .head-text {
+    font-size: 65px;
+  }
+  .desc-text {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .head-text {
+    font-size: 70px;
+  }
+  .desc-text {
+    font-size: 35px;
   }
 }
 
@@ -201,7 +220,6 @@ header {
   }
 
   & .header-image {
-    font-size: 2em;
     position: relative;
     margin-top: var(--header-height);
     height: 70vh;
@@ -216,6 +234,7 @@ header {
       align-items: center;
       justify-content: center;
       object-fit: cover;
+      overflow: hidden;
     }
 
     & .description {
@@ -223,10 +242,14 @@ header {
       height: inherit;
       width: 50%;
       min-width: 550px;
-      padding: 80px 40px;
+      margin-left: 40px;
       color: white;
 
-      .desc2 {
+      & .head-text {
+        margin-bottom: 0px;
+      }
+
+      & .desc-text {
         margin-bottom: 0px;
       }
     }
@@ -251,7 +274,6 @@ header {
       font-family: var(--font-primary);
       border: none;
       width: 100px;
-      text-size-adjust: auto;
     }
   }
 
@@ -281,39 +303,46 @@ header {
 
 /*  Eventos  */
 .upcoming-events {
+  height: var(--event-container-h);
+
   .event-container {
+    position: relative;
     display: flex;
     height: var(--event-container-h);
     width: 100%;
-    overflow-y: hidden;
+    overflow: hidden;
 
-    & .light-gradient {
+    & .ev-gradient {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      align-items: center;
       background-image: linear-gradient(
         to right,
         white,
         rgba(255, 255, 255, 0)
       );
-      z-index: 2;
-      position: absolute;
-      width: 50%;
-      height: var(--event-container-h);
-      font-size: 32px;
-      align-items: center;
     }
 
-    & .ev-desc {
+    & .ev-text {
       width: 70%;
-      height: var(--event-container-h);
-      margin-left: 40px;
+      max-height: inherit;
+      margin-left: 20px;
       display: block;
       align-items: center;
 
       & .ev-title {
-        font-size: 3em;
+        line-height: 50px;
+        margin-bottom: 20px;
       }
 
       & article {
-        padding-bottom: 40px;
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+      & p {
+        font-weight: 700;
+        margin-bottom: 40px;
       }
 
       & .ev-contact-a {
@@ -329,20 +358,19 @@ header {
       height: 100%;
       width: 100%;
       overflow: hidden;
+      display: flex;
       align-items: center;
       justify-content: center;
-      display: flex;
 
       & .ev-poster {
-        object-fit: fill;
-        width: 100%;
-        /* margin-left: 100px; */
-        padding-bottom: 400px;
+        margin-top: -45%;
+        width: 150%;
       }
 
       & .ev-logo {
         position: absolute;
-        right: 50px;
+        right: 3%;
+        height: 60%;
       }
     }
   }
@@ -368,7 +396,7 @@ header {
   & .pop-destinations {
     justify-content: center;
     display: flex;
-    height: 700px;
+    height: 560px;
     width: inherit;
 
     & .dest-container {
@@ -377,10 +405,11 @@ header {
       display: flex;
 
       transition-property: width;
+      transition-delay: 0.1s;
       transition-timing-function: ease-out;
       transition-duration: 0.5s;
       &:hover {
-        width: 500px;
+        width: 315px;
       }
 
       & .dest-image {
@@ -448,6 +477,7 @@ header {
 
   & .aboutus-text {
     display: block;
+    margin-inline: 50px;
   }
 
   & h1 {
