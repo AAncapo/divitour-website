@@ -40,7 +40,7 @@ setDestination(`${imgPath}stlucia/brisas-santa-lucia.jpg`, "Santa Lucia");
 function setDestination(imgPath, dstName) {
   let imgSrc = "" ? imgPath.length <= 0 : imgPath;
 
-  popDestContainer.innerHTML += `<div class="dest-container"> <div class="dest-image"> <img src=${imgSrc}></img><div class="dest-text-bg"><h3 class="dest-name">${dstName} </h3></div> </div> </div>`;
+  popDestContainer.innerHTML += `<div class="dest-container"> <div class="dest-image"> <img src=${imgSrc}></img><div class="dest-gradient"><h3 class="dest-name">${dstName} </h3></div> </div> </div>`;
 }
 
 function setData() {
