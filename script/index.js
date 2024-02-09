@@ -102,9 +102,10 @@ const destVids = document.querySelectorAll(".dest-video");
 destContainers.forEach((destC) => {
   let vid = destC.firstElementChild.children[0];
   let poster = destC.firstElementChild.children[1];
+  let gradient = destC.firstElementChild.children[2];
 
   //play video
-  poster.addEventListener("mouseover", () => {
+  gradient.addEventListener("mouseover", () => {
     vid
       .play()
       .then(() => {
@@ -115,38 +116,13 @@ destContainers.forEach((destC) => {
         console.log("the video cannot be played yet");
       });
   });
-
-  poster.addEventListener("mouseleave", () => {
-    //TODO: reduce playback speed (playbackRate) over time
+  //pause video
+  gradient.addEventListener("mouseleave", () => {
+    //reduce playback speed (playbackRate) over time
     if (!vid.paused) {
-      let done = false;
-      let start, prevTimestamp;
-
-      function animatePlaybackRate(timestamp) {
-        if (start === undefined) start = timestamp;
-
-        const elapsed = timestamp - start;
-        console.log(elapsed);
-        if (prevTimestamp !== timestamp) {
-          let count = Math.min(0.1 * elapsed, 0);
-          vid.playbackRate = count;
-          console.log(vid.playbackRate);
-          if (count === 0) done = true;
-        }
-
-        if (elapsed < 2000) {
-          prevTimestamp = timestamp;
-          if (!done) {
-            console.log("not done");
-            window.requestAnimationFrame(animatePlaybackRate);
-          } else {
-            console.log("done, is paused");
-            vid.pause();
-          }
-        }
-      }
-
-      window.requestAnimationFrame(animatePlaybackRate);
+      setTimeout(() => {
+        vid.pause();
+      }, 400);
     }
   });
 });

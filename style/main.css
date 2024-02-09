@@ -435,7 +435,6 @@ header {
 }
 
 /*  Destinos  */
-
 .destinations {
   height: 100%;
   width: 100%;
@@ -488,11 +487,19 @@ header {
       }
 
       & .dest-gradient {
-        background-image: linear-gradient(to bottom, black, #ffffff00);
+        background-image: linear-gradient(to bottom, rgb(0, 0, 0), #ffffff00);
+        opacity: 100;
         position: absolute;
         width: inherit;
-        height: 25%;
+        height: 100%;
         top: 0px;
+        transition-property: opacity;
+        transition-duration: 0.5s;
+        transition-delay: 0.2s;
+
+        &:hover {
+          opacity: 0;
+        }
       }
 
       & .dest-name {
