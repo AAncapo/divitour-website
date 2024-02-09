@@ -540,17 +540,22 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 100px;
 
     & .logo-container {
-      width: 150px;
-      height: 150px;
-      /* object-fit: cover; */
-      margin-inline: 100px;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      /* margin-inline: 50px; */
     }
 
     & .p-logo {
       height: 100%;
-      object-fit: scale-down;
+      width: 100%;
+      object-fit: contain;
+      display: flex;
+      align-items: center;
     }
   }
 }
@@ -593,7 +598,7 @@ footer {
   .contacts {
     height: 30px;
     font-size: 20px;
-    gap: 150px;
+    gap: 90px;
   }
 
   header {
@@ -653,6 +658,10 @@ footer {
       font-size: 22px;
     }
   }
+
+  .logo-container {
+    margin-inline: 50px;
+  }
 }
 
 /* lower than 1920 */
@@ -690,7 +699,7 @@ footer {
   }
 
   .contacts {
-    height: 40px;
+    height: 25px;
     font-size: 18px;
     gap: 90px;
   }
@@ -749,7 +758,7 @@ footer {
 
   .aboutus-text {
     & p {
-      font-size: 30px;
+      font-size: 22px;
     }
   }
 }
@@ -851,6 +860,10 @@ footer {
       font-size: 18px;
     }
   }
+
+  .logo-container {
+    margin-inline: 20px;
+  }
 }
 
 /* lower than 1200 */
@@ -950,6 +963,11 @@ footer {
       font-size: 16px;
     }
   }
+
+  .logo-container {
+    margin-inline: 10px;
+  }
+
 }
 
 /* lower than 1199 and higher than 800 */
