@@ -1,22 +1,12 @@
-const evPoster = document.querySelector(".ev-poster");
+// import { loadPage } from "./destination";
+
 const evSliderBtns = document.querySelectorAll(".ev-slider-btn");
-const eventContact = document.querySelector(".ev-contact-a");
-const contactForm = document.querySelector(".contact-form");
+// const eventContact = document.querySelector(".ev-contact-a");
+// const contactForm = document.querySelector(".contact-form");
 const popDestContainer = document.querySelector(".pop-destinations");
 const navBtns = document.querySelectorAll(".nav-btn");
 
 const imgPath = "images/destinos/";
-
-// eventContact.addEventListener("click", () => {
-//   contactForm.style.height = `300px`;
-// });
-
-// event poster zoom transition
-evPoster.addEventListener("scroll", () => {
-  if (evPoster.style.top <= window.screenY / 1.5) {
-    console.log("dadas");
-  }
-});
 
 evSliderBtns.forEach((button) => {
   button.addEventListener("click", () => {
@@ -33,7 +23,6 @@ evSliderBtns.forEach((button) => {
 // toggle show/hide navbuttons list on click
 navBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    let elem;
     if (btn.firstElementChild) {
       if (btn.lastElementChild.style.opacity > 0) {
         btn.lastElementChild.style.opacity = 0;
@@ -44,11 +33,6 @@ navBtns.forEach((btn) => {
   });
 });
 
-// async function playVideo() {
-//   try {
-//     await
-//   }
-// }
 const VRDRO_VID = "";
 const VRDRO_IMG = `${imgPath}varadero/varadero.jpg`;
 const CAYOLAR_VID = "";
@@ -98,7 +82,6 @@ setDestination(`${imgPath}zapata/zapata.jpg`, "PENINSULA DE ZAPATA");
 // play video
 const destContainers = document.querySelectorAll(".dest-container");
 const destVids = document.querySelectorAll(".dest-video");
-
 destContainers.forEach((destC) => {
   let vid = destC.firstElementChild.children[0];
   let poster = destC.firstElementChild.children[1];
@@ -127,10 +110,20 @@ destContainers.forEach((destC) => {
   });
 });
 
+// link destination posters to pages
+destContainers.forEach((anchor) => {
+  anchor.addEventListener("click", () => {
+    loadPage(
+      anchor.firstElementChild.lastElementChild.firstElementChild.innerText,
+      "",
+      ""
+    );
+  });
+});
 function setDestination(imgPath, dstName, videoSrc) {
   let imgSrc = "" ? imgPath.length <= 0 : imgPath;
 
-  popDestContainer.innerHTML += `<div class="dest-container"> <div class="dest-image"> <video loop class="dest-video" allow="autoplay;" src=${videoSrc} frameborder="0"></video> <img src=${imgSrc}></img><div class="dest-gradient"><h3 class="dest-name">${dstName} </h3></div> </div> </div>`;
+  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video loop class="dest-video" allow="autoplay;" src=${videoSrc} frameborder="0"></video> <img src=${imgSrc}></img><div class="dest-gradient"><h3 class="dest-name">${dstName} </h3></div> </div> </a>`;
 }
 
 function setData() {
