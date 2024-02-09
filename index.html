@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- https://openclassrooms.com/en/courses/5295881-create-web-page-layouts-with-css/5341491-set-media-queries-for-different-devices -->
 
-    <!-- <link rel="stylesheet" href="style/small.css" /> -->
-    <!-- <link rel="stylesheet" media="screen and (min-width: 800px)" href="style/medium.css" /> -->
-    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="style/main-higher.css" />
     <link rel="icon" href="images/icons/divitour-icon.png" />
     <meta
       name="description"
@@ -27,7 +25,7 @@
       <nav class="navbar">
         <div class="logo-header">
           <img src="images/logos/divitour-full.png" />
-          <span>
+          <span class="logo-subtext">
             The premier agency specializing in scuba diving and water activities
             in Cuba
           </span>
@@ -40,7 +38,7 @@
           <a class="nav-btn" href="#home">Home</a>
           <!-- Nav Button Destinos -->
           <div class="nav-btn">
-            <a href="#">Destinations </a>
+            <a href="#destinations">Destinations </a>
             <div class="nav-drop-ls">
               <a id="dest-havana" href="./pages/destination.html">Havana</a>
               <a id="dest-cayolargo" href="./pages/destination.html"
@@ -184,14 +182,6 @@
           </div>
         </div>
       </section>
-      <!-- <section class="contact-section">
-        <form id="contact-form" action="" method="post">
-          <input type="text" placeholder="First Name" />
-          <input type="email" placeholder="Email" />
-          <textarea type="text" placeholder="Message" />
-          <button type="submit">Send</button>
-        </form>
-      </section> -->
 
       <!------------ Destinations ------------>
       <section id="destinations" class="destinations">
@@ -199,26 +189,14 @@
         <h1 class="section-title">Popular Destinations</h1>
         <div class="pop-destinations">
           <!-- .dest-containers -->
-          <!-- <a class="dest-container">
-            <div class="dest-image">
-              <video
-                loop
-                class="dest-video"
-                allow="autoplay;"
-                src="videos/jibacoa-vid.mp4"
-                frameborder="0"
-              ></video>
-              <img src="" alt="" />
-              <div class="dest-gradient">
-                <h3 class="dest-name">JIBACOA</h3>
-              </div>
-            </div>
-          </a> -->
         </div>
       </section>
 
       <!------------ Services ------------>
-      <section style="position: relative" class="services">
+      <section
+        style="position: relative; width: 80%; margin-inline: auto"
+        class="services"
+      >
         <h1 class="section-title">Our Services</h1>
         <img src="images/under-construction.png" alt="" />
         <div
@@ -226,16 +204,17 @@
           style="
             position: absolute;
             top: 20%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-left: 28%;
+            margin-left: auto;
             font-size: 40px;
           "
         >
           <h2 style="margin-block: 0px; padding-block: 0px">Coming Soon</h2>
-          <h2 style="margin-block: 0px; padding-block: 0px">
+          <h2 hidden style="margin-block: 0px; padding-block: 0px">
             Section Under Construction
           </h2>
         </div>

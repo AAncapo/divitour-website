@@ -5,7 +5,7 @@ const evSliderBtns = document.querySelectorAll(".ev-slider-btn");
 // const contactForm = document.querySelector(".contact-form");
 const popDestContainer = document.querySelector(".pop-destinations");
 const navBtns = document.querySelectorAll(".nav-btn");
-
+const evContainer = document.querySelector(".event-container");
 const imgPath = "images/destinos/";
 
 evSliderBtns.forEach((button) => {
@@ -33,55 +33,60 @@ navBtns.forEach((btn) => {
   });
 });
 
-const VRDRO_VID = "";
-const VRDRO_IMG = `${imgPath}varadero/varadero.jpg`;
-const CAYOLAR_VID = "";
-const CAYOLAR_IMG = "";
-const JIB_VID = "";
-const JIB_IMG = "";
-const HAV_VID = "";
-const HAV_IMG = "";
-const PZAP_VID = "";
-const PZAP_IMG = "";
-const STLUC_VID = "";
-const STLUC_IMG = "";
-// set destination cards in home Destinations section
+// event animation
+evContainer.addEventListener("mouseover", () => {
+  let poster = evContainer.firstElementChild.firstElementChild;
+  poster.style.transitionProperty = "width";
+  poster.style.transitionDuration = "3s";
+  poster.style.width = "170%";
+});
+evContainer.addEventListener("mouseleave", () => {
+  let poster = evContainer.firstElementChild.firstElementChild;
+  poster.style.transitionProperty = "width";
+  poster.style.transitionDuration = "4s";
+  poster.style.width = "150%";
+});
+
+const VRDRO_VID = "videos/varadero-vid.mp4";
+const VRDRO_IMG = "videos/varadero-poster.jpg";
+const CAYOLAR_VID = "videos/cayolargo-vid.mp4";
+const CAYOLAR_IMG = "videos/cayolargo-poster.jpg";
+const JIB_VID = "videos/jibacoa-vid.mp4";
+const JIB_IMG = "videos/jibacoa-poster.jpg";
+const HAV_VID = "videos/havana-vid.mp4";
+const HAV_IMG = "videos/havana-poster.jpg";
+const PZAP_VID = "videos/zapata-vid.mp4";
+const PZAP_IMG = "videos/zapata-poster.jpg";
+const STLUC_VID = "videos/stlucia-vid.mp4";
+const STLUC_IMG = "videos/stlucia-poster.jpg";
+const TRIN_IMG = `videos/trinidad-poster.jpg`;
+const TRIN_VID = "videos/trinidad-vid.mp4";
+
+// havana
+setDestination(HAV_IMG, "HAVANA", HAV_VID);
+// varadero
+setDestination(VRDRO_IMG, "VARADERO", VRDRO_VID);
+// cayolargo
+setDestination(CAYOLAR_IMG, "CAYO LARGO DEL SUR", CAYOLAR_VID);
 // jibacoa
-setDestination(
-  `videos/jibacoa-poster.jpg`,
-  "JIBACOA",
-  "videos/jibacoa-vid.mp4"
-);
-// santa lucia
-setDestination(
-  `videos/stlucia-poster.jpg`,
-  "SANTA LUCIA",
-  "videos/stlucia-vid.mp4"
-);
+setDestination(JIB_IMG, "JIBACOA", JIB_VID);
+// stlucia
+setDestination(STLUC_IMG, "SANTA LUCIA", STLUC_VID);
 // trinidad
-setDestination(
-  `videos/trinidad-poster.jpg`,
-  "TRINIDAD",
-  "videos/trinidad-vid.mp4"
-);
-//cayo guillermo
+setDestination(TRIN_IMG, "TRINIDAD", TRIN_VID);
+//cguillermo
 setDestination(
   `videos/guillermo-poster.jpg`,
   "CAYO GUILLERMO",
   "videos/guillermo-vid.mp4"
 );
-// varadero
-setDestination(VRDRO_IMG, "VARADERO");
-// cayo largo
-setDestination(`${imgPath}cayolargo/cayolargo1.png`, "CAYO LARGO DEL SUR");
-// havana
-setDestination(`${imgPath}havana/havana.JPG`, "HAVANA");
-// peninsula de zapata
-setDestination(`${imgPath}zapata/zapata.jpg`, "PENINSULA DE ZAPATA");
+// zapata
+setDestination(PZAP_IMG, "PENINSULA DE ZAPATA", PZAP_VID);
 
 // play video
 const destContainers = document.querySelectorAll(".dest-container");
 const destVids = document.querySelectorAll(".dest-video");
+
 destContainers.forEach((destC) => {
   let vid = destC.firstElementChild.children[0];
   let poster = destC.firstElementChild.children[1];
@@ -89,6 +94,7 @@ destContainers.forEach((destC) => {
 
   //play video
   gradient.addEventListener("mouseover", () => {
+    evContainer.click();
     vid
       .play()
       .then(() => {
@@ -99,6 +105,14 @@ destContainers.forEach((destC) => {
         console.log("the video cannot be played yet");
       });
   });
+  // play video if clicked && paused
+  // destC.addEventListener("click", (e) => {
+  //   if (!vid.playing && poster.opacity > 1) {
+  //     e.preventDefault();
+  //     console.log("def prevented");
+  //     vid.play;
+  //   }
+  // });
   //pause video
   gradient.addEventListener("mouseleave", () => {
     //reduce playback speed (playbackRate) over time
@@ -123,7 +137,7 @@ destContainers.forEach((anchor) => {
 function setDestination(imgPath, dstName, videoSrc) {
   let imgSrc = "" ? imgPath.length <= 0 : imgPath;
 
-  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video loop class="dest-video" allow="autoplay;" src=${videoSrc} frameborder="0"></video> <img src=${imgSrc}></img><div class="dest-gradient"><h3 class="dest-name">${dstName} </h3></div> </div> </a>`;
+  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video autoplay loop class="dest-video" allow="autoplay;" loading="lazy" src=${videoSrc} frameborder="0"></video> <img src=${imgSrc}></img><div class="dest-gradient"><h3 class="dest-name">${dstName} </h3></div> </div> </a>`;
 }
 
 function setData() {
