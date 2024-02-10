@@ -114,7 +114,7 @@ destContainers.forEach((destC) => {
 function setDestination(imgPath, dstName, videoSrc) {
   let imgSrc = "" ? imgPath.length <= 0 : imgPath;
 
-  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" loading="lazy" src=${videoSrc} poster=${imgSrc} frameborder="0"></video><div class="dest-gradient"><h3 class="dest-name">${dstName} </h3></div> </div> </a>`;
+  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" loading="lazy" src=${videoSrc} poster=${imgSrc} frameborder="0"></video><div class="dest-gradient"></div><h3 class="dest-name">${dstName} </h3> </div> </a>`;
 }
 
 function setData() {
