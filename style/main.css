@@ -441,12 +441,12 @@ header {
           width: inherit;
         }
 
-        & img {
+        /* & img {
           position: absolute;
           object-fit: cover;
 
           height: 100%;
-        }
+        } */
       }
 
       & .dest-gradient {
