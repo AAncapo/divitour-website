@@ -47,6 +47,7 @@ evContainer.addEventListener("mouseleave", () => {
   poster.style.width = "150%";
 });
 
+// Handle destinations previews
 const VRDRO_VID = "videos/varadero-vid.mp4";
 const VRDRO_IMG = "videos/varadero-poster.jpg";
 const CAYOLAR_VID = "videos/cayolargo-vid.mp4";
@@ -61,6 +62,8 @@ const STLUC_VID = "videos/stlucia-vid.mp4";
 const STLUC_IMG = "videos/stlucia-poster.jpg";
 const TRIN_IMG = `videos/trinidad-poster.jpg`;
 const TRIN_VID = "videos/trinidad-vid.mp4";
+const GUILL_IMG = "videos/guillermo-poster.jpg";
+const GUILL_VID = "videos/guillermo-vid.mp4";
 
 // havana
 setDestination(HAV_IMG, "HAVANA", HAV_VID);
@@ -74,48 +77,32 @@ setDestination(JIB_IMG, "JIBACOA", JIB_VID);
 setDestination(STLUC_IMG, "SANTA LUCIA", STLUC_VID);
 // trinidad
 setDestination(TRIN_IMG, "TRINIDAD", TRIN_VID);
-//cguillermo
-setDestination(
-  `videos/guillermo-poster.jpg`,
-  "CAYO GUILLERMO",
-  "videos/guillermo-vid.mp4"
-);
+// cguillermo
+setDestination(GUILL_IMG, "CAYO GUILLERMO", GUILL_VID);
 // zapata
 setDestination(PZAP_IMG, "PENINSULA DE ZAPATA", PZAP_VID);
 
 // play video
 const destContainers = document.querySelectorAll(".dest-container");
-const destVids = document.querySelectorAll(".dest-video");
 
 destContainers.forEach((destC) => {
   let vid = destC.firstElementChild.children[0];
-  let poster = destC.firstElementChild.children[1];
-  let gradient = destC.firstElementChild.children[2];
+  let gradient = destC.firstElementChild.children[1];
 
   //play video
   gradient.addEventListener("mouseover", () => {
-    evContainer.click();
     vid
       .play()
       .then(() => {
-        poster.style.opacity = 0;
+        console.log("is playing");
       })
       .catch(() => {
-        // fake interaction or wait until video loads
         console.log("the video cannot be played yet");
       });
   });
-  // play video if clicked && paused
-  // destC.addEventListener("click", (e) => {
-  //   if (!vid.playing && poster.opacity > 1) {
-  //     e.preventDefault();
-  //     console.log("def prevented");
-  //     vid.play;
-  //   }
-  // });
   //pause video
   gradient.addEventListener("mouseleave", () => {
-    //reduce playback speed (playbackRate) over time
+    //TODO: reduce playback speed (playbackRate) over time
     if (!vid.paused) {
       setTimeout(() => {
         vid.pause();
@@ -124,20 +111,10 @@ destContainers.forEach((destC) => {
   });
 });
 
-// link destination posters to pages
-destContainers.forEach((anchor) => {
-  anchor.addEventListener("click", () => {
-    loadPage(
-      anchor.firstElementChild.lastElementChild.firstElementChild.innerText,
-      "",
-      ""
-    );
-  });
-});
 function setDestination(imgPath, dstName, videoSrc) {
   let imgSrc = "" ? imgPath.length <= 0 : imgPath;
 
-  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video autoplay muted loop class="dest-video" allow="autoplay;" loading="lazy" src=${videoSrc} frameborder="0"></video> <img src=${imgSrc}></img><div class="dest-gradient"><h3 class="dest-name">${dstName} </h3></div> </div> </a>`;
+  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" loading="lazy" src=${videoSrc} poster=${imgSrc} frameborder="0"></video><div class="dest-gradient"><h3 class="dest-name">${dstName} </h3></div> </div> </a>`;
 }
 
 function setData() {
