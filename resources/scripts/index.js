@@ -89,7 +89,7 @@ nextSlide.addEventListener("click", () => {
   });
 });
 
-setEventInfo(0);
+setEventInfo(1);
 
 // Handle destinations previews
 const vidPfx = "pages/home/local-images/dest-vids/";
