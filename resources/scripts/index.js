@@ -91,6 +91,19 @@ nextSlide.addEventListener("click", () => {
 
 setEventInfo(0);
 
+// Formulario //
+const evContactBtn = document.querySelector(".ev-contact-a");
+const contactForm = document.querySelector(".contact-form");
+let isContactVeible = false;
+evContactBtn.addEventListener("click", () => {
+  isContactVeible = !isContactVeible;
+  if (isContactVeible) {
+    contactForm.style.display = "block";
+  } else {
+    contactForm.style.display = "none";
+  }
+});
+
 // Handle destinations previews
 const vidPfx = "pages/home/local-images/dest-vids/";
 
