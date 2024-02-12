@@ -966,7 +966,7 @@ footer {
   }
 }
 
-/* lower than 1199 and higher than 800 */
+/* lower than 800 */
 @media screen and (max-width: 800px) {
   .navbar {
     height: 50px;

@@ -47,23 +47,44 @@ evContainer.addEventListener("mouseleave", () => {
   poster.style.width = "150%";
 });
 
+<<<<<<< Updated upstream:script/index.js
+=======
+const nextSlide = document.querySelector(".btn-next");
+nextSlide.addEventListener("click", () => {
+  if (currSlide === maxSlide) {
+    currSlide = 0;
+  } else {
+    currSlide++;
+  }
+  // set event text
+  setEventInfo(currSlide);
+  // show slide
+  slides.forEach((slide, idx) => {
+    slide.style.transform = `translateX(${100 * (idx - currSlide)}%)`;
+  });
+});
+
+setEventInfo(0);
+
+const vidPfx = "pages/home/local-images/dest-vids/";
+>>>>>>> Stashed changes:resources/scripts/index.js
 // Handle destinations previews
-const VRDRO_VID = "videos/varadero-vid.mp4";
-const VRDRO_IMG = "videos/varadero-poster.jpg";
-const CAYOLAR_VID = "videos/cayolargo-vid.mp4";
-const CAYOLAR_IMG = "videos/cayolargo-poster.jpg";
-const JIB_VID = "videos/jibacoa-vid.mp4";
-const JIB_IMG = "videos/jibacoa-poster.jpg";
-const HAV_VID = "videos/havana-vid.mp4";
-const HAV_IMG = "videos/havana-poster.jpg";
-const PZAP_VID = "videos/zapata-vid.mp4";
-const PZAP_IMG = "videos/zapata-poster.jpg";
-const STLUC_VID = "videos/stlucia-vid.mp4";
-const STLUC_IMG = "videos/stlucia-poster.jpg";
-const TRIN_IMG = `videos/trinidad-poster.jpg`;
-const TRIN_VID = "videos/trinidad-vid.mp4";
-const GUILL_IMG = "videos/guillermo-poster.jpg";
-const GUILL_VID = "videos/guillermo-vid.mp4";
+const JIB_VID = vidPfx + "jibacoa-vid.mp4";
+const JIB_IMG = vidPfx + "jibacoa-poster.jpg";
+const HAV_VID = vidPfx + "havana-vid.mp4";
+const HAV_IMG = vidPfx + "havana-poster.jpg";
+const PZAP_VID = vidPfx + "zapata-vid.mp4";
+const PZAP_IMG = vidPfx + "zapata-poster.jpg";
+const TRIN_VID = vidPfx + "trinidad-vid.mp4";
+const TRIN_IMG = vidPfx + `trinidad-poster.jpg`;
+const GUILL_VID = vidPfx + "guillermo-vid.mp4";
+const GUILL_IMG = vidPfx + "guillermo-poster.jpg";
+const VRDRO_VID = vidPfx + "varadero-vid.mp4";
+const VRDRO_IMG = vidPfx + "varadero-poster.jpg";
+const STLUC_VID = vidPfx + "stlucia-vid.mp4";
+const STLUC_IMG = vidPfx + "stlucia-poster.jpg";
+const CAYOLAR_VID = vidPfx + "cayolargo-vid.mp4";
+const CAYOLAR_IMG = vidPfx + "cayolargo-poster.jpg";
 
 // havana
 setDestination(HAV_IMG, "HAVANA", HAV_VID);
