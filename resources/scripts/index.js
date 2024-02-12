@@ -27,26 +27,26 @@ slides.forEach((slide, idx) => {
 let currSlide = 0;
 let maxSlide = slides.length - 1;
 
-const upcomingEvents = {
-  0: {
+const upcomingEvents = [
+  {
     name: "FotoSub International",
     desc: 'Divitour, Pipin Ferreras and Marinas Marlin call for the International Underwater Photography Event <strong>"PhotoSub Trinidad - 2024"</strong>. It will take place at the Trinidad International Marina under CMAS rules.',
     date: "From March 18th to 23th, 2024",
     image: "./images/eventos/fotosub-banner.jpeg",
   },
-  1: {
-    name: "Ernest Hemingway International Bill Fishing Tournament",
-    desc: "",
-    date: "From March 27th to the 1st of June, 2024",
-    image: "./images/eventos/torneo-pesca-hemingway.JPG",
-  },
-  2: {
-    name: "Jardines del Rey Big Game Trolling",
-    desc: "",
-    date: "From 24th to 29th of October, 2024",
-    image: "./images/eventos/big-game-trolling.JPG",
-  },
-};
+  // 1: {
+  //   name: "Ernest Hemingway International Bill Fishing Tournament",
+  //   desc: "",
+  //   date: "From March 27th to the 1st of June, 2024",
+  //   image: "./images/eventos/torneo-pesca-hemingway.JPG",
+  // },
+  // 2: {
+  //   name: "Jardines del Rey Big Game Trolling",
+  //   desc: "",
+  //   date: "From 24th to 29th of October, 2024",
+  //   image: "./images/eventos/big-game-trolling.JPG",
+  // },
+];
 
 function getEventInfo(idx) {
   return upcomingEvents[idx];
@@ -162,67 +162,3 @@ function setDestination(imgPath, dstName, videoSrc) {
 
   popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src=${videoSrc} poster=${imgSrc} frameborder="0"></video><div class="dest-gradient"></div><h3 class="dest-name">${dstName} </h3> </div> </a>`;
 }
-
-// function setData() {
-//   //create data
-//   let destHabana = {
-//     havana: createDestino(
-//       "Havana",
-//       "descripcion de la Habana",
-//       [imgPathPrefix + "havana/havana.JPG"],
-//       [
-//         createHotel("Hotel1", "prueba descripcion del hotel1", [
-//           "https://www.memoriesresorts.com/assetsTransformed/assets/images/site/9497/OPB_IB_POOL_MAIN_D1704_013_5d115737bb40693b26d0f189b7a2eb16.jpg",
-//         ]),
-//         createHotel("Hotel2", "prueba de hotel 2", [
-//           "https://www.memoriesresorts.com/assetsTransformed/assets/images/site/9497/OPB_IB_POOL_MAIN_D1704_013_5d115737bb40693b26d0f189b7a2eb16.jpg",
-//         ]),
-//       ],
-//       [
-//         createServicio(
-//           "seafari test",
-//           "description del servicio este",
-//           [""],
-//           [230.32, "USD"],
-//           "detalles del precio",
-//           [24, "Horas"]
-//         ),
-//       ]
-//     ),
-//   };
-//   //clear data.json
-
-//   //populate data.json
-//   console.log("HEY!");
-
-//   fs.writeFileSync("../data.json", JSON.stringify(destHabana));
-// }
-
-// function createDestino(_name, desc, imgsPaths, hotels, services) {
-//   return {
-//     nombre: _name,
-//     descripcion: desc,
-//     images: imgsPaths,
-//     hoteles: hotels,
-//     servicios: services,
-//   };
-// }
-
-// function createHotel(_name, desc, imgsPaths) {
-//   return {
-//     nombre: _name,
-//     descripcion: desc,
-//     imagenes: imgsPaths,
-//   };
-// }
-
-// function createServicio(_name, desc, imgPaths, cost, costDetail, dur) {
-//   return {
-//     nombre: _name,
-//     decripcion: desc,
-//     coste: cost, // la info sobre los precios debe permanecer en el server !!!!!
-//     coste_detalle: costDetail, // para agregar detalles sobre costes por PAX
-//     duracion: dur,
-//     imagenes: imgPaths,
-//   };
-// }
