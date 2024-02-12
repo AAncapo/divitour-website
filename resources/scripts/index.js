@@ -1,8 +1,4 @@
-// import { loadPage } from "./destination";
-
 const evSliderBtns = document.querySelectorAll(".ev-slider-btn");
-// const eventContact = document.querySelector(".ev-contact-a");
-// const contactForm = document.querySelector(".contact-form");
 const popDestContainer = document.querySelector(".pop-destinations");
 const navBtns = document.querySelectorAll(".nav-btn");
 const evContainer = document.querySelector(".event-container");
@@ -33,41 +29,6 @@ navBtns.forEach((btn) => {
   });
 });
 
-// event animation
-evContainer.addEventListener("mouseover", () => {
-  let poster = evContainer.firstElementChild.firstElementChild;
-  poster.style.transitionProperty = "width";
-  poster.style.transitionDuration = "3s";
-  poster.style.width = "170%";
-});
-evContainer.addEventListener("mouseleave", () => {
-  let poster = evContainer.firstElementChild.firstElementChild;
-  poster.style.transitionProperty = "width";
-  poster.style.transitionDuration = "4s";
-  poster.style.width = "150%";
-});
-
-<<<<<<< Updated upstream:script/index.js
-=======
-const nextSlide = document.querySelector(".btn-next");
-nextSlide.addEventListener("click", () => {
-  if (currSlide === maxSlide) {
-    currSlide = 0;
-  } else {
-    currSlide++;
-  }
-  // set event text
-  setEventInfo(currSlide);
-  // show slide
-  slides.forEach((slide, idx) => {
-    slide.style.transform = `translateX(${100 * (idx - currSlide)}%)`;
-  });
-});
-
-setEventInfo(0);
-
-const vidPfx = "pages/home/local-images/dest-vids/";
->>>>>>> Stashed changes:resources/scripts/index.js
 // Handle destinations previews
 const JIB_VID = vidPfx + "jibacoa-vid.mp4";
 const JIB_IMG = vidPfx + "jibacoa-poster.jpg";
@@ -138,66 +99,66 @@ function setDestination(imgPath, dstName, videoSrc) {
   popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src=${videoSrc} poster=${imgSrc} frameborder="0"></video><div class="dest-gradient"></div><h3 class="dest-name">${dstName} </h3> </div> </a>`;
 }
 
-function setData() {
-  //create data
-  let destHabana = {
-    havana: createDestino(
-      "Havana",
-      "descripcion de la Habana",
-      [imgPathPrefix + "havana/havana.JPG"],
-      [
-        createHotel("Hotel1", "prueba descripcion del hotel1", [
-          "https://www.memoriesresorts.com/assetsTransformed/assets/images/site/9497/OPB_IB_POOL_MAIN_D1704_013_5d115737bb40693b26d0f189b7a2eb16.jpg",
-        ]),
-        createHotel("Hotel2", "prueba de hotel 2", [
-          "https://www.memoriesresorts.com/assetsTransformed/assets/images/site/9497/OPB_IB_POOL_MAIN_D1704_013_5d115737bb40693b26d0f189b7a2eb16.jpg",
-        ]),
-      ],
-      [
-        createServicio(
-          "seafari test",
-          "description del servicio este",
-          [""],
-          [230.32, "USD"],
-          "detalles del precio",
-          [24, "Horas"]
-        ),
-      ]
-    ),
-  };
-  //clear data.json
+// function setData() {
+//   //create data
+//   let destHabana = {
+//     havana: createDestino(
+//       "Havana",
+//       "descripcion de la Habana",
+//       [imgPathPrefix + "havana/havana.JPG"],
+//       [
+//         createHotel("Hotel1", "prueba descripcion del hotel1", [
+//           "https://www.memoriesresorts.com/assetsTransformed/assets/images/site/9497/OPB_IB_POOL_MAIN_D1704_013_5d115737bb40693b26d0f189b7a2eb16.jpg",
+//         ]),
+//         createHotel("Hotel2", "prueba de hotel 2", [
+//           "https://www.memoriesresorts.com/assetsTransformed/assets/images/site/9497/OPB_IB_POOL_MAIN_D1704_013_5d115737bb40693b26d0f189b7a2eb16.jpg",
+//         ]),
+//       ],
+//       [
+//         createServicio(
+//           "seafari test",
+//           "description del servicio este",
+//           [""],
+//           [230.32, "USD"],
+//           "detalles del precio",
+//           [24, "Horas"]
+//         ),
+//       ]
+//     ),
+//   };
+//   //clear data.json
 
-  //populate data.json
-  console.log("HEY!");
+//   //populate data.json
+//   console.log("HEY!");
 
-  fs.writeFileSync("../data.json", JSON.stringify(destHabana));
-}
+//   fs.writeFileSync("../data.json", JSON.stringify(destHabana));
+// }
 
-function createDestino(_name, desc, imgsPaths, hotels, services) {
-  return {
-    nombre: _name,
-    descripcion: desc,
-    images: imgsPaths,
-    hoteles: hotels,
-    servicios: services,
-  };
-}
+// function createDestino(_name, desc, imgsPaths, hotels, services) {
+//   return {
+//     nombre: _name,
+//     descripcion: desc,
+//     images: imgsPaths,
+//     hoteles: hotels,
+//     servicios: services,
+//   };
+// }
 
-function createHotel(_name, desc, imgsPaths) {
-  return {
-    nombre: _name,
-    descripcion: desc,
-    imagenes: imgsPaths,
-  };
-}
+// function createHotel(_name, desc, imgsPaths) {
+//   return {
+//     nombre: _name,
+//     descripcion: desc,
+//     imagenes: imgsPaths,
+//   };
+// }
 
-function createServicio(_name, desc, imgPaths, cost, costDetail, dur) {
-  return {
-    nombre: _name,
-    decripcion: desc,
-    coste: cost, // la info sobre los precios debe permanecer en el server !!!!!
-    coste_detalle: costDetail, // para agregar detalles sobre costes por PAX
-    duracion: dur,
-    imagenes: imgPaths,
-  };
-}
+// function createServicio(_name, desc, imgPaths, cost, costDetail, dur) {
+//   return {
+//     nombre: _name,
+//     decripcion: desc,
+//     coste: cost, // la info sobre los precios debe permanecer en el server !!!!!
+//     coste_detalle: costDetail, // para agregar detalles sobre costes por PAX
+//     duracion: dur,
+//     imagenes: imgPaths,
+//   };
+// }
