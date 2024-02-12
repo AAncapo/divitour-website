@@ -35,7 +35,7 @@ const upcomingEvents = {
     image: "./images/eventos/fotosub-banner.jpeg",
   },
   1: {
-    name: "Ernest Hemingway International Bill Fishing Tournament, 72nd Edition",
+    name: "Ernest Hemingway International Bill Fishing Tournament",
     desc: "",
     date: "From March 27th to the 1st of June, 2024",
     image: "./images/eventos/torneo-pesca-hemingway.JPG",
@@ -89,7 +89,7 @@ nextSlide.addEventListener("click", () => {
   });
 });
 
-setEventInfo(1);
+setEventInfo(0);
 
 // Handle destinations previews
 const vidPfx = "pages/home/local-images/dest-vids/";
