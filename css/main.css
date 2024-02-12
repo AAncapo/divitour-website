@@ -280,8 +280,6 @@ header {
 
 /*  Eventos  */
 .upcoming-events {
-  /* height: var(--event-container-h); */
-
   .event-container {
     position: relative;
     display: flex;
@@ -289,23 +287,71 @@ header {
     width: 100%;
     overflow: hidden;
     align-items: center;
+    display: flex;
+
+    /* slider */
+    .slider {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .slide {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: all 0.5s;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        & img {
+          width: 100%;
+        }
+      }
+    }
+
+    .ev-slider-btn {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      padding: 5px;
+      border: none;
+      z-index: 10px;
+      background-color: #ffffff00;
+      object-fit: cover;
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      & img {
+        height: 100%;
+      }
+    }
+    .btn-prev {
+      top: 45%;
+      left: 1%;
+    }
+    .btn-next {
+      top: 45%;
+      right: 1%;
+    }
 
     & .ev-gradient {
       position: absolute;
-      width: 70%;
+      width: 100%;
       height: 100%;
       align-items: center;
       background-image: linear-gradient(
         to right,
-        white,
+        rgb(0, 13, 97) 30%,
         rgba(255, 255, 255, 0)
       );
     }
 
     & .ev-text {
-      width: 70%;
-      max-height: inherit;
-      /* margin-left: 100px; */
+      color: white;
+      width: 50%;
+      height: 100%;
       display: block;
       align-items: center;
 
@@ -313,12 +359,12 @@ header {
         margin-bottom: 20px;
       }
 
-      & article {
+      & .ev-desc {
         margin-bottom: 20px;
         font-weight: 400;
       }
 
-      & p {
+      & .ev-date {
         font-weight: 700;
         margin-bottom: 40px;
       }
@@ -339,48 +385,6 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
-
-      & .ev-poster {
-        margin-top: -45%;
-        margin-right: -30%;
-        width: 150%;
-      }
-
-      & .ev-logo {
-        position: absolute;
-        right: 3%;
-      }
-    }
-
-    .dir-btns {
-      gap: 92%;
-      /* height: 70px; */
-      width: 100%;
-      position: absolute;
-      display: flex;
-      justify-content: space-around;
-
-      & .ev-slider-btn {
-        height: 100%;
-        /* width: 70%; */
-        border: none;
-        border-radius: 70px;
-        background-color: #00000056;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        & img {
-          height: 110%;
-        }
-
-        /* & .prev {
-          left: 0px;
-        }
-        & .next {
-          right: 0px;
-        } */
-      }
     }
   }
 }
