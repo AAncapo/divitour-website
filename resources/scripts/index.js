@@ -34,18 +34,18 @@ const upcomingEvents = [
     date: "From March 18th to 23th, 2024",
     image: "./images/eventos/fotosub-banner.jpeg",
   },
-  // 1: {
-  //   name: "Ernest Hemingway International Bill Fishing Tournament",
-  //   desc: "",
-  //   date: "From March 27th to the 1st of June, 2024",
-  //   image: "./images/eventos/torneo-pesca-hemingway.JPG",
-  // },
-  // 2: {
-  //   name: "Jardines del Rey Big Game Trolling",
-  //   desc: "",
-  //   date: "From 24th to 29th of October, 2024",
-  //   image: "./images/eventos/big-game-trolling.JPG",
-  // },
+  {
+    name: "Ernest Hemingway<br>International Bill Fishing Tournament",
+    desc: "",
+    date: "From March 27th to the 1st of June, 2024",
+    image: "./images/eventos/torneo-pesca-hemingway.JPG",
+  },
+  {
+    name: "Jardines del Rey <br>Big Game Trolling",
+    desc: "",
+    date: "From 24th to 29th of October, 2024",
+    image: "./images/eventos/big-game-trolling.JPG",
+  },
 ];
 
 function getEventInfo(idx) {

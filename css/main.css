@@ -6,7 +6,7 @@
   --header-height: 50px;
   --theme-color: #527ed5;
   --theme-color-light: #7ca2edfe;
-  --event-container-h: 650px;
+  /* --event-container-h: 650px; */
 }
 
 * {
@@ -272,18 +272,24 @@ header {
     }
 
     & a {
+      text-decoration: none;
       margin-left: 5px;
       color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
 /*  Eventos  */
 .upcoming-events {
+
   .event-container {
     position: relative;
     display: flex;
-    height: var(--event-container-h);
+    height: 100%;
     width: 100%;
     overflow: hidden;
     align-items: center;
@@ -307,13 +313,61 @@ header {
         justify-content: end;
 
         & img {
-          height: 350%;
+          width: 50%;
+          height: 100%;
+          /* height: 350%;
           margin-top: -30%;
-          margin-right: -40%;
+          margin-right: -40%; */
         }
       }
     }
 
+    /* Event text */
+    & .ev-gradient {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      background-image: linear-gradient(to right,
+          rgb(0, 13, 97) 50%,
+          rgba(255, 255, 255, 0));
+
+      & .ev-text {
+        position: absolute;
+        color: white;
+        width: 50%;
+        height: 100%;
+        display: block;
+        /* flex-direction: column; */
+        /* align-items: start; */
+        text-overflow: ellipsis;
+
+        & .ev-title {
+          margin-block: 20px;
+          margin-top: 40px;
+        }
+
+        & .ev-desc {
+          margin-block: 5px;
+          font-weight: 400;
+          text-overflow: ellipsis;
+        }
+
+        & .ev-date {
+          font-weight: 700;
+          /* margin-bottom: 40px; */
+        }
+
+        & .ev-contact-a {
+          color: white;
+          background-color: black;
+          padding: 10px;
+          text-decoration: none;
+        }
+      }
+    }
+
+    /* Event control buttons */
     .ev-slider-btn {
       position: absolute;
       width: 60px;
@@ -343,54 +397,7 @@ header {
       right: 1%;
     }
 
-    & .ev-gradient {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      background-image: linear-gradient(to right,
-          rgb(0, 13, 97) 50%,
-          rgba(255, 255, 255, 0));
-    }
 
-    & .ev-text {
-      color: white;
-      width: 50%;
-      height: 100%;
-      display: block;
-      align-items: center;
-
-      & .ev-title {
-        margin-bottom: 20px;
-      }
-
-      & .ev-desc {
-        margin-bottom: 20px;
-        font-weight: 400;
-      }
-
-      & .ev-date {
-        font-weight: 700;
-        margin-bottom: 40px;
-      }
-
-      & .ev-contact-a {
-        color: white;
-        background-color: black;
-        padding: 10px;
-        text-decoration: none;
-      }
-    }
-
-    & .ev-img {
-      position: relative;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
   }
 }
 
@@ -620,15 +627,16 @@ footer {
 
   .section-title {
     margin-top: 0px;
-    font-size: 70px;
+    font-size: 80px;
   }
 
+
   .upcoming-events {
-    height: 1000px;
+    height: 800px;
   }
 
   .ev-text {
-    margin-left: 75px;
+    margin-left: 80px;
   }
 
   .ev-title {
@@ -723,11 +731,11 @@ footer {
   }
 
   .upcoming-events {
-    height: 550px;
+    height: 650px;
   }
 
   .ev-text {
-    margin-left: 70px;
+    margin-left: 75px;
   }
 
   .ev-title {
@@ -821,11 +829,11 @@ footer {
   }
 
   .upcoming-events {
-    height: 450px;
+    height: 500px;
   }
 
   .ev-text {
-    margin-left: 60px;
+    margin-left: 70px;
   }
 
   .ev-title {
@@ -927,7 +935,7 @@ footer {
   }
 
   .ev-text {
-    margin-left: 40px;
+    margin-left: 70px;
   }
 
   .ev-title {
@@ -942,14 +950,6 @@ footer {
   .ev-logo {
     height: 50%;
     width: 15%;
-  }
-
-  .dir-btns {
-    height: 30px;
-  }
-
-  .ev-slider-btn {
-    width: 30px;
   }
 
   .pop-destinations {
@@ -1029,7 +1029,7 @@ footer {
   }
 
   .ev-text {
-    margin-left: 35px;
+    margin-left: 70px;
   }
 
   .ev-title {
@@ -1046,13 +1046,6 @@ footer {
     width: 15%;
   }
 
-  .dir-btns {
-    height: 30px;
-  }
-
-  .ev-slider-btn {
-    width: 30px;
-  }
 
   .pop-destinations {
     height: 300px;
