@@ -104,46 +104,22 @@ evContactBtn.addEventListener("click", () => {
   }
 });
 
-// Handle destinations previews
-const vidPfx = "pages/home/local-images/dest-vids/";
 
-const JIB_VID = vidPfx + "jibacoa-vid.mp4";
-const JIB_IMG = vidPfx + "jibacoa-poster.jpg";
-const HAV_VID = vidPfx + "havana-vid.mp4";
-const HAV_IMG = vidPfx + "havana-poster.jpg";
-const PZAP_VID = vidPfx + "zapata-vid.mp4";
-const PZAP_IMG = vidPfx + "zapata-poster.jpg";
-const TRIN_VID = vidPfx + "trinidad-vid.mp4";
-const TRIN_IMG = vidPfx + `trinidad-poster.jpg`;
-const GUILL_VID = vidPfx + "guillermo-vid.mp4";
-const GUILL_IMG = vidPfx + "guillermo-poster.jpg";
-const VRDRO_VID = vidPfx + "varadero-vid.mp4";
-const VRDRO_IMG = vidPfx + "varadero-poster.jpg";
-const STLUC_VID = vidPfx + "stlucia-vid.mp4";
-const STLUC_IMG = vidPfx + "stlucia-poster.jpg";
-const CAYOLAR_VID = vidPfx + "cayolargo-vid.mp4";
-const CAYOLAR_IMG = vidPfx + "cayolargo-poster.jpg";
+setEventInfo(0);
 
-// havana
-setDestination(HAV_IMG, "HAVANA", HAV_VID);
-// varadero
-setDestination(VRDRO_IMG, "VARADERO", VRDRO_VID);
-// cayolargo
-setDestination(CAYOLAR_IMG, "CAYO LARGO DEL SUR", CAYOLAR_VID);
-// jibacoa
-setDestination(JIB_IMG, "JIBACOA", JIB_VID);
-// stlucia
-setDestination(STLUC_IMG, "SANTA LUCIA", STLUC_VID);
-// trinidad
-setDestination(TRIN_IMG, "TRINIDAD", TRIN_VID);
-// cguillermo
-setDestination(GUILL_IMG, "CAYO GUILLERMO", GUILL_VID);
-// zapata
-setDestination(PZAP_IMG, "PENINSULA DE ZAPATA", PZAP_VID);
+// set destinations preview videos and posters
+setDestination("HAVANA", "havana");
+setDestination("VARADERO", "varadero");
+setDestination("CAYO LARGO DEL SUR", "cayolargo");
+setDestination("JIBACOA", "jibacoa");
+setDestination("SANTA LUCIA", "stlucia");
+setDestination("TRINIDAD", "trinidad");
+setDestination("CAYO GUILLERMO", "guillermo");
+setDestination("PENINSULA DE ZAPATA", "zapata");
 
-// play video
 const destContainers = document.querySelectorAll(".dest-container");
 
+// play video on mouseover
 destContainers.forEach((destC) => {
   let vid = destC.firstElementChild.children[0];
   let gradient = destC.firstElementChild.children[1];
@@ -170,8 +146,8 @@ destContainers.forEach((destC) => {
   });
 });
 
-function setDestination(imgPath, dstName, videoSrc) {
-  let imgSrc = "" ? imgPath.length <= 0 : imgPath;
+function setDestination(title, fileName) {
+  let src = `pages/home/local-images/dest-vids/${fileName}`;
 
-  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src=${videoSrc} poster=${imgSrc} frameborder="0"></video><div class="dest-gradient"></div><h3 class="dest-name">${dstName} </h3> </div> </a>`;
+  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src="${src}.mp4" poster="${src}.jpg" frameborder="0"></video><div class="dest-gradient"></div><h3 class="dest-name">${title} </h3> </div> </a>`;
 }
