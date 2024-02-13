@@ -59,35 +59,51 @@ function setEventInfo(currSlide) {
   evDate.innerHTML = ev.date;
 }
 
-const prevSlide = document.querySelector(".btn-prev");
-prevSlide.addEventListener("click", () => {
-  if (currSlide === 0) {
-    currSlide = maxSlide;
+// const prevSlide = document.querySelector(".btn-prev");
+// prevSlide.addEventListener("click", () => {
+//   if (currSlide === 0) {
+//     currSlide = maxSlide;
+//   } else {
+//     currSlide--;
+//   }
+//   //set event text
+//   setEventInfo(currSlide);
+//   //show slide
+//   slides.forEach((slide, idx) => {
+//     slide.style.transform = `translateX(${100 * (idx - currSlide)}%)`;
+//   });
+// });
+
+// const nextSlide = document.querySelector(".btn-next");
+// nextSlide.addEventListener("click", () => {
+//   if (currSlide === maxSlide) {
+//     currSlide = 0;
+//   } else {
+//     currSlide++;
+//   }
+//   // set event text
+//   setEventInfo(currSlide);
+//   // show slide
+//   slides.forEach((slide, idx) => {
+//     slide.style.transform = `translateX(${100 * (idx - currSlide)}%)`;
+//   });
+// });
+
+setEventInfo(0);
+
+// Formulario //
+const evContactBtn = document.querySelector(".ev-contact-a");
+const contactForm = document.querySelector(".contact-form");
+let isContactVeible = false;
+evContactBtn.addEventListener("click", () => {
+  isContactVeible = !isContactVeible;
+  if (isContactVeible) {
+    contactForm.style.display = "block";
   } else {
-    currSlide--;
+    contactForm.style.display = "none";
   }
-  //set event text
-  setEventInfo(currSlide);
-  //show slide
-  slides.forEach((slide, idx) => {
-    slide.style.transform = `translateX(${100 * (idx - currSlide)}%)`;
-  });
 });
 
-const nextSlide = document.querySelector(".btn-next");
-nextSlide.addEventListener("click", () => {
-  if (currSlide === maxSlide) {
-    currSlide = 0;
-  } else {
-    currSlide++;
-  }
-  // set event text
-  setEventInfo(currSlide);
-  // show slide
-  slides.forEach((slide, idx) => {
-    slide.style.transform = `translateX(${100 * (idx - currSlide)}%)`;
-  });
-});
 
 setEventInfo(0);
 
