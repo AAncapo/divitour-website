@@ -1,1068 +1,362 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Lato");
-
-:root {
-  --font-primary: "Montserrat", sans-serif;
-  --header-height: 50px;
-  --theme-color: #527ed5;
-  --theme-color-light: #7ca2edfe;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
 
 * {
+  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
-  font-family: var(--font-primary);
-
-  button {
-    cursor: pointer;
-  }
+  box-sizing: border-box;
+  color: white;
 }
 
 body {
-  margin: 0;
-  padding: 0px;
+  background-color: black;
   width: 100%;
-}
-
-section {
-  /* padding-bottom: 100px; */
+  margin: 0px;
   display: block;
-  height: 90vh;
 }
 
-.section-title {
-  color: black;
-  margin-inline: auto;
-  font-family: "Montserrat", sans-serif;
-  font-size: 80px;
-  margin-bottom: 10px;
-  text-align: center;
+button {
+  cursor: pointer;
 }
 
-.anchor-button {
-  text-decoration: none;
-  color: white;
-  background-color: var(--theme-color-light);
-  padding: 10px;
-  margin-left: 50%;
+.navbar {
+  z-index: 10;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  min-height: 5vh;
+  height: 8vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
 
-  transition-property: background-color;
-  transition-property: padding;
-  transition-duration: 0.2s;
+  .logo-navbar {
+    height: 50%;
+    margin-left: 5px;
 
-  &:hover {
-    background-color: var(--theme-color);
-    padding: 15px;
+    & img {
+      height: 100%;
+    }
+  }
+
+  .more-nav-btn {
+    border-width: 2px;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+
+    & img {
+      width: 90%;
+    }
   }
 }
 
-/*  Header  */
-header {
-  padding-bottom: 80px;
+main {
+  margin-top: 5vh;
   display: block;
-  width: inherit;
+}
 
-  & .navbar {
-    top: 0px;
-    position: fixed;
-    width: 100%;
-    /* height: var(--header-height); */
-    align-items: center;
+section {
+  height: 95vh;
+  width: 100%;
+}
+
+.section-title {
+  /* padding: 0px; */
+  width: 100%;
+  margin: 0px;
+  color: white;
+  text-align: center;
+}
+
+.header {
+  position: relative;
+
+  .header-image {
+    position: relative;
     display: flex;
-    background-color: #fff;
-    z-index: 3;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
 
-    /* divitour logo */
-    .logo-header {
-      display: flex;
-      align-items: center;
-      height: 100%;
-
-      & img {
-        height: 80%;
-        margin-left: 20px;
-      }
-
-      & .logo-subtext {
-        font-size: 0.9em;
-        /* font-weight: 500; */
-        margin-left: 20px;
-        text-wrap: pretty;
-        max-width: 50%;
-      }
+    & img {
+      background-color: rgb(0, 0, 149);
+      object-fit: cover;
+      width: 100%;
+      /* height: 100%; */
     }
 
-    /* CALL TO ACTION */
-    .cta-header {
-      margin-inline: auto;
-      width: fit-content;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .header-img-ol {
+      position: absolute;
+      display: block;
+      width: 80%;
+      top: 40%;
+      left: 10vw;
 
-      & .cta-text {
-        font-size: 16px;
-        width: auto;
-        text-wrap: nowrap;
-        margin-right: 5px;
-      }
-
-      & .cta-btn {
-        text-decoration: none;
-        text-wrap: nowrap;
+      .header-text {
         color: white;
-        background-color: var(--theme-color-light);
-        padding: 10px;
-        margin-left: 10px;
-
-        transition-property: background-color;
-        transition-property: padding;
-        transition-duration: 0.2s;
-
-        &:hover {
-          background-color: var(--theme-color);
-          padding: 12px;
-        }
-      }
-    }
-
-    .header-buttons {
-      right: 10px;
-      display: flex;
-      align-items: center;
-      min-width: fit-content;
-
-      .nav-anchor-btn {
-        text-decoration: none;
-        color: white;
-        background-color: var(--theme-color-light);
-        margin-right: 100px;
-        /* padding: 10px; */
-
-        transition-property: background-color;
-        transition-property: padding;
-        transition-duration: 0.2s;
-
-        &:hover {
-          background-color: var(--theme-color);
-          padding: 15px;
-        }
+        padding-bottom: 20px;
       }
 
-      .nav-btn {
-        position: relative;
-        display: block;
+      .book-btn {
+        background-color: white;
         color: black;
+        padding: 15px;
         text-decoration: none;
+      }
+    }
+  }
 
-        & a {
-          text-decoration: none;
-        }
+  .bottom-grad {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60%;
+    background-image: linear-gradient(to top, black, #ffffff00);
+  }
+}
 
-        & .nav-drop-ls {
-          opacity: 0;
-          background-color: rgba(0, 0, 0, 0.69);
-          width: fit-content;
-          position: absolute;
-          top: 45px;
-          /* display: block; */
+.reserv-filter {
+  display: none;
+}
 
-          & a {
-            display: block;
-            text-wrap: nowrap;
-            height: fit-content;
-            text-decoration: none;
-            margin: 10px;
-            color: white;
-            transition-property: color;
-            transition-duration: 0.1s;
+/* Eventos */
+.events {
+  display: block;
 
-            &:hover {
-              color: #00d9ff;
-            }
+  .slider {
+    position: relative;
+    width: 90%;
+    height: 50%;
+    margin: 50px auto 0;
+    user-select: none;
+    touch-action: pan-y;
+    object-fit: cover;
+
+    .slider-list {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      .slider-track {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        .slide {
+          width: 100%;
+          height: 100%;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+
+
+          & img {
+            height: 100%;
+            pointer-events: none;
+            object-fit: contain;
           }
         }
       }
     }
 
-    #account-btn,
-    #lang-btn {
-      border: none;
-      background-color: rgba(255, 255, 255, 0);
+    .slider-list.grab {
+      cursor: grab;
+    }
 
-      & img {
-        padding-inline: 10px;
+    .slider-list.grabbing {
+      cursor: grabbing;
+    }
+
+    .slider-arrows {
+      margin-block: 15px;
+      text-align: center;
+
+      .next,
+      .prev {
+        background: none;
+        border: none;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+
+      .next.disabled,
+      .prev.disabled {
+        opacity: .25;
+        pointer-events: none;
       }
     }
   }
 
-  & .header-image {
-    position: relative;
-    margin-top: var(--header-height);
-    /* height: 900px; */
+  .ev-text {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    background-color: white;
-    display: flex;
-    overflow: hidden;
+    height: fit-content;
+    margin: 20px;
 
-    & img {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-      object-fit: cover;
-      overflow: hidden;
+    .ev-date {
+      padding-bottom: 20px;
     }
 
-    & .header-description {
-      position: absolute;
-      height: inherit;
-      width: 50%;
-      margin-left: 40px;
-      color: white;
-
-      & .head-text {
-        margin-bottom: 0px;
-      }
-
-      & .desc-text {
-        margin-bottom: 0px;
-      }
-    }
-  }
-
-  .book-now {
-    position: relative;
-    padding-top: 300px;
-    left: 60%;
-    width: 60%;
-
-    & span {
-      color: #fff;
-    }
-
-    & a {
+    .ev-contact-a {
+      background-color: white;
+      color: black;
       text-decoration: none;
-      margin-left: 20px;
       padding: 10px;
-      background-color: var(--theme-color-light);
-      color: white;
-      font-family: var(--font-primary);
-      border: none;
-      width: 100px;
-    }
-  }
-
-  /* Contacts */
-  & .contacts {
-    display: flex;
-    padding-block: 10px;
-    padding-inline: 0px;
-    justify-content: center;
-    /* gap: 5%; */
-    align-items: center;
-    background-color: black;
-    /* height: 30px; */
-    width: inherit;
-
-    & .contact-item {
-      text-wrap: nowrap;
-      display: flex;
-      align-items: center;
-    }
-
-    & a {
-      text-decoration: none;
-      margin-left: 5px;
-      color: white;
-
-      &:hover {
-        text-decoration: underline;
-      }
+      margin-inline: auto;
     }
   }
 }
 
-/*  Eventos  */
-.upcoming-events {
+/* Destinos */
+.destinations {
   display: block;
 
-  .event-container {
-    position: relative;
+  .dest-base-holder {
     display: flex;
+    flex-direction: column;
+    width: 100%;
     height: 100%;
-    width: 100%;
-    overflow: hidden;
-    align-items: center;
 
-    /* slider */
-    .slider {
-      position: absolute;
+    .dest-holder {
       width: 100%;
-      height: 100%;
-      overflow: hidden;
-
-      .slide {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transition: all 0.5s;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-
-        & img {
-          /* width: 50%; */
-          height: 100%;
-          /* height: 350%;
-          margin-top: -30%;*/
-          /* margin-right: -20%; */
-        }
-      }
-    }
-
-    /* Event text */
-    & .ev-gradient {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      background-image: linear-gradient(
-        to right,
-        rgb(0, 13, 97) 50%,
-        rgba(255, 255, 255, 0)
-      );
-
-      & .ev-text {
-        position: absolute;
-        color: white;
-        width: 50%;
-        height: 100%;
-        display: block;
-        /* flex-direction: column; */
-        /* align-items: start; */
-        text-overflow: ellipsis;
-
-        & .ev-title {
-          margin-block: 20px;
-          margin-top: 40px;
-        }
-
-        & .ev-desc {
-          margin-block: 5px;
-          font-weight: 400;
-          text-overflow: ellipsis;
-        }
-
-        & .ev-date {
-          font-weight: 700;
-          /* margin-bottom: 40px; */
-        }
-
-        & .ev-contact-a {
-          color: white;
-          background-color: black;
-          padding: 10px;
-          text-decoration: none;
-        }
-      }
-    }
-
-    /* Event control buttons */
-    .ev-slider-btn {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      padding: 5px;
-      border: none;
-      z-index: 10px;
-      background-color: #ffffff00;
-      object-fit: cover;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-
-      & img {
-        height: 100%;
-      }
-    }
-
-    .btn-prev {
-      top: 45%;
-      left: 1%;
-    }
-
-    .btn-next {
-      top: 45%;
-      right: 1%;
-    }
-  }
-}
-
-/* Formulario */
-.contact-form {
-  margin-left: 20px;
-  margin-block: 20px;
-  height: fit-content;
-  width: 50%;
-  display: none;
-
-  & input {
-    padding-top: 10px;
-    margin-block: 5px;
-    transition: all 0.5s;
-  }
-
-  .name-input {
-    width: 100%;
-  }
-
-  .email-input {
-    width: 100%;
-  }
-
-  .msg-input {
-    min-height: 50px;
-    width: 100%;
-    resize: vertical;
-  }
-}
-
-/*  Destinos  */
-.destinations {
-  height: 100%;
-  width: 100%;
-
-  & .pop-destinations {
-    display: flex;
-    /* height: 740px; */
-    width: inherit;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    & .dest-container {
-      width: 300px;
-      height: 100%;
+      height: 50%;
       display: flex;
-      padding-left: -100px;
-      overflow: hidden;
+      justify-content: center;
+      align-items: center;
 
-      transition-property: width;
-      transition-delay: 0.1s;
-      transition-timing-function: ease-out;
-      transition-duration: 0.5s;
-
-      &:hover {
-        width: 416px;
-      }
-
-      & .dest-image {
-        position: relative;
-        /* overflow: hidden; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
+      .dest-container {
         width: 100%;
-
-        & .dest-video {
-          object-fit: cover;
-          height: 100%;
-          width: inherit;
-        }
-
-        /* & img {
-          position: absolute;
-          object-fit: cover;
-
-          height: 100%;
-        } */
-      }
-
-      & .dest-gradient {
-        background-image: linear-gradient(to bottom, rgb(0, 0, 0), #ffffff00);
-        opacity: 100;
-        position: absolute;
-        width: inherit;
         height: 100%;
-        top: 0px;
-        transition-property: opacity;
+        display: flex;
+        overflow: hidden;
+
+        transition-property: width;
+        transition-delay: 0.1s;
+        transition-timing-function: ease-out;
         transition-duration: 0.5s;
-        transition-delay: 0.2s;
 
         &:hover {
-          opacity: 0;
+          width: 120%;
+        }
+
+        .dest-image {
+          position: relative;
+          /* overflow: hidden; */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+
+          .dest-video {
+            object-fit: contain;
+            height: 100%;
+            /* width: inherit; */
+          }
+        }
+
+        .dest-gradient {
+          background-image: linear-gradient(to bottom, rgb(0, 0, 0), #ffffff00);
+          opacity: 100;
+          position: absolute;
+          width: inherit;
+          height: 100%;
+          top: 0px;
+          transition-property: opacity;
+          transition-duration: 0.5s;
+          transition-delay: 0.2s;
+
+          &:hover {
+            opacity: 0;
+          }
+        }
+
+        .dest-name {
+          position: absolute;
+          color: #fff;
+          margin-inline: 12%;
+          top: 0px;
+          text-align: center;
         }
       }
-
-      & .dest-name {
-        position: absolute;
-        color: #fff;
-        margin-inline: 12%;
-        top: 0px;
-        text-align: center;
-      }
     }
   }
 }
 
-.services {
-  & .serv-container {
-    display: flex;
-    justify-content: center;
-
-    & h2 {
-      margin-inline: 300px;
-      font-size: 2em;
-    }
-
-    .serv {
-      margin-inline: 40px;
-      width: 600px;
-      margin-left: 40px;
-    }
-  }
-
-  & .serv-img-c {
-    width: 800px;
-    height: 100%;
-  }
-}
-
+/* About Us */
 .about-us {
-  width: 100%;
-  background-color: #252525;
-  display: flex;
-  height: fit-content;
-  color: white;
-  padding-bottom: 0px;
-
-  & .aboutus-text {
-    display: block;
-    margin-inline: 50px;
-  }
-
-  & h1 {
-    padding-top: 100px;
-    /* font-size: 70px; */
-    color: white;
-  }
-
-  & p {
-    font-size: 24px;
-  }
-}
-
-footer {
   display: block;
-  width: 100%;
-  height: 300px;
-  background-color: #252525;
 
-  & h1 {
-    margin-top: 0px;
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-    color: white;
-  }
-
-  & .partners-links {
+  .about-text {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 100px;
 
-    & .logo-container {
-      width: 200px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
-    }
-
-    & .p-logo {
-      height: 100%;
+    & p {
       width: 100%;
-      object-fit: contain;
-      display: flex;
-      align-items: center;
     }
   }
 }
 
-/* =============== Media queries =============== */
-/* higher than 1920 */
-@media screen and (min-width: 1922px) {
-  .navbar {
-    height: 70px;
+/* Contacts */
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  .contact-item {
+    width: 100%;
+
+    & a {
+      margin-left: 10px;
+      text-decoration: none;
+    }
   }
+}
 
-  /* .logo-subtext {
-    display: none;
-  } */
+/* Partners */
+.partner {
+  width: 50px;
+  height: 50px;
 
-  /* .cta-text {
-      display: none;
-    } */
-
-  .nav-btn {
-    padding-inline: 30px;
+  & img {
+    width: 100%;
   }
+}
 
-  .header-buttons {
-    width: 20%;
-  }
-
-  .header-image {
-    height: 900px;
-  }
-
-  .head-text {
-    font-size: 70px;
-  }
-
-  .desc-text {
-    font-size: 40px;
-  }
-
-  .contacts {
-    height: 30px;
-    font-size: 20px;
-    gap: 90px;
-  }
-
-  header {
-    padding-bottom: 100px;
-  }
-
-  section {
-    padding-bottom: 90px;
-  }
-
+/*========== Media queries ==========*/
+/* higher than 800 */
+@media screen and (min-width: 801px) {
   .section-title {
-    margin-top: 0px;
     font-size: 80px;
   }
 
-  .upcoming-events {
-    height: 800px;
+  .dest-base-holder {
+    display: flex;
   }
+}
 
-  .ev-text {
-    margin-left: 80px;
-  }
-
-  .ev-title {
-    font-size: 75px;
-    line-height: 70px;
-  }
-
-  .ev-desc {
-    font-size: 40px;
-  }
-
-  .ev-logo {
-    height: 70%;
-    width: 12%;
-  }
-
-  .ev-slider-btn {
-    width: 50px;
-  }
-
-  .pop-destinations {
-    height: 740px;
-  }
-
-  .dest-name {
+/* higher than 480px && lower than 800px*/
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .section-title {
     font-size: 32px;
   }
 
-  .aboutus-text {
-    & p {
-      font-size: 22px;
-    }
-  }
-
-  .logo-container {
-    margin-inline: 50px;
-  }
-}
-
-/* lower than 1920 */
-@media screen and (max-width: 1921px) {
   .navbar {
-    height: 50px;
-  }
+    justify-content: space-between;
 
-  /* .logo-subtext {
-    display: none;
-  } */
+    .logo-navbar {
+      /* centrar */
+    }
 
-  /* .cta-text {
+    .nav-buttons {
       display: none;
-    } */
-
-  .nav-btn {
-    padding-inline: 30px;
-  }
-
-  .header-buttons {
-    width: 30%;
-  }
-
-  .header-image {
-    height: 700px;
-  }
-
-  .head-text {
-    font-size: 45px;
-  }
-
-  .desc-text {
-    font-size: 24px;
-  }
-
-  .contacts {
-    height: 25px;
-    font-size: 18px;
-    gap: 90px;
-  }
-
-  header {
-    padding-bottom: 100px;
-  }
-
-  section {
-    padding-bottom: 90px;
-  }
-
-  .section-title {
-    margin-top: 0px;
-    font-size: 70px;
-  }
-
-  .upcoming-events {
-    height: 650px;
-  }
-
-  .ev-text {
-    margin-left: 75px;
-  }
-
-  .ev-title {
-    font-size: 65px;
-    line-height: 60px;
-  }
-
-  .ev-desc {
-    font-size: 30px;
-  }
-
-  .ev-logo {
-    height: 70%;
-    width: 15%;
-  }
-
-  .dir-btns {
-    height: 50px;
-  }
-
-  .ev-slider-btn {
-    width: 50px;
-  }
-
-  .pop-destinations {
-    height: 600px;
-  }
-
-  .dest-name {
-    font-size: 22px;
-  }
-
-  .aboutus-text {
-    & p {
-      font-size: 22px;
-    }
-  }
-}
-
-/* lower than 1620 */
-@media screen and (max-width: 1620px) {
-  .navbar {
-    height: 50px;
-  }
-
-  .logo-subtext {
-    display: none;
-  }
-
-  /* .cta-text {
-    display: none;
-  } */
-
-  .nav-btn {
-    padding-inline: 30px;
-  }
-
-  .header-buttons {
-    width: 30%;
-  }
-
-  .header-image {
-    height: 500px;
-  }
-
-  .head-text {
-    font-size: 28px;
-  }
-
-  .desc-text {
-    font-size: 18px;
-  }
-
-  .contacts {
-    height: 20px;
-    font-size: 16px;
-    gap: 50px;
-  }
-
-  header {
-    padding-bottom: 60px;
-  }
-
-  section {
-    padding-bottom: 60px;
-  }
-
-  .section-title {
-    margin-top: 0px;
-    font-size: 50px;
-  }
-
-  .upcoming-events {
-    height: 500px;
-  }
-
-  .ev-text {
-    margin-left: 70px;
-  }
-
-  .ev-title {
-    font-size: 55px;
-    line-height: 50px;
-  }
-
-  .ev-desc {
-    font-size: 25px;
-  }
-
-  .ev-logo {
-    height: 70%;
-    width: 15%;
-  }
-
-  .dir-btns {
-    height: 40px;
-  }
-
-  .ev-slider-btn {
-    width: 40px;
-  }
-
-  .pop-destinations {
-    height: 500px;
-  }
-
-  .dest-name {
-    font-size: 18px;
-  }
-
-  .aboutus-text {
-    & p {
-      font-size: 18px;
     }
   }
 
-  .logo-container {
-    margin-inline: 20px;
-  }
-}
-
-/* lower than 1200 */
-@media screen and (max-width: 1200px) {
-  .navbar {
-    height: 50px;
-  }
-
-  .logo-subtext {
-    display: none;
-  }
-
-  /* .cta-text {
-    display: none;
-  } */
-
-  .nav-btn {
-    padding-inline: 10px;
-  }
-
-  .header-buttons {
-    width: 30%;
-  }
-
-  .header-image {
-    height: 350px;
-  }
-
-  .head-text {
-    font-size: 22px;
-  }
-
-  .desc-text {
-    font-size: 14px;
-  }
-
-  .contacts {
-    height: 20px;
-    font-size: 12px;
-    gap: 20px;
-  }
-
-  header {
-    padding-bottom: 60px;
-  }
-
-  section {
-    padding-bottom: 60px;
-  }
-
-  .section-title {
-    margin-top: 0px;
-    font-size: 40px;
-  }
-
-  .upcoming-events {
-    height: 450px;
-  }
-
-  .ev-text {
-    margin-left: 70px;
-  }
-
-  .ev-title {
-    font-size: 50px;
-    line-height: 50px;
-  }
-
-  .ev-desc {
-    font-size: 25px;
-  }
-
-  .ev-logo {
-    height: 50%;
-    width: 15%;
-  }
-
-  .pop-destinations {
-    height: 400px;
-  }
-
-  .dest-name {
-    font-size: 14px;
-  }
-
-  .aboutus-text {
-    & p {
-      font-size: 16px;
-    }
-  }
-
-  .logo-container {
-    margin-inline: 10px;
-  }
-}
-
-/* lower than 800 */
-@media screen and (max-width: 800px) {
-  .navbar {
-    height: 50px;
-  }
-
-  .logo-subtext {
-    display: none;
-  }
-
-  .cta-text {
-    display: none;
-  }
-
-  .nav-btn {
-    padding-inline: 10px;
-  }
-
-  .header-buttons {
-    width: 30%;
-  }
-
-  .header-image {
-    height: 300px;
-  }
-
-  .head-text {
-    font-size: 20px;
-  }
-
-  .desc-text {
-    font-size: 12px;
-  }
-
-  .contacts {
-    height: 20px;
-    font-size: 12px;
-    gap: 5px;
-  }
-
-  .section-title {
-    margin-top: 0px;
-    font-size: 40px;
-  }
-
-  .upcoming-events {
-    height: 450px;
-  }
-
-  .ev-text {
-    margin-left: 70px;
-  }
-
-  .ev-title {
-    font-size: 40px;
-    line-height: 40px;
-  }
-
-  .ev-desc {
-    font-size: 15px;
-  }
-
-  .ev-logo {
-    height: 30%;
-    width: 15%;
-  }
-
-  .pop-destinations {
-    height: 300px;
-  }
-
-  .dest-name {
-    font-size: 12px;
-  }
-
-  .aboutus-text {
-    & p {
-      font-size: 15px;
-    }
+  .dest-base-holder {
+    display: block;
   }
 }
