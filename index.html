@@ -59,6 +59,7 @@
       </section>
       <section id="booking" class="reserv-filter"></section>
       <!---------- Events ---------->
+      <!-- https://codepen.io/i-did/pen/yLYRvVL -->
       <section id="evs" class="events">
         <h1 class="section-title">UPCOMING EVENTS</h1>
         <div class="slider">
@@ -102,12 +103,13 @@
         ></textarea>
         <button class="submit-btn" type="submit">Submit</button>
       </section> -->
-      <!------------ Destinations ------------>
-      <section id="destinations" class="destinations">
-        <h1 class="section-title">Popular Destinations</h1>
-        <div class="pop-destinations">
-          <!-- .dest-containers -->
-          <!-- <a class="dest-container" href="pages/destination.html">
+      <!------- Destinations ------>
+      <section id="dst" class="destinations">
+        <h1 class="section-title">Destinations</h1>
+        <div class="dest-base-holder">
+          <div class="dest-holder-a dest-holder">
+            <!-- .dest-containers -->
+            <!-- <a class="dest-container" href="pages/destination.html">
             <div class="dest-image">
               <video
                 muted
@@ -124,16 +126,12 @@
               <h3 class="dest-name">${dstName}</h3>
             </div>
           </a> -->
+          </div>
+          <div class="dest-holder-b dest-holder"></div>
         </div>
       </section>
-
-      <!------------ Services ------------>
-      <section
-        style="position: relative; width: 80%; margin-inline: auto"
-        class="services"
-      ></section>
       <section class="about-us">
-        <div class="aboutus-text">
+        <div class="about-text">
           <h1 class="section-title">Who we are</h1>
           <p>
             At Divitour, we take pride in being the leading agency for diving
@@ -166,7 +164,7 @@
         </div>
       </section>
       <section class="contacts">
-        <h3>Contact us:</h3>
+        <h3 class="section-title">Contact us:</h3>
         <span class="contact-item">
           <img src="resources/images/icons/icons8-teléfono-30.png" alt="" /><a
             href="tel: +53 52529974"
@@ -214,58 +212,46 @@
       </section>
     </main>
 
-    <footer>
-      <h1>Our Partners</h1>
+    <section class="partners">
+      <h1 class="section-title">Our Partners</h1>
       <div class="partners-links">
-        <div class="logo-container">
-          <img
-            class="p-logo"
-            src="resources/images/logos/partners/cammproductions.png"
-          />
-        </div>
-        <div class="logo-container">
-          <a href="https://www.daiquiritravel.com/home" target="_blank">
-            <img
-              class="p-logo"
-              src="resources/images/logos/partners/daiquiri.png"
-            />
-          </a>
-        </div>
+        <a class="partner" href="">
+          <img src="resources/images/logos/partners/cammproductions.png" />
+        </a>
+        <a
+          class="partner"
+          href="https://www.daiquiritravel.com/home"
+          target="_blank"
+        >
+          <img src="resources/images/logos/partners/daiquiri.png" />
+        </a>
 
-        <div class="logo-container">
-          <a href="https://ecotur.travel/" target="_blank">
-            <img
-              class="p-logo"
-              src="resources/images/logos/partners/ecotur.png"
-            />
-          </a>
-        </div>
-        <div class="logo-container">
-          <a href="https://www.grupocubanacan.com/" target="_blank">
-            <img
-              class="p-logo"
-              src="resources/images/logos/partners/cubanacan.PNG"
-            />
-          </a>
-        </div>
-        <div class="logo-container">
-          <a href="https://www.marinasmarlin.com/" target="_blank">
-            <img
-              class="p-logo"
-              src="resources/images/logos/partners/marlin.png"
-            />
-          </a>
-        </div>
-        <div class="logo-container">
-          <a href="https://www.bluediamondresorts.com/es" target="_blank">
-            <img
-              class="p-logo"
-              src="resources/images/logos/partners/bluediamond.png"
-            />
-          </a>
-        </div>
+        <a class="partner" href="https://ecotur.travel/" target="_blank">
+          <img src="resources/images/logos/partners/ecotur.png" />
+        </a>
+        <a
+          class="partner"
+          href="https://www.grupocubanacan.com/"
+          target="_blank"
+        >
+          <img src="resources/images/logos/partners/cubanacan.PNG" />
+        </a>
+        <a
+          class="partner"
+          href="https://www.marinasmarlin.com/"
+          target="_blank"
+        >
+          <img src="resources/images/logos/partners/marlin.png" />
+        </a>
+        <a
+          class="partner"
+          href="https://www.bluediamondresorts.com/es"
+          target="_blank"
+        >
+          <img src="resources/images/logos/partners/bluediamond.png" />
+        </a>
       </div>
-    </footer>
+    </section>
 
     <script src="resources/scripts/index.js"></script>
   </body>

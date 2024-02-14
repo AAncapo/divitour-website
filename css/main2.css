@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
 * {
+  font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  color: white;
 }
 
 body {
@@ -56,6 +60,14 @@ section {
   width: 100%;
 }
 
+.section-title {
+  /* padding: 0px; */
+  width: 100%;
+  margin: 0px;
+  color: white;
+  text-align: center;
+}
+
 .header {
   position: relative;
 
@@ -106,6 +118,7 @@ section {
   display: none;
 }
 
+/* Eventos */
 .events {
   /* background-color: black; */
   display: block;
@@ -114,7 +127,7 @@ section {
     display: flex;
     width: 100%;
     height: 50%;
-    /* overflow: hidden; */
+    overflow: hidden;
     .slide {
       width: 100%;
       height: 100%;
@@ -127,13 +140,6 @@ section {
         /* height: 100%; */
       }
     }
-  }
-
-  .section-title {
-    /* padding: 0px; */
-    width: 100%;
-    margin: 0px;
-    color: white;
   }
 
   .ev-text {
@@ -159,7 +165,123 @@ section {
   }
 }
 
-/* higher than 480px */
+/* Destinos */
+.destinations {
+  display: block;
+
+  .dest-base-holder {
+    width: 100%;
+    height: 100%;
+
+    .dest-holder {
+      width: 100%;
+      height: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .dest-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+
+        transition-property: width;
+        transition-delay: 0.1s;
+        transition-timing-function: ease-out;
+        transition-duration: 0.5s;
+
+        &:hover {
+          width: 120%;
+        }
+
+        .dest-image {
+          position: relative;
+          /* overflow: hidden; */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+
+          .dest-video {
+            object-fit: contain;
+            height: 100%;
+            width: inherit;
+          }
+        }
+
+        .dest-gradient {
+          background-image: linear-gradient(to bottom, rgb(0, 0, 0), #ffffff00);
+          opacity: 100;
+          position: absolute;
+          width: inherit;
+          height: 100%;
+          top: 0px;
+          transition-property: opacity;
+          transition-duration: 0.5s;
+          transition-delay: 0.2s;
+
+          &:hover {
+            opacity: 0;
+          }
+        }
+
+        .dest-name {
+          position: absolute;
+          color: #fff;
+          margin-inline: 12%;
+          top: 0px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+/* About Us */
+.about-us {
+  display: block;
+  .about-text {
+    width: 100%;
+    & p {
+      width: 100%;
+    }
+  }
+}
+
+/* Contacts */
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  .contact-item {
+    width: 100%;
+    & a {
+      margin-left: 10px;
+      text-decoration: none;
+    }
+  }
+}
+
+/* Partners */
+.partner {
+  width: 50px;
+  height: 50px;
+  & img {
+    width: 100%;
+  }
+}
+
+/*========== Media queries ==========*/
+/* higher than 800 */
+@media screen and (min-width: 801px) {
+  .dest-base-holder {
+    display: flex;
+  }
+}
+
+/* higher than 480px && lower than 800px*/
 @media screen and (min-width: 480px) and (max-width: 800px) {
   .navbar {
     justify-content: space-between;
@@ -169,5 +291,9 @@ section {
     .nav-buttons {
       display: none;
     }
+  }
+
+  .dest-base-holder {
+    display: block;
   }
 }

@@ -1,4 +1,5 @@
-const popDestContainer = document.querySelector(".pop-destinations");
+const destHolderA = document.querySelector(".dest-holder-a");
+const destHolderB = document.querySelector(".dest-holder-b");
 const navBtns = document.querySelectorAll(".nav-btn");
 
 // toggle show/hide navbuttons list on click
@@ -92,22 +93,21 @@ function setEventInfo(currSlide) {
 setEventInfo(0);
 
 // Formulario //
-const evContactBtn = document.querySelector(".ev-contact-a");
-const contactForm = document.querySelector(".contact-form");
-let isContactVeible = false;
-evContactBtn.addEventListener("click", () => {
-  isContactVeible = !isContactVeible;
-  if (isContactVeible) {
-    contactForm.style.display = "block";
-  } else {
-    contactForm.style.display = "none";
-  }
-});
-
-
-setEventInfo(0);
+// const evContactBtn = document.querySelector(".ev-contact-a");
+// const contactForm = document.querySelector(".contact-form");
+// let isContactVeible = false;
+// evContactBtn.addEventListener("click", () => {
+//   isContactVeible = !isContactVeible;
+//   if (isContactVeible) {
+//     contactForm.style.display = "block";
+//   } else {
+//     contactForm.style.display = "none";
+//   }
+// });
 
 // set destinations preview videos and posters
+let destCount = 0;
+
 setDestination("HAVANA", "havana");
 setDestination("VARADERO", "varadero");
 setDestination("CAYO LARGO DEL SUR", "cayolargo");
@@ -149,5 +149,13 @@ destContainers.forEach((destC) => {
 function setDestination(title, fileName) {
   let src = `pages/home/local-images/dest-vids/${fileName}`;
 
-  popDestContainer.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src="${src}.mp4" poster="${src}.jpg" frameborder="0"></video><div class="dest-gradient"></div><h3 class="dest-name">${title} </h3> </div> </a>`;
+  let destHolderSelected;
+  if (destCount < 4) {
+    destHolderSelected = destHolderA;
+  } else {
+    destHolderSelected = destHolderB;
+  }
+  destHolderSelected.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src="${src}.mp4" poster="${src}.jpg" frameborder="0"></video><div class="dest-gradient"></div><h3 class="dest-name">${title} </h3> </div> </a>`;
+
+  destCount++;
 }
