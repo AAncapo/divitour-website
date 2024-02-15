@@ -3,16 +3,10 @@ const destHolderB = document.querySelector(".dest-holder-b");
 const navBtns = document.querySelectorAll(".nav-btn");
 
 // toggle show/hide navbuttons list on click
-navBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    if (btn.firstElementChild) {
-      if (btn.lastElementChild.style.opacity > 0) {
-        btn.lastElementChild.style.opacity = 0;
-      } else {
-        btn.lastElementChild.style.opacity = 100;
-      }
-    }
-  });
+const sideNavBtn = document.querySelector(".more-nav-btn");
+const sideNav = document.querySelector(".nav-side");
+sideNavBtn.addEventListener("click", () => {
+  sideNav.style.display = sideNav.display != "none" ? "none" : "flex";
 });
 
 // Event image slider
