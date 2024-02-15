@@ -1,1062 +1,175 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Lato");
-
-:root {
-  --font-primary: "Montserrat", sans-serif;
-  --header-height: 50px;
-  --theme-color: #527ed5;
-  --theme-color-light: #7ca2edfe;
-  /* --event-container-h: 650px; */
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
 
 * {
-  scroll-behavior: smooth;
-  font-family: var(--font-primary);
-
-  button {
-    cursor: pointer;
-  }
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    /* box-sizing: border-box; */
+    color: white;
 }
 
 body {
-  margin: 0;
-  padding: 0px;
-  width: 100%;
+    position: relative;
+    background-color: rgb(1, 6, 27);
+    width: 100%;
+    margin: 0px;
+    display: block;
+}
+
+.header-image {
+    width: 100%;
+    height: 50vh;
+    background-color: aquamarine;
+}
+
+main {
+    margin-inline: auto;
+    width: 70%;
 }
 
 section {
-  /* padding-bottom: 100px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 100%;
 }
 
-.section-title {
-  color: black;
-  margin-inline: auto;
-  font-family: "Montserrat", sans-serif;
-  font-size: 80px;
-  margin-bottom: 10px;
+.dest-name {
+    color: aquamarine;
 }
 
-.anchor-button {
-  text-decoration: none;
-  color: white;
-  background-color: var(--theme-color-light);
-  padding: 10px;
-  margin-left: 50%;
-
-  transition-property: background-color;
-  transition-property: padding;
-  transition-duration: 0.2s;
-
-  &:hover {
-    background-color: var(--theme-color);
-    padding: 15px;
-  }
-}
-
-/* ############# Header ############# */
-header {
-  padding-bottom: 80px;
-  display: block;
-  width: inherit;
-
-  & .navbar {
-    top: 0px;
+.navbar {
+    z-index: 10;
+    width: 100%;
     position: fixed;
-    width: 100%;
-    /* height: var(--header-height); */
-    align-items: center;
-    display: flex;
-    background-color: #fff;
-    z-index: 3;
+    top: 0px;
+    min-height: 40px;
+    max-height: 80px;
+    height: 9vh;
 
-    /* divitour logo */
-    .logo-header {
-      display: flex;
-      align-items: center;
-      height: 100%;
+    .nav-top {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-      & img {
-        height: 80%;
-        margin-left: 20px;
-      }
+        .logo-navbar {
+            height: 50%;
+            margin-left: 20px;
 
-      & .logo-subtext {
-        font-size: 0.9em;
-        /* font-weight: 500; */
-        margin-left: 20px;
-        text-wrap: pretty;
-        max-width: 50%;
-      }
-    }
-
-    /* CALL TO ACTION */
-    .cta-header {
-      margin-inline: auto;
-      width: fit-content;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      & .cta-text {
-        font-size: 16px;
-        width: auto;
-        text-wrap: nowrap;
-        margin-right: 5px;
-      }
-
-      & .cta-btn {
-        text-decoration: none;
-        text-wrap: nowrap;
-        color: white;
-        background-color: var(--theme-color-light);
-        padding: 10px;
-        margin-left: 10px;
-
-        transition-property: background-color;
-        transition-property: padding;
-        transition-duration: 0.2s;
-
-        &:hover {
-          background-color: var(--theme-color);
-          padding: 12px;
-        }
-      }
-    }
-
-    .header-buttons {
-      right: 10px;
-      display: flex;
-      align-items: center;
-      min-width: fit-content;
-
-      .nav-anchor-btn {
-        text-decoration: none;
-        color: white;
-        background-color: var(--theme-color-light);
-        margin-right: 100px;
-        /* padding: 10px; */
-
-        transition-property: background-color;
-        transition-property: padding;
-        transition-duration: 0.2s;
-
-        &:hover {
-          background-color: var(--theme-color);
-          padding: 15px;
-        }
-      }
-
-      .nav-btn {
-        position: relative;
-        display: block;
-        color: black;
-        text-decoration: none;
-
-        & a {
-          text-decoration: none;
-        }
-
-        & .nav-drop-ls {
-          opacity: 0;
-          background-color: rgba(0, 0, 0, 0.69);
-          width: fit-content;
-          position: absolute;
-          top: 45px;
-          /* display: block; */
-
-          & a {
-            display: block;
-            text-wrap: nowrap;
-            height: fit-content;
-            text-decoration: none;
-            margin: 10px;
-            color: white;
-            transition-property: color;
-            transition-duration: 0.1s;
-
-            &:hover {
-              color: #00d9ff;
+            & img {
+                height: 100%;
             }
-          }
         }
-      }
+
+        .more-nav-btn {
+            /* border-width: 2px; */
+            background-color: white;
+            height: 50px;
+            width: 50px;
+            margin-right: 5px;
+
+            & img {
+                width: 90%;
+            }
+        }
+
+        .nav-buttons {
+            width: 40%;
+            margin-inline: 20px;
+            justify-content: center;
+            gap: 80px;
+
+            & a {
+                text-decoration: none;
+                color: black;
+            }
+        }
     }
 
-    #account-btn,
-    #lang-btn {
-      border: none;
-      background-color: rgba(255, 255, 255, 0);
+    /* Side Menu */
+    .nav-side {
+        /* bg image */
+        display: none;
+        position: absolute;
+        top: 9vh;
+        height: 100vh;
+        width: 100%;
+        /* background-color: rgba(0, 0, 0, 0.35); */
 
-      & img {
-        padding-inline: 10px;
-      }
+        transition: all .5s;
+        justify-content: flex-end;
+
+        .snav-menu {
+            height: 100%;
+            width: 50%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+
+            transition: all .2s;
+            /* transform: translateX(100px); */
+
+            & a {
+                text-decoration: none;
+                color: black;
+                margin-left: 20px;
+                margin-block: 20px;
+
+                transition: all .2s;
+
+                &:hover {
+                    color: cadetblue;
+                }
+            }
+        }
     }
-  }
-
-  & .header-image {
-    position: relative;
-    margin-top: var(--header-height);
-    /* height: 900px; */
-    width: 100%;
-    background-color: white;
-    display: flex;
-    overflow: hidden;
-
-    & img {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-      object-fit: cover;
-      overflow: hidden;
-    }
-
-    & .header-description {
-      position: absolute;
-      height: inherit;
-      width: 50%;
-      margin-left: 40px;
-      color: white;
-
-      & .head-text {
-        margin-bottom: 0px;
-      }
-
-      & .desc-text {
-        margin-bottom: 0px;
-      }
-    }
-  }
-
-  .book-now {
-    position: relative;
-    padding-top: 300px;
-    left: 60%;
-    width: 60%;
-
-    & span {
-      color: #fff;
-    }
-
-    & a {
-      text-decoration: none;
-      margin-left: 20px;
-      padding: 10px;
-      background-color: var(--theme-color-light);
-      color: white;
-      font-family: var(--font-primary);
-      border: none;
-      width: 100px;
-    }
-  }
-
-  /* Contacts */
-  & .contacts {
-    display: flex;
-    padding-block: 10px;
-    padding-inline: 0px;
-    justify-content: center;
-    /* gap: 5%; */
-    align-items: center;
-    background-color: black;
-    /* height: 30px; */
-    width: inherit;
-
-    & .contact-item {
-      text-wrap: nowrap;
-      display: flex;
-      align-items: center;
-    }
-
-    & a {
-      text-decoration: none;
-      margin-left: 5px;
-      color: white;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
 }
 
-/*  Eventos  */
-.upcoming-events {
-
-  .event-container {
-    position: relative;
-    display: flex;
-    height: 100%;
+.hotels-container {
     width: 100%;
-    overflow: hidden;
-    align-items: center;
+    height: 100%;
     display: flex;
+    justify-content: space-around;
 
-    /* slider */
-    .slider {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-
-      .slide {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transition: all 0.5s;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: end;
-
-        & img {
-          width: 50%;
-          height: 100%;
-          /* height: 350%;
-          margin-top: -30%;
-          margin-right: -40%; */
-        }
-      }
-    }
-
-    /* Event text */
-    & .ev-gradient {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      background-image: linear-gradient(to right,
-          rgb(0, 13, 97) 50%,
-          rgba(255, 255, 255, 0));
-
-      & .ev-text {
-        position: absolute;
-        color: white;
-        width: 50%;
-        height: 100%;
+    .hotel-card {
         display: block;
-        /* flex-direction: column; */
-        /* align-items: start; */
-        text-overflow: ellipsis;
+        width: 400px;
+        height: 600px;
 
-        & .ev-title {
-          margin-block: 20px;
+
+        .hotel-img {
+            background-color: blueviolet;
+            height: 50%;
+
+            & img {
+                height: 100%;
+            }
         }
 
-        & .ev-desc {
-          margin-block: 5px;
-          font-weight: 400;
-          text-overflow: ellipsis;
+        .context {
+            display: block;
+            font-size: 14px;
+
+            .hotel-name {
+                text-align: center;
+            }
+
+            .hotel-desc {
+                margin-inline: 10px;
+            }
         }
-
-        & .ev-date {
-          font-weight: 700;
-          /* margin-bottom: 40px; */
-        }
-
-        & .ev-contact-a {
-          color: white;
-          background-color: black;
-          padding: 10px;
-          text-decoration: none;
-        }
-      }
     }
-
-    /* Event control buttons */
-    .ev-slider-btn {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      padding: 5px;
-      border: none;
-      z-index: 10px;
-      background-color: #ffffff00;
-      object-fit: cover;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-
-      & img {
-        height: 100%;
-      }
-    }
-
-    .btn-prev {
-      top: 45%;
-      left: 1%;
-    }
-
-    .btn-next {
-      top: 45%;
-      right: 1%;
-    }
-
-
-  }
 }
 
-#contact-form {
-  height: fit-content;
-  width: 100%;
-  height: 300px;
-  display: block;
-
-  & textarea {
-    width: 50%;
-    height: fit-content;
-  }
-}
-
-/*  Destinos  */
-.destinations {
-  height: 100%;
-  width: 100%;
-
-  & .pop-destinations {
-    display: flex;
-    /* height: 740px; */
-    width: inherit;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-
-    & .dest-container {
-      width: 300px;
-      height: 100%;
-      display: flex;
-      padding-left: -100px;
-      overflow: hidden;
-
-      transition-property: width;
-      transition-delay: 0.1s;
-      transition-timing-function: ease-out;
-      transition-duration: 0.5s;
-
-      &:hover {
-        width: 416px;
-      }
-
-      & .dest-image {
-        position: relative;
-        /* overflow: hidden; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-
-        & .dest-video {
-          object-fit: cover;
-          height: 100%;
-          width: inherit;
-        }
-
-        /* & img {
-          position: absolute;
-          object-fit: cover;
-
-          height: 100%;
-        } */
-      }
-
-      & .dest-gradient {
-        background-image: linear-gradient(to bottom, rgb(0, 0, 0), #ffffff00);
-        opacity: 100;
-        position: absolute;
-        width: inherit;
-        height: 100%;
-        top: 0px;
-        transition-property: opacity;
-        transition-duration: 0.5s;
-        transition-delay: 0.2s;
-
-        &:hover {
-          opacity: 0;
-        }
-      }
-
-      & .dest-name {
-        position: absolute;
-        color: #fff;
-        margin-inline: 12%;
-        top: 0px;
-        text-align: center;
-      }
-    }
-  }
-}
-
-.services {
-  & .serv-container {
-    display: flex;
-    justify-content: center;
-
-    & h2 {
-      margin-inline: 300px;
-      font-size: 2em;
+@media screen and (min-width:800px) {
+    .section-title {
+        font-size: 70px;
     }
 
-    .serv {
-      margin-inline: 40px;
-      width: 600px;
-      margin-left: 40px;
-    }
-  }
-
-  & .serv-img-c {
-    width: 800px;
-    height: 100%;
-  }
-}
-
-.about-us {
-  width: 100%;
-  background-color: #252525;
-  display: flex;
-  height: 800px;
-  color: white;
-  padding-bottom: 0px;
-
-  & .aboutus-text {
-    display: block;
-    margin-inline: 50px;
-  }
-
-  & h1 {
-    padding-top: 100px;
-    /* font-size: 70px; */
-    color: white;
-  }
-
-  & p {
-    font-size: 24px;
-  }
-}
-
-footer {
-  display: block;
-  width: 100%;
-  height: 300px;
-  background-color: #252525;
-
-  & h1 {
-    margin-top: 0px;
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-    color: white;
-  }
-
-  & .partners-links {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 100px;
-
-    & .logo-container {
-      width: 200px;
-      height: 200px;
-      display: flex;
-      justify-content: center;
+    .top-text {
+        font-size: 50px;
     }
 
-    & .p-logo {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      display: flex;
-      align-items: center;
+    .sub-text {
+        font-size: 30px;
     }
-  }
-}
-
-/* =============== Media queries =============== */
-/* higher than 1920 */
-@media screen and (min-width: 1922px) {
-  .navbar {
-    height: 70px;
-  }
-
-  /* .logo-subtext {
-    display: none;
-  } */
-
-  /* .cta-text {
-      display: none;
-    } */
-
-  .nav-btn {
-    padding-inline: 30px;
-  }
-
-  .header-buttons {
-    width: 20%;
-  }
-
-  .header-image {
-    height: 900px;
-  }
-
-  .head-text {
-    font-size: 70px;
-  }
-
-  .desc-text {
-    font-size: 40px;
-  }
-
-  .contacts {
-    height: 30px;
-    font-size: 20px;
-    gap: 90px;
-  }
-
-  header {
-    padding-bottom: 100px;
-  }
-
-  section {
-    padding-bottom: 90px;
-  }
-
-  .section-title {
-    margin-top: 0px;
-    font-size: 80px;
-  }
-
-
-  .upcoming-events {
-    height: 800px;
-  }
-
-  .ev-text {
-    margin-left: 80px;
-  }
-
-  .ev-title {
-    font-size: 75px;
-    line-height: 70px;
-  }
-
-  .ev-desc {
-    font-size: 40px;
-  }
-
-  .ev-logo {
-    height: 70%;
-    width: 12%;
-  }
-
-
-  .ev-slider-btn {
-    width: 50px;
-  }
-
-  .pop-destinations {
-    height: 740px;
-  }
-
-  .dest-name {
-    font-size: 32px;
-  }
-
-  .aboutus-text {
-    & p {
-      font-size: 22px;
-    }
-  }
-
-  .logo-container {
-    margin-inline: 50px;
-  }
-}
-
-/* lower than 1920 */
-@media screen and (max-width: 1921px) {
-  .navbar {
-    height: 50px;
-  }
-
-  /* .logo-subtext {
-    display: none;
-  } */
-
-  /* .cta-text {
-      display: none;
-    } */
-
-  .nav-btn {
-    padding-inline: 30px;
-  }
-
-  .header-buttons {
-    width: 30%;
-  }
-
-  .header-image {
-    height: 700px;
-  }
-
-  .head-text {
-    font-size: 45px;
-  }
-
-  .desc-text {
-    font-size: 24px;
-  }
-
-  .contacts {
-    height: 25px;
-    font-size: 18px;
-    gap: 90px;
-  }
-
-  header {
-    padding-bottom: 100px;
-  }
-
-  section {
-    padding-bottom: 90px;
-  }
-
-  .section-title {
-    margin-top: 0px;
-    font-size: 70px;
-  }
-
-  .upcoming-events {
-    height: 650px;
-  }
-
-  .ev-text {
-    margin-left: 75px;
-  }
-
-  .ev-title {
-    font-size: 65px;
-    line-height: 60px;
-  }
-
-  .ev-desc {
-    font-size: 30px;
-  }
-
-  .ev-logo {
-    height: 70%;
-    width: 15%;
-  }
-
-  .dir-btns {
-    height: 50px;
-  }
-
-  .ev-slider-btn {
-    width: 50px;
-  }
-
-  .pop-destinations {
-    height: 600px;
-  }
-
-  .dest-name {
-    font-size: 22px;
-  }
-
-  .aboutus-text {
-    & p {
-      font-size: 22px;
-    }
-  }
-}
-
-/* lower than 1620 */
-@media screen and (max-width: 1620px) {
-  .navbar {
-    height: 50px;
-  }
-
-  .logo-subtext {
-    display: none;
-  }
-
-  /* .cta-text {
-    display: none;
-  } */
-
-  .nav-btn {
-    padding-inline: 30px;
-  }
-
-  .header-buttons {
-    width: 30%;
-  }
-
-  .header-image {
-    height: 500px;
-  }
-
-  .head-text {
-    font-size: 28px;
-  }
-
-  .desc-text {
-    font-size: 18px;
-  }
-
-  .contacts {
-    height: 20px;
-    font-size: 16px;
-    gap: 50px;
-  }
-
-  header {
-    padding-bottom: 60px;
-  }
-
-  section {
-    padding-bottom: 60px;
-  }
-
-  .section-title {
-    margin-top: 0px;
-    font-size: 50px;
-  }
-
-  .upcoming-events {
-    height: 500px;
-  }
-
-  .ev-text {
-    margin-left: 70px;
-  }
-
-  .ev-title {
-    font-size: 55px;
-    line-height: 50px;
-  }
-
-  .ev-desc {
-    font-size: 25px;
-  }
-
-  .ev-logo {
-    height: 70%;
-    width: 15%;
-  }
-
-  .dir-btns {
-    height: 40px;
-  }
-
-  .ev-slider-btn {
-    width: 40px;
-  }
-
-  .pop-destinations {
-    height: 500px;
-  }
-
-  .dest-name {
-    font-size: 18px;
-  }
-
-  .aboutus-text {
-    & p {
-      font-size: 18px;
-    }
-  }
-
-  .logo-container {
-    margin-inline: 20px;
-  }
-}
-
-/* lower than 1200 */
-@media screen and (max-width: 1200px) {
-  .navbar {
-    height: 50px;
-  }
-
-  .logo-subtext {
-    display: none;
-  }
-
-  /* .cta-text {
-    display: none;
-  } */
-
-  .nav-btn {
-    padding-inline: 10px;
-  }
-
-  .header-buttons {
-    width: 30%;
-  }
-
-  .header-image {
-    height: 350px;
-  }
-
-  .head-text {
-    font-size: 22px;
-  }
-
-  .desc-text {
-    font-size: 14px;
-  }
-
-  .contacts {
-    height: 20px;
-    font-size: 12px;
-    gap: 20px;
-  }
-
-  header {
-    padding-bottom: 60px;
-  }
-
-  section {
-    padding-bottom: 60px;
-  }
-
-  .section-title {
-    margin-top: 0px;
-    font-size: 40px;
-  }
-
-  .upcoming-events {
-    height: 450px;
-  }
-
-  .ev-text {
-    margin-left: 70px;
-  }
-
-  .ev-title {
-    font-size: 50px;
-    line-height: 50px;
-  }
-
-  .ev-desc {
-    font-size: 25px;
-  }
-
-  .ev-logo {
-    height: 50%;
-    width: 15%;
-  }
-
-  .pop-destinations {
-    height: 400px;
-  }
-
-  .dest-name {
-    font-size: 14px;
-  }
-
-  .aboutus-text {
-    & p {
-      font-size: 16px;
-    }
-  }
-
-  .logo-container {
-    margin-inline: 10px;
-  }
-}
-
-/* lower than 800 */
-@media screen and (max-width: 800px) {
-  .navbar {
-    height: 50px;
-  }
-
-  .logo-subtext {
-    display: none;
-  }
-
-  .cta-text {
-    display: none;
-  }
-
-  .nav-btn {
-    padding-inline: 10px;
-  }
-
-  .header-buttons {
-    width: 30%;
-  }
-
-  .header-image {
-    height: 300px;
-  }
-
-  .head-text {
-    font-size: 20px;
-  }
-
-  .desc-text {
-    font-size: 12px;
-  }
-
-  .contacts {
-    height: 20px;
-    font-size: 12px;
-    gap: 5px;
-  }
-
-  header {
-    padding-bottom: 50px;
-  }
-
-  section {
-    padding-bottom: 50px;
-  }
-
-  .section-title {
-    margin-top: 0px;
-    font-size: 40px;
-  }
-
-  .upcoming-events {
-    height: 450px;
-  }
-
-  .ev-text {
-    margin-left: 70px;
-  }
-
-  .ev-title {
-    font-size: 40px;
-    line-height: 40px;
-  }
-
-  .ev-desc {
-    font-size: 15px;
-  }
-
-  .ev-logo {
-    height: 30%;
-    width: 15%;
-  }
-
-
-  .pop-destinations {
-    height: 300px;
-  }
-
-  .dest-name {
-    font-size: 12px;
-  }
-
-  .aboutus-text {
-    & p {
-      font-size: 15px;
-    }
-  }
 }

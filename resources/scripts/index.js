@@ -1,5 +1,7 @@
-const destHolderA = document.querySelector(".dest-holder-a");
-const destHolderB = document.querySelector(".dest-holder-b");
+// import * as dest from "../../pages/destination/destination.js";
+
+const destHolder = document.querySelector(".dest-holder");
+
 const navBtns = document.querySelectorAll(".nav-btn");
 
 // toggle show/hide navbuttons list on click
@@ -277,8 +279,9 @@ const destContainers = document.querySelectorAll(".dest-container");
 destContainers.forEach((destC) => {
   let vid = destC.querySelector(".dest-video");
   let gradient = destC.querySelector(".dest-gradient");
+
   //play video
-  gradient.addEventListener("mouseover", () => {
+  destC.addEventListener("mouseover", () => {
     vid
       .play()
       .then(() => {
@@ -288,26 +291,30 @@ destContainers.forEach((destC) => {
         console.log("the video cannot be played yet");
       });
   });
+
   //pause video
-  gradient.addEventListener("mouseleave", () => {
+  destC.addEventListener("mouseleave", () => {
     if (!vid.paused) {
       setTimeout(() => {
         vid.pause();
       }, 400);
     }
   });
+
+  //load destination page
+  destC.addEventListener("click", (e) => {
+    e.preventDefault();
+    let destPageId = destC.id;
+    console.log(destPageId);
+    let nav = document.querySelector(".navbar");
+
+    window.location.href = "../../pages/destination/destination.html";
+  });
 });
 
 function setDestination(title, fileName) {
   let src = `pages/home/local-images/dest-vids/${fileName}`;
-
-  let destHolderSelected;
-  if (destCount < 4) {
-    destHolderSelected = destHolderA;
-  } else {
-    destHolderSelected = destHolderB;
-  }
-  destHolderSelected.innerHTML += `<a class="dest-container" href="pages/destination.html"><h3 class="dest-name">${title} </h3>  <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src="${src}.mp4" poster="${src}.jpg" frameborder="0"><div class="dest-gradient"></div></video></div> </a>`;
+  destHolder.innerHTML += `<a id="${fileName}" class="dest-container" href=""><h3 class="dest-name">${title}</h3>  <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src="${src}.mp4" poster="${src}.jpg" frameborder="0"></video><div class="dest-gradient"></div></div> </a>`;
 
   destCount++;
 }
