@@ -25,6 +25,7 @@ button {
   position: fixed;
   top: 0px;
   min-height: 40px;
+  max-height: 80px;
   height: 9vh;
 
   .nav-top {
@@ -45,7 +46,7 @@ button {
     }
 
     .more-nav-btn {
-      border-width: 2px;
+      /* border-width: 2px; */
       background-color: white;
       height: 50px;
       width: 50px;
@@ -55,9 +56,11 @@ button {
         width: 90%;
       }
     }
+
     .nav-buttons {
       width: 30%;
       margin-inline: 20px;
+
       & a {
         text-decoration: none;
         color: black;
@@ -67,12 +70,16 @@ button {
 
   /* Side Menu */
   .nav-side {
-    display: flex;
+    /* bg image */
+    display: none;
     position: absolute;
     top: 9vh;
     height: 100vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.35);
+    /* background-color: rgba(0, 0, 0, 0.35); */
+
+    transition: all .5s;
+    justify-content: flex-end;
 
     .snav-menu {
       height: 100%;
@@ -81,11 +88,20 @@ button {
       display: flex;
       flex-direction: column;
 
+      transition: all .2s;
+      /* transform: translateX(100px); */
+
       & a {
         text-decoration: none;
         color: black;
         margin-left: 20px;
         margin-block: 20px;
+
+        transition: all .2s;
+
+        &:hover {
+          color: cadetblue;
+        }
       }
     }
   }
@@ -211,6 +227,7 @@ section {
         .slider-list.grab {
           cursor: grab;
         }
+
         .slider-list.grabbing {
           cursor: grabbing;
         }
@@ -379,6 +396,7 @@ section {
       display: flex;
       justify-content: space-around;
     }
+
     .more-nav-btn {
       display: none;
     }
@@ -396,6 +414,7 @@ section {
     .slider {
       width: 50%;
     }
+
     .ev-text {
       width: 50%;
     }
@@ -419,12 +438,15 @@ section {
       display: none;
     }
   }
+
   .ev-container {
     flex-direction: column;
+
     .slider {
       width: 90%;
     }
   }
+
   .dest-base-holder {
     display: block;
   }

@@ -3,10 +3,21 @@ const destHolderB = document.querySelector(".dest-holder-b");
 const navBtns = document.querySelectorAll(".nav-btn");
 
 // toggle show/hide navbuttons list on click
-const sideNavBtn = document.querySelector(".more-nav-btn");
+const snavBtn = document.querySelector(".more-nav-btn");
 const sideNav = document.querySelector(".nav-side");
-sideNavBtn.addEventListener("click", () => {
-  sideNav.style.display = sideNav.display != "none" ? "none" : "flex";
+const sideMenu = sideNav.querySelector(".snav-menu");
+// let visibleSidenav = false;
+
+snavBtn.addEventListener("click", () => {
+  if (sideNav.style.display !== "none") {
+    // sideMenu.style.transform = `translateX(${sideMenu.offsetWidth}px)`;
+    // visibleSidenav = false;
+    sideNav.style.display = "none";
+  } else {
+    sideNav.style.display = "flex";
+    // sideMenu.style.transform = `translateX(${-sideMenu.offsetWidth}px)`;
+    // visibleSidenav = true;
+  }
 });
 
 // Event image slider
