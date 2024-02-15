@@ -4,19 +4,14 @@ const navBtns = document.querySelectorAll(".nav-btn");
 
 // toggle show/hide navbuttons list on click
 const snavBtn = document.querySelector(".more-nav-btn");
-const sideNav = document.querySelector(".nav-side");
-const sideMenu = sideNav.querySelector(".snav-menu");
-// let visibleSidenav = false;
+let sideNav = document.querySelector(".nav-side"),
+  sideMenu = sideNav.querySelector(".snav-menu");
 
 snavBtn.addEventListener("click", () => {
   if (sideNav.style.display !== "none") {
-    // sideMenu.style.transform = `translateX(${sideMenu.offsetWidth}px)`;
-    // visibleSidenav = false;
     sideNav.style.display = "none";
   } else {
     sideNav.style.display = "flex";
-    // sideMenu.style.transform = `translateX(${-sideMenu.offsetWidth}px)`;
-    // visibleSidenav = true;
   }
 });
 
