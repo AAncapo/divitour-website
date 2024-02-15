@@ -275,9 +275,8 @@ const destContainers = document.querySelectorAll(".dest-container");
 
 // play video on mouseover
 destContainers.forEach((destC) => {
-  let vid = destC.firstElementChild.children[0];
-  let gradient = destC.firstElementChild.children[1];
-
+  let vid = destC.querySelector(".dest-video");
+  let gradient = destC.querySelector(".dest-gradient");
   //play video
   gradient.addEventListener("mouseover", () => {
     vid
@@ -291,7 +290,6 @@ destContainers.forEach((destC) => {
   });
   //pause video
   gradient.addEventListener("mouseleave", () => {
-    //TODO: reduce playback speed (playbackRate) over time
     if (!vid.paused) {
       setTimeout(() => {
         vid.pause();
@@ -309,7 +307,7 @@ function setDestination(title, fileName) {
   } else {
     destHolderSelected = destHolderB;
   }
-  destHolderSelected.innerHTML += `<a class="dest-container" href="pages/destination.html"> <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src="${src}.mp4" poster="${src}.jpg" frameborder="0"></video><div class="dest-gradient"></div><h3 class="dest-name">${title} </h3> </div> </a>`;
+  destHolderSelected.innerHTML += `<a class="dest-container" href="pages/destination.html"><h3 class="dest-name">${title} </h3>  <div class="dest-image"> <video muted loop disablepictureinpicture class="dest-video" allow="autoplay;" preload="metadata" loading="lazy" src="${src}.mp4" poster="${src}.jpg" frameborder="0"><div class="dest-gradient"></div></video></div> </a>`;
 
   destCount++;
 }
