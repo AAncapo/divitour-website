@@ -20,7 +20,7 @@
     />
   </head>
 
-  <body class="bg-dark">
+  <body>
     <header>
       <!-- Navbar -->
       <?php include('../includes/navbar.php'); ?>
@@ -47,9 +47,6 @@
       <div class="container-fluid w-100">
         <h1 class="text-center section-title">Services</h1>
         <div id="destServices" class="container-fluid w-100"></div>
-        
-        
-
       </div>
     </main>
     <footer>

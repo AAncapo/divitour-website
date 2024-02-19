@@ -41,23 +41,25 @@
   >
     <!----------- Navbar --------->
     <?php include('includes/navbar.php') ?>
-    <main>
-      <!----------- Header --------->
-      <div id="home" class="p-5 mb-4 bg-dark" style="height: 90vh">
-        <div
-          class="container-sm"
-          style="position: absolute; top: 30%; left: 20%; width: 60%"
-        >
-          <p class="col-md-8 fs-4 text-light mb-5">
-            Join us <br />in exploring the hidden treasures beneath the waves
-            <br />and make your underwater adventure with Divitour <br />a
-            journey to remember.
-          </p>
-          <button class="btn btn-light btn-lg rounded-0" type="button">
-            Book Now
-          </button>
-        </div>
+    <!----------- Header --------->
+  <header class="container-fluid">
+    <div id="home" class="p-5 mb-4 bg-dark" style="height: 90vh">
+      <div
+      class="container-sm"
+      style="position: absolute; top: 30%; left: 20%; width: 60%"
+      >
+        <p class="col-md-8 fs-4 text-light mb-5">
+          Join us <br />in exploring the hidden treasures beneath the waves
+          <br />and make your underwater adventure with Divitour <br />a
+          journey to remember.
+        </p>
+        <button class="btn btn-light btn-lg rounded-0" type="button">
+          Book Now
+        </button>
       </div>
+    </div>
+  </header>
+    <main class="container" style="">
       <!---------- Events ---------->
       <div id="events" class="container-fluid mt-5">
         <h1 class="text-center mb-5 text-light section-title">
@@ -81,15 +83,14 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 id="evTitle" class="card-title">Card title</h5>
-                  <p id="evDesc" class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
+                  <!-- event title -->
+                  <h1 id="evTitle" class="card-title" ></h1>
+                  <!-- event description -->
+                  <p id="evDesc" class="card-text" style="font-weight:200">
+                    </p>
                   <p class="card-text">
                     <small id="evDate" class="text-muted"
-                      >Last updated 3 mins ago</small
+                      ></small
                     >
                   </p>
                   <button
@@ -105,7 +106,8 @@
             </div>
           </div>
         </div>
-        <div id="modal" class="modal fade">
+        <!-- fotosub modal -->
+        <!-- <div id="modal" class="modal fade">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -136,9 +138,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
-      <!-------- Destinations ------->
+      <!-- Destinations -->
       <div
         id="destinations"
         class="container-fluid mb-5"
@@ -233,6 +235,8 @@
           data-elfsight-app-lazy
         ></div> -->
     </main>
+    <footer class="container">
+
     <!-- Partners -->
     <div class="container-fluid" style="margin-bottom: 100px">
       <h1 class="text-center text-light mb-5 section-title">Our Partners</h1>
@@ -276,6 +280,8 @@
         </a>
       </div>
     </div>
+    </footer>
+
     <script src="js/index.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script

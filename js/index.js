@@ -87,6 +87,6 @@ function setDestination(title, fileName) {
               ></video>
               <div id="cardGradient"></div>
             </div>
-            <h4 id="destName" class="text-center w-100 mb-2">${title}</h4>
+            <h5 id="destName" class="text-center w-100" style="font-size:12px">${title}</h5>
           </a>`;
 }
