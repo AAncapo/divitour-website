@@ -36,7 +36,7 @@
   </head>
 
   <body
-    class="bg-dark"
+    class="bg-dark w-100"
     style="font-family: 'Montserrat', sans-serif; margin-top: 59px"
   >
     <!----------- Navbar --------->

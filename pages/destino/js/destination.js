@@ -1,6 +1,7 @@
 let dstName = document.querySelector("#destName"),
   dstDesc = document.querySelector("#destDesc"),
-  dstHotels = document.querySelector("#destHotels");
+  dstHotels = document.querySelector("#destHotels"),
+  dstServices = document.querySelector("#destServices");
 
 // Function to get URL parameters
 function getUrlParameter(name) {
@@ -21,73 +22,151 @@ let destinations = {
     description:
       "As diving enthusiasts, we always seize any opportunity to plunge into the water, and if you're going to be in Havana, we can also dive into shipwrecks, coral reefs, and enjoy a diverse marine life. Indeed, Havana has several certified diving sites with excellent instructors that will allow us to appreciate the underwater world of the Havana coastline in the warm waters of the Caribbean Sea. We will encounter various vibrant tropical fish, such as angelfish, parrotfish, butterflyfish, and clownfish, along with other species like barracudas, rays, moray eels, lobsters, and crabs.",
     hotels: [
-      "Royalton Habana",
-      "Memories Miramar",
-      "Parque Central",
-      "Packard",
-      "Melia Habana",
-      "Melia Cohiba",
-      "Hostales",
+      {
+        name: "Royalton Habana",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/3d/9c/ac/royalton-habana.jpg?w=700&h=-1&s=1",
+      },
+      {
+        name: "Memories Miramar",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/a7/f2/bc/entrada-del-hotel.jpg?w=700&h=-1&s=1",
+      },
+      {
+        name: "Parque Central",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/15/c9/f7/iberostar-parque-central.jpg?w=700&h=-1&s=1",
+      },
+      {
+        name: "Packard",
+        image:
+          "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_600,q_auto,w_600//hotelier-images/8b/84/6895a3f85dc50db54ca30e18eca03d08f7b1e421d1733b7108b4d3ac1ec1.jpeg",
+      },
+      {
+        name: "Melia Habana",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/58/a1/b1/fb-img-1503196494981.jpg?w=300&h=-1&s=1",
+      },
+      {
+        name: "Melia Cohiba",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/06/19/72/exteriores-del-hotel.jpg?w=700&h=-1&s=1",
+      },
+      {
+        name: "Hostal",
+        image:
+          "https://media-cdn.tripadvisor.com/media/photo-s/04/35/67/d1/cuba-colonial.jpg",
+      },
+    ],
+    services: [
+      {
+        type: "immersion",
+        name: "Buceo en arrecifes coralinos de la Habana",
+        description:
+          "Descubre la belleza del mundo submarino con esta experiencia de buceo en arrecife de coral. Un instructor certificado te guiará a través de una inmersión segura y emocionante. Tu aventura comienza con una bienvenida en el centro de buceo, donde se preparará el plan de inmersión con toda la información necesaria del sitio de buceo, las medidas de seguridad, y temas generales.  A continuación, subirás a una lancha que te llevará al sitio de buceo. Durante el trayecto, podrás disfrutar de las vistas panorámicas de la hermosa Habana. Al llegar al sitio de buceo, te prepararás para la inmersión. Tu instructor te ayudará en todo lo que necesites para trasladarte confianza y guiarte para disfrutar al máximo la experiencia. Descenderás en aguas abiertas según la certificación que poseas. Podrás explorar en el arrecife de coral, donde hay varias formaciones coralinas y multitud de especies tropicales, destacando los alevines, pez león, morenas y rayas Podrás ver una gran variedad de peces, corales y otras criaturas marinas. La inmersión durará aproximadamente 50 minutos, podrá ser más o menos tiempo en dependencia de tu propio consumo. Al finalizar, regresarás a la lancha para volver al centro de buceo. Esta experiencia es una excelente manera de descubrir el mundo submarino de la majestuosa Habana, donde el mar complementa los encantos que ofrece esta maravillosa ciudad en tierra.",
+        schedule: "1 Enero a 31 Dic 2024, 9am-3pm",
+        duration: "2 hours",
+        prices: ["Tarifa: 40 usd", "Tarifa Privada: 240 por el grupo de 6"],
+        cancelation_policy: "Custom 0-1 dia  100%, 1-2 dias 75%, 2-3 dias 50%",
+        misc: "El Serivcio incluye Embarcación, equipamiento completo, tanques, lastre e instructor x cada 6 buzos. Todos los clientes deberán ser mayores de 12 años (entre 12 y 18 acompañados de un tutor), presentar su certificación de buceo y pasaporte y firmar un acta de exoneración de responsabilidad para poder realizar actividades de buceo en los centros de buceo.",
+      },
+      {
+        type: "excursion",
+        name: "Paseo por el litoral habanero",
+        description:
+          "Salida desde la marina Hemingway navegando en dirección Este hasta la altura de la entrada de la bahía de La Habana donde el cliente podrá contemplar parte del litoral habanero y disfrutar de una vista panorámica de la ciudad. Tiempo para realizar baños de mar de regreso a La Marina. incluye: Bebidas nacionales a bordo. ",
+        schedule: "",
+        duration: "3 hours",
+        prices: [
+          "Precio Costo: 255.00 hasta 4pax, A partir del 5to pax, paga 29.00 por pax. Niños de 3 a 12 años solo pagan el 50%",
+          "Precio Publico: 300.00 hasta 4 pax, A partir del 5to pax paga 34.00 por pax. Niños de 3 a 12 años solo pagan el 50%",
+        ],
+        misc: "",
+      },
+      {
+        type: "excursion",
+        name: "Seafari",
+        description:
+          "Es la combinación de varias actividades náuticas. En esta modalidad la embarcación permanece fondeada permitiéndole al cliente hacer snorkeling y contemplar la belleza de los fondos marinos, tomar baños de sol y realizar pesca al curricán. Incluye: avíos para la pesca, equipamiento para hacer snorkeling y bebidas nacionales a bordo",
+        schedule: "",
+        duration: "5 hours",
+        prices: [
+          "Precio Costo: 357.00 hasta pax. A partir del 5to pax paga 35.00 por pax. Niños de 3 a 12 años solo pagan el 50%.",
+          "Precio Publico: 420.00 hasta 4 pax. A partir del 5to pax paga 42.50 por pax. Niños de 3 a 12 años solo pagan el 50%.",
+        ],
+        misc: "",
+      },
     ],
   },
-  varadero: {
-    name: "Varadero",
-    description:
-      "Varadero is one of the most recognized and awarded tourist resorts in the world year after year. In addition to its beautiful beaches and the numerous water activities it offers, it boasts admirable and well-preserved underwater ecosystems in warm and crystal-clear waters throughout the year, allowing for an enriching underwater experience. Multiple marine species coexist among the coral reefs and shipwrecks, which can be enjoyed with excellent visibility near the entry point and the start of the dive.",
-    hotels: [
-      "ROYALTON HICACOS",
-      "MYSTIQUE CASA PERLA",
-      "IBEROSTAR SELECTION VARADERO",
-      "SOL CARIBE BEACH",
-      "SOL VARADERO BEACH",
-      "MELIA VARADERO",
-    ],
-  },
-  guillermo: { name: "Cayo Guillermo", description: "", hotels: [] },
-  stlucia: {
-    name: "Santa Lucia",
-    description:
-      "Diving in Santa Lucia, Camaguey offers a captivating underwater experience for diving enthusiasts. Located on the northern coast of Cuba, Santa Lucia is known for its pristine beaches and vibrant marine ecosystems. As you dive into the waters of Santa Lucia, you'll discover stunning coral reefs teeming with life. The reefs boast a colorful array of hard and soft corals, including brain corals, sea fans, and sponges. These vibrant habitats provide a home to an abundance of tropical fish, such as angelfish, parrotfish, and butterflyfish, creating a mesmerizing underwater scene. The visibility in Santa Lucia is generally excellent, allowing for clear views of the marine life and intricate coral formations. Water temperatures remain warm throughout the year, ensuring comfortable diving conditions. In addition to the coral reefs, Santa Lucia is also known for its encounters with larger marine species. Divers have the chance to spot sea turtles gracefully gliding through the water, as well as rays and various species of sharks. Santa Lucia offers well-equipped dive centers that provide professional guidance and rental equipment for both novice and experienced divers. Whether you're a beginner or an advanced diver, there are suitable dive sites catering to different skill levels and interests. Overall, diving in Santa Lucia, Camaguey promises an unforgettable experience with its vibrant coral reefs, diverse marine life, and the opportunity to witness captivating underwater encounters.",
-    hotels: ["BRISAS SANTA LUCIA"],
-  },
-  zapata: {
-    name: "Peninsula de Zapata",
-    description: `Diving in the Playa Girón and Playa Larga area in the Zapata Peninsula is an exceptional experience for underwater enthusiasts. These coastal areas offer diverse diving sites and abundant marine life, making them popular destinations for divers. Underwater, you'll encounter stunning coral reefs housing a wide variety of marine species, including brain corals, fire corals, and gorgonians. Colorful tropical fish like angelfish, butterflyfish, and parrotfish thrive in these reefs. The visibility is excellent, allowing for clear views of marine life and reef details. Water temperatures remain warm year-round, providing comfortable diving conditions. The Zapata Peninsula is also known for encounters with larger marine creatures such as sea turtles, rays, sharks, and occasionally manatees. For beginners, there are professional dive centers that offer certification courses and expert guides to ensure a safe and exciting experience. In summary, diving in Playa Girón and Playa Larga offers breathtaking coral reefs, abundant marine life, and the opportunity to encounter fascinating underwater species. It's an ideal destination for divers of all levels and a unique opportunity to explore Cuba's underwater beauty.`,
-    hotels: ["Hotel Playa Girón", "Casas Privadas", "Campers"],
-  },
-  cayolargo: {
-    name: "Cayo Largo del Sur",
-    description:
-      "Cayo Largo is a paradise destination for diving enthusiasts. Located in the Canarreos Archipelago, Cuba, this cay offers a unique and thrilling underwater experience. Its turquoise and crystal-clear waters are home to a great diversity of marine life and spectacular coral reefs. Divers can explore impressive vertical walls covered in coral, underwater caves, canyons, and vibrant coral gardens. The visibility in the waters of Cayo Largo is exceptional, easily reaching 30 meters or more. This allows for detailed appreciation of the beauty of the corals, as well as the observation of brightly colored tropical fish, sea turtles, rays, sharks, and other fascinating species. In addition to the reefs, Cayo Largo features several shipwrecks that offer exciting exploration opportunities. These submerged wrecks provide a unique habitat for a variety of marine species and add an element of adventure to the dives. Diving centers in Cayo Largo have expert and certified staff and offer a wide range of options for divers of all levels, from beginners to experienced divers. Certification courses and specialized dive programs can also be undertaken.",
-    hotels: [
-      "MEMORIES CAYO LARGO",
-      "STARFISH CAYO LARGO",
-      "VILLA LINDA MAR",
-      "Grand Memories Cayo Largo",
-      "SANCTUARY GM",
-    ],
-  },
-  jibacoa: {
-    name: "Jibacoa",
-    description:
-      "Scuba diving at Memories Jibacoa offers divers access to a variety of technical diving experiences. The dive center is equipped with high-quality gear, including air tanks and compressors, ensuring a reliable and safe diving operation. The water temperature ranges from 24°C to 30°C, providing comfortable diving conditions year-round. Divers can explore vibrant coral reefs, walls, and fascinating shipwrecks. The reefs are home to a diverse range of marine life, including colorful tropical fish, turtles, rays, and moray eels. The walls offer thrilling dives with depths ranging from 10 to over 40 meters, adorned with coral and sponges, and inhabited by pelagic fish, sharks, and barracudas. The area's shipwrecks provide exciting opportunities for exploration, catering to divers of different skill levels. With excellent visibility often exceeding 30 meters, divers can fully appreciate the beauty of the underwater world. Memories Jibacoa ensures the safety of divers by providing experienced instructors who guide and oversee diving activities. Whether you're a beginner seeking certification or an experienced technical diver, Memories Jibacoa offers an enriching and adventurous diving experience in Cuba's pristine waters.",
-    hotels: ["MEMORIES JIBACOA"],
-  },
-  trinidad: { name: "Trinidad", description: "", hotels: [] },
 };
 
+// nombre del destino
 dstName.innerHTML = destinations[urlDestination].name;
+// descripcion
 dstDesc.innerHTML = destinations[urlDestination].description;
+// hoteles
 destinations[urlDestination]["hotels"].forEach((htl) => {
-  setHotelCard(htl, "");
+  setHotelCard(htl.name, "", htl.image);
+});
+// services
+destinations[urlDestination]["services"].forEach((serv) => {
+  setServiceCard(
+    "",
+    serv.type,
+    serv.name,
+    serv.description,
+    serv.schedule,
+    serv.duration,
+    [],
+    serv.misc
+  );
 });
 
-function setHotelCard(hName, hDesc) {
+function setHotelCard(hName, hDesc, hImg) {
   dstHotels.innerHTML += `<div id="hotelCard" class="card" style="max-width: 300px">
-          <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
+          <img class="card-img-top" src=${hImg} alt="Title" />
           <div class="card-body">
             <h4 id="hotelName" class="card-title">${hName}</h4>
             <p id="hotelDesc" class="card-text">${hDesc}</p>
+          </div>
+        </div>`;
+}
+
+function setServiceCard(
+  sImg = "",
+  sType = "",
+  sName = "",
+  sDesc = "",
+  sSchedule = "",
+  sDuration = "",
+  sPrices = [],
+  sMisc = ""
+) {
+  dstServices.innerHTML += `<div class="card mb-3" >
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src=${sImg}
+                class="img-fluid rounded-start"
+                alt="Card title"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${sName}</h5>
+                <p class="card-text">${sDesc}</p>
+                <p class="card-text">
+                  <small class="text-muted"
+                    >Schedule: ${sSchedule}</small
+                  >
+                </p>
+                <p class="card-text">
+                  <small class="text-muted"
+                    >Duration: ${sDuration}</small
+                  >
+                </p>
+              </div>
+            </div>
           </div>
         </div>`;
 }

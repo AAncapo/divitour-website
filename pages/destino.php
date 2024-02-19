@@ -20,80 +20,10 @@
     />
   </head>
 
-  <body>
+  <body class="bg-dark">
     <header>
       <!-- Navbar -->
       <?php include('../includes/navbar.php'); ?>
-      <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">DIVITOUR</a>
-          <!-- navbar toggle list items button -->
-          <button
-            class="navbar-toggler d-lg-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- navbar collapsable list items -->
-          <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="#home" aria-current="page"
-                  >Home<span class="visually-hidden">(current)</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#events">Events</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#destinations">Destinations</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#services">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contacts">Contacts</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About Us</a>
-              </li>
-              <!-- <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="dropdownId"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  >Dropdown</a
-                >
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                  <a class="dropdown-item" href="#">Action 1</a>
-                  <a class="dropdown-item" href="#">Action 2</a>
-                </div>
-              </li> -->
-            </ul>
-            <!-- <form class="d-flex my-2 my-lg-0">
-              <input
-                class="form-control me-sm-2"
-                type="text"
-                placeholder="Search"
-              />
-              <button
-                class="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Search
-              </button>
-            </form> -->
-          </div>
-        </div>
-      </nav>
       <!-- Banner -->
       <div class="container-fluid" style="height: 40vh">
         <img id="destBanner" src="" alt="" />
@@ -101,15 +31,26 @@
     </header>
     <main class="container">
       <!-- Name & Description -->
-      <h1 id="destName">Destination Name</h1>
-      <p id="destDesc">
+      <h1 id="destName">Destinationsa Name</h1>
+      <p id="destDesc" class='mb-5'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sint
         quibusdam placeat! Vero qui doloremque illum eos suscipit fugit amet
         possimus, perferendis pariatur optio, magnam natus sint. Quisquam,
         beatae aperiam.
       </p>
+      <!-- Hotels -->
+      <section id='hoteles' class="mb-5">
       <h1 class="text-center section-title">Hotels</h1>
       <div id="destHotels" class="container-fluid row"></div>
+      </section>
+      <!-- Services -->
+      <div class="container-fluid w-100">
+        <h1 class="text-center section-title">Services</h1>
+        <div id="destServices" class="container-fluid w-100"></div>
+        
+        
+
+      </div>
     </main>
     <footer>
       <!-- place footer here -->
