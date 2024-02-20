@@ -73,7 +73,7 @@ destCards.forEach((card) => {
 
 function setDestination(title, fileName) {
   let src = `images/destinos/${fileName}`;
-  destContainer.innerHTML += `<a id="destCard" class="card" href="pages/destino.php?dest=${fileName}">
+  destContainer.innerHTML += `<a id="destCard" class="col-3 p-0" href="pages/destino.php?destination=${fileName}"  style="overflow:hidden">
             <div id="vidContainer">
               <video
                 id="destVideo"
@@ -86,7 +86,8 @@ function setDestination(title, fileName) {
                 poster="${src}.jpg"
               ></video>
               <div id="cardGradient"></div>
+              <h5 id="destName" class="text-center" style="font-size:12px">${title}</h5>
             </div>
-            <h5 id="destName" class="text-center w-100" style="font-size:12px">${title}</h5>
+            
           </a>`;
 }

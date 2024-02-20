@@ -26,19 +26,14 @@
       <!-- Navbar -->
       <?php include('../includes/navbar.php'); ?>
       <!-- Banner -->
-      <div class="container-fluid" style="height: 40vh">
-        <img id="destBanner" src="" alt="" />
+      <div class="container-fluid p-0 mb-5" style="height: 40vh;">
+        <img id="destBanner" src="" alt="" style="width:100%; height:100%; object-fit:cover" />
       </div>
     </header>
     <main class="container">
       <!-- Name & Description -->
-      <h1 id="destName">Destinationsa Name</h1>
-      <p id="destDesc" class='mb-5'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sint
-        quibusdam placeat! Vero qui doloremque illum eos suscipit fugit amet
-        possimus, perferendis pariatur optio, magnam natus sint. Quisquam,
-        beatae aperiam.
-      </p>
+      <h1 id="destName"></h1>
+      <p id="destDesc" class='mb-5'></p>
       <!-- Hotels -->
       <section id='hoteles' class="mb-5">
       <h1 class="text-center section-title">Hotels</h1>

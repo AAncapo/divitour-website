@@ -151,7 +151,7 @@
         <h1 class="text-center text-light section-title">
           Popular Destinations
         </h1>
-        <div id="dest-card-container" class="container-fluid d-flex g-0"></div>
+        <div id="dest-card-container" class="container-fluid row g-0"></div>
       </div>
       <!-- About us -->
       <div
@@ -241,7 +241,7 @@
 
     <!-- Partners -->
     <div class="container-fluid mb-5">
-      <h1 class="text-center text-light mb-5 section-title">Our Partners</h1>
+      <h3 class="text-center text-light mb-2 section-title">Our Partners</h3>
       <div class="row mb-5 w-100 partners-container">
         <a class="col partner" href="/">
           <img

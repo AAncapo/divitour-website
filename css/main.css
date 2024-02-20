@@ -11,24 +11,26 @@
   }
 }
 
+/* Destinations */
+#destinations {
+  height: fit-content;
+}
 
 #dest-card-container {
-  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 #destCard {
   position: relative;
   padding: 0px;
   text-decoration: none;
-  /* height: 100%; */
-  /* width: 100%; */
-  /* transition: all 0.5s;
-  transition-timing-function: ease-out;
-  transition-property: width; */
 }
 
 #vidContainer {
-  position: absolute;
+  position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -39,7 +41,9 @@
 
 #destVideo {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 #cardGradient {
@@ -61,6 +65,8 @@
 #destName {
   color: #fff;
   position: absolute;
+  width: 100%;
+  margin: 0px;
 }
 
 .contact-item {

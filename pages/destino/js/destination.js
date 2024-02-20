@@ -1,4 +1,5 @@
-let dstName = document.querySelector("#destName"),
+let dstBanner = document.querySelector("#destBanner"),
+  dstName = document.querySelector("#destName"),
   dstDesc = document.querySelector("#destDesc"),
   dstHotels = document.querySelector("#destHotels"),
   dstServices = document.querySelector("#destServices");
@@ -14,13 +15,14 @@ function getUrlParameter(name) {
 }
 
 // Get the selected destination
-let urlDestination = getUrlParameter("dest");
+let urlDestination = getUrlParameter("destination");
 
 let destinations = {
   havana: {
     name: "Havana",
     description:
       "As diving enthusiasts, we always seize any opportunity to plunge into the water, and if you're going to be in Havana, we can also dive into shipwrecks, coral reefs, and enjoy a diverse marine life. Indeed, Havana has several certified diving sites with excellent instructors that will allow us to appreciate the underwater world of the Havana coastline in the warm waters of the Caribbean Sea. We will encounter various vibrant tropical fish, such as angelfish, parrotfish, butterflyfish, and clownfish, along with other species like barracudas, rays, moray eels, lobsters, and crabs.",
+    banner: "destino/images/havana/havana-banner.jpg",
     hotels: [
       {
         name: "Hotel Royalton Habana",
@@ -100,6 +102,8 @@ let destinations = {
   },
 };
 
+// banner
+dstBanner.src = destinations[urlDestination].banner;
 // nombre del destino
 dstName.innerHTML = destinations[urlDestination].name;
 // descripcion

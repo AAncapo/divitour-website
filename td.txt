@@ -1,11 +1,12 @@
 ------ Home ------
 - mostrar seccion destnos correctamente
+    + mostrar como un grid -> anim de enlarge hacia arriba o abajo
 - alinear contactos
 - hacer q el # de telefono abra whatsapp
 - (christian) banner de home 
 
 ------ Destinos.php -------
-- (christian) banners de destinos 
+- (christian) banners de destinos (havana)
 - carousel para hoteles
 - recortar texto de servicios
 - (erik) puntualizar visual de precios
