@@ -1,4 +1,22 @@
-- mostrar destnos correctamente
+------ Home ------
+- mostrar seccion destnos correctamente
 - alinear contactos
 - hacer q el # de telefono abra whatsapp
+- (christian) banner de home 
+
+------ Destinos.php -------
+- (christian) banners de destinos 
+- carousel para hoteles
+- recortar texto de servicios
+- (erik) puntualizar visual de precios
+- CMS
+
+------ Booking form -------
+(seria una lista de dropdown lists)
+
+Personas: --  Ni;os: --
+Destino: ----seleccionar-----
+Hotel: ----selecionar----
+Servicio: ----- Add service -----
+
 - (antes del prox despliegue) descomentar lineas del formulario de fotosub
