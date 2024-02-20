@@ -1,0 +1,4 @@
+- mostrar destnos correctamente
+- alinear contactos
+- hacer q el # de telefono abra whatsapp
+- (antes del prox despliegue) descomentar lineas del formulario de fotosub

@@ -43,10 +43,10 @@
     <?php include('includes/navbar.php') ?>
     <!----------- Header --------->
   <header class="container-fluid">
-    <div id="home" class="p-5 mb-4 bg-dark" style="height: 90vh">
+    <div id="home" class="p-5 mb-4 bg-dark" style="height: 90vh;display:flex; align-items:center">
       <div
       class="container-sm"
-      style="position: absolute; top: 30%; left: 20%; width: 60%"
+      
       >
         <p class="col-md-8 fs-4 text-light mb-5">
           Join us <br />in exploring the hidden treasures beneath the waves
@@ -59,7 +59,7 @@
       </div>
     </div>
   </header>
-    <main class="container" style="">
+    <main class="container">
       <!---------- Events ---------->
       <div id="events" class="container-fluid mt-5">
         <h1 class="text-center mb-5 text-light section-title">
@@ -144,7 +144,7 @@
       <div
         id="destinations"
         class="container-fluid mb-5"
-        style="height: 90vh; margin-top: 100px"
+        style="height: 40vh; margin-top: 100px"
       >
         <h1 class="text-center text-light section-title">
           Popular Destinations
@@ -162,7 +162,7 @@
           At Divitour, we take pride in being the leading agency for diving and
           aquatic activities in Cuba. Founded in 2015, we have been pioneers in
           developing training programs and educational initiatives for
-          professionals on the island. Our headquarters are strategically
+          professionals on the island. <!--Our headquarters are strategically
           located in Cuba, known for its abundant marine biodiversity, stunning
           coral reefs, and warm, crystal-clear waters. With multiple
           internationally certified diving centers, top-notch marinas, and
@@ -181,8 +181,8 @@
           contribute to advising and training other entities to foster the
           development of aquatic activities in Cuba. At Divitour, we are
           dedicated to creating unforgettable moments and helping you explore
-          the wonders of Cuba's aquatic world. Divitour Global Sponsor and
-          Associate Colaborate - Pipin Ferreras, is a former professional free
+          the wonders of Cuba's aquatic world.  -->
+          Divitour Global Sponsor and Associate Colaborate - Pipin Ferreras, is a former professional free
           diver and world-record holder in the sport. He is considered one of
           the pioneers and legends of free diving.
         </p>
@@ -192,20 +192,20 @@
         <h3 class="text-light text-center section-title">Contact Us</h3>
         <div class="contact-items">
           <span class="contact-item">
-            <img src="resources/images/icons/icons8-tel-30.png" alt="" /><a
+            <img src="images/icons/icons8-tel-30.png" alt="" /><a
               href="tel: +53 52529974"
               >(+53) 52529974</a
             >
           </span>
           <span class="contact-item">
-            <img src="resources/images/icons/icons8-dir-30.png" /><a
+            <img src="images/icons/icons8-dir-30.png" /><a
               style="text-decoration: none"
               href=""
               >5ta Avenida e/ 62 & 66, Miramar, La Habana, Cuba</a
             >
           </span>
           <span class="contact-item">
-            <img src="resources/images/icons/icons8-nuevo-post-30.png" /><a
+            <img src="images/icons/icons8-nuevo-post-30.png" /><a
               href="mailto: info@divitour.com"
               target="_blank"
               >info@divitour.com</a
@@ -213,12 +213,12 @@
           </span>
           <span class="contact-item">
             <a href="https://www.facebook.com/divitourtravel/" target="_blank"
-              ><img src="resources/images/icons/icons8-facebook-nuevo-30.png"
+              ><img src="images/icons/icons8-facebook-nuevo-30.png"
             /></a>
           </span>
           <span class="contact-item">
             <a href="https://www.instagram.com/divitourtravel/" target="_blank"
-              ><img src="resources/images/icons/icons8-instagram-30.png"
+              ><img src="images/icons/icons8-instagram-30.png"
             /></a>
           </span>
         </div>
@@ -238,7 +238,7 @@
     <footer class="container">
 
     <!-- Partners -->
-    <div class="container-fluid" style="margin-bottom: 100px">
+    <div class="container-fluid mb-5">
       <h1 class="text-center text-light mb-5 section-title">Our Partners</h1>
       <div class="row mb-5 w-100 partners-container">
         <a class="col partner" href="/">

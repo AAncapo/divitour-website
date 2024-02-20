@@ -122,11 +122,11 @@ destinations[urlDestination]["services"].forEach((serv) => {
   );
 });
 
-function setHotelCard(hName, hDesc, hImg) {
-  dstHotels.innerHTML += `<div id="hotelCard" class="card" style="max-width: 300px">
-          <img class="card-img-top" src=${hImg} alt="Title" />
+function setHotelCard(hName = "", hDesc = "", hImg = "") {
+  dstHotels.innerHTML += `<div id="hotelCard" class="card m-2" style="max-width: 300px; padding:0px; overflow:hidden">
+          <img class="card-img-top hotelImage" src=${hImg} alt="Title" style="height:100%;" />
           <div class="card-body">
-            <h4 id="hotelName" class="card-title">${hName}</h4>
+            <h4 id="hotelName" class="card-title text-center">${hName}</h4>
             <p id="hotelDesc" class="card-text">${hDesc}</p>
           </div>
         </div>`;
@@ -142,11 +142,11 @@ function setServiceCard(
   sPrices = [],
   sMisc = ""
 ) {
+  let hidden = sImg === "" ? `hidden` : ``;
   dstServices.innerHTML += `<div class="card mb-3" >
           <div class="row g-0">
-            <div class="col-md-4">
-              <img
-                src=${sImg}
+            <div ${hidden} class="col-md-4">
+              <img src=${sImg}
                 class="img-fluid rounded-start"
                 alt="Card title"
               />
