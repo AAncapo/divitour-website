@@ -73,7 +73,7 @@ destCards.forEach((card) => {
 
 function setDestination(title, fileName) {
   let src = `images/destinos/${fileName}`;
-  destContainer.innerHTML += `<a id="destCard" class="col" href="pages/destino.php?destination=${fileName}">
+  destContainer.innerHTML += `<a id="destCard" class="card" href="pages/destino.php?dest=${fileName}">
             <div id="vidContainer">
               <video
                 id="destVideo"

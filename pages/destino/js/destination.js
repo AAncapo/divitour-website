@@ -14,7 +14,7 @@ function getUrlParameter(name) {
 }
 
 // Get the selected destination
-let urlDestination = getUrlParameter("destination");
+let urlDestination = getUrlParameter("dest");
 
 let destinations = {
   havana: {

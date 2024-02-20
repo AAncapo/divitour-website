@@ -42,11 +42,14 @@
     <!----------- Navbar --------->
     <?php include('includes/navbar.php') ?>
     <!----------- Header --------->
-  <header class="container-fluid">
-    <div id="home" class="p-5 mb-4 bg-dark" style="height: 90vh;display:flex; align-items:center">
+  <header class="container-fluid p-0" style="position:relative;">
+    <div id="home" class="mb-4 bg-dark" style="height: 90vh;display:flex; align-items:center;">
+    <div class="banner-image">
+      <img src="images/home-banner.jpg" alt="" >
+    </div>
       <div
       class="container-sm"
-      
+      style="position:absolute;"
       >
         <p class="col-md-8 fs-4 text-light mb-5">
           Join us <br />in exploring the hidden treasures beneath the waves
@@ -143,13 +146,12 @@
       <!-- Destinations -->
       <div
         id="destinations"
-        class="container-fluid mb-5"
-        style="height: 40vh; margin-top: 100px"
+        class="container-fluid mb-5 mt-5"
       >
         <h1 class="text-center text-light section-title">
           Popular Destinations
         </h1>
-        <div id="dest-card-container" class="row h-100"></div>
+        <div id="dest-card-container" class="container-fluid d-flex g-0"></div>
       </div>
       <!-- About us -->
       <div
