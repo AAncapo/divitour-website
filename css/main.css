@@ -78,17 +78,38 @@
   margin: 0px;
 }
 
+.contact-items {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-item {
-  padding-inline: 10px;
+  justify-content: space-between;
+  /* padding-inline: 10px; */
+
+  & img {
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+  }
 
   & a {
+    font-size: .8rem;
     color: #fff;
     text-decoration: none;
 
     &:hover {
       text-decoration: underline;
     }
+
   }
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 .partners-container {

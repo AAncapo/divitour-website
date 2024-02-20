@@ -1,9 +1,10 @@
 ------ Home ------
-- alinear contactos
+- pausar videos de destinos on click (caundo regresas de la pagina de destinos el video sigue reproduciendose (todos))
 - fix navbuttons
 - carousel de eventos
 
 TEST - hacer q el # de telefono abra whatsapp
+OK - alinear contactos
 OK - (christian) banner de home 
 OK - mostrar seccion destnos correctamente
     >>> mostrar como un grid -> anim de enlarge hacia arriba o abajo
@@ -12,7 +13,6 @@ OK - mostrar seccion destnos correctamente
 - (christian) banners de destinos (havana-ok)
 - carousel para hoteles
 - CMS
-- (erik) puntualizar visual de precios
 - cargar iconos de contacts online
 - resolver carga de imagenes desde local  -> include footer con seccion de contactos
 - recortar texto de servicios

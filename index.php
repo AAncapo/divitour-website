@@ -66,7 +66,7 @@
     <main class="container">
       <!---------- Events ---------->
       <div id="events" class="container-fluid mt-5">
-        <h1 class="text-center mb-5 text-light section-title">
+        <h1 class="text-center mb-2 text-light section-title">
           Upcoming Events
         </h1>
         <div class="row">
@@ -191,39 +191,42 @@
         </p>
       </div>
       <!-- Contacts -->
-      <div id="contacts" class="container" style="margin-bottom: 100px">
+      <div id="contacts" class="container d-flex" style="margin-bottom: 100px;flex-direction:column">
         <h3 class="text-light text-center section-title">Contact Us</h3>
         <div class="contact-items">
           <span class="contact-item">
-            <img src="images/icons/icons8-tel-30.png" alt="" /><a
+            <img src="https://icons8.com/icon/85088/whatsapp" alt="" /><a
               href="https://api.whatsapp.com/api/send?phone=5352529974" target="_blank"
               >(+53) 52529974</a
             >
           </span>
           <span class="contact-item">
-            <img src="images/icons/icons8-dir-30.png" /><a
+            <img src="https://icons8.com/icon/61845/address" /><a
               style="text-decoration: none"
               href=""
               >5ta Avenida e/ 62 & 66, Miramar, La Habana, Cuba</a
             >
           </span>
           <span class="contact-item">
-            <img src="images/icons/icons8-nuevo-post-30.png" /><a
+            <img src="https://icons8.com/icon/86840/mail" /><a
               href="mailto: info@divitour.com"
               target="_blank"
               >info@divitour.com</a
             >
           </span>
-          <span class="contact-item">
-            <a href="https://www.facebook.com/divitourtravel/" target="_blank"
-              ><img src="images/icons/icons8-facebook-nuevo-30.png"
-            /></a>
-          </span>
-          <span class="contact-item">
-            <a href="https://www.instagram.com/divitourtravel/" target="_blank"
-              ><img src="images/icons/icons8-instagram-30.png"
-            /></a>
-          </span>
+          <!-- Social Media -->
+          <div class="social-media">
+            <span class="contact-item">
+              <a href="https://www.facebook.com/divitourtravel/" target="_blank"
+              ><img src="https://icons8.com/icon/118487/facebook"
+              /></a>
+            </span>
+            <span class="contact-item">
+              <a href="https://www.instagram.com/divitourtravel/" target="_blank"
+              ><img src="https://icons8.com/icon/59813/instagram"
+              /></a>
+            </span>
+          </div>
         </div>
       </div>
 
