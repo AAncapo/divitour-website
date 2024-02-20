@@ -1,16 +1,21 @@
 ------ Home ------
-- mostrar seccion destnos correctamente
-    + mostrar como un grid -> anim de enlarge hacia arriba o abajo
 - alinear contactos
-- hacer q el # de telefono abra whatsapp
-- (christian) banner de home 
+- fix navbuttons
+- carousel de eventos
+
+TEST - hacer q el # de telefono abra whatsapp
+OK - (christian) banner de home 
+OK - mostrar seccion destnos correctamente
+    >>> mostrar como un grid -> anim de enlarge hacia arriba o abajo
 
 ------ Destinos.php -------
-- (christian) banners de destinos (havana)
+- (christian) banners de destinos (havana-ok)
 - carousel para hoteles
-- recortar texto de servicios
-- (erik) puntualizar visual de precios
 - CMS
+- (erik) puntualizar visual de precios
+- cargar iconos de contacts online
+- resolver carga de imagenes desde local  -> include footer con seccion de contactos
+- recortar texto de servicios
 
 ------ Booking form -------
 (seria una lista de dropdown lists)

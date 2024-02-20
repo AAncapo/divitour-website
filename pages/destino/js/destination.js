@@ -55,9 +55,8 @@ let destinations = {
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/06/19/72/exteriores-del-hotel.jpg?w=700&h=-1&s=1",
       },
       {
-        name: "Hotel Hostal",
-        image:
-          "https://media-cdn.tripadvisor.com/media/photo-s/04/35/67/d1/cuba-colonial.jpg",
+        name: "Hostales",
+        image: "",
       },
     ],
     services: [
@@ -70,7 +69,7 @@ let destinations = {
         duration: "2 hours",
         prices: ["Tarifa: 40 usd", "Tarifa Privada: 240 por el grupo de 6"],
         cancelation_policy: "Custom 0-1 dia  100%, 1-2 dias 75%, 2-3 dias 50%",
-        misc: "El Serivcio incluye Embarcación, equipamiento completo, tanques, lastre e instructor x cada 6 buzos. Todos los clientes deberán ser mayores de 12 años (entre 12 y 18 acompañados de un tutor), presentar su certificación de buceo y pasaporte y firmar un acta de exoneración de responsabilidad para poder realizar actividades de buceo en los centros de buceo.",
+        misc: "El Servicio incluye Embarcación, equipamiento completo, tanques, lastre e instructor x cada 6 buzos. Todos los clientes deberán ser mayores de 12 años (entre 12 y 18 acompañados de un tutor), presentar su certificación de buceo y pasaporte y firmar un acta de exoneración de responsabilidad para poder realizar actividades de buceo en los centros de buceo.",
       },
       {
         type: "excursion",
@@ -83,6 +82,7 @@ let destinations = {
           "Precio Costo: 255.00 hasta 4pax, A partir del 5to pax, paga 29.00 por pax. Niños de 3 a 12 años solo pagan el 50%",
           "Precio Publico: 300.00 hasta 4 pax, A partir del 5to pax paga 34.00 por pax. Niños de 3 a 12 años solo pagan el 50%",
         ],
+        cancelation_policy: "",
         misc: "",
       },
       {
@@ -96,12 +96,142 @@ let destinations = {
           "Precio Costo: 357.00 hasta pax. A partir del 5to pax paga 35.00 por pax. Niños de 3 a 12 años solo pagan el 50%.",
           "Precio Publico: 420.00 hasta 4 pax. A partir del 5to pax paga 42.50 por pax. Niños de 3 a 12 años solo pagan el 50%.",
         ],
+        cancelation_policy: "",
+        misc: "",
+      },
+      {
+        type: "excursion",
+        name: "La Habana en Autos Clasicos",
+        description:
+          "You will be picked up at the hotel or rental house where you are rented (let us know in the additional note of the booking process).  Then, we will tour the most magical places with the best views of the city such as the Hotel Nacional, the Almendares River, the University of Havana, the Revolution Square and the Christ of Havana. We will make some stops to enjoy the views and take pictures.",
+        schedule: "",
+        duration: "3 hours",
+        prices: ["Precio: 130 EUR"],
+        cancelation_policy: "",
+        misc: "",
+      },
+      {
+        type: "excursion",
+        name: "Habana Panorámica en Motos",
+        description:
+          "Welcome to the Daiquiri Tours house, where you will learn about their exclusive product Cuba on the Road, on 6th Street between 5th and 5th A, Miramar.  Departure through the Havana Forest, stop for photos at Josefina Island. Climb to the hill of the three little dogs with panoramic view of the favored neighborhood of Nuevo Vedado and the National Zoo. Panoramic view of the Colon Cemetery, Cuba's National Monument since 1987. Continue to the iconic Plaza de la Revolución, with a stop for photos. Then we will continue with a panoramic view of the University of Havana and its university stadium. We will go down San Francisco Street, following the historic route of the students to the end, where the monument to the 8 medical students stands. We will continue along the Prado promenade to the Capitolio, the Central Park and then we will walk along the Malecon to the Plaza Vieja to see the historic center of the city. Return with a panoramic walk along the Malecon to the starting point at Daiquiri and its Cuba on the Road.",
+        schedule: "",
+        duration: "2 hours",
+        prices: ["Precio: 60 EUR"],
+        cancelation_policy: "",
+        misc: "",
+      },
+      {
+        type: "excursion",
+        name: "Pedaleando en la Habana",
+        description:
+          "We will start by welcoming you to the home of Daiquiri Tours, where you will learn about their exclusive product Cuba on the Road, on 6th Street between 5th and 5th A, Miramar.  Departure through the Metropolitan Park of Havana, to appreciate the Cuban Flora, stop for photos at Josefina Island. Panoramic view of the National Zoo and the Necropolis of Colon. Continue to the iconic Plaza de la Revolución, with photo stop. Then we will continue with a panoramic view of the University of Havana and its university stadium. We will go down L Street and walk through the Vedado area of the capital. Stop with a visit to the gardens of the Hotel Nacional and then we return enjoying the breeze of the Malecón Habanero to the starting point at Daiquirí and its Cuba on the Road.",
+        schedule: "",
+        duration: "2 hours",
+        prices: ["Precio: 60 EUR"],
+        cancelation_policy: "",
+        misc: "",
+      },
+    ],
+  },
+  varadero: {
+    name: "Varadero",
+    description:
+      "Varadero is one of the most recognized and awarded tourist resorts in the world year after year. In addition to its beautiful beaches and the numerous water activities it offers, it boasts admirable and well-preserved underwater ecosystems in warm and crystal-clear waters throughout the year, allowing for an enriching underwater experience. Multiple marine species coexist among the coral reefs and shipwrecks, which can be enjoyed with excellent visibility near the entry point and the start of the dive.",
+    banner: "destino/images/varadero/varadero-banner.jpg",
+    hotels: [
+      {
+        name: "ROYALTON HICACOS",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/a7/dc/14/royalton-hicacos-varadero.jpg?w=700&h=-1&s=1",
+      },
+      {
+        name: "MYSTIQUE CASA PERLA",
+        image:
+          "https://media-cdn.tripadvisor.com/media/photo-s/21/f5/7d/01/mystique-casa-perla.jpg",
+      },
+      {
+        name: "IBEROSTAR SELECTION VARADERO",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/af/90/8b/iberostar-selection-varadero.jpg?w=700&h=-1&s=1",
+      },
+      {
+        name: "SOL CARIBE BEACH",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/72/b2/2c/sol-caribe-beach.jpg?w=700&h=-1&s=1",
+      },
+      {
+        name: "SOL VARADERO BEACH",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/43/05/c9/sol-varadero-beach-all.jpg?w=700&h=-1&s=1",
+      },
+      {
+        name: "MELIA VARADERO",
+        image:
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/a4/53/e1/melia-varadero.jpg?w=700&h=-1&s=1",
+      },
+    ],
+    services: [
+      {
+        type: "excursion",
+        name: "Russian Frigate #383 Dive Site",
+        description:
+          "Discover the captivating depths of the Russian Frigate #383, a Konning-class warship sunk in 1998. With a remarkable length of 98 meters and a width of 17.5 meters, this dive site offers an exhilarating adventure. Descending to a maximum depth of 30 meters, you'll encounter a mesmerizing world teeming with marine life",
+        schedule: "",
+        duration: "",
+        prices: [],
+        cancelation_policy: "",
+        misc: "",
+      },
+      {
+        type: "excursion",
+        name: "Claraboyas 1 Coral Reef Dive Site",
+        description:
+          "Prepare to be enchanted by the mesmerizing Claraboyas 1 Coral Reef Dive Site. With a maximum depth of 27 meters and an average depth of 14 meters, this vibrant coral reef offers a breathtaking underwater spectacle.",
+        schedule: "",
+        duration: "",
+        prices: [],
+        cancelation_policy: "",
+        misc: "",
+      },
+      {
+        type: "excursion",
+        name: "Sunken Tug Ship Dive Site",
+        description:
+          "Embark on an exploration of the Sunken Tug Ship Dive Site, where history and marine life converge in a remarkable underwater setting. This tug ship, sunk in 1998, rests at a maximum depth of 18 meters, inviting divers into its captivating realm",
+        schedule: "",
+        duration: "",
+        prices: [],
+        cancelation_policy: "",
         misc: "",
       },
     ],
   },
 };
 
+// let destTemplate = {
+//   name: "name",
+//   description: "description",
+//   banner: "destino/images/.....",
+//   hotels: [
+//     {
+//       name: "name",
+//       image: "link",
+//     },
+//   ],
+//   services: [
+//     {
+//       type: "excursion",
+//       name: "servName",
+//       description: "descr",
+//       schedule: "schedule",
+//       duration: "X hours",
+//       prices: [],
+//       cancelation_policy: "",
+//       misc: "",
+//     },
+//   ],
+// };
 // banner
 dstBanner.src = destinations[urlDestination].banner;
 // nombre del destino
