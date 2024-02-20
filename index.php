@@ -43,13 +43,14 @@
     <?php include('includes/navbar.php') ?>
     <!----------- Header --------->
   <header class="container-fluid p-0" style="position:relative;">
-    <div id="home" class="mb-4 bg-dark" style="height: 90vh;display:flex; align-items:center;">
-    <div class="banner-image">
-      <img src="images/home-banner.jpg" alt="" >
-    </div>
+    <div id="home" class="mb-4 bg-dark" style="height: 90vh;display:flex; align-items:center; justify-content:space-around">
+      <div class="banner-image">
+        <img src="images/home-banner.jpg" alt="" >
+        <div class="banner-gradient"></div>
+      </div>
       <div
       class="container-sm"
-      style="position:absolute;"
+      style="position:absolute; width:fit-content"
       >
         <p class="col-md-8 fs-4 text-light mb-5">
           Join us <br />in exploring the hidden treasures beneath the waves
