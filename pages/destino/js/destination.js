@@ -23,37 +23,37 @@ let destinations = {
       "As diving enthusiasts, we always seize any opportunity to plunge into the water, and if you're going to be in Havana, we can also dive into shipwrecks, coral reefs, and enjoy a diverse marine life. Indeed, Havana has several certified diving sites with excellent instructors that will allow us to appreciate the underwater world of the Havana coastline in the warm waters of the Caribbean Sea. We will encounter various vibrant tropical fish, such as angelfish, parrotfish, butterflyfish, and clownfish, along with other species like barracudas, rays, moray eels, lobsters, and crabs.",
     hotels: [
       {
-        name: "Royalton Habana",
+        name: "Hotel Royalton Habana",
         image:
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/3d/9c/ac/royalton-habana.jpg?w=700&h=-1&s=1",
       },
       {
-        name: "Memories Miramar",
+        name: "Hotel Memories Miramar",
         image:
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/a7/f2/bc/entrada-del-hotel.jpg?w=700&h=-1&s=1",
       },
       {
-        name: "Parque Central",
+        name: "Hotel Parque Central",
         image:
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/15/c9/f7/iberostar-parque-central.jpg?w=700&h=-1&s=1",
       },
       {
-        name: "Packard",
+        name: "Hotel Packard",
         image:
           "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_600,q_auto,w_600//hotelier-images/8b/84/6895a3f85dc50db54ca30e18eca03d08f7b1e421d1733b7108b4d3ac1ec1.jpeg",
       },
       {
-        name: "Melia Habana",
+        name: "Hotel Melia Habana",
         image:
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/58/a1/b1/fb-img-1503196494981.jpg?w=300&h=-1&s=1",
       },
       {
-        name: "Melia Cohiba",
+        name: "Hotel Melia Cohiba",
         image:
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/06/19/72/exteriores-del-hotel.jpg?w=700&h=-1&s=1",
       },
       {
-        name: "Hostal",
+        name: "Hotel Hostal",
         image:
           "https://media-cdn.tripadvisor.com/media/photo-s/04/35/67/d1/cuba-colonial.jpg",
       },
