@@ -196,7 +196,7 @@
         <div class="contact-items">
           <span class="contact-item">
             <img src="https://icons8.com/icon/85088/whatsapp" alt="" /><a
-              href="https://api.whatsapp.com/api/send?phone=5352529974" target="_blank"
+              href="https://wa.me/5352529974" target="_blank"
               >(+53) 52529974</a
             >
           </span>
