@@ -39,11 +39,11 @@
     class="bg-dark w-100"
     style="font-family: 'Montserrat', sans-serif; margin-top: 59px"
   >
-    <!----------- Navbar --------->
+    <!-- Navbar -->
     <?php include('includes/navbar.php') ?>
-    <!----------- Header --------->
+  <!-- Header  -->
   <header class="container-fluid p-0" style="position:relative;">
-    <div id="home" class="mb-4 bg-dark" style="height: 90vh;display:flex; align-items:center; justify-content:space-around">
+    <div id="home" class="mb-4 bg-dark" style="height: 95vh;display:flex; align-items:center; justify-content:space-around">
       <div class="banner-image">
         <img src="images/home-banner.jpg" alt="" >
         <div class="banner-gradient"></div>

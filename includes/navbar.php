@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="/"
-          ><img
+        <a class="navbar-brand" href="#">
+          <img
             src="images/divitour-full.png"
             alt="Divitour Logo"
             style="width: 200px"
@@ -18,9 +18,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div
-          class="collapse navbar-collapse m-5"
+          class="collapse navbar-collapse"
           id="collapsibleNavId"
-          style="position: absolute; right: 0px"
         >
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item">

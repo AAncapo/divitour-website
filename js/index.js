@@ -69,6 +69,10 @@ destCards.forEach((card) => {
       }, 400);
     }
   });
+
+  card.addEventListener("click", () => {
+    vid.pause();
+  });
 });
 
 function setDestination(title, fileName) {

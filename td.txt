@@ -1,9 +1,9 @@
 ------ Home ------
-- pausar videos de destinos on click (caundo regresas de la pagina de destinos el video sigue reproduciendose (todos))
-- fix navbuttons
+- hacer q el # de telefono abra whatsapp
 - carousel de eventos
 
-TEST - hacer q el # de telefono abra whatsapp
+??? - pausar videos de destinos on click (caundo regresas de la pagina de destinos el video sigue reproduciendose (todos))
+OK - fix navbuttons
 OK - alinear contactos
 OK - (christian) banner de home 
 OK - mostrar seccion destnos correctamente
