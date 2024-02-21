@@ -195,20 +195,20 @@
         <h3 class="text-light text-center section-title">Contact Us</h3>
         <div class="contact-items">
           <span class="contact-item">
-            <img src="https://icons8.com/icon/85088/whatsapp" alt="" /><a
+            <img src="images/icons/whatsapp.png" alt="" /><a
               href="https://wa.me/5352529974" target="_blank"
               >(+53) 52529974</a
             >
           </span>
           <span class="contact-item">
-            <img src="https://icons8.com/icon/61845/address" /><a
+            <img src="images/icons/icons8-address.png" /><a
               style="text-decoration: none"
               href=""
               >5ta Avenida e/ 62 & 66, Miramar, La Habana, Cuba</a
             >
           </span>
           <span class="contact-item">
-            <img src="https://icons8.com/icon/86840/mail" /><a
+            <img src="images/icons/icons8-mail.png" /><a
               href="mailto: info@divitour.com"
               target="_blank"
               >info@divitour.com</a
@@ -218,12 +218,12 @@
           <div class="social-media">
             <span class="contact-item">
               <a href="https://www.facebook.com/divitourtravel/" target="_blank"
-              ><img src="https://icons8.com/icon/118487/facebook"
+              ><img src="images/icons/icons8-facebook.png"
               /></a>
             </span>
             <span class="contact-item">
               <a href="https://www.instagram.com/divitourtravel/" target="_blank"
-              ><img src="https://icons8.com/icon/59813/instagram"
+              ><img src="images/icons/icons8-instagram.png"
               /></a>
             </span>
           </div>
