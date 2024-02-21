@@ -75,9 +75,10 @@ destCards.forEach((card) => {
   });
 });
 
-function setDestination(title, fileName) {
+function setDestination(title, fileName,enable=false) {
   let src = `images/destinos/${fileName}`;
-  destContainer.innerHTML += `<a id="destCard" class="col-3 p-0" href="pages/destino.php?destination=${fileName}"  style="overflow:hidden">
+  let _link = enable?`pages/destino.php?destination="${fileName}"`:'#';
+  destContainer.innerHTML += `<a id="destCard" class="col-3 p-0" href=${_link}  style="overflow:hidden">
             <div id="vidContainer">
               <video
                 id="destVideo"
