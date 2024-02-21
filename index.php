@@ -111,11 +111,11 @@
           </div>
         </div>
         <!-- fotosub modal -->
-        <!-- <div id="modal" class="modal fade">
+         <div id="modal" class="modal fade">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h3>Subscribe to FotoSub Event</h3>
+                <!-- <h3>Subscribe to FotoSub Event</h3> -->
               </div>
               <div class="modal-body">
                 <script
@@ -142,7 +142,7 @@
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
       <!-- Destinations -->
       <div
