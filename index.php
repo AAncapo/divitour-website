@@ -57,9 +57,9 @@
           <br />and make your underwater adventure with Divitour <br />a
           journey to remember.
         </p>
-        <button class="btn btn-light btn-lg rounded-0" type="button">
+       <!-- <button class="btn btn-light btn-lg rounded-0" type="button">
           Book Now
-        </button>
+        </button> -->
       </div>
     </div>
   </header>
