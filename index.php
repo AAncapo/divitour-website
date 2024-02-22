@@ -64,52 +64,50 @@
     </div>
   </header>
     <main class="container">
-      <!---------- Events ---------->
+      <!-- Events -->
       <div id="events" class="container-fluid mt-5">
         <h1 class="text-center mb-2 text-light section-title">
           Upcoming Events
         </h1>
-        <div class="row">
-          <div
-            id="evCard"
-            class="card bg-dark text-light mb-3"
-            style="border: none"
-          >
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img
-                  id="evImage"
-                  src="Image Source"
-                  class="img-fluid"
-                  alt="Card title"
-                  style="width: 100%"
-                />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <!-- event title -->
-                  <h1 id="evTitle" class="card-title" ></h1>
-                  <!-- event description -->
-                  <p id="evDesc" class="card-text" style="font-weight:200">
-                    </p>
-                  <p class="card-text">
-                    <small id="evDate" class="text-muted"
-                      ></small
-                    >
-                  </p>
-                  <button
-                    class="btn btn-light rounded-0"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modal"
-                    href="/"
-                  >
-                    Subscribe
-                  </button>
+        <div id="eventsCarousel" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <!-- Carousel Item -->
+            <div class="carousel-item active">
+              <div id="evCard" class="card mb-3 bg-dark border-0">
+                <div class="row g-0">
+                  <div class="col-md-4 ev-img-container">
+                    <img
+                    id="evImage"
+                      src=""
+                      class="img-fluid rounded-start"
+                      alt="Card title"
+                    />
+                  </div>
+                  <div class="col-md-8 ev-text-container text-light">
+                    <div class="card-body">
+                      <h5 id="evTitle" class="card-title">Card title</h5>
+                      <p id="evDesc" class="card-text">
+                        This is a wider card with supporting text below as a
+                        natural lead-in to additional content. This content is a
+                        little bit longer.
+                      </p>
+                      <p class="card-text">
+                        <small id="evDate" class="text-light"
+                          >Last updated 3 mins ago</small
+                        >
+                      </p>
+                      <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+           
         <!-- fotosub modal -->
          <div id="modal" class="modal fade">
           <div class="modal-dialog">

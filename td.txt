@@ -1,8 +1,10 @@
 ------ Home ------
-- hacer q el # de telefono abra whatsapp
 - carousel de eventos
+- dropdown de destinos(navbtn) (bs5 dropdown-end)
+- separar nav buttons del logo correctamente
 
-??? - pausar videos de destinos on click (caundo regresas de la pagina de destinos el video sigue reproduciendose (todos))
+OK - hacer q el # de telefono abra whatsapp
+OK - pausar videos de destinos on click (caundo regresas de la pagina de destinos el video sigue reproduciendose (todos))
 OK - fix navbuttons
 OK - alinear contactos
 OK - (christian) banner de home 
@@ -10,6 +12,7 @@ OK - mostrar seccion destnos correctamente
     >>> mostrar como un grid -> anim de enlarge hacia arriba o abajo
 
 ------ Destinos.php -------
+- filtro de servicios usando tabs
 - (christian) banners de destinos (havana-ok)
 - carousel para hoteles
 - CMS

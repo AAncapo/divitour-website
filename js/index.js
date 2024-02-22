@@ -60,7 +60,6 @@ destCards.forEach((card) => {
         console.log("the video cannot be played yet");
       });
   });
-
   //pause video
   gradient.addEventListener("mouseleave", () => {
     if (!vid.paused) {
@@ -72,12 +71,13 @@ destCards.forEach((card) => {
 
   card.addEventListener("click", () => {
     vid.pause();
+    gradient.style.opacity = "100";
   });
 });
 
-function setDestination(title, fileName,enable=false) {
+function setDestination(title, fileName, enable = false) {
   let src = `images/destinos/${fileName}`;
-  let _link = enable?`pages/destino.php?destination="${fileName}"`:'#';
+  let _link = enable ? `pages/destino.php?destination="${fileName}"` : "#";
   destContainer.innerHTML += `<a id="destCard" class="col-3 p-0" href=${_link}  style="overflow:hidden">
             <div id="vidContainer">
               <video

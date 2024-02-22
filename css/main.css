@@ -20,6 +20,8 @@
   }
 }
 
+/* Events */
+
 /* Destinations */
 #destinations {
   height: fit-content;
@@ -78,6 +80,8 @@
   margin: 0px;
 }
 
+
+/* Contacts */
 .contact-items {
   display: flex;
   flex-direction: column;
