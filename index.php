@@ -88,25 +88,25 @@
                       alt="Card title"
                     />
                   </div>
-                  <div class="col-md-8 ev-text-container text-light">
-                    <div class="card-body">
-                      <h5 id="evTitle" class="card-title">Card title</h5>
-                      <p id="evDesc" class="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                      <p class="card-text">
-                        <small id="evDate" class="text-light"
-                          >Last updated 3 mins ago</small
-                        >
-                      </p>
-                      <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
-                    </div>
+                <div class="col-md-8 ev-text-container text-light">
+                  <div class="card-body">
+                    <h5 id="evTitle" class="card-title">Card title</h5>
+                    <p id="evDesc" class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                    <p class="card-text">
+                      <small id="evDate" class="text-light"
+                        >Last updated 3 mins ago</small
+                      >
+                    </p>
+                    <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
            
         <!-- fotosub modal -->
          <div id="modal" class="modal fade">
