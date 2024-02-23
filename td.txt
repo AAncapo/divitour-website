@@ -1,5 +1,6 @@
 ------ Home ------
-- carousel de eventos
+- fix carousel indicators en el fondo de la pagina
+??? - carousel de eventos
 - dropdown de destinos(navbtn) (bs5 dropdown-end)
 - separar nav buttons del logo correctamente
 
@@ -15,8 +16,6 @@ OK - mostrar seccion destnos correctamente
 - filtro de servicios usando tabs
 - (christian) banners de destinos (havana-ok)
 - carousel para hoteles
-- CMS
-- cargar iconos de contacts online
 - resolver carga de imagenes desde local  -> include footer con seccion de contactos
 - recortar texto de servicios
 
@@ -28,4 +27,3 @@ Destino: ----seleccionar-----
 Hotel: ----selecionar----
 Servicio: ----- Add service -----
 
-- (antes del prox despliegue) descomentar lineas del formulario de fotosub

@@ -21,6 +21,9 @@
 }
 
 /* Events */
+#eventsCarousel {
+  height: 40vh;
+}
 
 /* Destinations */
 #destinations {

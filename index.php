@@ -8,7 +8,6 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <link rel="icon" href="favicon.png" />
-
     <meta
       name="description"
       content="The best professional agency specializing in scuba and water activities
@@ -77,6 +76,7 @@
           </div>
           <div class="carousel-inner">
             <!-- Carousel Item -->
+            <!-- ///////////// -->
             <div class="carousel-item active">
               <div id="evCard" class="card mb-3 bg-dark border-0">
                 <div class="row g-0">
