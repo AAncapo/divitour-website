@@ -87,6 +87,11 @@
   margin: 0px;
 }
 
+/* About Us */
+#about {
+  height: fit-content;
+  margin-bottom: 100px;
+}
 
 /* Contacts */
 .contact-items {

@@ -77,7 +77,7 @@ destCards.forEach((card) => {
 
 function setDestination(title, fileName, enable = true) {
   let src = `images/destinos/${fileName}`;
-  let _link = enable ? `pages/destino.php?destination="${fileName}"` : "#";
+  let _link = enable ? `pages/destino.php?dest_id=${fileName}` : "#";
   destContainer.innerHTML += `<a id="destCard" class="col-3 p-0" href=${_link}  style="overflow:hidden">
             <div id="vidContainer">
               <video
