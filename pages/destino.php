@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>
-      DIVITOUR | The best professional agency specializing in scuba and water
-      activities in Cuba
-    </title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link rel="icon" href="../favicon.png">
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-  </head>
+<?php
+include('../includes/dbh.inc.php');
+include('../includes/header.inc.php');
 
-  <body>
-    <header>
-      <!-- Navbar -->
-      <?php include('../includes/navbar.php'); ?>
+?>
       <!-- Banner -->
       <div class="container-fluid p-0 mb-5" style="height: 40vh;">
         <img id="destBanner" src="" alt="" style="width:100%; height:100%; object-fit:cover" />
