@@ -209,29 +209,6 @@ let destinations = {
   },
 };
 
-// let destTemplate = {
-//   name: "name",
-//   description: "description",
-//   banner: "destino/images/.....",
-//   hotels: [
-//     {
-//       name: "name",
-//       image: "link",
-//     },
-//   ],
-//   services: [
-//     {
-//       type: "excursion",
-//       name: "servName",
-//       description: "descr",
-//       schedule: "schedule",
-//       duration: "X hours",
-//       prices: [],
-//       cancelation_policy: "",
-//       misc: "",
-//     },
-//   ],
-// };
 // banner
 dstBanner.src = destinations[urlDestination].banner;
 // nombre del destino
