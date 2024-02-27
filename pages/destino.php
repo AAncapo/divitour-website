@@ -43,10 +43,25 @@ if (isset($_GET['dest_id'])) {
           <!-- Services -->
           <div class="container-fluid w-100">
             <h1 class="text-center section-title">Services</h1>
+
+            <!-- Services Filters -->
+            <div class="row justify-content-center m-3">
+              <div id="serviceFilters" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="immersion" autocomplete="off" >
+                <label class="btn btn-outline-dark" for="immersion">Immersions</label>
+                
+                <input type="radio" class="btn-check" name="btnradio" id="excursion" autocomplete="off" checked>
+                <label class="btn btn-outline-dark" for="excursion">Excursions</label>
+                
+                <input type="radio" class="btn-check" name="btnradio" id="course" autocomplete="off">
+                <label class="btn btn-outline-dark" for="course">Courses</label>
+              </div>
+            </div>
+              
             <div class="container-fluid w-100">
             <?php while ($record = mysqli_fetch_assoc($res)) { ?>
                   <!-- Service Card -->
-                  <div id="servCard" class="card mb-3" >
+                  <div id="servCard" class="card mb-3 <?php echo $record['tipo']; ?>" >
                     <div id="servCardWrapper" class="row g-0">
                       <div id="servImage" class="col-md-4">
                         <img src= <?php echo $record['image_url']; ?> 
@@ -54,24 +69,17 @@ if (isset($_GET['dest_id'])) {
                         />
                       </div>
                       <div class="card-body col-md-8">
-                        <h5 id="servName" class="card-title"> <?php echo $record['nombre']; ?> </h5>
-                        <p id="servDesc" class="card-text"> <?php echo $record['descripcion']; ?> </p>
+                        <h5 id="servName" class="card-title"><?php echo $record['nombre']; ?></h5>
+                        <p id="servDesc" class="card-text"><?php echo $record['descripcion']; ?></p>
                         <p class="card-text">
-                          <small class="text-muted"
-                            >Availability:  <?php echo $record['horario']; ?> </small
-                          >
-                        </p>
-                        <p class="card-text"> <?php echo $record['precios']; ?> </p>
-
-                        <p class="card-text">
-                          <small class="text-muted"
-                            >Duration:  <?php echo $record['duracion']; ?> </small
-                          >
+                          <small class="text-muted">Availability:  <?php echo $record['horario']; ?></small>
                         </p>
                         <p class="card-text">
-                          <small class="text-muted"
-                            >Cancelation Policy:  <?php echo $record['pol_cancel']; ?> </small
-                          >
+                          <small class="text-muted">Duration: <?php echo $record['duracion']; ?></small>
+                        </p>
+                        <p class="card-text"><?php echo $record['precios']; ?></p>
+                        <p class="card-text">
+                          <small class="text-muted">Cancelation Policy:  <?php echo $record['pol_cancel']; ?></small>
                         </p>
                       </div>
                     </div>
@@ -79,7 +87,39 @@ if (isset($_GET['dest_id'])) {
             <?php } ?>
             </div>
           </div>
-  <?php }
+          <script>
+            // Handle Service Cards filtering
+            let servFilters = document.querySelector('#serviceFilters'),
+            filterBtns = servFilters.querySelectorAll('.btn-check');
+            let servCards = document.querySelectorAll('#servCard');
+            
+            filterServices();
+            
+            filterBtns.forEach(fb => {
+              fb.addEventListener('click', ()=> {
+                filterBtns.forEach(element => {
+                  if (element.hasAttribute('checked')) { element.removeAttribute('checked'); }
+                });
+                fb.setAttribute('checked','');
+                filterServices();
+              })
+            })
+
+            function filterServices() {
+              filterBtns.forEach(filterb => {
+                if (filterb.hasAttribute('checked')) {
+                  // console.log(filterb.id);
+                  servCards.forEach(scard => {
+                    scard.style.display = scard.classList.contains(filterb.id) ? 'initial' : 'none';
+                  });
+                }
+              });
+            }
+
+          </script>
+  <?php } else {
+          echo 'Couldnt find any service :/';
+        }
         $stmt->close();
       }
   ?>
