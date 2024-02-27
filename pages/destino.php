@@ -94,13 +94,13 @@ if (isset($_GET['dest_id'])) {
           <!-- Hotels -->
           <div id='hoteles' class="mb-5">
             <h1 class="text-center section-title">Hotels</h1>
-            <div id="htlCardContainer" class="container-fluid row">
+            <div id="htlCardContainer" class="container-fluid row justify-content-center">
           <?php while ($record = mysqli_fetch_assoc($res)) { ?>
               <!-- Insert Hotel Cards -->
               <div id="htlCard" class="card m-2">
-              <div id="htlImage">
-                <img class="card-img-top" src= <?php echo $record['image_url']; ?> />
-              </div>
+                <div id="htlImage">
+                  <img class="card-img-top" src= <?php echo $record['image_url']; ?> />
+                </div>
                 <div class="card-body">
                   <h4 id="htlName" class="card-title text-center"> <?php echo $record['nombre']; ?> </h4>
                   <p id="htlDesc" class="card-text"> <?php echo $record['descripcion']; ?> </p>

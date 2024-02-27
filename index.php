@@ -1,6 +1,9 @@
 <?php
 include('includes/dbh.inc.php');
 include('includes/header.inc.php');
+
+// TODO: 
+// design booking-from
 ?>
 
 <header class="container-fluid p-0" style="position:relative;">
@@ -11,16 +14,61 @@ include('includes/header.inc.php');
     </div>
     <div
     class="container-sm"
-    style="position:absolute; width:fit-content"
+    style="position: absolute; width: fit-content;"
     >
       <p class="col-md-8 fs-4 text-light mb-5">
         Join us <br />in exploring the hidden treasures beneath the waves
         <br />and make your underwater adventure with Divitour <br />a
         journey to remember.
       </p>
-      <!-- <button class="btn btn-light btn-lg rounded-0" type="button">
+      <button class="btn btn-light btn-lg rounded-0" data-bs-toggle="modal" data-bs-target="#bookingModal" type="button">
           Book Now
-        </button> -->
+      </button> 
+    </div>
+  </div>
+  <!-- Booking Modal -->
+  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="bookingModalLabel">Booking</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action=<?php echo $base_url . 'pages/booking.php' ?> method="post">
+            <!-- Informacion de formulario -->
+            <div class="mb-3">
+              <label for="destSelector" class="form-label">Select a location first</label>
+              <select
+                class="form-select form-select-lg"
+                name="destination"
+                id="destSelector"
+              >
+                <option selected>Select a destination</option>
+                <option value="havana">Havana</option>
+                <option value="varadero">Varadero</option>
+                <option value="jibacoa">Jibacoa</option>
+              </select>
+            </div>
+            <!-- Select service -->
+            <div class="mb-3">
+              <label for="offerSelector" class="form-label">Select offer</label>
+              <select
+                class="form-select form-select-lg"
+                name="offer"
+                id="offerSelector"
+              >
+                <option value="hoteles">Hotels</option>
+                <option value="servicios">Services</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -62,7 +110,7 @@ include('includes/header.inc.php');
         </div>
       </div>
       <!-- fotosub modal -->
-        <div id="modal" class="modal fade">
+        <!-- <div id="modal" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header"> </div>
@@ -91,7 +139,7 @@ include('includes/header.inc.php');
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- Destinations -->
