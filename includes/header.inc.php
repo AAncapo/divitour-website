@@ -39,12 +39,12 @@ $base_url = '/divitur/';
   </head>
 
   <body
-    class="bg-dark text-light w-100"
+    class=" w-100"
     style="font-family: 'Montserrat', sans-serif; margin-top: 59px"
   >
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href=<?php echo $base_url . 'index.php' ?>>
           <img
             src=<?php echo $base_url . 'images/divitour-full.png' ?>
             alt="Divitour Logo"

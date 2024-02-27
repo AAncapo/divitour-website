@@ -4,7 +4,7 @@ include('includes/header.inc.php');
 ?>
 
 <header class="container-fluid p-0" style="position:relative;">
-  <div id="home" class="mb-4 bg-dark" style="height: 95vh; display:flex; align-items:center; justify-content:space-around">
+  <div id="home" class="mb-4" style="height: 95vh; display:flex; align-items:center; justify-content:space-around">
     <div class="banner-image">
       <img src="images/home-banner.jpg" alt="" >
       <div class="banner-gradient"></div>
@@ -27,7 +27,7 @@ include('includes/header.inc.php');
 <main class="container" style="height: fit-content;">
 <!-- Events -->
   <div id="events" class="container-fluid mt-5">
-    <h1 class="text-center mb-2 text-light section-title">Upcoming Events</h1>
+    <h1 class="text-center mb-2 section-title">Upcoming Events</h1>
     <div id="eventsCarousel" class="carousel slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -38,17 +38,17 @@ include('includes/header.inc.php');
         <!-- Carousel Item -->
         <!-- ///////////// -->
         <div class="carousel-item active">
-          <div id="evCard" class="card mb-3 bg-dark border-0">
+          <div id="evCard" class="card mb-3 border-0">
             <div class="row g-0">
               <div class="col-md-4 ev-img-container">
                 <img
                 id="evImage"
                   src=""
-                  class="img-fluid rounded-start"
+                  class="img-fluid rounded-0"
                   alt="Card title"
                 />
               </div>
-              <div class="col-md-8 ev-text-container text-light">
+              <div class="col-md-8 ev-text-container">
                 <div class="card-body">
                   <h5 id="evTitle" class="card-title">Card title</h5>
                   <p id="evDesc" class="card-text">
@@ -57,11 +57,9 @@ include('includes/header.inc.php');
                     little bit longer.
                   </p>
                   <p class="card-text">
-                    <small id="evDate" class="text-light"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small id="evDate" >Last updated 3 mins ago</small>
                   </p>
-                  <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
+                  <button class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
                 </div>
               </div>
             </div>
@@ -103,14 +101,13 @@ include('includes/header.inc.php');
   </div>
   <!-- Destinations -->
   <div id="destinations" class="container-fluid mb-5 mt-5" >
-    <h1 class="text-center text-light section-title">Popular Destinations</h1>
+    <h1 class="text-center section-title">Popular Destinations</h1>
     <div id="dest-card-container" class="container-fluid row g-0"></div>
   </div>
   <!-- About us -->
   <div id="about" class="container">
-    <h1 class="text-light section-title">Who we are</h1>
-    <p class="text-light">
-      At Divitour, we take pride in being the leading agency for diving and
+    <h1 class="section-title">Who we are</h1>
+    <p>At Divitour, we take pride in being the leading agency for diving and
       aquatic activities in Cuba. Founded in 2015, we have been pioneers in
       developing training programs and educational initiatives for
       professionals on the island. <!--Our headquarters are strategically

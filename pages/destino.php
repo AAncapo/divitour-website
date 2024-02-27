@@ -4,7 +4,7 @@ include('../includes/header.inc.php');
 
 // get destination from table
 if (isset($_GET['dest_id'])) {
-  $destid = $_GET['dest_id'];
+  $destid = htmlspecialchars($_GET['dest_id']);
   if ($dest_stmt = $connect->prepare('SELECT * FROM destinos where id = ?')) {
     $dest_stmt->bind_param('s',$destid);
     $dest_stmt->execute();
@@ -32,33 +32,7 @@ if (isset($_GET['dest_id'])) {
     }
   }
   ?>
-      <?php 
-      if ($stmt = $connect->prepare('SELECT * FROM hoteles where destino_id = ?')) {
-        $stmt->bind_param('s',$destid);
-        $stmt->execute();
-        
-        $res = $stmt->get_result();
-        if ($res->num_rows>0) { ?>
-          <!-- Hotels -->
-          <div id='hoteles' class="mb-5">
-            <h1 class="text-center section-title">Hotels</h1>
-            <div class="container-fluid row">
-          <?php while ($record = mysqli_fetch_assoc($res)) { ?>
-              <!-- Insert Hotel Cards -->
-              <div id="hotelCard" class="card m-2" style="max-width: 300px; padding:0px; overflow:hidden">
-                <img class="card-img-top hotelImage" src= <?php echo $record['image_url']; ?> style="height:100%;" />
-                <div class="card-body">
-                  <h4 id="hotelName" class="card-title text-center"> <?php echo $record['nombre']; ?> </h4>
-                  <p id="hotelDesc" class="card-text"> <?php echo $record['descripcion']; ?> </p>
-                </div>
-              </div>
-          <?php } ?>
-            </div>
-          </div>
-  <?php } 
-        $stmt->close();
-      }
-  ?>
+      
     <?php
     if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
         $stmt->bind_param('s',$destid);
@@ -71,17 +45,16 @@ if (isset($_GET['dest_id'])) {
             <h1 class="text-center section-title">Services</h1>
             <div class="container-fluid w-100">
             <?php while ($record=mysqli_fetch_assoc($res)) { ?>
-                  <!-- Insert Service Cards -->
-                  <div class="card mb-3" >
+                  <!-- Service Card -->
+                  <div id="servCard" class="card mb-3" >
                     <div class="row g-0">
-                      <div class="col-md-4">
+                      <div id="servImage" class="col-md-4">
                         <img src= <?php echo $record['image_url']; ?> 
                           class="img-fluid rounded-start"
                           alt="Card title"
                         />
                       </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
+                        <div class="card-body col-md-8">
                           <h5 class="card-title"> <?php echo $record['nombre']; ?> </h5>
                           <p class="card-text"> <?php echo $record['descripcion']; ?> </p>
                           <p class="card-text">
@@ -95,13 +68,42 @@ if (isset($_GET['dest_id'])) {
                             >
                           </p>
                         </div>
-                      </div>
                     </div>
                   </div>
             <?php } ?>
             </div>
           </div>
   <?php }
+        $stmt->close();
+      }
+  ?>
+
+  <?php 
+      if ($stmt = $connect->prepare('SELECT * FROM hoteles where destino_id = ?')) {
+        $stmt->bind_param('s',$destid);
+        $stmt->execute();
+        
+        $res = $stmt->get_result();
+        if ($res->num_rows>0) { ?>
+          <!-- Hotels -->
+          <div id='hoteles' class="mb-5">
+            <h1 class="text-center section-title">Hotels</h1>
+            <div id="htlCardContainer" class="container-fluid row">
+          <?php while ($record = mysqli_fetch_assoc($res)) { ?>
+              <!-- Insert Hotel Cards -->
+              <div id="htlCard" class="card m-2">
+              <div id="htlImage">
+                <img class="card-img-top" src= <?php echo $record['image_url']; ?> />
+              </div>
+                <div class="card-body">
+                  <h4 id="htlName" class="card-title text-center"> <?php echo $record['nombre']; ?> </h4>
+                  <p id="htlDesc" class="card-text"> <?php echo $record['descripcion']; ?> </p>
+                </div>
+              </div>
+          <?php } ?>
+            </div>
+          </div>
+  <?php } 
         $stmt->close();
       }
   ?>

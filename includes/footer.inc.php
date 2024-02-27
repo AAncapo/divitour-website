@@ -1,4 +1,4 @@
-<footer class="container">
+<footer class="container-fluid bg-dark">
     <!-- Contacts -->
       <div id="contacts" class="container d-flex" style="margin-bottom: 100px;flex-direction:column">
         <h3 class="text-light text-center section-title">Contact Us</h3>
@@ -49,7 +49,7 @@
           data-elfsight-app-lazy
         ></div> -->
     <!-- Partners -->
-    <div class="container-fluid mb-5">
+    <div class="container mb-5">
       <h3 class="text-center text-light mb-2 section-title">Our Partners</h3>
       <div class="row mb-5 w-100 partners-container">
         <a class="col partner" href="/">
