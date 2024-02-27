@@ -45,7 +45,7 @@ if (isset($_GET['dest_id'])) {
             <h1 class="text-center section-title">Services</h1>
 
             <!-- Services Filters -->
-            <div class="row justify-content-center m-3">
+            <div class="row justify-content-center m-3 p-0">
               <div id="serviceFilters" class="btn-group" role="group" aria-label="Basic radio toggle button group">
                 <input type="radio" class="btn-check" name="btnradio" id="immersion" autocomplete="off" >
                 <label class="btn btn-outline-dark" for="immersion">Immersions</label>
@@ -87,6 +87,7 @@ if (isset($_GET['dest_id'])) {
             <?php } ?>
             </div>
           </div>
+          
           <script>
             // Handle Service Cards filtering
             let servFilters = document.querySelector('#serviceFilters'),
@@ -115,8 +116,8 @@ if (isset($_GET['dest_id'])) {
                 }
               });
             }
-
           </script>
+
   <?php } else {
           echo 'Couldnt find any service :/';
         }
