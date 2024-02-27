@@ -45,19 +45,14 @@ include('includes/header.inc.php');
                 id="evImage"
                   src=""
                   class="img-fluid rounded-0"
-                  alt="Card title"
                 />
               </div>
               <div class="col-md-8 ev-text-container">
                 <div class="card-body">
-                  <h5 id="evTitle" class="card-title">Card title</h5>
-                  <p id="evDesc" class="card-text">
-                    This is a wider card with supporting text below as a
-                    natural lead-in to additional content. This content is a
-                    little bit longer.
-                  </p>
+                  <h5 id="evTitle" class="card-title"></h5>
+                  <p id="evDesc" class="card-text"></p>
                   <p class="card-text">
-                    <small id="evDate" >Last updated 3 mins ago</small>
+                    <small id="evDate" ></small>
                   </p>
                   <button class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
                 </div>

@@ -44,30 +44,36 @@ if (isset($_GET['dest_id'])) {
           <div class="container-fluid w-100">
             <h1 class="text-center section-title">Services</h1>
             <div class="container-fluid w-100">
-            <?php while ($record=mysqli_fetch_assoc($res)) { ?>
+            <?php while ($record = mysqli_fetch_assoc($res)) { ?>
                   <!-- Service Card -->
                   <div id="servCard" class="card mb-3" >
-                    <div class="row g-0">
+                    <div id="servCardWrapper" class="row g-0">
                       <div id="servImage" class="col-md-4">
                         <img src= <?php echo $record['image_url']; ?> 
                           class="img-fluid rounded-start"
-                          alt="Card title"
                         />
                       </div>
-                        <div class="card-body col-md-8">
-                          <h5 class="card-title"> <?php echo $record['nombre']; ?> </h5>
-                          <p class="card-text"> <?php echo $record['descripcion']; ?> </p>
-                          <p class="card-text">
-                            <small class="text-muted"
-                              >Schedule:  <?php echo $record['horario']; ?> </small
-                            >
-                          </p>
-                          <p class="card-text">
-                            <small class="text-muted"
-                              >Duration:  <?php echo $record['duracion']; ?> </small
-                            >
-                          </p>
-                        </div>
+                      <div class="card-body col-md-8">
+                        <h5 id="servName" class="card-title"> <?php echo $record['nombre']; ?> </h5>
+                        <p id="servDesc" class="card-text"> <?php echo $record['descripcion']; ?> </p>
+                        <p class="card-text">
+                          <small class="text-muted"
+                            >Availability:  <?php echo $record['horario']; ?> </small
+                          >
+                        </p>
+                        <p class="card-text"> <?php echo $record['precios']; ?> </p>
+
+                        <p class="card-text">
+                          <small class="text-muted"
+                            >Duration:  <?php echo $record['duracion']; ?> </small
+                          >
+                        </p>
+                        <p class="card-text">
+                          <small class="text-muted"
+                            >Cancelation Policy:  <?php echo $record['pol_cancel']; ?> </small
+                          >
+                        </p>
+                      </div>
                     </div>
                   </div>
             <?php } ?>
@@ -84,7 +90,7 @@ if (isset($_GET['dest_id'])) {
         $stmt->execute();
         
         $res = $stmt->get_result();
-        if ($res->num_rows>0) { ?>
+        if ($res->num_rows > 0) { ?>
           <!-- Hotels -->
           <div id='hoteles' class="mb-5">
             <h1 class="text-center section-title">Hotels</h1>
