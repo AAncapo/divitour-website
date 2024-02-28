@@ -30,6 +30,17 @@ a {
   height: fit-content;
 }
 
+/* #evCarouselImage {
+  width: 100%;
+
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+} */
+
 /* Destinations */
 #destinations {
   height: fit-content;

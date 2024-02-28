@@ -2,7 +2,18 @@
 include('includes/dbh.inc.php');
 include('includes/header.inc.php');
 
-if ($stmt = $connect->prepare('SELECT * FROM servicios')) {
+// el formulario de reservas es un form con position absolute anclado a la base del header
+// se muestra solo en md+ y se oculta en sm-
+// toggled con Book Now
+
+
+// Excursions | Immersions | Courses | Hotels
+// Destination
+// Date
+// Availability Schedule
+
+
+if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
   $stmt->execute();
   $res = $stmt->get_result();
   if ($res->num_rows > 0) {
@@ -34,23 +45,24 @@ if ($stmt = $connect->prepare('SELECT * FROM servicios')) {
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="bookingModalLabel">Booking</h1>
+          <h1 class="modal-title fs-5" id="bookingModalLabel">Plan your adventure with us</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action=<?php echo $base_url . 'pages/booking.php' ?> method="post">
+          <form action=<?php echo $base_url . 'pages/booking.php?' ?> method="get">
+
             <!-- Informacion de formulario -->
+            <!-- Destino -->
             <div class="mb-3">
-              <label for="destSelector" class="form-label">Select a location first</label>
+              <label for="destSelector" class="form-label">Destination</label>
               <select
                 class="form-select form-select-lg"
                 name="destination"
                 id="destSelector"
               >
-                <option selected>Select a destination</option>
-                <option value="havana">Havana</option>
-                <option value="varadero">Varadero</option>
-                <option value="jibacoa">Jibacoa</option>
+                <?php while ($record = mysqli_fetch_assoc($res)) { ?>
+                <option value="<?php echo $record['id']; ?>"> <?php echo $record['nombre']; ?> </option>
+                <?php } ?>
               </select>
             </div>
             <!-- Select service -->
@@ -66,14 +78,6 @@ if ($stmt = $connect->prepare('SELECT * FROM servicios')) {
               </select>
             </div>
           </form>
-          <ul class="list-group list-group-flush">
-
-            <?php while ($record = mysqli_fetch_assoc($res)) { ?>
-            <li class="list-group-item">
-              <a href="<?php echo $base_url . 'pages/destino.php?dest_id=' . $record['destino_id']?>" class="<?php echo $record['destino_id']; ?>" > <?php echo $record['nombre']; ?> </a>
-            </li>
-            <?php } ?>
-          </ul>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -120,38 +124,38 @@ if ($stmt = $connect->prepare('SELECT * FROM servicios')) {
           </div>
         </div>
       </div>
-      <!-- fotosub modal -->
-        <!-- <div id="modal" class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header"> </div>
-            <div class="modal-body">
-              <script
-                charset="utf-8"
-                type="text/javascript"
-                src="//js-eu1.hsforms.net/forms/embed/v2.js"
-              ></script>
-              <script>
-                hbspt.forms.create({
-                  region: "eu1",
-                  portalId: "144042486",
-                  formId: "e4b74cc4-01e7-4f4c-a1f8-b07a0b60af4b",
-                });
-              </script>
-            </div>
-            <div class="modal-footer">
-              <button
-                class="btn btn-dark"
-                data-bs-target="#modal"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
+    </div>
+    <!-- fotosub modal -->
+      <!-- <div id="modal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"> </div>
+          <div class="modal-body">
+            <script
+              charset="utf-8"
+              type="text/javascript"
+              src="//js-eu1.hsforms.net/forms/embed/v2.js"
+            ></script>
+            <script>
+              hbspt.forms.create({
+                region: "eu1",
+                portalId: "144042486",
+                formId: "e4b74cc4-01e7-4f4c-a1f8-b07a0b60af4b",
+              });
+            </script>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-dark"
+              data-bs-target="#modal"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
-      </div> -->
-    </div>
+      </div>
+    </div> -->
   </div>
   <!-- Destinations -->
   <div id="destinations" class="container-fluid mb-5 mt-5" >

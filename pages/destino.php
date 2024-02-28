@@ -87,6 +87,7 @@ if (isset($_GET['dest_id'])) {
                         <p class="card-text">
                           <small class="text-muted">Cancelation Policy:  <?php echo $record['pol_cancel']; ?></small>
                         </p>
+                        <div class="btn btn-primary w-50">Visit</div>
                       </div>
                     </div>
                   </div>
