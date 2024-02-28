@@ -41,24 +41,30 @@ if (isset($_GET['dest_id'])) {
         $res = $stmt->get_result();
         if ($res->num_rows > 0) { ?>
           <!-- Services -->
-          <div class="container-fluid w-100">
+          <div class="container-fluid w-100 p-0">
             <h1 class="text-center section-title">Services</h1>
 
             <!-- Services Filters -->
-            <div class="row justify-content-center m-3 p-0">
-              <div id="serviceFilters" class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="immersion" autocomplete="off" >
-                <label class="btn btn-outline-dark" for="immersion">Immersions</label>
-                
-                <input type="radio" class="btn-check" name="btnradio" id="excursion" autocomplete="off" checked>
-                <label class="btn btn-outline-dark" for="excursion">Excursions</label>
-                
-                <input type="radio" class="btn-check" name="btnradio" id="course" autocomplete="off">
-                <label class="btn btn-outline-dark" for="course">Courses</label>
-              </div>
+            <div id="serviceFilters" class="row justify-content-center m-3 p-0">
+
+              <ul class="nav nav-underline">
+                <li class="nav-item">
+                  <a id="immersion" class="nav-link">Immersions</a>
+                </li>
+                <li class="nav-item">
+                  <a id="excursion" class="nav-link" checked >Excursions</a>
+                </li>
+                <li class="nav-item">
+                  <a id="course" class="nav-link">Courses</a>
+                </li>
+              </ul>
             </div>
               
-            <div class="container-fluid w-100">
+            <div class="container-fluid w-100 p-0">
+              <!-- Empty Results Message -->
+              <div id='emptyResMsg' class="row justify-content-center">
+                <p class="text-center">No results.</p>
+              </div>
             <?php while ($record = mysqli_fetch_assoc($res)) { ?>
                   <!-- Service Card -->
                   <div id="servCard" class="card mb-3 <?php echo $record['tipo']; ?>" >
@@ -91,15 +97,18 @@ if (isset($_GET['dest_id'])) {
           <script>
             // Handle Service Cards filtering
             let servFilters = document.querySelector('#serviceFilters'),
-            filterBtns = servFilters.querySelectorAll('.btn-check');
+            filterBtns = servFilters.querySelectorAll('.nav-link');
             let servCards = document.querySelectorAll('#servCard');
-            
+            let emptyMsg = document.querySelector('#emptyResMsg');
+            let matchCount = 0;
             filterServices();
             
             filterBtns.forEach(fb => {
-              fb.addEventListener('click', ()=> {
+              fb.addEventListener('click', () => {
                 filterBtns.forEach(element => {
-                  if (element.hasAttribute('checked')) { element.removeAttribute('checked'); }
+                  if (element !== fb) { 
+                    element.removeAttribute('checked'); 
+                  }
                 });
                 fb.setAttribute('checked','');
                 filterServices();
@@ -107,15 +116,21 @@ if (isset($_GET['dest_id'])) {
             })
 
             function filterServices() {
+              matchCount = 0;
               filterBtns.forEach(filterb => {
+                //check which button is selected
                 if (filterb.hasAttribute('checked')) {
-                  // console.log(filterb.id);
                   servCards.forEach(scard => {
                     scard.style.display = scard.classList.contains(filterb.id) ? 'initial' : 'none';
+                    if (scard.style.display !== 'none') {
+                      matchCount++;
+                    }
                   });
                 }
               });
+              emptyMsg.style.display = matchCount > 0 ? 'none' : 'initial';
             }
+
           </script>
 
   <?php } else {
@@ -133,7 +148,7 @@ if (isset($_GET['dest_id'])) {
         $res = $stmt->get_result();
         if ($res->num_rows > 0) { ?>
           <!-- Hotels -->
-          <div id='hoteles' class="mb-5">
+          <div id='hoteles' class="row justify-content-center mb-5">
             <h1 class="text-center section-title">Hotels</h1>
             <div id="htlCardContainer" class="container-fluid row justify-content-center">
           <?php while ($record = mysqli_fetch_assoc($res)) { ?>

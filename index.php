@@ -2,8 +2,11 @@
 include('includes/dbh.inc.php');
 include('includes/header.inc.php');
 
-// TODO: 
-// design booking-from
+if ($stmt = $connect->prepare('SELECT * FROM servicios')) {
+  $stmt->execute();
+  $res = $stmt->get_result();
+  if ($res->num_rows > 0) {
+
 ?>
 
 <header class="container-fluid p-0" style="position:relative;">
@@ -21,7 +24,7 @@ include('includes/header.inc.php');
         <br />and make your underwater adventure with Divitour <br />a
         journey to remember.
       </p>
-      <button class="btn btn-light btn-lg rounded-0" data-bs-toggle="modal" data-bs-target="#bookingModal" type="button">
+      <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#bookingModal" type="button">
           Book Now
       </button> 
     </div>
@@ -59,10 +62,18 @@ include('includes/header.inc.php');
                 id="offerSelector"
               >
                 <option value="hoteles">Hotels</option>
-                <option value="servicios">Services</option>
+                <option value="servicios">All our services</option>
               </select>
             </div>
           </form>
+          <ul class="list-group list-group-flush">
+
+            <?php while ($record = mysqli_fetch_assoc($res)) { ?>
+            <li class="list-group-item">
+              <a href="<?php echo $base_url . 'pages/destino.php?dest_id=' . $record['destino_id']?>" class="<?php echo $record['destino_id']; ?>" > <?php echo $record['nombre']; ?> </a>
+            </li>
+            <?php } ?>
+          </ul>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -181,5 +192,9 @@ include('includes/header.inc.php');
 </main>
 
 <?php
+  }
+}
+
+
 include('includes/footer.inc.php');
 ?>
