@@ -21,7 +21,7 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
 ?>
 
 <header class="container-fluid p-0" style="position:relative;">
-  <div id="home" class="mb-4" style="height: 95vh; display:flex; align-items:center; justify-content:space-around">
+  <div id="home" class="mb-4">
     <div class="banner-image">
       <img src="images/home-banner.jpg" alt="" >
       <div class="banner-gradient"></div>
@@ -53,30 +53,109 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
 
             <!-- Informacion de formulario -->
             <!-- Destino -->
-            <div class="mb-3">
-              <label for="destSelector" class="form-label">Destination</label>
-              <select
-                class="form-select form-select-lg"
-                name="destination"
-                id="destSelector"
-              >
-                <?php while ($record = mysqli_fetch_assoc($res)) { ?>
-                <option value="<?php echo $record['id']; ?>"> <?php echo $record['nombre']; ?> </option>
-                <?php } ?>
-              </select>
+            <div id="bookingFilterButtons" class="mb-3">
+              <span><a id="excursion">Excursions </a>|<a id="immersion"> Immersions </a>|<a id="course"> Courses </a>|<a id="hotel"> Hotels</a></span>
             </div>
-            <!-- Select service -->
-            <div class="mb-3">
-              <label for="offerSelector" class="form-label">Select offer</label>
-              <select
-                class="form-select form-select-lg"
-                name="offer"
-                id="offerSelector"
-              >
-                <option value="hoteles">Hotels</option>
-                <option value="servicios">All our services</option>
-              </select>
+            <select
+              class="form-select form-select-lg"
+              name="destination"
+              id="destSelector"
+            >
+              <?php while ($record = mysqli_fetch_assoc($res)) { ?>
+              <option value="<?php echo $record['id']; ?>"> <?php echo $record['nombre']; ?> </option>
+              <?php 
+            } ?>
+            </select>
+            <!-- Results -->
+            <div class="list-group">
+              <?php 
+                if ($stm=$connect->prepare('SELECT * FROM servicios')) {
+                  $stm->execute();
+                  $result=$stm->get_result();
+                  if ($result->num_rows > 0) {
+
+                    while ($rec=mysqli_fetch_assoc($result)) {
+
+              ?>
+              <a id="bookingResultItem" class="list-group-item list-group-item-action <?php echo $rec['destino_id']; ?> <?php echo $rec['tipo'] ?>">
+                  <div class="row g-0">
+                    <div id='bkResImage' class="col-md-4">
+                      <img src="<?php echo $rec['image_url']; ?>" />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title"> <?php echo $rec['nombre'] ?> </h5>
+                        <p class="card-text">
+                          <small class="text-muted">dest</small>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+              </a>
+              <?php
+                    }
+                  } else {
+                    // Show No SERVICE results found.
+                    ?>
+                    <p class="text-center">No Services found</p>
+                    <?php
+                  }
+                } else {
+                  // Couldnt connect to database
+                }
+                ?>
+                <?php 
+                
+                if ($stm=$connect->prepare('SELECT * FROM hoteles')) {
+                  $stm->execute();
+                  $result=$stm->get_result();
+                  if ($result->num_rows > 0) {
+
+                    while ($rec=mysqli_fetch_assoc($result)) {
+
+              ?>
+              <a id="bookingResultItem" class="list-group-item list-group-item-action <?php echo $rec['destino_id']; ?> hotel">
+                  <div class="row g-0">
+                    <div id='bkResImage' class="col-md-4">
+                      <img src="<?php echo $rec['image_url']; ?>" />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title"><?php echo $rec['nombre'] ?></h5>
+                        <p class="card-text">
+                          <small class="text-muted"><?php echo $rec['destino_id']; ?> </small>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+              </a>
+              <?php
+                    }
+                  } else {
+                    // Show No HOTEL results found.
+                  }
+                } else {
+                  // Couldnt connect to database
+                }
+                ?>
             </div>
+            <script>
+              let dstSel = document.querySelector('#destSelector');
+              let bresItems = document.querySelectorAll('#bookingResultItem');
+              let bf = document.querySelector('#bookingFilterButtons'),
+              bookingFilterBtns = bf.querySelectorAll('a');
+              bookingFilterBtns.forEach(bfb => {
+                bfb.addEventListener('click', () => {
+                  filterBookingResults(bfb.id, dstSel.value);
+                });
+              });
+              function filterBookingResults(tipo,destId) {
+                bresItems.forEach(bresitem => {
+                  bresitem.style.display = bresitem.classList.contains(tipo) && bresitem.classList.contains(destId) ? 'initial':'none';
+                });
+              }
+
+            </script>
           </form>
         </div>
         <div class="modal-footer">
