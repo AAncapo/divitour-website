@@ -1,6 +1,7 @@
 <?php
 include('../includes/dbh.inc.php');
 include('../includes/header.inc.php');
+include('../includes/helper_functions.inc.php');
 
 // get destination from table
 if (isset($_GET['dest_id'])) {
@@ -77,17 +78,11 @@ if (isset($_GET['dest_id'])) {
                       <div class="card-body col-md-8">
                         <h5 id="servName" class="card-title"><?php echo $record['nombre']; ?></h5>
                         <p id="servDesc" class="card-text"><?php echo $record['descripcion']; ?></p>
-                        <p class="card-text">
-                          <small class="text-muted">Availability:  <?php echo $record['horario']; ?></small>
-                        </p>
-                        <p class="card-text">
-                          <small class="text-muted">Duration: <?php echo $record['duracion']; ?></small>
-                        </p>
-                        <p class="card-text"><?php echo $record['precios']; ?></p>
-                        <p class="card-text">
-                          <small class="text-muted">Cancelation Policy:  <?php echo $record['pol_cancel']; ?></small>
-                        </p>
-                        <div class="btn btn-primary w-50">Visit</div>
+                        <?php echo set_service_text($record['horario'],'Disponibilidad: ') ?>
+                        <?php echo set_service_text($record['duracion'],'Duracion: ') ?>
+                        <?php echo set_service_text($record['precios']); ?>
+                        <?php echo set_service_text($record['pol_cancel'],"Politica de Cancelacion: "); ?>
+                        <!-- <div class="btn btn-primary w-50">Visit</div> -->
                       </div>
                     </div>
                   </div>
