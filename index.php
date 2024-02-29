@@ -6,7 +6,6 @@ include('includes/header.inc.php');
 // se muestra solo en md+ y se oculta en sm-
 // toggled con Book Now
 
-
 // Excursions | Immersions | Courses | Hotels
 // Destination
 // Date
