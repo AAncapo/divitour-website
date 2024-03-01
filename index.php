@@ -49,7 +49,6 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
         </div>
         <div class="modal-body">
           <form action=<?php echo $base_url . 'pages/booking.php?' ?> method="get">
-
             <!-- Informacion de formulario -->
             <!-- Destino -->
             <div id="bookingFilterButtons" class="mb-3">
@@ -74,7 +73,6 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
                   if ($result->num_rows > 0) {
 
                     while ($rec=mysqli_fetch_assoc($result)) {
-
               ?>
               <a id="bookingResultItem" class="list-group-item list-group-item-action <?php echo $rec['destino_id']; ?> <?php echo $rec['tipo'] ?>">
                   <div class="row g-0">

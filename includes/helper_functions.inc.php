@@ -7,7 +7,7 @@ function set_psmall ($title="",$key_value="") {
             </p>';
 }
 
-function set_simple_p ($title="",$keyval="",$id="",$class="") {
+function set_simple_p ($title="", $keyval="",$id="",$class="") {
     $ini_display = $id == 'servDesc' ? '-webkit-box' : 'initial';
     $display = $keyval == '' ? 'none' : $ini_display;
     

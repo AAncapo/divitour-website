@@ -32,9 +32,7 @@ if (isset($_GET['dest_id'])) {
       die();
     }
   }
-  ?>
-      
-  <?php
+
   if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
       $stmt->bind_param('s',$destid);
       $stmt->execute();
@@ -47,7 +45,6 @@ if (isset($_GET['dest_id'])) {
 
           <!-- Services Filters -->
           <div id="serviceFilters" class="row justify-content-center m-3 p-0">
-
             <ul class="nav nav-underline w-100 justify-content-center">
               <li class="nav-item">
                 <a id="immersion" class="nav-link">Immersions</a>
@@ -66,27 +63,25 @@ if (isset($_GET['dest_id'])) {
             <div id='emptyResMsg' class="row justify-content-center">
               <p class="text-center">No results.</p>
             </div>
-        <?php while ($rec = mysqli_fetch_assoc($res)) { ?>
+        <?php while ($record = mysqli_fetch_assoc($res)) { ?>
               <!-- Service Card -->
-              <!-- <div id="servCard" class="card mb-3 " > -->
-              <div class="card mb-3 servcard <?php echo $rec['tipo']; ?>">
+              <div class="card mb-3 servcard <?php echo $record['tipo']; ?>">
                 <div id="servCardWrapper" class="row g-0">
                   <div id="servImage" class="col-md-4 d-none">
-                    <img src= <?php echo $rec['image_url']; ?> class="img-fluid rounded-start"/>
+                    <img src= <?php echo $record['image_url']; ?> class="img-fluid rounded-start"/>
                   </div>
                   <div class="card-body col-md-8">
-                    <h5 id="servName" class="card-title"><?php echo $rec['nombre']; ?></h5>
+                    <h5 id="servName" class="card-title"><?php echo $record['nombre']; ?></h5>
                     <?php 
-                    echo set_simple_p('',$rec['descripcion'],"servDesc","card-text");
-                    ?> <br> <?php 
-                    echo set_simple_p('Incluye: ',$rec['incluye'],"servInc","card-text"); 
-                    ?> <br> 
-                    <?php echo set_psmall('Disponibilidad: ', $rec['horario']); ?>
+                    echo set_simple_p('',$record['descripcion'],"servDesc","card-text");
+                    ?> 
+                    <br> 
+                    <?php echo set_simple_p('Incluye: ',$record['incluye'],"servInc","card-text"); ?>
+                    <?php echo set_psmall('Disponibilidad: ', $record['horario']); ?>
+                    <?php echo set_psmall('Duracion: ', $record['duracion']); ?>
+                    <?php echo set_psmall("",$record['precios']); ?>
                     <br>
-                    <?php echo set_psmall('Duracion: ', $rec['duracion']); ?>
-                    <?php echo set_psmall($rec['precios']); ?>
-                    <br>
-                    <?php echo set_psmall("Politica de Cancelacion: ", $rec['pol_cancel']);  ?>
+                    <?php echo set_psmall("Politica de Cancelacion: ", $record['pol_cancel']);  ?>
                   </div>
                 </div>
               </div>
