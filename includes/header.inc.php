@@ -74,8 +74,23 @@ $base_url = '/divitur/';
             <li class="nav-item">
               <a class="nav-link" href="#events">Events</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="#destinations">Destinations</a>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#destinations" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Destinations
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=havana'; ?>>Havana</a></li>
+                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=varadero'; ?>>Varadero</a></li>
+                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=jibacoa'; ?>>Jibacoa</a></li>
+                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=cayolargo'; ?>>Cayo Largo del Sur</a></li>
+                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=stlucia'; ?>>Santa Lucia</a></li>
+                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=trinidad'; ?>>Trinidad</a></li>
+                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=guillermo'; ?>>Cayo Guillermo</a></li>
+                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=zapata'; ?>>Peninsula de Zapata</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contacts">Contacts</a>

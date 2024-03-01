@@ -66,28 +66,27 @@ if (isset($_GET['dest_id'])) {
             <div id='emptyResMsg' class="row justify-content-center">
               <p class="text-center">No results.</p>
             </div>
-        <?php while ($record = mysqli_fetch_assoc($res)) { ?>
+        <?php while ($rec = mysqli_fetch_assoc($res)) { ?>
               <!-- Service Card -->
-              <div id="servCard" class="card mb-3 <?php echo $record['tipo']; ?>" >
+              <!-- <div id="servCard" class="card mb-3 " > -->
+              <div class="card mb-3 servcard <?php echo $rec['tipo']; ?>">
                 <div id="servCardWrapper" class="row g-0">
-                  <div id="servImage" class="col-md-4">
-                    <img src= <?php echo $record['image_url']; ?> 
-                      class="img-fluid rounded-start"
-                    />
+                  <div id="servImage" class="col-md-4 d-none">
+                    <img src= <?php echo $rec['image_url']; ?> class="img-fluid rounded-start"/>
                   </div>
                   <div class="card-body col-md-8">
-                    <h5 id="servName" class="card-title"><?php echo $record['nombre']; ?></h5>
+                    <h5 id="servName" class="card-title"><?php echo $rec['nombre']; ?></h5>
                     <?php 
-                    echo set_simple_p('',$record['descripcion'],"servDesc","card-text");
+                    echo set_simple_p('',$rec['descripcion'],"servDesc","card-text");
                     ?> <br> <?php 
-                    echo set_simple_p('Incluye: ',$record['incluye'],"servInc","card-text"); 
-                    ?> <br> <?php 
-                    echo set_psmall('Disponibilidad: ', $record['horario']);
-                    echo set_psmall('Duracion: ', $record['duracion']);
-                    echo set_psmall($record['precios']);
-                    echo set_psmall("Politica de Cancelacion: ", $record['pol_cancel']); 
-                    ?>
-                    <!-- <div class="btn btn-primary w-50">Visit</div> -->
+                    echo set_simple_p('Incluye: ',$rec['incluye'],"servInc","card-text"); 
+                    ?> <br> 
+                    <?php echo set_psmall('Disponibilidad: ', $rec['horario']); ?>
+                    <br>
+                    <?php echo set_psmall('Duracion: ', $rec['duracion']); ?>
+                    <?php echo set_psmall($rec['precios']); ?>
+                    <br>
+                    <?php echo set_psmall("Politica de Cancelacion: ", $rec['pol_cancel']);  ?>
                   </div>
                 </div>
               </div>
@@ -99,7 +98,7 @@ if (isset($_GET['dest_id'])) {
           // Handle Service Cards filtering
           let servFilters = document.querySelector('#serviceFilters'),
           filterBtns = servFilters.querySelectorAll('.nav-link');
-          let servCards = document.querySelectorAll('#servCard');
+          let servCards = document.querySelectorAll('.servcard');
           let emptyMsg = document.querySelector('#emptyResMsg');
           let matchCount = 0;
           filterServices();
@@ -122,7 +121,7 @@ if (isset($_GET['dest_id'])) {
               //check which button is selected
               if (filterb.hasAttribute('checked')) {
                 servCards.forEach(scard => {
-                  scard.style.display = scard.classList.contains(filterb.id) ? 'initial' : 'none';
+                  scard.style.display = scard.classList.contains(filterb.id) ? 'flex' : 'none';
                   if (scard.style.display !== 'none') {
                     matchCount++;
                   }

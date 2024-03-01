@@ -122,7 +122,7 @@ a {
 /* ========== Destino.php ========== */
 
 /* service cards */
-#servCard {
+.servcard {
   height: fit-content;
   overflow: hidden;
 }
