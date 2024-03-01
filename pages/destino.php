@@ -6,6 +6,7 @@ include('../includes/helper_functions.inc.php');
 // get destination from table
 if (isset($_GET['dest_id'])) {
   $destid = htmlspecialchars($_GET['dest_id']);
+
   if ($dest_stmt = $connect->prepare('SELECT * FROM destinos where id = ?')) {
     $dest_stmt->bind_param('s',$destid);
     $dest_stmt->execute();
@@ -23,111 +24,70 @@ if (isset($_GET['dest_id'])) {
 </header>
 <main class="container">
   <!-- Name & Description -->
-  <h1> <?php echo $dest_rec['nombre']?> </h1>
+  <h1 class="display-2" > <?php echo $dest_rec['nombre']?> </h1>
   <p class='mb-5'> <?php echo $dest_rec['descripcion']?> </p>
-  <?php 
-      $dest_stmt->close();
-    } else {
-      echo 'No destination found with id=' . $_GET['dest_id'];
-      die();
-    }
-  }
-
-  if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
-      $stmt->bind_param('s',$destid);
-      $stmt->execute();
-      
-      $res = $stmt->get_result();
-      if ($res->num_rows > 0) { ?>
+    <?php 
+        $dest_stmt->close();
+      } else {
+        echo 'No destination found with id=' . $_GET['dest_id'];
+        die();
+      }
+    } ?>
         <!-- Services -->
         <div class="container-fluid w-100 p-0">
-          <h1 class="text-center section-title">Services</h1>
-
-          <!-- Services Filters -->
-          <div id="serviceFilters" class="row justify-content-center m-3 p-0">
-            <ul class="nav nav-underline w-100 justify-content-center">
-              <li class="nav-item">
-                <a id="immersion" class="nav-link">Immersions</a>
-              </li>
-              <li class="nav-item">
-                <a id="excursion" class="nav-link" checked >Excursions</a>
-              </li>
-              <li class="nav-item">
-                <a id="course" class="nav-link">Courses</a>
-              </li>
-            </ul>
-          </div>
-            
-          <div class="container-fluid w-100 p-0">
-            <!-- Empty Results Message -->
-            <div id='emptyResMsg' class="row justify-content-center">
-              <p class="text-center">No results.</p>
+          <h1 class="display-4 text-center section-title">Services</h1>
+          <h2>Immersions</h2>
+            <div class="container-fluid p-0">
             </div>
-        <?php while ($record = mysqli_fetch_assoc($res)) { ?>
-              <!-- Service Card -->
-              <div class="card mb-3 servcard <?php echo $record['tipo']; ?>">
-                <div id="servCardWrapper" class="row g-0">
-                  <div id="servImage" class="col-md-4 d-none">
-                    <img src= <?php echo $record['image_url']; ?> class="img-fluid rounded-start"/>
+            <!-- Excursiones -->
+            <?php if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
+              $stmt->bind_param('s',$destid);
+              $stmt->execute();
+              
+              $res = $stmt->get_result();
+              if ($res->num_rows > 0) { ?>
+                <h2>Excursions</h2>
+                <div class="container-fluid p-0">
+                <?php while ($record=mysqli_fetch_assoc($res)) { ?>
+                  <!-- Service Card -->
+                  <div class="card mb-3 servcard <?php echo $record['tipo']; ?>">
+                    <div id="servCardWrapper" class="row g-0">
+                      <div id="servImage" class="col-md-4 d-none">
+                        <img src= <?php echo $record['image_url']; ?> class="img-fluid rounded-start"/>
+                      </div>
+                      <div class="card-body col-md-8">
+                        <h5 id="servName" class="card-title"><?php echo $record['nombre']; ?></h5>
+                        <?php echo set_simple_p('',$record['descripcion'],"servDesc","card-text");?>
+                        <?php echo set_simple_p('Incluye: ',$record['incluye'],"servInc","card-text"); ?>
+                        <?php echo set_psmall('Disponibilidad: ', $record['horario']); ?>
+                        <?php echo set_psmall('Duracion: ', $record['duracion']); ?>
+                        <?php echo set_psmall('Inmersiones: ', $record['inmersiones']); ?>
+                        <?php echo set_psmall("",$record['precios']); ?>
+                        <?php echo set_psmall("Politica de Cancelacion: ", $record['pol_cancel']); ?>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-body col-md-8">
-                    <h5 id="servName" class="card-title"><?php echo $record['nombre']; ?></h5>
-                    <?php 
-                    echo set_simple_p('',$record['descripcion'],"servDesc","card-text");
-                    ?> 
-                
-                    <?php echo set_simple_p('Incluye: ',$record['incluye'],"servInc","card-text"); ?>
-                    <?php echo set_psmall('Disponibilidad: ', $record['horario']); ?>
-                    <?php echo set_psmall('Duracion: ', $record['duracion']); ?>
-                    <?php echo set_psmall('Inmersiones: ', $record['inmersiones']); ?>
-                    <?php echo set_psmall("",$record['precios']); ?>
-                    <?php echo set_psmall("Politica de Cancelacion: ", $record['pol_cancel']);  ?>
-                  </div>
-                </div>
-              </div>
-        <?php } ?>
-          </div>
-        </div>
-        
-        <script>
-          // Handle Service Cards filtering
-          let servFilters = document.querySelector('#serviceFilters'),
-          filterBtns = servFilters.querySelectorAll('.nav-link');
-          let servCards = document.querySelectorAll('.servcard');
-          let emptyMsg = document.querySelector('#emptyResMsg');
-          let matchCount = 0;
-          filterServices();
-          
-          filterBtns.forEach(fb => {
-            fb.addEventListener('click', () => {
-              filterBtns.forEach(element => {
-                if (element !== fb) { 
-                  element.removeAttribute('checked'); 
-                }
-              });
-              fb.setAttribute('checked','');
-              filterServices();
-            })
-          })
-
-          function filterServices() {
-            matchCount = 0;
-            filterBtns.forEach(filterb => {
-              //check which button is selected
-              if (filterb.hasAttribute('checked')) {
-                servCards.forEach(scard => {
-                  scard.style.display = scard.classList.contains(filterb.id) ? 'flex' : 'none';
-                  if (scard.style.display !== 'none') {
-                    matchCount++;
-                  }
-                });
+              <?php } ?>
+            </div>
+            <?php }
               }
-            });
-            emptyMsg.style.display = matchCount > 0 ? 'none' : 'initial';
-          }
-
-        </script>
-
+              $stmt->close();
+            ?>
+            <!-- Cursos -->
+            <?php if ($stmt = $connect->prepare('SELECT * FROM cursos')) {
+              $stmt->bind_param('s',$destid);
+              $stmt->execute();
+              
+              $res = $stmt->get_result();
+              if ($res->num_rows > 0) { ?>
+          <h2>Courses</h2>
+            <div class="container-fluid p-0">
+            </div>
+        
+        <?php while ($record = mysqli_fetch_assoc($res)) { ?>
+              
+        <?php } ?>
+        </div>
 <?php } else {
         echo 'Couldnt find any service :/';
       }
