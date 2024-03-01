@@ -48,7 +48,7 @@ if (isset($_GET['dest_id'])) {
           <!-- Services Filters -->
           <div id="serviceFilters" class="row justify-content-center m-3 p-0">
 
-            <ul class="nav nav-underline">
+            <ul class="nav nav-underline w-100 justify-content-center">
               <li class="nav-item">
                 <a id="immersion" class="nav-link">Immersions</a>
               </li>
