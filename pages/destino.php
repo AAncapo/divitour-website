@@ -18,7 +18,7 @@ if (isset($_GET['dest_id'])) {
 <!-- Banner -->
 <header>
   <div class="container-fluid p-0 mb-5" style="height: 40vh;">
-    <img src="" alt="" style="width:100%; height:100%; object-fit:cover" />
+    <img src= "<?php echo 'destino/images/banners/banner-' . $destid . '.jpg'; ?>" alt="" style="width:100%; height:100%; object-fit:cover" />
   </div>
 </header>
 <main class="container">
