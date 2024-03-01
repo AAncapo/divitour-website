@@ -75,12 +75,12 @@ if (isset($_GET['dest_id'])) {
                     <?php 
                     echo set_simple_p('',$record['descripcion'],"servDesc","card-text");
                     ?> 
-                    <br> 
+                
                     <?php echo set_simple_p('Incluye: ',$record['incluye'],"servInc","card-text"); ?>
                     <?php echo set_psmall('Disponibilidad: ', $record['horario']); ?>
                     <?php echo set_psmall('Duracion: ', $record['duracion']); ?>
+                    <?php echo set_psmall('Inmersiones: ', $record['inmersiones']); ?>
                     <?php echo set_psmall("",$record['precios']); ?>
-                    <br>
                     <?php echo set_psmall("Politica de Cancelacion: ", $record['pol_cancel']);  ?>
                   </div>
                 </div>
