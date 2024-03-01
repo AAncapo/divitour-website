@@ -34,106 +34,111 @@ if (isset($_GET['dest_id'])) {
   }
   ?>
       
-    <?php
-    if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
-        $stmt->bind_param('s',$destid);
-        $stmt->execute();
-        
-        $res = $stmt->get_result();
-        if ($res->num_rows > 0) { ?>
-          <!-- Services -->
-          <div class="container-fluid w-100 p-0">
-            <h1 class="text-center section-title">Services</h1>
+  <?php
+  if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
+      $stmt->bind_param('s',$destid);
+      $stmt->execute();
+      
+      $res = $stmt->get_result();
+      if ($res->num_rows > 0) { ?>
+        <!-- Services -->
+        <div class="container-fluid w-100 p-0">
+          <h1 class="text-center section-title">Services</h1>
 
-            <!-- Services Filters -->
-            <div id="serviceFilters" class="row justify-content-center m-3 p-0">
+          <!-- Services Filters -->
+          <div id="serviceFilters" class="row justify-content-center m-3 p-0">
 
-              <ul class="nav nav-underline">
-                <li class="nav-item">
-                  <a id="immersion" class="nav-link">Immersions</a>
-                </li>
-                <li class="nav-item">
-                  <a id="excursion" class="nav-link" checked >Excursions</a>
-                </li>
-                <li class="nav-item">
-                  <a id="course" class="nav-link">Courses</a>
-                </li>
-              </ul>
-            </div>
-              
-            <div class="container-fluid w-100 p-0">
-              <!-- Empty Results Message -->
-              <div id='emptyResMsg' class="row justify-content-center">
-                <p class="text-center">No results.</p>
-              </div>
-            <?php while ($record = mysqli_fetch_assoc($res)) { ?>
-                  <!-- Service Card -->
-                  <div id="servCard" class="card mb-3 <?php echo $record['tipo']; ?>" >
-                    <div id="servCardWrapper" class="row g-0">
-                      <div id="servImage" class="col-md-4">
-                        <img src= <?php echo $record['image_url']; ?> 
-                          class="img-fluid rounded-start"
-                        />
-                      </div>
-                      <div class="card-body col-md-8">
-                        <h5 id="servName" class="card-title"><?php echo $record['nombre']; ?></h5>
-                        <p id="servDesc" class="card-text"><?php echo $record['descripcion']; ?></p>
-                        <?php echo set_service_text($record['horario'],'Disponibilidad: ') ?>
-                        <?php echo set_service_text($record['duracion'],'Duracion: ') ?>
-                        <?php echo set_service_text($record['precios']); ?>
-                        <?php echo set_service_text($record['pol_cancel'],"Politica de Cancelacion: "); ?>
-                        <!-- <div class="btn btn-primary w-50">Visit</div> -->
-                      </div>
-                    </div>
-                  </div>
-            <?php } ?>
-            </div>
+            <ul class="nav nav-underline">
+              <li class="nav-item">
+                <a id="immersion" class="nav-link">Immersions</a>
+              </li>
+              <li class="nav-item">
+                <a id="excursion" class="nav-link" checked >Excursions</a>
+              </li>
+              <li class="nav-item">
+                <a id="course" class="nav-link">Courses</a>
+              </li>
+            </ul>
           </div>
-          
-          <script>
-            // Handle Service Cards filtering
-            let servFilters = document.querySelector('#serviceFilters'),
-            filterBtns = servFilters.querySelectorAll('.nav-link');
-            let servCards = document.querySelectorAll('#servCard');
-            let emptyMsg = document.querySelector('#emptyResMsg');
-            let matchCount = 0;
-            filterServices();
             
-            filterBtns.forEach(fb => {
-              fb.addEventListener('click', () => {
-                filterBtns.forEach(element => {
-                  if (element !== fb) { 
-                    element.removeAttribute('checked'); 
-                  }
-                });
-                fb.setAttribute('checked','');
-                filterServices();
-              })
-            })
-
-            function filterServices() {
-              matchCount = 0;
-              filterBtns.forEach(filterb => {
-                //check which button is selected
-                if (filterb.hasAttribute('checked')) {
-                  servCards.forEach(scard => {
-                    scard.style.display = scard.classList.contains(filterb.id) ? 'initial' : 'none';
-                    if (scard.style.display !== 'none') {
-                      matchCount++;
-                    }
-                  });
+          <div class="container-fluid w-100 p-0">
+            <!-- Empty Results Message -->
+            <div id='emptyResMsg' class="row justify-content-center">
+              <p class="text-center">No results.</p>
+            </div>
+        <?php while ($record = mysqli_fetch_assoc($res)) { ?>
+              <!-- Service Card -->
+              <div id="servCard" class="card mb-3 <?php echo $record['tipo']; ?>" >
+                <div id="servCardWrapper" class="row g-0">
+                  <div id="servImage" class="col-md-4">
+                    <img src= <?php echo $record['image_url']; ?> 
+                      class="img-fluid rounded-start"
+                    />
+                  </div>
+                  <div class="card-body col-md-8">
+                    <h5 id="servName" class="card-title"><?php echo $record['nombre']; ?></h5>
+                    <?php 
+                    echo set_simple_p('',$record['descripcion'],"servDesc","card-text");
+                    ?> <br> <?php 
+                    echo set_simple_p('Incluye: ',$record['incluye'],"servInc","card-text"); 
+                    ?> <br> <?php 
+                    echo set_psmall('Disponibilidad: ', $record['horario']);
+                    echo set_psmall('Duracion: ', $record['duracion']);
+                    echo set_psmall($record['precios']);
+                    echo set_psmall("Politica de Cancelacion: ", $record['pol_cancel']); 
+                    ?>
+                    <!-- <div class="btn btn-primary w-50">Visit</div> -->
+                  </div>
+                </div>
+              </div>
+        <?php } ?>
+          </div>
+        </div>
+        
+        <script>
+          // Handle Service Cards filtering
+          let servFilters = document.querySelector('#serviceFilters'),
+          filterBtns = servFilters.querySelectorAll('.nav-link');
+          let servCards = document.querySelectorAll('#servCard');
+          let emptyMsg = document.querySelector('#emptyResMsg');
+          let matchCount = 0;
+          filterServices();
+          
+          filterBtns.forEach(fb => {
+            fb.addEventListener('click', () => {
+              filterBtns.forEach(element => {
+                if (element !== fb) { 
+                  element.removeAttribute('checked'); 
                 }
               });
-              emptyMsg.style.display = matchCount > 0 ? 'none' : 'initial';
-            }
+              fb.setAttribute('checked','');
+              filterServices();
+            })
+          })
 
-          </script>
+          function filterServices() {
+            matchCount = 0;
+            filterBtns.forEach(filterb => {
+              //check which button is selected
+              if (filterb.hasAttribute('checked')) {
+                servCards.forEach(scard => {
+                  scard.style.display = scard.classList.contains(filterb.id) ? 'initial' : 'none';
+                  if (scard.style.display !== 'none') {
+                    matchCount++;
+                  }
+                });
+              }
+            });
+            emptyMsg.style.display = matchCount > 0 ? 'none' : 'initial';
+          }
 
-  <?php } else {
-          echo 'Couldnt find any service :/';
-        }
-        $stmt->close();
+        </script>
+
+<?php } else {
+        echo 'Couldnt find any service :/';
       }
+      $stmt->close();
+    }
   ?>
 
   <?php 
