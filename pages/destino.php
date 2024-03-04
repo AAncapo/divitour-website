@@ -44,26 +44,26 @@ if (isset($_GET['dest_id'])) {
               $stmt->bind_param('s',$destid);
               $stmt->execute();
               
-              $res = $stmt->get_result();
-              if ($res->num_rows > 0) { ?>
+              $result = $stmt->get_result();
+              if ($result->num_rows > 0) { ?>
                 <h2>Excursions</h2>
                 <div class="container-fluid p-0">
-                <?php while ($record=mysqli_fetch_assoc($res)) { ?>
+                <?php while ($row=mysqli_fetch_assoc($result)) { ?>
                   <!-- Service Card -->
-                  <div class="card mb-3 servcard <?php echo $record['tipo']; ?>">
+                  <div class="card mb-3 servcard <?php echo $row['tipo']; ?>">
                     <div id="servCardWrapper" class="row g-0">
                       <div id="servImage" class="col-md-4 d-none">
-                        <img src= <?php echo $record['image_url']; ?> class="img-fluid rounded-start"/>
+                        <img src= <?php echo $row['image_url']; ?> class="img-fluid rounded-start"/>
                       </div>
                       <div class="card-body col-md-8">
-                        <h5 id="servName" class="card-title"><?php echo $record['nombre']; ?></h5>
-                        <?php echo set_simple_p('',$record['descripcion'],"servDesc","card-text");?>
-                        <?php echo set_simple_p('Incluye: ',$record['incluye'],"servInc","card-text"); ?>
-                        <?php echo set_psmall('Disponibilidad: ', $record['horario']); ?>
-                        <?php echo set_psmall('Duracion: ', $record['duracion']); ?>
-                        <?php echo set_psmall('Inmersiones: ', $record['inmersiones']); ?>
-                        <?php echo set_psmall("",$record['precios']); ?>
-                        <?php echo set_psmall("Politica de Cancelacion: ", $record['pol_cancel']); ?>
+                        <h5 id="servName" class="card-title"><?php echo $row['nombre']; ?></h5>
+                        <?php echo set_simple_p('',$row['descripcion'],"servDesc","card-text");?>
+                        <?php echo set_simple_p('Incluye: ',$row['incluye'],"servInc","card-text"); ?>
+                        <?php echo set_psmall('Disponibilidad: ', $row['horario']); ?>
+                        <?php echo set_psmall('Duracion: ', $row['duracion']); ?>
+                        <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
+                        <?php echo set_psmall("",$row['precios']); ?>
+                        <?php echo set_psmall("Politica de Cancelacion: ", $row['pol_cancel']); ?>
                       </div>
                     </div>
                   </div>
