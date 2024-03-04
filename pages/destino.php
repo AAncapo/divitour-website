@@ -64,9 +64,8 @@ if (isset($_GET['dest_id'])) {
                         <?php echo set_psmall("Politica de Cancelacion: ", $row['pol_cancel']); ?>
                     </div>
                   </div> -->
-
                   <!-- Service Card -->
-                  <div class="card mb-3 servcard">
+                  <div class="card mb-3 servcard" style="border: none;">
                     <div id="servCardWrapper" class="row g-0">
                       <div id="servImage" class="col-md-4 d-none">
                         <img src= <?php echo $row['image_url']; ?> class="img-fluid rounded-start"/>
@@ -83,6 +82,8 @@ if (isset($_GET['dest_id'])) {
                       </div>
                     </div>
                   </div>
+                  <div class="thin-line-separator" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div>
+
               <?php } ?>
             </div>
             <?php }
