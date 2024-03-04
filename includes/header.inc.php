@@ -1,5 +1,5 @@
 <?php
-$base_url = '/divitur/';
+$base_url = "/divitur/";
 ?>
 
 <!DOCTYPE html>
@@ -67,9 +67,8 @@ $base_url = '/divitur/';
         >
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="#home" aria-current="page"
-                >Home<span class="visually-hidden">(current)</span></a
-              >
+              <a class="nav-link active" href="#home" aria-current="page">Home<span class="visually-hidden">(current)</span>
+              </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#events">Events</a>
@@ -95,9 +94,38 @@ $base_url = '/divitur/';
             <li class="nav-item">
               <a class="nav-link" href="#contacts">Contacts</a>
             </li>
+            <li class="nav-item">
+              <label for="#book-now-btn"></label>
+              <button type="button" id="book-now-btn" class="btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Book Now</button>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
-  
+    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="staticBackdropLabel">Booking Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <select class="form-select form-select-sm" aria-label="Small select example">
+              <option selected>Select Your Destination</option>
+              <option value="1">Havana</option>
+              <option value="2">Varadero</option>
+              <option value="3">Jibacoa</option>
+              <option value="4">Cayo Largo del Sur</option>
+              <option value="5">Santa Lucia</option>
+              <option value="6">Trinidad</option>
+              <option value="7">Cayo Guillermo</option>
+              <option value="8">Peninsula de Zapata</option>
+            </select>
+            <input type="date">
+            <label for="#psgrInput">Adults</label>
+            <input id="psgrInput" type="number" min="1">
+            <button type="button" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </div>
+

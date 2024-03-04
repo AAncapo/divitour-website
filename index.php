@@ -31,13 +31,13 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
         <br />and make your underwater adventure with Divitour <br />a
         journey to remember.
       </p>
-      <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#bookingModal" type="button">
+      <!-- <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#bookingModal" type="button">
           Book Now
-      </button> 
+      </button>  -->
     </div>
   </div>
   <!-- Booking Modal -->
-  <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -46,8 +46,6 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
         </div>
         <div class="modal-body">
           <form action=<?php echo $base_url . 'pages/booking.php?' ?> method="get">
-            <!-- Informacion de formulario -->
-            <!-- Destino -->
             <div id="bookingFilterButtons" class="mb-3">
               <span><a id="excursion">Excursions </a>|<a id="immersion"> Immersions </a>|<a id="course"> Courses </a>|<a id="hotel"> Hotels</a></span>
             </div>
@@ -61,7 +59,6 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
               <?php 
             } ?>
             </select>
-            <!-- Results -->
             <div class="list-group">
               <?php 
                 if ($stm=$connect->prepare('SELECT * FROM servicios')) {
@@ -154,7 +151,7 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </header>
 <main class="container" style="height: fit-content;">
 <!-- Events -->

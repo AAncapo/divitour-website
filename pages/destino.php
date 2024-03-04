@@ -47,22 +47,34 @@ if (isset($_GET['dest_id'])) {
               $result = $stmt->get_result();
               if ($result->num_rows > 0) { ?>
                 <h2>Excursions</h2>
-                <div class="container-fluid p-0">
+                <!-- <div class="container-fluid p-0"> -->
+                  <div class="row justify-content-center">
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                  <!-- <div id="htlCard" class="card m-2">
+                    <div id="htlImage">
+                      <img class="card-img-top" src= <?php echo $row['image_url']; ?> />
+                    </div>
+                    <div class="card-body">
+                      <h4 id="htlName" class="card-title text-center"> <?php echo $row['nombre']; ?> </h4>
+                      <p id="htlDesc" class="card-text"> <?php echo $row['descripcion']; ?> </p>
+                      <?php echo set_psmall('Disponibilidad: ', $row['horario']); ?>
+                        <?php echo set_psmall('Duracion: ', $row['duracion']); ?>
+                        <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
+                        <?php echo set_psmall("",$row['precios']); ?>
+                        <?php echo set_psmall("Politica de Cancelacion: ", $row['pol_cancel']); ?>
+                    </div>
+                  </div> -->
+
                   <!-- Service Card -->
-                  <div class="card mb-3 servcard <?php echo $row['tipo']; ?>">
+                  <div class="card mb-3 servcard">
                     <div id="servCardWrapper" class="row g-0">
                       <div id="servImage" class="col-md-4 d-none">
                         <img src= <?php echo $row['image_url']; ?> class="img-fluid rounded-start"/>
                       </div>
                       <div class="card-body col-md-8">
                         <h5 id="servName" class="card-title"><?php echo $row['nombre']; ?></h5>
-                        <!-- TODO: enviar el $row como parametro a la helper_function y manejar por alla errores como que no se encuentre la key en el array 
-                        OR
-                        crear todo el servcard en un destino_view.php
-                        -->
                         <?php echo set_simple_p('',$row['descripcion'],"servDesc","card-text");?>
-                        <!-- <?php echo set_simple_p('Incluye: ',$row['incluye'],"servInc","card-text"); ?> -->
+                        <?php echo set_simple_p('Incluye: ',$row['incluye'],"servInc","card-text"); ?> 
                         <?php echo set_psmall('Disponibilidad: ', $row['horario']); ?>
                         <?php echo set_psmall('Duracion: ', $row['duracion']); ?>
                         <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
@@ -78,26 +90,33 @@ if (isset($_GET['dest_id'])) {
               $stmt->close();
             ?>
             <!-- Cursos -->
-            <?php if ($stmt = $connect->prepare('SELECT * FROM cursos')) {
-              // $stmt->bind_param('s',$destid);
+            <!-- <?php if ($stmt = $connect->prepare('SELECT * FROM cursos')) {
               $stmt->execute();
               
               $result = $stmt->get_result();
               if ($result->num_rows > 0) { ?>
           <h2>Courses</h2>
             <div class="container-fluid p-0">
-            </div>
-        
-        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
               
-        <?php } ?>
+              <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                <div class="card mb-3 servcard">
+                    <div id="servCardWrapper" class="row g-0">
+                      <div class="card-body col-md-8">
+                        <h5 id="servName" class="card-title"><?php echo $row['title']; ?></h5>
+                        <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
+                      </div>
+                    </div>
+                  </div>
+                
+                <?php } ?>
+              </div>
         </div>
 <?php } else {
-        echo 'Couldnt find any courses :/';
+        echo 'Couldnt find any courses :(';
       }
       $stmt->close();
     }
-  ?>
+  ?> -->
 
   <?php 
       if ($stmt = $connect->prepare('SELECT * FROM hoteles where destino_id = ?')) {
@@ -107,7 +126,7 @@ if (isset($_GET['dest_id'])) {
         $res = $stmt->get_result();
         if ($res->num_rows > 0) { ?>
           <!-- Hotels -->
-          <div id='hoteles' class="row justify-content-center mb-5">
+          <div id='hoteles' class="row justify-content-center m-5">
             <h1 class="text-center section-title">Hotels</h1>
             <div id="htlCardContainer" class="container-fluid row justify-content-center">
         <?php while ($record = mysqli_fetch_assoc($res)) { ?>
