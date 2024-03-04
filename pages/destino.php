@@ -82,7 +82,7 @@ if (isset($_GET['dest_id'])) {
                       </div>
                     </div>
                   </div>
-                  <div class="thin-line-separator" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div>
+                  <div class="thin-line-separator ms-5" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div>
 
               <?php } ?>
             </div>

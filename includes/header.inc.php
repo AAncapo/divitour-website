@@ -44,9 +44,9 @@ $base_url = "/divitur/";
   >
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
       <div class="container">
-        <a class="navbar-brand" href=<?php echo $base_url . 'index.php' ?>>
+        <a class="navbar-brand" href=<?php echo $base_url . 'index.php'; ?>>
           <img
-            src=<?php echo $base_url . 'images/divitour-full.png' ?>
+            src=<?php echo $base_url . 'images/divitour-full.png'; ?>
             alt="Divitour Logo"
             style="width: 200px"
         /></a>
@@ -73,9 +73,6 @@ $base_url = "/divitur/";
             <li class="nav-item">
               <a class="nav-link" href="#events">Events</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#destinations">Destinations</a>
-            </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#destinations" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Destinations
@@ -109,23 +106,23 @@ $base_url = "/divitur/";
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <div>
-          <select class="form-select form-select-sm" aria-label="Small select example">
-              <option selected>Select Your Destination</option>
-              <option value="1">Havana</option>
-              <option value="2">Varadero</option>
-              <option value="3">Jibacoa</option>
-              <option value="4">Cayo Largo del Sur</option>
-              <option value="5">Santa Lucia</option>
-              <option value="6">Trinidad</option>
-              <option value="7">Cayo Guillermo</option>
-              <option value="8">Peninsula de Zapata</option>
-            </select>
-            <input type="date">
-            <label for="#psgrInput">Adults</label>
-            <input id="psgrInput" type="number" min="1">
-            <button type="button" class="btn btn-primary">Search</button>
-        </div>
+        <form action="<?php echo $base_url . 'includes/booking.inc.php'; ?>" method="post">
+          <select name="destino" class="form-select form-select-sm" aria-label="Small select example">
+            <option selected>Select Your Destination</option>
+            <option value="havana">Havana</option>
+            <option value="varadero">Varadero</option>
+            <option value="jibacoa">Jibacoa</option>
+            <option value="cayolargo">Cayo Largo del Sur</option>
+            <option value="stlucia">Santa Lucia</option>
+            <option value="trinidad">Trinidad</option>
+            <option value="guillermo">Cayo Guillermo</option>
+            <option value="zapata">Peninsula de Zapata</option>
+          </select>
+          <input name="datestart" type="date">
+          <label for="#psgrInput">Adults</label>
+          <input name="psgrs" id="psgrInput" type="number" min="1">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
       </div>
     </div>
 
