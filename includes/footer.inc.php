@@ -1,4 +1,4 @@
-<footer class="container-fluid bg-dark">
+<footer class="container-fluid bg-dark" style="height: 600px;">
     <!-- Contacts -->
       <div id="contacts" class="container d-flex" style="margin-bottom: 100px;flex-direction:column">
         <h3 class="text-light text-center mt-5 section-title">Contact Us</h3>

@@ -11,13 +11,10 @@ include('includes/header.inc.php');
 // Date
 // Availability Schedule
 
-
 if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
   $stmt->execute();
   $res = $stmt->get_result();
-  if ($res->num_rows > 0) {
-
-?>
+  if ($res->num_rows > 0) { ?>
 
 <header class="container-fluid p-0" style="position:relative;">
   <div id="home" class="mb-4">
@@ -99,33 +96,29 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
                   }
                 } else {
                   // Couldnt connect to database
-                }
-                ?>
+                } ?>
                 <?php 
-                
-                if ($stm=$connect->prepare('SELECT * FROM hoteles')) {
+                if ($stm = $connect->prepare('SELECT * FROM hoteles')) {
                   $stm->execute();
-                  $result=$stm->get_result();
+                  $result = $stm->get_result();
                   if ($result->num_rows > 0) {
 
-                    while ($rec=mysqli_fetch_assoc($result)) {
-
-              ?>
-              <a id="bookingResultItem" class="list-group-item list-group-item-action <?php echo $rec['destino_id']; ?> hotel">
-                  <div class="row g-0">
-                    <div id='bkResImage' class="col-md-4">
-                      <img src="<?php echo $rec['image_url']; ?>" />
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title"><?php echo $rec['nombre'] ?></h5>
-                        <p class="card-text">
-                          <small class="text-muted"><?php echo $rec['destino_id']; ?> </small>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-              </a>
+                    while ($row=mysqli_fetch_assoc($result)) { ?>
+                    <a id="bookingResultItem" class="list-group-item list-group-item-action <?php echo $row['destino_id']; ?> hotel">
+                        <div class="row g-0">
+                          <div id='bkResImage' class="col-md-4">
+                            <img src="<?php echo $row['image_url']; ?>" />
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title"><?php echo $row['nombre'] ?></h5>
+                              <p class="card-text">
+                                <small class="text-muted"><?php echo $row['destino_id']; ?> </small>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                    </a>
               <?php
                     }
                   } else {

@@ -36,9 +36,9 @@ if (isset($_GET['dest_id'])) {
         <!-- Services -->
         <div class="container-fluid w-100 p-0">
           <h1 class="display-4 text-center section-title">Services</h1>
-          <h2>Immersions</h2>
+          <!-- <h2>Immersions</h2>
             <div class="container-fluid p-0">
-            </div>
+            </div> -->
             <!-- Excursiones -->
             <?php if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
               $stmt->bind_param('s',$destid);
@@ -48,7 +48,7 @@ if (isset($_GET['dest_id'])) {
               if ($result->num_rows > 0) { ?>
                 <h2>Excursions</h2>
                 <div class="container-fluid p-0">
-                <?php while ($row=mysqli_fetch_assoc($result)) { ?>
+                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                   <!-- Service Card -->
                   <div class="card mb-3 servcard <?php echo $row['tipo']; ?>">
                     <div id="servCardWrapper" class="row g-0">
@@ -57,8 +57,12 @@ if (isset($_GET['dest_id'])) {
                       </div>
                       <div class="card-body col-md-8">
                         <h5 id="servName" class="card-title"><?php echo $row['nombre']; ?></h5>
+                        <!-- TODO: enviar el $row como parametro a la helper_function y manejar por alla errores como que no se encuentre la key en el array 
+                        OR
+                        crear todo el servcard en un destino_view.php
+                        -->
                         <?php echo set_simple_p('',$row['descripcion'],"servDesc","card-text");?>
-                        <?php echo set_simple_p('Incluye: ',$row['incluye'],"servInc","card-text"); ?>
+                        <!-- <?php echo set_simple_p('Incluye: ',$row['incluye'],"servInc","card-text"); ?> -->
                         <?php echo set_psmall('Disponibilidad: ', $row['horario']); ?>
                         <?php echo set_psmall('Duracion: ', $row['duracion']); ?>
                         <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
@@ -75,21 +79,21 @@ if (isset($_GET['dest_id'])) {
             ?>
             <!-- Cursos -->
             <?php if ($stmt = $connect->prepare('SELECT * FROM cursos')) {
-              $stmt->bind_param('s',$destid);
+              // $stmt->bind_param('s',$destid);
               $stmt->execute();
               
-              $res = $stmt->get_result();
-              if ($res->num_rows > 0) { ?>
+              $result = $stmt->get_result();
+              if ($result->num_rows > 0) { ?>
           <h2>Courses</h2>
             <div class="container-fluid p-0">
             </div>
         
-        <?php while ($record = mysqli_fetch_assoc($res)) { ?>
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
               
         <?php } ?>
         </div>
 <?php } else {
-        echo 'Couldnt find any service :/';
+        echo 'Couldnt find any courses :/';
       }
       $stmt->close();
     }
@@ -106,7 +110,7 @@ if (isset($_GET['dest_id'])) {
           <div id='hoteles' class="row justify-content-center mb-5">
             <h1 class="text-center section-title">Hotels</h1>
             <div id="htlCardContainer" class="container-fluid row justify-content-center">
-          <?php while ($record = mysqli_fetch_assoc($res)) { ?>
+        <?php while ($record = mysqli_fetch_assoc($res)) { ?>
               <!-- Insert Hotel Cards -->
               <div id="htlCard" class="card m-2">
                 <div id="htlImage">
@@ -120,10 +124,9 @@ if (isset($_GET['dest_id'])) {
           <?php } ?>
             </div>
           </div>
-  <?php } 
+  <?php }
         $stmt->close();
-      }
-  ?>
+      } ?>
 </main>
 
 <?php

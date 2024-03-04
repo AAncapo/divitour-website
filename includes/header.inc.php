@@ -39,7 +39,7 @@ $base_url = '/divitur/';
   </head>
 
   <body
-    class=" w-100"
+    class="w-100"
     style="font-family: 'Montserrat', sans-serif; margin-top: 59px"
   >
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
