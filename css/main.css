@@ -126,9 +126,6 @@ a {
 
 
 /* ========== Destino.php ========== */
-
-/* service cards */
-
 @media screen and (max-width: 500px) {
   #destDescription {
     display: -webkit-box;
@@ -139,6 +136,8 @@ a {
       text-overflow: ellipsis;
   }
 }
+/* service cards */
+
 .servcard {
   height: fit-content;
   overflow: hidden;
@@ -210,38 +209,8 @@ a {
 
 /***************** FOOTER *****************/
 /* Contacts */
-.contact-items {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-item {
-  justify-content: space-between;
-  /* padding-inline: 10px; */
-
-  & img {
-    margin-right: 10px;
-    height: 20px;
-    width: 20px;
-  }
-
-  & a {
-    font-size: .8rem;
-    color: #fff;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-  }
-}
-
-.social-media {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 50px;
+.contactItem {
+  width: fit-content;
 }
 
 .partners-container {
