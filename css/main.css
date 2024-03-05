@@ -202,6 +202,7 @@ a {
     object-fit: cover;
   }
 }
+
 #htlDesc {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -213,7 +214,7 @@ a {
   text-overflow: ellipsis;
 }
 
-/***************** FOOTER *****************/
+/*********** FOOTER ************/
 /* Contacts */
 .contactItem {
   width: fit-content;

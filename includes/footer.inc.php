@@ -6,7 +6,7 @@
 
     <div class="container-fluid">
       <!-- Contact Links -->
-      <div class="d-flex flex-sm-row flex-column justify-content-center align-items-center gap-5 mb-2">
+      <div class="d-flex flex-sm-row flex-column justify-content-between align-items-center gap-md-5 mb-2">
         <div class="col-3 contactItem">
           <a class=" text-decoration-none text-light" href="https://wa.me/5352529974" target="_blank"><img src=<?php echo $base_url . 'images/icons/whatsapp.png'; ?> />  (+53) 52529974</a>
         </div>
@@ -19,8 +19,8 @@
       </div>
 
       <!-- Social Media -->
-      <span class="d-flex justify-content-center gap-3">
-        <p>Follow Us</p>
+      <span class="w-100 d-flex justify-content-center align-items-center gap-3">
+        <p class="text-light text-center m-0">Follow Us</p>
         <a class="contactItem" href="https://www.facebook.com/divitourtravel/" target="_blank">
           <img src=<?php echo $base_url . 'images/icons/icons8-facebook.png'; ?> />
         </a>

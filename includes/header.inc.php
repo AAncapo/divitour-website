@@ -40,7 +40,7 @@ $base_url = "/divitur/";
 
   <body>
     <nav class="navbar navbar-expand-lg bg-light fixed-top" role="navigation">
-      <div class="container-fluid"> 
+      <div class="container"> 
         <a class="navbar-brand" href=<?php echo $base_url . 'index.php'; ?>>
           <img
           src=<?php echo $base_url . 'images/divitour-full.png'; ?>
@@ -69,9 +69,7 @@ $base_url = "/divitur/";
               <a class="nav-link" href="#events">Events</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#destinations" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Destinations
-              </a>
+              <a class="nav-link dropdown-toggle" href="#destinations" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=havana'; ?>>Havana</a></li>
                 <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=varadero'; ?>>Varadero</a></li>
@@ -121,7 +119,7 @@ $base_url = "/divitur/";
       </div>
     </div>
 
-    <div class="container d-sm-flex d-md-none fixed-bottom text-light" style="background-color: #d50032;">
+    <div class="container d-sm-flex d-md-none fixed-bottom text-light" style="background-color: var(--red-color);">
         <!-- <label class="text-wrap me-auto h-100" for="#bookNowBtn">Plan your adventure with us </label> -->
         <button type="button" id="bookNowBtn" class="btn btn-danger" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Book Now</button>
     </div>

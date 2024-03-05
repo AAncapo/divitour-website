@@ -19,13 +19,13 @@ if (isset($_GET['dest_id'])) {
 <!-- Banner -->
 <header>
   <div class="container-fluid p-0 mb-5" style="height: 40vh;">
-    <img src= "<?php echo 'destino/images/banners/banner-' . $destid . '.jpg'; ?>" alt="" style="width:100%; height:100%; object-fit:cover" />
+    <img class="w-100 h-100" src= "<?php echo 'destino/images/banners/banner-' . $destid . '.jpg'; ?>" style="object-fit:cover" />
   </div>
 </header>
 <main class="container">
   <!-- Name & Description -->
-  <h1 class="display-2" > <?php echo $dest_rec['nombre']?> </h1>
-  <p class='mb-5' id="destDescription"> <?php echo $dest_rec['descripcion']?> </p>
+  <h1 class="display-1" > <?php echo $dest_rec['nombre']?> </h1>
+  <p class='fs-3 fw-light mb-5' id="destDescription"> <?php echo $dest_rec['descripcion']?> </p>
     <?php 
         $dest_stmt->close();
       } else {
@@ -46,32 +46,18 @@ if (isset($_GET['dest_id'])) {
               
               $result = $stmt->get_result();
               if ($result->num_rows > 0) { ?>
-                <h2>Excursions</h2>
-                <!-- <div class="container-fluid p-0"> -->
+                <!-- <h2>Excursions</h2> -->
                   <div class="row justify-content-center">
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                  <!-- <div id="htlCard" class="card m-2">
-                    <div id="htlImage">
-                      <img class="card-img-top" src= <?php echo $row['image_url']; ?> />
-                    </div>
-                    <div class="card-body">
-                      <h4 id="htlName" class="card-title text-center"> <?php echo $row['nombre']; ?> </h4>
-                      <p id="htlDesc" class="card-text"> <?php echo $row['descripcion']; ?> </p>
-                      <?php echo set_psmall('Disponibilidad: ', $row['horario']); ?>
-                        <?php echo set_psmall('Duracion: ', $row['duracion']); ?>
-                        <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
-                        <?php echo set_psmall("",$row['precios']); ?>
-                        <?php echo set_psmall("Politica de Cancelacion: ", $row['pol_cancel']); ?>
-                    </div>
-                  </div> -->
                   <!-- Service Card -->
-                  <div class="card mb-3 servcard">
-                    <div id="servCardWrapper" class="row g-0">
-                      <div id="servImage" class="col-md-4 d-none">
+                  <div class="servcard-separator ms-5" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div>
+                  <div class="card mb-3 servcard border-0">
+                    <div id="servCardWrapper" class="row">
+                      <!-- <div id="servImage" class="col-md-4">
                         <img src= <?php echo $row['image_url']; ?> class="img-fluid rounded-start"/>
-                      </div>
+                      </div> -->
                       <div class="card-body col-md-8">
-                        <h5 id="servName" class="card-title"><?php echo $row['nombre']; ?></h5>
+                        <h5 id="servName" class="card-title fs-4"><?php echo $row['nombre']; ?></h5>
                         <?php echo set_simple_p('',$row['descripcion'],"servDesc","card-text");?>
                         <?php echo set_simple_p('Incluye: ',$row['incluye'],"servInc","card-text"); ?> 
                         <?php echo set_psmall('Disponibilidad: ', $row['horario']); ?>
@@ -82,8 +68,6 @@ if (isset($_GET['dest_id'])) {
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="thin-line-separator ms-5" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div> -->
-
               <?php } ?>
             </div>
             <?php }
@@ -128,7 +112,7 @@ if (isset($_GET['dest_id'])) {
         if ($res->num_rows > 0) { ?>
           <!-- Hotels -->
           <div id='hoteles' class="row justify-content-center m-5">
-            <h1 class="text-center section-title">Hotels</h1>
+            <h1 class="text-center display-4 section-title">Hotels</h1>
             <div id="htlCardContainer" class="container-fluid row justify-content-center">
         <?php while ($record = mysqli_fetch_assoc($res)) { ?>
               <!-- Insert Hotel Cards -->
