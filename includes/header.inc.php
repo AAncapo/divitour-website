@@ -38,33 +38,28 @@ $base_url = "/divitur/";
     />
   </head>
 
-  <body
-    class="w-100"
-    style="font-family: 'Montserrat', sans-serif; margin-top: 59px"
-  >
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-      <div class="container">
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light fixed-top" role="navigation">
+      <div class="container-fluid"> 
         <a class="navbar-brand" href=<?php echo $base_url . 'index.php'; ?>>
           <img
-            src=<?php echo $base_url . 'images/divitour-full.png'; ?>
-            alt="Divitour Logo"
-            style="width: 200px"
-        /></a>
+          src=<?php echo $base_url . 'images/divitour-full.png'; ?>
+          alt="Divitour Logo"
+          style="width: 200px"
+          /></a>
         <button
-          class="navbar-toggler d-lg-none"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapsibleNavId"
-          aria-controls="collapsibleNavId"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+        class="navbar-toggler d-lg-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse"
-          id="collapsibleNavId"
-        >
+            
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
             <li class="nav-item">
               <a class="nav-link active" href="#home" aria-current="page">Home<span class="visually-hidden">(current)</span>
@@ -91,16 +86,16 @@ $base_url = "/divitur/";
             <li class="nav-item">
               <a class="nav-link" href="#contacts">Contacts</a>
             </li>
-            <li class="nav-item">
-              <label for="#book-now-btn"></label>
-              <button type="button" id="book-now-btn" class="btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Book Now</button>
-            </li>
           </ul>
+          <div class="d-none d-md-flex align-items-center">
+            <label class="me-2" for="#bookNowBtn">Plan your adventure with us </label>
+            <button type="button" id="bookNowBtn" class="btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Book Now</button>
+          </div>
         </div>
-      </div>
+      </div> 
     </nav>
 
-    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="staticBackdropLabel">Booking Menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -126,3 +121,7 @@ $base_url = "/divitur/";
       </div>
     </div>
 
+    <div class="container d-sm-flex d-md-none bg-danger fixed-bottom text-light">
+        <!-- <label class="text-wrap me-auto h-100" for="#bookNowBtn">Plan your adventure with us </label> -->
+        <button type="button" id="bookNowBtn" class="btn btn-danger" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Book Now</button>
+    </div>

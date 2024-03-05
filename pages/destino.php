@@ -25,7 +25,7 @@ if (isset($_GET['dest_id'])) {
 <main class="container">
   <!-- Name & Description -->
   <h1 class="display-2" > <?php echo $dest_rec['nombre']?> </h1>
-  <p class='mb-5'> <?php echo $dest_rec['descripcion']?> </p>
+  <p class='mb-5' id="destDescription"> <?php echo $dest_rec['descripcion']?> </p>
     <?php 
         $dest_stmt->close();
       } else {
@@ -65,7 +65,7 @@ if (isset($_GET['dest_id'])) {
                     </div>
                   </div> -->
                   <!-- Service Card -->
-                  <div class="card mb-3 servcard" style="border: none;">
+                  <div class="card mb-3 servcard">
                     <div id="servCardWrapper" class="row g-0">
                       <div id="servImage" class="col-md-4 d-none">
                         <img src= <?php echo $row['image_url']; ?> class="img-fluid rounded-start"/>
@@ -82,7 +82,7 @@ if (isset($_GET['dest_id'])) {
                       </div>
                     </div>
                   </div>
-                  <div class="thin-line-separator ms-5" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div>
+                  <!-- <div class="thin-line-separator ms-5" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div> -->
 
               <?php } ?>
             </div>

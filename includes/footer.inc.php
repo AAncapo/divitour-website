@@ -11,10 +11,7 @@
           </span>
           <span class="contact-item">
             <img src=<?php echo $base_url . 'images/icons/icons8-address.png'; ?> /><a
-              style="text-decoration: none"
-              href=""
-              >5ta Avenida e/ 62 & 66, Miramar, La Habana, Cuba</a
-            >
+              style="text-decoration: none">5ta Avenida e/ 62 & 66, Miramar, La Habana, Cuba</a>
           </span>
           <span class="contact-item">
             <img src=<?php echo $base_url . 'images/icons/icons8-mail.png'; ?> /><a
@@ -36,16 +33,6 @@
           </div>
         </div>
       </div>
-      <!-- Whatsapp widget -->
-      <!-- <script
-          src="https://static.elfsight.com/platform/platform.js"
-          data-use-service-core
-          defer
-        ></script>
-        <div
-          class="elfsight-app-313ebca9-aa4a-4f79-b99d-803f64cb2f5d"
-          data-elfsight-app-lazy
-        ></div> -->
     <!-- Partners -->
     <div class="container mb-5">
       <h3 class="text-center text-light mt-5 section-title">Our Partners</h3>

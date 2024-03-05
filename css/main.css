@@ -1,5 +1,8 @@
 body {
+  width: 100%;
   height: 100%;
+  font-family: 'Montserrat', sans-serif; 
+  margin-top: 59px
 }
 
 a {
@@ -125,6 +128,17 @@ a {
 /* ========== Destino.php ========== */
 
 /* service cards */
+
+@media screen and (max-width: 500px) {
+  #destDescription {
+    display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+      max-height: 40%;
+      text-overflow: ellipsis;
+  }
+}
 .servcard {
   height: fit-content;
   overflow: hidden;
