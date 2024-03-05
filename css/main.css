@@ -1,3 +1,8 @@
+:root {
+ --red-color: #d50032;
+ --darkblue-color: #002d72;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -113,9 +118,10 @@ a {
 }
 
 #destName {
-  position: absolute;
-  width: 100%;
-  margin: 0px;
+  font-size: 20px;
+  @media screen and (max-width:800px){
+    font-size: 8px;
+  }
 }
 
 /* About Us */

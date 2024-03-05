@@ -19,7 +19,7 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
 <header class="container-fluid p-0" style="position:relative;">
   <div id="home" class="mb-4">
     <div class="banner-image">
-      <img src="images/home-banner.jpg" alt="" >
+      <img src="images/home-banner.jpg">
       <div class="banner-gradient"></div>
     </div>
     <div
@@ -36,122 +36,6 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
       </button>  -->
     </div>
   </div>
-  <!-- Booking Modal -->
-  <!-- <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="bookingModalLabel">Plan your adventure with us</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action=<?php echo $base_url . 'pages/booking.php?' ?> method="get">
-            <div id="bookingFilterButtons" class="mb-3">
-              <span><a id="excursion">Excursions </a>|<a id="immersion"> Immersions </a>|<a id="course"> Courses </a>|<a id="hotel"> Hotels</a></span>
-            </div>
-            <select
-              class="form-select form-select-lg"
-              name="destination"
-              id="destSelector"
-            >
-              <?php while ($record = mysqli_fetch_assoc($res)) { ?>
-              <option value="<?php echo $record['id']; ?>"> <?php echo $record['nombre']; ?> </option>
-              <?php 
-            } ?>
-            </select>
-            <div class="list-group">
-              <?php 
-                if ($stm=$connect->prepare('SELECT * FROM servicios')) {
-                  $stm->execute();
-                  $result=$stm->get_result();
-                  if ($result->num_rows > 0) {
-
-                    while ($rec=mysqli_fetch_assoc($result)) {
-              ?>
-              <a id="bookingResultItem" class="list-group-item list-group-item-action <?php echo $rec['destino_id']; ?> <?php echo $rec['tipo'] ?>">
-                  <div class="row g-0">
-                    <div id='bkResImage' class="col-md-4">
-                      <img src="<?php echo $rec['image_url']; ?>" />
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title"> <?php echo $rec['nombre'] ?> </h5>
-                        <p class="card-text">
-                          <small class="text-muted">dest</small>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-              </a>
-              <?php
-                    }
-                  } else {
-                    // Show No SERVICE results found.
-                    ?>
-                    <p class="text-center">No Services found</p>
-                    <?php
-                  }
-                } else {
-                  // Couldnt connect to database
-                } ?>
-                <?php 
-                if ($stm = $connect->prepare('SELECT * FROM hoteles')) {
-                  $stm->execute();
-                  $result = $stm->get_result();
-                  if ($result->num_rows > 0) {
-
-                    while ($row=mysqli_fetch_assoc($result)) { ?>
-                    <a id="bookingResultItem" class="list-group-item list-group-item-action <?php echo $row['destino_id']; ?> hotel">
-                        <div class="row g-0">
-                          <div id='bkResImage' class="col-md-4">
-                            <img src="<?php echo $row['image_url']; ?>" />
-                          </div>
-                          <div class="col-md-8">
-                            <div class="card-body">
-                              <h5 class="card-title"><?php echo $row['nombre'] ?></h5>
-                              <p class="card-text">
-                                <small class="text-muted"><?php echo $row['destino_id']; ?> </small>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                    </a>
-              <?php
-                    }
-                  } else {
-                    // Show No HOTEL results found.
-                  }
-                } else {
-                  // Couldnt connect to database
-                }
-                ?>
-            </div>
-            <script>
-              let dstSel = document.querySelector('#destSelector');
-              let bresItems = document.querySelectorAll('#bookingResultItem');
-              let bf = document.querySelector('#bookingFilterButtons'),
-              bookingFilterBtns = bf.querySelectorAll('a');
-              bookingFilterBtns.forEach(bfb => {
-                bfb.addEventListener('click', () => {
-                  filterBookingResults(bfb.id, dstSel.value);
-                });
-              });
-              function filterBookingResults(tipo,destId) {
-                bresItems.forEach(bresitem => {
-                  bresitem.style.display = bresitem.classList.contains(tipo) && bresitem.classList.contains(destId) ? 'initial':'none';
-                });
-              }
-
-            </script>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
 </header>
 <main class="container" style="height: fit-content;">
 <!-- Events -->

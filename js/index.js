@@ -91,7 +91,7 @@ function setDestination(title, fileName, enable = true) {
                 poster="${src}.jpg"
               ></video>
               <div id="cardGradient"></div>
-              <h5 id="destName" class="text-center" style="font-size:12px">${title}</h5>
+              <p id="destName" class="position-absolute w-100 m-0 text-center fw-medium">${title}</p>
             </div>
             
           </a>`;

@@ -121,7 +121,7 @@ $base_url = "/divitur/";
       </div>
     </div>
 
-    <div class="container d-sm-flex d-md-none bg-danger fixed-bottom text-light">
+    <div class="container d-sm-flex d-md-none fixed-bottom text-light" style="background-color: #d50032;">
         <!-- <label class="text-wrap me-auto h-100" for="#bookNowBtn">Plan your adventure with us </label> -->
         <button type="button" id="bookNowBtn" class="btn btn-danger" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Book Now</button>
     </div>

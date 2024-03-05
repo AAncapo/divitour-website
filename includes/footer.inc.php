@@ -20,6 +20,7 @@
 
       <!-- Social Media -->
       <span class="d-flex justify-content-center gap-3">
+        <p>Follow Us</p>
         <a class="contactItem" href="https://www.facebook.com/divitourtravel/" target="_blank">
           <img src=<?php echo $base_url . 'images/icons/icons8-facebook.png'; ?> />
         </a>
