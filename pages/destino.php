@@ -17,22 +17,29 @@ if (isset($_GET['dest_id'])) {
 ?>
 
 <!-- Banner -->
-<header>
-  <div class="container-fluid p-0 mb-5" style="height: 40vh;">
+<header class="container-fluid p-0 mb-5" style="height: 40vh;">
     <img class="w-100 h-100" src= "<?php echo 'destino/images/banners/banner-' . $destid . '.jpg'; ?>" style="object-fit:cover" />
-  </div>
 </header>
-<main class="container">
-  <!-- Name & Description -->
+<!-- Name & Description -->
+<section class="container">
   <h1 class="display-1" > <?php echo $dest_rec['nombre']?> </h1>
   <p class='fs-3 fw-light mb-5' id="destDescription"> <?php echo $dest_rec['descripcion']?> </p>
-    <?php 
-        $dest_stmt->close();
-      } else {
-        echo 'No destination found with id=' . $_GET['dest_id'];
-        die();
-      }
-    } ?>
+</section>
+<?php 
+    $dest_stmt->close();
+  } else {
+    echo 'No destination found with id=' . $_GET['dest_id'];
+    die();
+  }
+} ?>
+
+<main class="container-fluid">
+  <div class="row justify-content-center">
+    <!-- Map -->
+    <div class="col">
+      <img src="" alt="">
+    </div>
+  </div>
         <!-- Services -->
         <div class="container-fluid w-100 p-0">
           <h1 class="display-4 text-center section-title">Services</h1>
@@ -43,28 +50,62 @@ if (isset($_GET['dest_id'])) {
               
               $result = $stmt->get_result();
               if ($result->num_rows > 0) { ?>
-                <!-- <h2>Excursions</h2> -->
-                  <div class="row justify-content-center">
+
+  
+  <!-- <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div> -->
+
+
+  
+                <div class="accordion accordion-flush" id="servCardsAccordion">
+                  <!-- <div class="row justify-content-center"> -->
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                <?php $servId = 'serv' . $row['id']; ?>
+
+                  <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $servId; ?>" aria-expanded="false" aria-controls="<?php echo $servId; ?>"> <?php echo $row['nombre']; ?> </button>
+                      </h2>
+                      <div id="<?php echo $servId; ?>" class="accordion-collapse collapse" data-bs-parent="#servCardsAccordion">
+                        <div class="accordion-body">
+                        <?php echo set_simple_p('',$row['descripcion'],"servDesc","card-text");?>
+
+                          <!-- <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow. -->
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
                   <!-- Service Card -->
                   <!-- <div class="servcard-separator ms-5" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div> -->
-                  <div class="card mb-3 servcard border-0">
-                    <div id="servCardWrapper" class="row">
+                  <!-- <div class="card mb-3 servcard border-0"> -->
+                    <!-- <div id="servCardWrapper" class="row"> -->
                       <!-- <div id="servImage" class="col-md-4">
                         <img src= <?php echo $row['image_url']; ?> class="img-fluid rounded-start"/>
                       </div> -->
-                      <div class="card-body col-md-8">
+                      <!-- <div class="card-body col-md-8">
                         <h5 id="servName" class="card-title fs-4"><?php echo $row['nombre']; ?></h5>
                         <?php echo set_simple_p('',$row['descripcion'],"servDesc","card-text");?>
-                        <!-- <?php echo set_simple_p('Incluye: ',$row['incluye'],"servInc","card-text"); ?>  -->
                         <?php echo set_psmall('Disponibilidad: ', $row['horario']); ?>
                         <?php echo set_psmall('Duracion: ', $row['duracion']); ?>
                         <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
                         <?php echo set_psmall("",$row['precios']); ?>
                         <?php echo set_psmall("Politica de Cancelacion: ", $row['pol_cancel']); ?>
-                      </div>
-                    </div>
-                  </div>
+                      </div> -->
+                    <!-- </div> -->
+                  <!-- </div> -->
               <?php } ?>
             </div>
             <?php }
