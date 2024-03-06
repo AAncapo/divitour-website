@@ -57,7 +57,7 @@ if (isset($_GET['dest_id'])) {
           <h2 class="accordion-header">
             <button class="accordion-button collapsed fs-5 fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $servId; ?>" aria-expanded="false" aria-controls="<?php echo $servId; ?>"  style="color: var(--darkblue-color);"> 
               <div class="me-3" style="width: 40px; height:40px;">
-              <?php if($row['tipo']=='immersion') {?>
+              <?php if($row['tipo']=='immersion') { ?>
                 <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-diving-goggles-48.png" alt="Includes Diving Activities">
               <?php } ?>
             </div>
@@ -67,8 +67,24 @@ if (isset($_GET['dest_id'])) {
           <div id="<?php echo $servId; ?>" class="accordion-collapse collapse" data-bs-parent="#servCardsAccordion">
             <div class="accordion-body">
               <?php echo set_simple_p('',$row['descripcion'],"servDesc","card-text");?>
-              <?php echo set_psmall('Disponibilidad: ', $row['horario']); ?>
-              <?php echo set_psmall('Duracion: ', $row['duracion']); ?>
+              <?php 
+                // $horario = $row['horario'] ;
+                // $days_hrs = explode(',',$horario);
+                // $days = $days_hrs[0];
+                // $hrs = $days_hrs[1];
+
+                if ($row['horario']) { ?>
+                  <div style="width: 35px; height: 35px;">
+                    <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-calendar-48.png" alt="">
+                  </div>
+            <?php echo set_psmall('', $row['horario']);
+                } ?>
+                <?php if ($row['duracion']) { ?>
+                  <div style="width: 35px; height: 35px;">
+                    <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-tiempo-64.png" alt="">
+                  </div>
+            <?php echo set_psmall('', $row['duracion']);
+                } ?>
               <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
               <?php echo set_psmall("",$row['precios']); ?>
               <?php echo set_psmall("Politica de Cancelacion: ", $row['pol_cancel']); ?>
