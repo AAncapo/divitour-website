@@ -36,9 +36,6 @@ if (isset($_GET['dest_id'])) {
         <!-- Services -->
         <div class="container-fluid w-100 p-0">
           <h1 class="display-4 text-center section-title">Services</h1>
-          <!-- <h2>Immersions</h2>
-            <div class="container-fluid p-0">
-            </div> -->
             <!-- Excursiones -->
             <?php if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
               $stmt->bind_param('s',$destid);
@@ -50,7 +47,7 @@ if (isset($_GET['dest_id'])) {
                   <div class="row justify-content-center">
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                   <!-- Service Card -->
-                  <div class="servcard-separator ms-5" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div>
+                  <!-- <div class="servcard-separator ms-5" style="border-top: 1px solid rgba(0, 0, 0, 0.2); "></div> -->
                   <div class="card mb-3 servcard border-0">
                     <div id="servCardWrapper" class="row">
                       <!-- <div id="servImage" class="col-md-4">
@@ -59,7 +56,7 @@ if (isset($_GET['dest_id'])) {
                       <div class="card-body col-md-8">
                         <h5 id="servName" class="card-title fs-4"><?php echo $row['nombre']; ?></h5>
                         <?php echo set_simple_p('',$row['descripcion'],"servDesc","card-text");?>
-                        <?php echo set_simple_p('Incluye: ',$row['incluye'],"servInc","card-text"); ?> 
+                        <!-- <?php echo set_simple_p('Incluye: ',$row['incluye'],"servInc","card-text"); ?>  -->
                         <?php echo set_psmall('Disponibilidad: ', $row['horario']); ?>
                         <?php echo set_psmall('Duracion: ', $row['duracion']); ?>
                         <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
