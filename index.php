@@ -17,10 +17,10 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
   if ($res->num_rows > 0) { ?>
 
 <header class="container-fluid p-0" style="position:relative;">
-  <div id="home" class="mb-4">
-    <div class="banner-image">
-      <img src="images/home-banner.jpg">
-      <div class="banner-gradient"></div>
+  <div id="home" class="d-flex flex-column mb-4" style="height: 75vh;">
+    <div class="w-100 h-100 position-relative">
+      <img class="w-100 h-100 object-fit-cover object-position-left" src="images/home-banner.jpg">
+      <div class="gradient"></div>
     </div>
     <div
     class="container-sm"
@@ -31,16 +31,14 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
         <br />and make your underwater adventure with Divitour <br />a
         journey to remember.
       </p>
-      <!-- <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#bookingModal" type="button">
-          Book Now
-      </button>  -->
     </div>
+    <div class="row w-100" style="height:50px; background-color: var(--darkblue-color);"></div>
   </div>
 </header>
-<main class="container" style="height: fit-content;">
+<main class="container-fluid p-0">
 <!-- Events -->
-  <div id="events" class="container-fluid mt-5">
-    <h1 class="text-center mb-2 section-title">Upcoming Events</h1>
+  <div id="events" class="w-100 mt-5">
+    <h1 class="text-center mb-2 display-4 fw-bold section-title">Upcoming Events</h1>
     <div id="eventsCarousel" class="carousel slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -108,7 +106,7 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
     </div> -->
   </div>
   <!-- Destinations -->
-  <div id="destinations" class="container-fluid mb-5 mt-5" >
+  <div id="destinations" class="container mb-5 mt-5" >
     <h1 class="text-center section-title">Popular Destinations</h1>
     <div id="dest-card-container" class="container-fluid row g-0"></div>
   </div>
