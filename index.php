@@ -141,6 +141,8 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
   </div>
 </main>
 
+<script src=<?php echo $base_url . 'js/index.js' ?> ></script>
+
 <?php
   }
 }
