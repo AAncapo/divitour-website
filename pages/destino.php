@@ -21,8 +21,8 @@ if (isset($_GET['dest_id'])) {
   <img class="w-100 h-100" src= "<?php echo 'destino/images/banners/banner-' . $destid . '.jpg'; ?>" style="object-fit:cover;" />
 </header>
 <!-- Name & Description -->
-<section class="container">
-  <h1 class="display-1 fw-semibold" style="color: var(--darkblue-color);" > <?php echo $dest_rec['nombre']?> </h1>
+<section class="container mb-5">
+  <h1 class="display-1 fw-semibold text-center" style="color: var(--darkblue-color);" > <?php echo $dest_rec['nombre']?> </h1>
   <p class='fs-5 fw-normal mb-5' id="destDescription" > <?php echo $dest_rec['descripcion']?> </p>
 </section>
 <?php 
@@ -56,39 +56,39 @@ if (isset($_GET['dest_id'])) {
         
         <div class="accordion-item my-2 px-3 rounded-top rounded-bottom">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed fs-5 fw-semibold p-0 py-3 ps-2" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $servId; ?>" aria-expanded="false" aria-controls="<?php echo $servId; ?>"  style="color: var(--darkblue-color);"> 
-              <!-- <div class="me-3" style="width: 40px; height:40px;">
-              <?php if($row['tipo']=='immersion') { ?>
-                <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-diving-goggles-48.png" alt="Includes Diving Activities">
-              <?php } ?>
-            </div> -->
+            <button class="accordion-button collapsed fs-5 fw-semibold p-0 py-3 ps-3" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $servId; ?>" aria-expanded="false" aria-controls="<?php echo $servId; ?>"  style="color: var(--darkblue-color);"> 
               <?php echo $row['nombre']; ?> 
             </button>
           </h2>
           <div id="<?php echo $servId; ?>" class="accordion-collapse collapse" data-bs-parent="#servCardsAccordion">
             <div class="accordion-body">
-              <?php echo set_simple_p('',$row['descripcion'],"servDesc","card-text");?>
-              <?php 
-                // $horario = $row['horario'] ;
-                // $days_hrs = explode(',',$horario);
-                // $days = $days_hrs[0];
-                // $hrs = $days_hrs[1];
-
-                if ($row['horario']) { ?>
-                  <div style="width: 35px; height: 35px;">
-                    <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-calendar-48.png" alt="">
+              <p class="card-text d-<?php echo get_display($row['descripcion']); ?>"> <?php echo $row['descripcion'] ?> </p>
+              <!-- <div class="row align-items-center">
+                
+                <?php $value = $row['capacidad']; ?>
+                <div class="col d-<?php echo get_display($value,'flex'); ?> gap-3 align-items-center">
+                  <div style="width: 40px; height: 40px;">
+                    <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-man-50.png">
                   </div>
-            <?php echo set_psmall('', $row['horario']);
-                } ?>
-                <?php if ($row['duracion']) { ?>
-                  <div style="width: 35px; height: 35px;">
-                    <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-tiempo-64.png" alt="">
+                  <p class="card-text fw-medium text-center"><?php echo $value ?></p>
+                </div>
+                
+                <?php $value = $row['horario']; ?>
+                <div class="col d-<?php echo get_display($value,'flex'); ?> gap-3 align-items-center">
+                  <div style="width: 40px; height: 40px;">
+                    <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-calendar-48.png">
                   </div>
-            <?php echo set_psmall('', $row['duracion']);
-                } ?>
-              <?php echo set_psmall('Inmersiones: ', $row['inmersiones']); ?>
-              <?php echo set_psmall("",$row['precios']); ?>
-              <?php echo set_psmall("Politica de Cancelacion: ", $row['pol_cancel']); ?>
+                  <p class="card-text fw-medium"><?php echo $value ?></p>
+                </div>
+                
+                <?php $value = $row['duracion']; ?>
+                <div class="col d-<?php echo get_display($value,'flex'); ?> gap-3 align-items-center">
+                  <div style="width: 40px; height: 40px;">
+                    <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-tiempo-64.png">
+                  </div>
+                  <p class="card-text fw-medium text-center"><?php echo $value ?></p>
+                </div>
+            </div> -->
             </div>
           </div>
         </div>
