@@ -1,6 +1,7 @@
 :root {
  --red-color: #d50032;
  --darkblue-color: #002d72;
+ --excursions-bg: #f1f1f1;
 }
 
 body {
@@ -122,6 +123,10 @@ a {
       overflow: hidden;
       max-height: 40%;
       text-overflow: ellipsis;
+  }
+
+  #locMap {
+    display: none;
   }
 }
 /* service cards */

@@ -33,7 +33,7 @@
 
     <!-- Partners -->
     <div class="container pb-5">
-      <!-- <h3 class="text-center text-light mt-5 section-title">Our Partners</h3> -->
+      <p class="text-light text-center fs-5 fw-medium">Through our commitment to excellence, we have built trust and established direct partnerships with key service providers and business partners, eliminating intermediaries and ensuring the seamless execution of our aquatic experiences</p>
       <div class="row w-100 partners-container">
         <a class="col partner" href="/">
           <img

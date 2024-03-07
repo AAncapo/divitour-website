@@ -127,11 +127,7 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
       Divitour team consists of highly skilled professionals who specialize
       in our destination and aquatic activities. This expertise allows us to
       have in-depth knowledge of the activities we offer and stay up-to-date
-      with the latest developments in our destinations. Through our
-      commitment to excellence, we have built trust and established direct
-      partnerships with key service providers and business partners,
-      eliminating intermediaries and ensuring the seamless execution of our
-      aquatic experiences. Our mission is to provide unique and highly
+      with the latest developments in our destinations. . Our mission is to provide unique and highly
       satisfying aquatic experiences that meet the highest standards of
       quality and professional technical rigor. Additionally, we actively
       contribute to advising and training other entities to foster the

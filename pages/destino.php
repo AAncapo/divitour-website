@@ -33,16 +33,17 @@ if (isset($_GET['dest_id'])) {
   }
 } ?>
 
-<main class="container-fluid ms-5">
+<main class="container-fluid p-0">
   <h1 class="display-5 text-center fw-semibold" style="color: var(--darkblue-color);">Excursions</h1>
-  <div class="row justify-content-center">
+  <!-- Expeditions -->
+  <div class="row w-100" style="background-color: var(--excursions-bg); height:fit-content">
     <!-- Map -->
-    <div class="col-4" style="height: 70vh;">
-      <img class="w-100 h-100" src="<?php echo $base_url . 'pages/destino/images/maps/map-havana.jpg'; ?>" alt="" style="object-fit: cover; overflow:hidden;">
+    <div id="locMap" class="col-5" style="overflow: hidden; min-height:40px;" >
+      <img class="w-100 h-100 object-fit-cover" src="<?php echo $base_url . 'pages/destino/images/maps/map-havana.jpg'; ?>" alt="">
     </div>
-    <!-- Services -->
-    <div class="col-4">
+    <div class="col-md-5 col" style="height: fit-content;">
       <!-- Excursiones -->
+      <h2 class="fs-4 fw-medium my-5" style="color: var(--darkblue-color);">Select an excursion to see more details..</h2>
 <?php if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
       $stmt->bind_param('s',$destid);
       $stmt->execute();
@@ -53,9 +54,9 @@ if (isset($_GET['dest_id'])) {
       <?php while ($row = mysqli_fetch_assoc($result)) { ?>
         <?php $servId = 'serv' . $row['id']; ?>
         
-        <div class="accordion-item">
+        <div class="accordion-item my-2 px-3 rounded-top rounded-bottom">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed fs-5 fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $servId; ?>" aria-expanded="false" aria-controls="<?php echo $servId; ?>"  style="color: var(--darkblue-color);"> 
+            <button class="accordion-button collapsed fs-5 fw-medium p-0" type="button" data-bs-toggle="collapse" data-bs-target="#<?php echo $servId; ?>" aria-expanded="false" aria-controls="<?php echo $servId; ?>"  style="color: var(--darkblue-color);"> 
               <div class="me-3" style="width: 40px; height:40px;">
               <?php if($row['tipo']=='immersion') { ?>
                 <img class="w-100 h-100 object-fit-contain" src="../images/icons/icons8-diving-goggles-48.png" alt="Includes Diving Activities">
@@ -94,6 +95,7 @@ if (isset($_GET['dest_id'])) {
     <?php } ?>
       </div>
     </div>
+  </div>
 <?php }
   }
   $stmt->close();
