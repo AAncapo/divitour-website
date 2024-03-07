@@ -33,7 +33,7 @@
 
     <!-- Partners -->
     <div class="container-fluid pb-5">
-      <p class="text-light text-center fs-5 fw-medium">Through our commitment to excellence, we have built trust and established direct partnerships with key service providers and business partners, eliminating intermediaries and ensuring the seamless execution of our aquatic experiences</p>
+      <p class="w-50 text-light text-center fs-5 fw-medium mx-auto mb-3">We have built trust and established direct partnerships with key service providers and business partners,<br> eliminating intermediaries and ensuring the seamless execution of our aquatic experiences</p>
       <div id="partnerIcons" class="row w-100">
         <a class="col" href="" target="_blank">
           <img src=<?php echo $base_url . 'images/partners/cammproductions.png'; ?> /> </a>
