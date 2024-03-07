@@ -108,18 +108,33 @@ if (isset($_GET['dest_id'])) {
         
         $res = $stmt->get_result();
         if ($res->num_rows > 0) { ?>
-          <!-- Hotels -->
+          <!-- Hotels -->          
           <div id='hoteles' class="row justify-content-center m-5">
-            <h1 class="text-center display-6 fw-semibold" style="color: var(--darkblue-color);">Hotels Available</h1>
+            <h1 class="text-center fs-3 fw-semibold" style="color: var(--darkblue-color);">Hotels Available</h1>
             <div id="htlCardContainer" class="container-fluid row justify-content-center">
         <?php while ($record = mysqli_fetch_assoc($res)) { ?>
               <!-- Insert Hotel Cards -->
-              <div id="htlCard" class="card m-2">
+              <div id="htlCard" class="card m-2" style="min-width: 400px; min-height: 600px">
                 <div id="htlImage">
                   <img class="card-img-top" src= <?php echo $record['image_url']; ?> />
                 </div>
                 <div class="card-body">
-                  <h4 id="htlName" class="card-title text-center"> <?php echo $record['nombre']; ?> </h4>
+                  <h4 id="htlName" class="card-title fw-semibold" style="color: var(--darkblue-color);"> <?php echo $record['nombre']; ?> </h4>
+                  <div class="d-flex justify-content-start align-items-center fs-5 fw-semibold my-4" style="width:20px; height: 20px; color:var(--darkblue-color)">
+                    <?php echo $record['stars']; ?>
+                    <img class="w-100 h-100 object-fit-contain" src="<?php echo $base_url . 'images/icons/icons8-star-48.png'; ?>">
+                  </div>
+                  <!-- <div class="row justify-content-center" style="height: 20px;">
+                    <?php
+                   if ($record['stars'] && $record['stars'] > 0) {
+                     for ($i=0; $i < $record['stars']; $i++) { ?>
+                       <div class="col h-100" id="imageWrapper" style="width: 10px;">
+                        <img class="w-100 h-100 object-fit-contain" src="<?php echo $base_url . 'images/icons/icons8-star-48.png' ?>">
+                       </div>
+                <?php }
+                    }
+                    ?>
+                  </div> -->
                   <p id="htlDesc" class="card-text"> <?php echo $record['descripcion']; ?> </p>
                 </div>
               </div>
