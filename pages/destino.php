@@ -22,7 +22,7 @@ if (isset($_GET['dest_id'])) {
 </header>
 <!-- Name & Description -->
 <section class="container mb-5">
-  <h1 class="display-1 fw-semibold text-center" style="color: var(--darkblue-color);" > <?php echo $dest_rec['nombre']?> </h1>
+  <h1 class="display-3 fw-semibold text-center" style="color: var(--darkblue-color);" > <?php echo $dest_rec['nombre']?> </h1>
   <p class='fs-5 fw-normal mb-5' id="destDescription" > <?php echo $dest_rec['descripcion']?> </p>
 </section>
 <?php 
@@ -34,7 +34,7 @@ if (isset($_GET['dest_id'])) {
 } ?>
 
 <main class="container-fluid p-0">
-  <h1 class="display-5 text-center fw-semibold" style="color: var(--darkblue-color);">Excursions</h1>
+  <h1 class="text-center fs-3 fw-semibold" style="color: var(--darkblue-color);">Excursions</h1>
   <!-- Expeditions -->
   <div class="row w-100" style="background-color: var(--excursions-bg); height:fit-content">
     <!-- Map -->
