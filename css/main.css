@@ -202,26 +202,23 @@ a {
 }
 
 /*********** FOOTER ************/
+#partnerIcons {
+  height: 80px;
+  justify-content: center;
+  /* gap: 10px; */
+
+  & a {
+    width: fit-content;
+    height: 100%;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
 /* Contacts */
 .contactItem {
   width: fit-content;
-}
-
-.partners-container {
-  display: flex;
-  align-items: center;
-}
-
-.partner {
-  width: 10%;
-  height: 10%;
-  padding: 0px;
-  margin: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & img {
-    width: 100%;
-  }
 }

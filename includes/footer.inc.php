@@ -32,44 +32,25 @@
   </div>
 
     <!-- Partners -->
-    <div class="container pb-5">
+    <div class="container-fluid pb-5">
       <p class="text-light text-center fs-5 fw-medium">Through our commitment to excellence, we have built trust and established direct partnerships with key service providers and business partners, eliminating intermediaries and ensuring the seamless execution of our aquatic experiences</p>
-      <div class="row w-100 partners-container">
-        <a class="col partner" href="/">
-          <img
-            src=<?php echo $base_url . 'images/partners/cammproductions.png'; ?>
-          />
-        </a>
-        <a
-          class="col partner"
-          href="https://www.daiquiritravel.com/home"
-          target="_blank"
-        >
+      <div id="partnerIcons" class="row w-100">
+        <a class="col" href="" target="_blank">
+          <img src=<?php echo $base_url . 'images/partners/cammproductions.png'; ?> /> </a>
+        <a class="col" href="https://www.daiquiritravel.com/home" target="_blank" >
           <img src=<?php echo $base_url . 'images/partners/daiquiri.png'; ?> />
         </a>
 
-        <a class="col partner" href="https://ecotur.travel/" target="_blank">
+        <a class="col" href="https://ecotur.travel/" target="_blank" style="width: fit-content;">
           <img src=<?php echo $base_url . 'images/partners/ecotur.png'; ?> />
         </a>
-        <a
-          class="col partner"
-          href="https://www.grupocubanacan.com/"
-          target="_blank"
-        >
+        <a class="col" href="https://www.grupocubanacan.com/" target="_blank" >
           <img src=<?php echo $base_url . 'images/partners/cubanacan.png'; ?> />
         </a>
-        <a
-          class="col partner"
-          href="https://www.marinasmarlin.com/"
-          target="_blank"
-        >
+        <a class="col" href="https://www.marinasmarlin.com/" target="_blank" >
           <img src=<?php echo $base_url . 'images/partners/marlin.png'; ?> />
         </a>
-        <a
-          class="col partner"
-          href="https://www.bluediamondresorts.com/es"
-          target="_blank"
-        >
+        <a class="col" href="https://www.bluediamondresorts.com/es" target="_blank" >
           <img src=<?php echo $base_url . 'images/partners/bluediamond.png'; ?> />
         </a>
       </div>
