@@ -31,7 +31,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
   if ($result->num_rows > 0) { ?>
   <div id="events" class="contaier-fluid w-100 mb-5 p-0">
     <h1 class="text-center mb-2 display-5 fw-bold section-title">Upcoming Events</h1>
-      <div id="eventsCarousel" class="carousel slide" data-bs-ride="true" data-bs-touch="true" style="height:600px">
+      <div id="eventsCarousel" class="carousel slide" data-bs-touch="true" style="height:600px">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -39,17 +39,17 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
         </div>
         <div class="carousel-inner h-100">
           <?php $active = "active";
-                while ($row = mysqli_fetch_assoc($result)) { ?>
-                <div class="carousel-item <?php echo $active; $active=""; ?> h-100">
-                  <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
-                  <div class="gradient"></div>
-                  <div class="carousel-caption d-md-block w-lg-50">
-                    <h4 class="fs-sm-4 fs-1 fw-semibold text-start"><?php echo $row['titulo'] ?></h4>
-                    <p class="fw-medium text-start"><?php echo $row['descripcion'] ?></p>
-                    <p class="fw-medium text-start"><?php echo $row['fecha'] ?></p>
-                    <button class="btn btn-outline-light ms-0 fs-4 fw-bold p-3 shadow" data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
-                  </div>
-                </div>
+          while ($row = mysqli_fetch_assoc($result)) { ?>
+          <div class="carousel-item <?php echo $active; $active=""; ?> h-100">
+            <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
+            <div class="gradient"></div>
+            <div class="carousel-caption d-md-block w-lg-50" style="min-height: fit-content;">
+              <h4 class="fs-sm-4 fs-1 fw-semibold text-start"><?php echo $row['titulo'] ?></h4>
+              <p id="eventDesc" class="fs-5 fw-medium text-start"><?php echo $row['descripcion'] ?></p>
+              <p class="fw-medium text-start"><?php echo $row['fecha'] ?></p>
+              <button class="btn btn-outline-light ms-0 fs-4 fw-bold p-3 shadow" data-bs-toggle="modal" data-bs-target="#modal" style="letter-spacing: .1em;">Subscribe</button>
+            </div>
+          </div>
           <?php } ?>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">

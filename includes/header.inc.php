@@ -38,34 +38,20 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg bg-light fixed-top" role="navigation">
-      <div class="container h-100"> 
-        <a class="navbar-brand h-100 p-0" href=<?php echo $base_url . 'index.php'; ?>>
-          <img
-          class="w-100 h-100 object-fit-cover"
-          src=<?php echo $base_url . 'images/divitour-full.png'; ?>
-          alt="Divitour Logo"
-          /></a>
-        <button
-        class="navbar-toggler d-lg-none"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-        >
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" role="navigation">
+      <div class="container">
+        <a class="navbar-brand" href="<?php echo $base_url . 'index.php'; ?>" style="width:240px; height: 60px;">
+          <img class="w-100 h-100 object-fit-contain" src="<?php echo $base_url . 'images/divitour-full.png'; ?>" alt="Divitour logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-            
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-            <!-- <li class="nav-item px-2">
-              <a class="nav-link fs-5 fw-semibold" href="#home" aria-current="page">Home<span class="visually-hidden">(current)</span>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fs-5 fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                DESTINATIONS
               </a>
-            </li> -->
-            <li class="nav-item px-2 dropdown">
-              <a class="nav-link dropdown-toggle fs-5 fw-semibold" href="#destinations" role="button" data-bs-toggle="dropdown" aria-expanded="false">DESTINATIONS</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=havana'; ?>>Havana</a></li>
                 <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=varadero'; ?>>Varadero</a></li>
@@ -77,16 +63,12 @@
                 <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=zapata'; ?>>Peninsula de Zapata</a></li>
               </ul>
             </li>
-            <li class="nav-item px-2">
-              <a class="nav-link fs-5 fw-semibold" href="#contacts">CONTACTS</a>
+            <li class="nav-item">
+              <a class="nav-link fs-5 fw-semibold" href="#events">EVENTS</a>
             </li>
           </ul>
-          <!-- <div class="d-none d-md-flex align-items-center">
-            <label class="me-2" for="#bookNowBtn">Plan your adventure with us </label>
-            <button type="button" id="bookNowBtn" class="btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Book Now</button>
-          </div> -->
         </div>
-      </div> 
+      </div>
     </nav>
 
     <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
@@ -113,9 +95,4 @@
           <button type="submit" class="btn btn-primary">Search</button>
         </form>
       </div>
-    </div>
-
-    <div class="container d-sm-flex d-md-none fixed-bottom text-light" style="background-color: var(--red-color);">
-        <!-- <label class="text-wrap me-auto h-100" for="#bookNowBtn">Plan your adventure with us </label> -->
-        <button type="button" id="bookNowBtn" class="btn btn-danger" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Book Now</button>
     </div>
