@@ -1,14 +1,11 @@
 <?php
 include('includes/dbh.inc.php');
 include('includes/header.inc.php');
+?>
 
-if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
-  $stmt->execute();
-  $res = $stmt->get_result();
-  if ($res->num_rows > 0) { ?>
 
 <header id="home" class="container-fluid p-0 mb-5">
-  <div class="d-flex flex-column" style="height: 70vh;">
+  <div class="d-flex flex-column" style="height: 700px;">
     <div class="w-100 h-100 position-relative">
       <img class="w-100 h-100 object-fit-cover object-position-center" src="images/home-banner.jpg">
       <div class="gradient"></div>
@@ -27,38 +24,43 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
 </header>
 <main class="container-fluid p-0">
 <!-- Events -->
-  <div id="events" class="w-100 mb-5">
-    <h1 class="text-center mb-2 display-4 fw-bold section-title">Upcoming Events</h1>
-    <div id="eventsCarousel" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <!-- Carousel Item -->
-        <!-- ///////////// -->
-        <div class="carousel-item active">
-          <div id="evCard" class="card mb-3 border-0">
-            <div class="row g-0">
-              <div class="col-md-4 ev-img-container">
-                <img id="evImage" src="" class="img-fluid rounded-0" />
-              </div>
-              <div class="col-md-8 ev-text-container">
-                <div class="card-body">
-                  <h5 id="evTitle" class="card-title"></h5>
-                  <p id="evDesc" class="card-text"></p>
-                  <p class="card-text">
-                    <small id="evDate" ></small>
-                  </p>
-                  <button class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
+<?php
+if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
+  $stmt->execute();
+  $result = $stmt->get_result();
+  if ($result->num_rows > 0) { ?>
+  <div id="events" class="contaier-fluid w-100 mb-5 p-0">
+    <h1 class="text-center mb-2 display-5 fw-bold section-title">Upcoming Events</h1>
+      <div id="eventsCarousel" class="carousel slide" style="height:600px">
+        <!-- <div class="carousel-indicators">
+          <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div> -->
+        <div class="carousel-inner h-100">
+          <?php $active = "active";
+                while ($row = mysqli_fetch_assoc($result)) { ?>
+                <div class="carousel-item <?php echo $active; $active=""; ?> h-100">
+                  <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
+                  <div class="gradient"></div>
+                  <div class="carousel-caption d-md-block w-lg-50">
+                    <h4 class="fs-sm-4 fs-1 fw-semibold text-start"><?php echo $row['titulo'] ?></h4>
+                    <p class="fw-medium text-start"><?php echo $row['descripcion'] ?></p>
+                    <p class="fw-medium text-start"><?php echo $row['fecha'] ?></p>
+                    <button class="btn btn-outline-light ms-0 fs-4 fw-bold p-3" data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
+          <?php } ?>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    </div>
     <!-- fotosub modal -->
       <!-- <div id="modal" class="modal fade">
       <div class="modal-dialog">
@@ -91,14 +93,20 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
       </div>
     </div> -->
   </div>
+<?php
+  }
+} else {
+  echo 'Connection to database failed!';
+}
+?>
   <!-- Destinations -->
   <div id="destinations" class="container mb-5 mt-5" >
-    <h1 class="text-center section-title">Popular Destinations</h1>
+    <h1 class="text-center display-5 fw-bold section-title">Top Destinations</h1>
     <div id="dest-card-container" class="container-fluid row g-0"></div>
   </div>
   <!-- About us -->
   <div id="about" class="container">
-    <h1 class="section-title">Who we are</h1>
+    <h1 class="text-center display-5 fw-bold section-title">Who we are</h1>
     <p>At Divitour, we take pride in being the leading agency for diving and
       aquatic activities in Cuba. Founded in 2015, we have been pioneers in
       developing training programs and educational initiatives for
@@ -128,9 +136,5 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
 <script src=<?php echo $base_url . 'js/index.js' ?> ></script>
 
 <?php
-  }
-}
-
-
 include('includes/footer.inc.php');
 ?>

@@ -39,12 +39,12 @@
 
   <body>
     <nav class="navbar navbar-expand-lg bg-light fixed-top" role="navigation">
-      <div class="container"> 
-        <a class="navbar-brand" href=<?php echo $base_url . 'index.php'; ?>>
+      <div class="container h-100"> 
+        <a class="navbar-brand h-100 p-0" href=<?php echo $base_url . 'index.php'; ?>>
           <img
+          class="w-100 h-100 object-fit-cover"
           src=<?php echo $base_url . 'images/divitour-full.png'; ?>
           alt="Divitour Logo"
-          style="width: 200px"
           /></a>
         <button
         class="navbar-toggler d-lg-none"
@@ -60,34 +60,31 @@
             
         <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" href="#home" aria-current="page">Home<span class="visually-hidden">(current)</span>
+            <!-- <li class="nav-item px-2">
+              <a class="nav-link fs-5 fw-semibold" href="#home" aria-current="page">Home<span class="visually-hidden">(current)</span>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#events">Events</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#destinations" role="button" data-bs-toggle="dropdown" aria-expanded="false">Destinations</a>
+            </li> -->
+            <li class="nav-item px-2 dropdown">
+              <a class="nav-link dropdown-toggle fs-5 fw-semibold" href="#destinations" role="button" data-bs-toggle="dropdown" aria-expanded="false">DESTINATIONS</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=havana'; ?>>Havana</a></li>
-                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=varadero'; ?>>Varadero</a></li>
-                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=jibacoa'; ?>>Jibacoa</a></li>
-                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=cayolargo'; ?>>Cayo Largo del Sur</a></li>
-                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=stlucia'; ?>>Santa Lucia</a></li>
-                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=trinidad'; ?>>Trinidad</a></li>
-                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=guillermo'; ?>>Cayo Guillermo</a></li>
-                <li><a class="dropdown-item" href=<?php echo $base_url . 'pages/destino.php?dest_id=zapata'; ?>>Peninsula de Zapata</a></li>
+                <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=havana'; ?>>Havana</a></li>
+                <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=varadero'; ?>>Varadero</a></li>
+                <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=jibacoa'; ?>>Jibacoa</a></li>
+                <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=cayolargo'; ?>>Cayo Largo del Sur</a></li>
+                <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=stlucia'; ?>>Santa Lucia</a></li>
+                <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=trinidad'; ?>>Trinidad</a></li>
+                <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=guillermo'; ?>>Cayo Guillermo</a></li>
+                <li><a class="dropdown-item fw-medium" href=<?php echo $base_url . 'pages/destino.php?dest_id=zapata'; ?>>Peninsula de Zapata</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacts">Contacts</a>
+            <li class="nav-item px-2">
+              <a class="nav-link fs-5 fw-semibold" href="#contacts">CONTACTS</a>
             </li>
           </ul>
-          <div class="d-none d-md-flex align-items-center">
+          <!-- <div class="d-none d-md-flex align-items-center">
             <label class="me-2" for="#bookNowBtn">Plan your adventure with us </label>
             <button type="button" id="bookNowBtn" class="btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Book Now</button>
-          </div>
+          </div> -->
         </div>
       </div> 
     </nav>

@@ -22,18 +22,18 @@ const events = [
 ];
 
 // set event cards data
-let evCards = document.querySelectorAll("#evCard");
-evCards.forEach((card, index) => {
-  let evImage = card.querySelector("#evImage"),
-    evTitle = card.querySelector("#evTitle"),
-    evDesc = card.querySelector("#evDesc"),
-    evDate = card.querySelector("#evDate");
+// let evCards = document.querySelectorAll("#evCard");
+// evCards.forEach((card, index) => {
+//   let evImage = card.querySelector("#evImage"),
+//     evTitle = card.querySelector("#evTitle"),
+//     evDesc = card.querySelector("#evDesc"),
+//     evDate = card.querySelector("#evDate");
 
-  evImage.src = events[index].image;
-  evTitle.innerHTML = events[index].name;
-  evDesc.innerHTML = events[index].desc;
-  evDate.innerHTML = events[index].date;
-});
+//   evImage.src = events[index].image;
+//   evTitle.innerHTML = events[index].name;
+//   evDesc.innerHTML = events[index].desc;
+//   evDate.innerHTML = events[index].date;
+// });
 
 setDestination("HAVANA", "havana");
 setDestination("VARADERO", "varadero");
