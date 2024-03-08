@@ -2,42 +2,32 @@
 include('includes/dbh.inc.php');
 include('includes/header.inc.php');
 
-// el formulario de reservas es un form con position absolute anclado a la base del header
-// se muestra solo en md+ y se oculta en sm-
-// toggled con Book Now
-
-// Excursions | Immersions | Courses | Hotels
-// Destination
-// Date
-// Availability Schedule
-
 if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
   $stmt->execute();
   $res = $stmt->get_result();
   if ($res->num_rows > 0) { ?>
 
-<header class="container-fluid p-0" style="position:relative;">
-  <div id="home" class="d-flex flex-column mb-4" style="height: 75vh;">
+<header id="home" class="container-fluid p-0 mb-5">
+  <div class="d-flex flex-column" style="height: 70vh;">
     <div class="w-100 h-100 position-relative">
-      <img class="w-100 h-100 object-fit-cover object-position-left" src="images/home-banner.jpg">
+      <img class="w-100 h-100 object-fit-cover object-position-center" src="images/home-banner.jpg">
       <div class="gradient"></div>
     </div>
-    <div
-    class="container-sm"
-    style="position: absolute; width: fit-content;"
-    >
-      <p class="col-md-8 fs-4 text-light mb-5">
-        Join us <br />in exploring the hidden treasures beneath the waves
-        <br />and make your underwater adventure with Divitour <br />a
+    <div class="container-sm" style="position: absolute; top:40%; width: fit-content;">
+      <p class="col-md-8 fs-4 fw-medium text-light mb-2">
+        Join us <br/>in exploring the hidden treasures beneath the waves
+        <br/>and make your underwater adventure with Divitour <br/>a
         journey to remember.
       </p>
     </div>
-    <div class="row w-100" style="height:50px; background-color: var(--darkblue-color);"></div>
+    <!-- <div class="row w-100 m-0 p-0" style="height:50px; background-color: var(--darkblue-color);">
+      <div class="col text-center text-light fs-6 fw-semibold">Sponsored by <br>Pipin Ferreras</div>
+    </div> -->
   </div>
 </header>
 <main class="container-fluid p-0">
 <!-- Events -->
-  <div id="events" class="w-100 mt-5">
+  <div id="events" class="w-100 mb-5">
     <h1 class="text-center mb-2 display-4 fw-bold section-title">Upcoming Events</h1>
     <div id="eventsCarousel" class="carousel slide">
       <div class="carousel-indicators">
@@ -52,11 +42,7 @@ if ($stmt = $connect->prepare('SELECT * FROM destinos')) {
           <div id="evCard" class="card mb-3 border-0">
             <div class="row g-0">
               <div class="col-md-4 ev-img-container">
-                <img
-                id="evImage"
-                  src=""
-                  class="img-fluid rounded-0"
-                />
+                <img id="evImage" src="" class="img-fluid rounded-0" />
               </div>
               <div class="col-md-8 ev-text-container">
                 <div class="card-body">

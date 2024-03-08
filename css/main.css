@@ -2,21 +2,26 @@
  --red-color: #d50032;
  --darkblue-color: #002d72;
  --excursions-bg: #f1f1f1;
+ --nav-height:70px;
+}
+
+a {
+  cursor: pointer;
 }
 
 body {
   width: 100%;
   height: 100%;
   font-family: 'Montserrat', sans-serif; 
-  margin-top: 64px
+  margin-top: var(--nav-height);
+}
+
+nav {
+  height: var(--nav-height);
 }
 
 .section-title {
   color: var(--darkblue-color);
-}
-
-a {
-  cursor: pointer;
 }
 
 .gradient {
@@ -26,11 +31,6 @@ a {
   height: 100%;
   background-image: linear-gradient(to top, #00000078, #00000000);
   background-color: #00000078;
-}
-
-/* Events */
-#eventsCarousel {
-  height: fit-content;
 }
 
 /* Destinations */
