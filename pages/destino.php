@@ -114,7 +114,7 @@ if (isset($_GET['dest_id'])) {
             <div id="htlCardContainer" class="container-fluid row justify-content-center">
         <?php while ($record = mysqli_fetch_assoc($res)) { ?>
               <!-- Insert Hotel Cards -->
-              <div id="htlCard" class="card m-2" style="min-width: 400px; min-height: 600px">
+              <div id="htlCard" class="card shadow m-2" style="min-width: 400px; min-height: 600px; border-width: 0px;">
                 <div id="htlImage">
                   <img class="card-img-top" src= <?php echo $record['image_url']; ?> />
                 </div>

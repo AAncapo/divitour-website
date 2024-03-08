@@ -31,12 +31,12 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
   if ($result->num_rows > 0) { ?>
   <div id="events" class="contaier-fluid w-100 mb-5 p-0">
     <h1 class="text-center mb-2 display-5 fw-bold section-title">Upcoming Events</h1>
-      <div id="eventsCarousel" class="carousel slide" style="height:600px">
-        <!-- <div class="carousel-indicators">
+      <div id="eventsCarousel" class="carousel slide" data-bs-ride="true" data-bs-touch="true" style="height:600px">
+        <div class="carousel-indicators">
           <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div> -->
+        </div>
         <div class="carousel-inner h-100">
           <?php $active = "active";
                 while ($row = mysqli_fetch_assoc($result)) { ?>
@@ -47,7 +47,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
                     <h4 class="fs-sm-4 fs-1 fw-semibold text-start"><?php echo $row['titulo'] ?></h4>
                     <p class="fw-medium text-start"><?php echo $row['descripcion'] ?></p>
                     <p class="fw-medium text-start"><?php echo $row['fecha'] ?></p>
-                    <button class="btn btn-outline-light ms-0 fs-4 fw-bold p-3" data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
+                    <button class="btn btn-outline-light ms-0 fs-4 fw-bold p-3 shadow" data-bs-toggle="modal" data-bs-target="#modal">Subscribe</button>
                   </div>
                 </div>
           <?php } ?>
