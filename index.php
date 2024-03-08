@@ -5,17 +5,19 @@ include('includes/header.inc.php');
 
 
 <header id="home" class="container-fluid p-0 mb-5">
-  <div class="d-flex flex-column" style="height: 700px;">
+  <div class="d-flex flex-column" style="height: 700px; position: relative;">
     <div class="w-100 h-100 position-relative">
       <img class="w-100 h-100 object-fit-cover object-position-center" src="images/home-banner.jpg">
       <div class="gradient"></div>
     </div>
-    <div class="container-sm" style="position: absolute; top:40%; width: fit-content;">
-      <p class="col-md-8 fs-4 fw-medium text-light mb-2">
-        Join us <br/>in exploring the hidden treasures beneath the waves
-        <br/>and make your underwater adventure with Divitour <br/>a
-        journey to remember.
-      </p>
+
+    <div class="d-flex flex-column w-100 h-100 justify-content-center align-items-bottom" style="position: absolute; pointer-events:none;">
+        <p class="container fs-4 fw-semibold text-light text-center mb-5">
+          Join us <br/>in exploring the hidden treasures beneath the waves
+          <br/>and make your underwater adventure with Divitour <br/>a
+          journey to remember.
+        </p>
+        <?php include('includes/booking_form.inc.php'); ?>
     </div>
     <!-- <div class="row w-100 m-0 p-0" style="height:50px; background-color: var(--darkblue-color);">
       <div class="col text-center text-light fs-6 fw-semibold">Sponsored by <br>Pipin Ferreras</div>
@@ -41,7 +43,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
           <?php $active = "active";
           while ($row = mysqli_fetch_assoc($result)) { ?>
           <div class="carousel-item <?php echo $active; $active=""; ?> h-100">
-            <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
+            <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" loading="lazy" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
             <div class="gradient"></div>
             <div class="carousel-caption d-md-block w-lg-50" style="min-height: fit-content;">
               <h4 class="fs-sm-4 fs-1 fw-semibold text-start"><?php echo $row['titulo'] ?></h4>

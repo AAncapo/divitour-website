@@ -71,7 +71,7 @@
       </div>
     </nav>
 
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+    <!-- <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="staticBackdropLabel">Booking Menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -84,9 +84,9 @@
             <option value="varadero">Varadero</option>
             <option value="jibacoa">Jibacoa</option>
             <option value="cayolargo">Cayo Largo del Sur</option>
+            <option value="guillermo">Cayo Guillermo</option>
             <option value="stlucia">Santa Lucia</option>
             <option value="trinidad">Trinidad</option>
-            <option value="guillermo">Cayo Guillermo</option>
             <option value="zapata">Peninsula de Zapata</option>
           </select>
           <input name="datestart" type="date">
@@ -95,4 +95,4 @@
           <button type="submit" class="btn btn-primary">Search</button>
         </form>
       </div>
-    </div>
+    </div> -->
