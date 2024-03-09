@@ -11,15 +11,15 @@ include('includes/header.inc.php');
     </div>
 
     <div class="w-100 h-100 position-absolute" style="pointer-events: none;">    
-      <div class="d-block w-100 h-100">
-        <div class="col">
+      <div class="row flex-column justify-content-end align-items-center w-100 h-100 pb-2 m-0">
+        <div class="col-md-8 p-0">
           <p class="fs-4 fw-semibold text-light text-center">
             Join us <br/>in exploring the hidden treasures beneath the waves
             <br/>and make your underwater adventure with Divitour <br/>a
             journey to remember.
           </p>
         </div>
-        <div class="col">
+        <div class="col-md-8 p-0">
           <?php include('includes/booking_form.inc.php'); ?>
         </div>
       </div>

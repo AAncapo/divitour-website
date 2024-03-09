@@ -49,7 +49,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle fs-5 fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 DESTINATIONS
               </a>
               <ul class="dropdown-menu">
@@ -64,9 +64,10 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 fw-semibold" href="#events">EVENTS</a>
+              <a class="nav-link fw-semibold" href="#events">EVENTS</a>
             </li>
           </ul>
+          <a class="" href="https://wa.me/5352529974" target="_blank"><img src=<?php echo $base_url . 'images/icons/whatsapp.png'; ?> /></a>
         </div>
       </div>
     </nav>
