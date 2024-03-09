@@ -3,7 +3,6 @@ include('includes/dbh.inc.php');
 include('includes/header.inc.php');
 ?>
 
-
 <header id="home" class="container-fluid p-0 mb-5">
   <div class="d-flex flex-column" style="height: 700px; position: relative;">
     <div class="w-100 h-100 position-relative">
@@ -11,17 +10,20 @@ include('includes/header.inc.php');
       <div class="gradient"></div>
     </div>
 
-    <div class="d-flex flex-column w-100 h-100 justify-content-center align-items-bottom" style="position: absolute; pointer-events:none;">
-        <p class="container fs-4 fw-semibold text-light text-center mb-5">
-          Join us <br/>in exploring the hidden treasures beneath the waves
-          <br/>and make your underwater adventure with Divitour <br/>a
-          journey to remember.
-        </p>
-        <?php include('includes/booking_form.inc.php'); ?>
+    <div class="w-100 h-100 position-absolute" style="pointer-events: none;">    
+      <div class="d-block w-100 h-100">
+        <div class="col">
+          <p class="fs-4 fw-semibold text-light text-center">
+            Join us <br/>in exploring the hidden treasures beneath the waves
+            <br/>and make your underwater adventure with Divitour <br/>a
+            journey to remember.
+          </p>
+        </div>
+        <div class="col">
+          <?php include('includes/booking_form.inc.php'); ?>
+        </div>
+      </div>
     </div>
-    <!-- <div class="row w-100 m-0 p-0" style="height:50px; background-color: var(--darkblue-color);">
-      <div class="col text-center text-light fs-6 fw-semibold">Sponsored by <br>Pipin Ferreras</div>
-    </div> -->
   </div>
 </header>
 <main class="container-fluid p-0">
@@ -44,7 +46,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
           while ($row = mysqli_fetch_assoc($result)) { ?>
           <div class="carousel-item <?php echo $active; $active=""; ?> h-100">
             <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" loading="lazy" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
-            <div class="gradient"></div>
+            <div class="gradient2"></div>
             <div class="carousel-caption d-md-block w-lg-50" style="min-height: fit-content;">
               <h4 class="fs-sm-4 fs-1 fw-semibold text-start"><?php echo $row['titulo'] ?></h4>
               <p id="eventDesc" class="fs-5 fw-medium text-start"><?php echo $row['descripcion'] ?></p>
@@ -121,7 +123,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
       Divitour team consists of highly skilled professionals who specialize
       in our destination and aquatic activities. This expertise allows us to
       have in-depth knowledge of the activities we offer and stay up-to-date
-      with the latest developments in our destinations. . Our mission is to provide unique and highly
+      with the latest developments in our destinations. Our mission is to provide unique and highly
       satisfying aquatic experiences that meet the highest standards of
       quality and professional technical rigor. Additionally, we actively
       contribute to advising and training other entities to foster the
