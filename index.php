@@ -4,14 +4,14 @@ include('includes/header.inc.php');
 ?>
 
 <header id="home" class="container-fluid p-0 mb-5">
-  <div class="d-flex flex-column" style="height: 700px; position: relative;">
+  <div class="d-flex flex-column" style="height: 600px; position: relative;">
     <div class="w-100 h-100 position-relative">
       <img class="w-100 h-100 object-fit-cover object-position-center" src="images/home-banner.jpg">
       <div class="gradient"></div>
     </div>
 
     <div class="w-100 h-100 position-absolute" style="pointer-events: none;">    
-      <div class="row flex-column justify-content-end align-items-center w-100 h-100 pb-2 m-0">
+      <div class="row flex-column justify-content-end align-items-center w-100 h-100 pb-4 m-0">
         <div class="col-md-8 p-0">
           <p class="fs-4 fw-semibold text-light text-center">
             Join us <br/>in exploring the hidden treasures beneath the waves
@@ -24,6 +24,11 @@ include('includes/header.inc.php');
         </div>
       </div>
     </div>
+  </div>
+  <div class="row w-100 m-0 py-2 align-items-center justify-content-around gap-3" style="background-color: var(--darkblue-color);">
+    <div class="col text-light text-center fs-5 fw-bold">Sponsored by <br>Pipin Ferreras</div>
+    <div class="col text-light text-center fs-5 fw-bold">+50 Unique <br>Experiences</div>
+    <div class="col text-light text-center fs-5 fw-bold">Specialized <br>Courses</div>
   </div>
 </header>
 <main class="container-fluid p-0">
