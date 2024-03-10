@@ -150,6 +150,16 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
       </div>
     </div>
   </section>
+  <!-- Newsletter -->
+  <section class="container-fluid bg-dark py-5 mb-5">
+    <p class="fs-4 fw-semibold text-center text-light" style="letter-spacing: 1px;">Subscribe to our Newsletter</p>
+    <div class="row w-100 justify-content-center m-0" style="height: 60px;">
+      <form class="col-8 d-flex" method="post">
+        <input name="email" type="email" class="col form-control rounded-0" id="emailInput" placeholder="example@mail.com">
+        <button type="submit" class="col fw-semibold btn btn-danger rounded-0 rounded-end" style="background-color: var(--darkred-color);">Subscribe</button>
+      </form>
+    </div>
+  </section>
   <!-- About us -->
   <div id="about" class="container">
     <h1 class="text-center display-5 fw-bold section-title">Who we are</h1>
