@@ -109,10 +109,47 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
 }
 ?>
   <!-- Destinations -->
-  <div id="destinations" class="container mb-5 mt-5" >
+  <section id="destinations" class="container mb-5 mt-5" >
     <h1 class="text-center display-5 fw-bold section-title">Top Destinations</h1>
     <div id="dest-card-container" class="container-fluid row g-0"></div>
-  </div>
+  </section>
+  <!-- Seleccion de Excursiones -->
+  <section id="excursionsSelection" class="container my-5">
+    <h1 class="text-center display-5 fw-bold section-title">Selected Excursions</h1>
+    <div class="row justify-content-around align-items-center" style="height: 200px;">
+      <!-- <p id="excSelLocation" class="text-center fs-5 fw-semibold p-2" style="height:30px; color: var(--softred);"><img src="images/icons/icons8-gps-30.png" style="width: 30px; height: 30px;">Havana</p> -->
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Diving in Coral Reefs</p>
+        </div>
+      </div>
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Russian Frigate #383</p>
+        </div>
+      </div>
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Coral Tour</p>
+        </div>
+      </div>
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Super Reef</p>
+        </div>
+      </div>
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Seafari Cayo Blanco</p>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- About us -->
   <div id="about" class="container">
     <h1 class="text-center display-5 fw-bold section-title">Who we are</h1>

@@ -47,7 +47,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 DESTINATIONS
@@ -67,33 +67,7 @@
               <a class="nav-link fw-semibold" href="#events">EVENTS</a>
             </li>
           </ul>
-          <a class="" href="https://wa.me/5352529974" target="_blank"><img src=<?php echo $base_url . 'images/icons/whatsapp.png'; ?> /></a>
+          <a class="d-flex me-2" href="https://wa.me/5352529974" target="_blank"><img src=<?php echo $base_url . 'images/icons/icons8-whatsapp-32.png'; ?> /></a>
         </div>
       </div>
     </nav>
-
-    <!-- <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="staticBackdropLabel">Booking Menu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <form action="<?php echo $base_url . 'includes/booking.inc.php'; ?>" method="post">
-          <select name="destino" class="form-select form-select-sm" aria-label="Small select example">
-            <option selected>Select Your Destination</option>
-            <option value="havana">Havana</option>
-            <option value="varadero">Varadero</option>
-            <option value="jibacoa">Jibacoa</option>
-            <option value="cayolargo">Cayo Largo del Sur</option>
-            <option value="guillermo">Cayo Guillermo</option>
-            <option value="stlucia">Santa Lucia</option>
-            <option value="trinidad">Trinidad</option>
-            <option value="zapata">Peninsula de Zapata</option>
-          </select>
-          <input name="datestart" type="date">
-          <label for="#psgrInput">Adults</label>
-          <input name="psgrs" id="psgrInput" type="number" min="1">
-          <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-      </div>
-    </div> -->
