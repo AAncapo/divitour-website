@@ -1,11 +1,11 @@
 <footer class="container-fluid" style="background-color: var(--darkblue-color);">
   <!-- Newsletter -->
   <section class="container-fluid py-5 mb-5" style="background-color: var(--darkblue-color);">
-    <p class="fs-4 fw-semibold text-center text-light" style="letter-spacing: 1px;">Subscribe to our Newsletter</p>
+    <p class="fs-3 fw-bold text-center text-light" style="letter-spacing: 1px;">Subscribe to our Newsletter</p>
     <div class="row w-100 justify-content-center m-0" style="height: 60px;">
       <form class="col-lg-4 d-flex justify-content-around" method="post">
         <input name="email" type="email" class="col form-control rounded-0 rounded-start" id="emailInput" placeholder="  example@mail.com">
-        <button type="submit" class="col-2 fw-semibold btn btn-danger rounded-0 rounded-end" style="background-color: var(--darkred-color);"><p class="d-none d-md-flex text-center m-0">Subscribe</p><img class="d-flex d-md-none w-100 h-100" src="<?php echo $base_url . 'images/icons/form-next-link-svgrepo-com.svg' ?>"></button>
+        <button type="submit" class="col-2 fw-semibold btn btn-danger rounded-0 rounded-end" style="background-color: var(--darkred-color);"><p class="d-none d-md-flex w-100 h-100 align-items-center m-0">Subscribe</p><img class="d-flex d-md-none w-100 h-100" src="<?php echo $base_url . 'images/icons/form-next-link-svgrepo-com.svg' ?>"></button>
       </form>
     </div>
   </section>
@@ -13,7 +13,7 @@
   <div class="row justify-content-around">
     <div id="about" class="col-lg-4">
       <h1 class="text-light text-center text-md-start fs-3 fw-bold mb-3">Who we are</h1>
-      <p class="fs-5 fw-medium" style="color: gray;">At Divitour, we take pride in being the leading agency for diving and
+      <p class="text-center text-md-start fs-5 fw-medium" style="color: gray;">At Divitour, we take pride in being the leading agency for diving and
         aquatic activities in Cuba. Founded in 2015, we have been pioneers in
         developing training programs and educational initiatives for
         professionals on the island. <!--Our headquarters are strategically

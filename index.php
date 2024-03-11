@@ -9,8 +9,7 @@ include('includes/header.inc.php');
       <img class="w-100 h-100 object-fit-cover object-position-center" src="images/home-banner.jpg">
       <div class="gradient"></div>
     </div>
-
-    <div class="row align-items-bottom w-100 h-100 position-absolute" style="pointer-events: none;">    
+    <div class="row align-items-bottom w-100 h-100 position-absolute m-0" style="pointer-events: none;">    
       <div class="container d-block m-auto pb-4">
         <div class="col-md-8 p-0 m-auto">
           <p class="fs-4 fw-semibold text-light text-center">
@@ -25,7 +24,7 @@ include('includes/header.inc.php');
       </div>
     </div>
   </div>
-  <div class="row w-100 m-0 py-2 align-items-center justify-content-around gap-3" style="background-color: var(--darkblue-color);">
+  <div class="row w-100 m-0 py-3 align-items-center justify-content-around gap-3" style="background-color: var(--darkblue-color);">
     <div class="col text-light text-center fs-5 fw-bold">Sponsored by <br>Pipin Ferreras</div>
     <div class="col text-light text-center fs-5 fw-bold">+50 Unique <br>Experiences</div>
     <div class="col text-light text-center fs-5 fw-bold">Specialized <br>Courses</div>
