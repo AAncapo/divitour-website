@@ -67,7 +67,7 @@
               <a class="nav-link fw-semibold" href="#events">EVENTS</a>
             </li>
           </ul>
-          <a class="d-flex me-2" href="https://wa.me/5352529974" target="_blank"><img src=<?php echo $base_url . 'images/icons/icons8-whatsapp-32.png'; ?> /></a>
+          <a class="d-flex me-2" href="https://wa.me/5352529974" target="_blank" style="height: 50px; width:50px;"><img class="w-100 h-100" src=<?php echo $base_url . 'images/icons/icons8-whatsapp.svg'; ?> /></a>
         </div>
       </div>
     </nav>

@@ -4,22 +4,22 @@ include('includes/header.inc.php');
 ?>
 
 <header id="home" class="container-fluid p-0 mb-5">
-  <div class="d-flex flex-column" style="height: 600px; position: relative;">
+  <div class="d-flex flex-column" style="height: 70vh; position: relative;">
     <div class="w-100 h-100 position-relative">
       <img class="w-100 h-100 object-fit-cover object-position-center" src="images/home-banner.jpg">
       <div class="gradient"></div>
     </div>
 
-    <div class="w-100 h-100 position-absolute" style="pointer-events: none;">    
-      <div class="row flex-column justify-content-end align-items-center w-100 h-100 pb-4 m-0">
-        <div class="col-md-8 p-0">
+    <div class="row align-items-bottom w-100 h-100 position-absolute" style="pointer-events: none;">    
+      <div class="container d-block m-auto pb-4">
+        <div class="col-md-8 p-0 m-auto">
           <p class="fs-4 fw-semibold text-light text-center">
             Join us <br/>in exploring the hidden treasures beneath the waves
             <br/>and make your underwater adventure with Divitour <br/>a
             journey to remember.
           </p>
         </div>
-        <div class="col-md-8 p-0">
+        <div class="col-md-8 p-0 m-auto">
           <?php include('includes/booking_form.inc.php'); ?>
         </div>
       </div>
@@ -114,10 +114,10 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
     <div id="dest-card-container" class="container-fluid row g-0"></div>
   </section>
   <!-- Seleccion de Excursiones -->
-  <section id="excursionsSelection" class="container my-5">
+  <!-- <section id="excursionsSelection" class="container my-5">
     <h1 class="text-center display-5 fw-bold section-title">Selected Excursions</h1>
-    <div class="row justify-content-around align-items-center" style="height: 200px;">
-      <!-- <p id="excSelLocation" class="text-center fs-5 fw-semibold p-2" style="height:30px; color: var(--softred);"><img src="images/icons/icons8-gps-30.png" style="width: 30px; height: 30px;">Havana</p> -->
+    <div class="row justify-content-around gap-2 align-items-center" style="min-height: 200px;">
+       <p id="excSelLocation" class="text-center fs-5 fw-semibold p-2" style="height:30px; color: var(--softred);"><img src="images/icons/icons8-gps-30.png" style="width: 30px; height: 30px;">Havana</p>
       <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
         <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
         <div class="gradient2">
@@ -149,45 +149,9 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
         </div>
       </div>
     </div>
-  </section>
-  <!-- Newsletter -->
-  <section class="container-fluid bg-dark py-5 mb-5">
-    <p class="fs-4 fw-semibold text-center text-light" style="letter-spacing: 1px;">Subscribe to our Newsletter</p>
-    <div class="row w-100 justify-content-center m-0" style="height: 60px;">
-      <form class="col-8 d-flex" method="post">
-        <input name="email" type="email" class="col form-control rounded-0" id="emailInput" placeholder="example@mail.com">
-        <button type="submit" class="col fw-semibold btn btn-danger rounded-0 rounded-end" style="background-color: var(--darkred-color);">Subscribe</button>
-      </form>
-    </div>
-  </section>
-  <!-- About us -->
-  <div id="about" class="container">
-    <h1 class="text-center display-5 fw-bold section-title">Who we are</h1>
-    <p>At Divitour, we take pride in being the leading agency for diving and
-      aquatic activities in Cuba. Founded in 2015, we have been pioneers in
-      developing training programs and educational initiatives for
-      professionals on the island. <!--Our headquarters are strategically
-      located in Cuba, known for its abundant marine biodiversity, stunning
-      coral reefs, and warm, crystal-clear waters. With multiple
-      internationally certified diving centers, top-notch marinas, and
-      high-standard hotels spread along its 5,746 kilometers of coastline,
-      Cuba provides the perfect setting for unforgettable experiences. The
-      Divitour team consists of highly skilled professionals who specialize
-      in our destination and aquatic activities. This expertise allows us to
-      have in-depth knowledge of the activities we offer and stay up-to-date
-      with the latest developments in our destinations. Our mission is to provide unique and highly
-      satisfying aquatic experiences that meet the highest standards of
-      quality and professional technical rigor. Additionally, we actively
-      contribute to advising and training other entities to foster the
-      development of aquatic activities in Cuba. At Divitour, we are
-      dedicated to creating unforgettable moments and helping you explore
-      the wonders of Cuba's aquatic world.  -->
-      Divitour Global Sponsor and Associate Colaborate - Pipin Ferreras, is a former professional free
-      diver and world-record holder in the sport. He is considered one of
-      the pioneers and legends of free diving.
-    </p>
-  </div>
+  </section> -->
 </main>
+  
 
 <script src=<?php echo $base_url . 'js/index.js' ?> ></script>
 

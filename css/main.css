@@ -90,12 +90,6 @@ body {
   }
 }
 
-/* About Us */
-#about {
-  height: fit-content;
-  margin-bottom: 100px;
-}
-
 .gradient {
   position: absolute;
   top: 0px;
@@ -200,9 +194,10 @@ body {
 
 /*********** FOOTER ************/
 #partnerIcons {
-  height: 80px;
+  /* display: flex;
   justify-content: center;
-  /* gap: 10px; */
+  width: 100%; */
+  height: 80px;
 
   & a {
     width: fit-content;
@@ -211,11 +206,8 @@ body {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      object-position: center;
     }
   }
 }
 
-/* Contacts */
-.contactItem {
-  width: fit-content;
-}
