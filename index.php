@@ -2,7 +2,7 @@
 include('includes/dbh.inc.php');
 include('includes/header.inc.php');
 ?>
-
+<!-- Header -->
 <header id="home" class="container-fluid p-0 mb-5">
   <div class="d-flex flex-column" style="height: 70vh; position: relative;">
     <div class="w-100 h-100 position-relative">
@@ -30,50 +30,42 @@ include('includes/header.inc.php');
     <div class="col d-md-flex justify-content-start gap-2 text-light text-center fs-5 fw-bold"><img src="images/icons/graduate-certificate-svgrepo-com.svg"><p class="m-0">Specialized <br>Courses</p></div>
   </div>
 </header>
-<main class="container-fluid p-0">
 
+<main class="container-fluid p-0">
   <!-- Destinations -->
-  <section id="destinations" class="container mb-5 mt-5" >
-    <h1 class="text-center display-5 fw-bold section-title">Top Destinations</h1>
-    <div id="dest-card-container" class="container-fluid row g-0"></div>
-  </section>
-  <!-- Seleccion de Excursiones -->
-  <section id="excursionsSelection" class="container my-5">
-    <h1 class="text-center display-5 fw-bold section-title">Selected Excursions</h1>
-    <div class="row justify-content-around gap-2 align-items-center" style="min-height: 200px;">
-       <p id="excSelLocation" class="text-center fs-5 fw-semibold p-2" style="height:30px; color: var(--softred);"><img src="images/icons/icons8-gps-30.png" style="width: 30px; height: 30px;">Havana</p>
-      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
-        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
-        <div class="gradient2">
-          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Diving in Coral Reefs</p>
-        </div>
-      </div>
-      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
-        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
-        <div class="gradient2">
-          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Russian Frigate #383</p>
-        </div>
-      </div>
-      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
-        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
-        <div class="gradient2">
-          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Coral Tour</p>
-        </div>
-      </div>
-      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
-        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
-        <div class="gradient2">
-          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Super Reef</p>
-        </div>
-      </div>
-      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
-        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
-        <div class="gradient2">
-          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Seafari Cayo Blanco</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<?php if ($stmt=$connect->prepare('SELECT * FROM destinos')) {
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) { ?>
+        <section id="destinations" class="container-fluid my-5 p-0" >
+          <h1 class="text-center display-5 fw-bold section-title">Top Destinations</h1>
+          <div id="dest-card-container" class="row g-0" style="height: 70vh;">
+
+    <?php while ($row=mysqli_fetch_assoc($result)) { ?>
+            <a id="destCard" class="col-3 col-lg p-0 d-flex align-items-center position-relative text-light text-decoration-none" href="<?php echo $base_url.'pages/destino.php?dest_id='.$row['id'] ?>"  style="overflow:hidden;">
+              <video
+                class="w-100 h-100 object-fit-cover object-position-center"
+                id="destVideo"
+                loop
+                muted
+                preload="metadata"
+                loading="lazy"
+                frameborder="0"
+                src="<?php echo $base_url.'images/destinos/'.$row['id'].'.mp4' ?>"
+                poster="<?php echo $base_url.'images/destinos/'.$row['id'].'.jpg' ?>"
+              ></video>
+              <div id="cardGradient"></div>
+              <p id="destName" class="position-absolute w-100 m-0 text-center fw-semibold">
+                <?php echo strtoupper($row['nombre']) ?>
+              </p>
+          </a>
+    <?php } ?>
+            
+          </div>
+        </section>
+  <?php } 
+      } ?>
 
 <!-- Events -->
 <?php
@@ -81,7 +73,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
   $stmt->execute();
   $result = $stmt->get_result();
   if ($result->num_rows > 0) { ?>
-  <div id="events" class="contaier-fluid w-100 mb-5 p-0">
+  <section id="events" class="contaier-fluid w-100 mb-5 p-0">
     <h1 class="text-center mb-2 display-5 fw-bold section-title">Upcoming Events</h1>
       <div id="eventsCarousel" class="carousel slide" data-bs-touch="true" style="height:600px">
         <div class="carousel-indicators">
@@ -90,7 +82,9 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
           <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner h-100">
-          <?php $active = "active";
+
+          <?php 
+          $active = "active";
           while ($row = mysqli_fetch_assoc($result)) { ?>
           <div class="carousel-item <?php echo $active; $active=""; ?> h-100">
             <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" loading="lazy" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
@@ -103,6 +97,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
             </div>
           </div>
           <?php } ?>
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -144,13 +139,51 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
         </div>
       </div>
     </div> -->
-  </div>
+  </section>
 <?php
   }
 } else {
   echo 'Connection to database failed!';
 }
 ?>
+  <!-- Seleccion de Excursiones -->
+  <!-- <section id="excursionsSelection" class="container my-5">
+    <h1 class="text-center display-5 fw-bold section-title">Best Excursions</h1>
+    <div class="row justify-content-around gap-2 align-items-center" style="min-height: 200px;">
+       <p id="excSelLocation" class="text-center fs-5 fw-semibold p-2" style="height:30px; color: var(--softred);"><img src="images/icons/icons8-gps-30.png" style="width: 30px; height: 30px;">Havana</p>
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Diving in Coral Reefs</p>
+        </div>
+      </div>
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Russian Frigate #383</p>
+        </div>
+      </div>
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Coral Tour</p>
+        </div>
+      </div>
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Super Reef</p>
+        </div>
+      </div>
+      <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">
+        <img class="w-100 h-100 object-fit-cover object-position-center" src="images/destinos/cayolargo.jpg" alt="">
+        <div class="gradient2">
+          <p class="d-flex text-center text-light fs-5 fw-semibold w-100 h-100 p-2 align-items-center">Seafari Cayo Blanco</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
 </main>
 
   

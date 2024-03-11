@@ -120,21 +120,14 @@ if (isset($_GET['dest_id'])) {
                 </div>
                 <div class="card-body">
                   <h4 id="htlName" class="card-title fw-semibold" style="color: var(--darkblue-color);"> <?php echo $record['nombre']; ?> </h4>
+                  <?php if ($record['stars'] > 0) { ?>
                   <div class="d-flex justify-content-start align-items-center fs-5 fw-semibold my-4" style="width:20px; height: 20px; color:var(--darkblue-color)">
                     <?php echo $record['stars']; ?>
                     <img class="w-100 h-100 object-fit-contain" src="<?php echo $base_url . 'images/icons/icons8-star-48.png'; ?>">
                   </div>
-                  <!-- <div class="row justify-content-center" style="height: 20px;">
-                    <?php
-                   if ($record['stars'] && $record['stars'] > 0) {
-                     for ($i=0; $i < $record['stars']; $i++) { ?>
-                       <div class="col h-100" id="imageWrapper" style="width: 10px;">
-                        <img class="w-100 h-100 object-fit-contain" src="<?php echo $base_url . 'images/icons/icons8-star-48.png' ?>">
-                       </div>
-                <?php }
+                <?php 
                     }
                     ?>
-                  </div> -->
                   <p id="htlDesc" class="card-text"> <?php echo $record['descripcion']; ?> </p>
                 </div>
               </div>

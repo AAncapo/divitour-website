@@ -33,40 +33,6 @@ body {
   }
 }
 
-/* Destinations */
-#destinations {
-  height: fit-content;
-}
-
-#dest-card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-#destCard {
-  position: relative;
-  padding: 0px;
-  text-decoration: none;
-}
-
-#vidContainer {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-#destVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
-
 #cardGradient {
   position: absolute;
   height: 100%;
@@ -84,7 +50,8 @@ body {
 }
 
 #destName {
-  font-size: 20px;
+  pointer-events: none;
+  font-size: 24px;
   @media screen and (max-width:800px){
     font-size: 8px;
   }
