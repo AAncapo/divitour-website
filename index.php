@@ -148,7 +148,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
 ?>
   <!-- Seleccion de Excursiones -->
   <!-- <section id="excursionsSelection" class="container my-5">
-    <h1 class="text-center display-5 fw-bold section-title">Best Excursions</h1>
+    <h1 class="text-center display-5 fw-bold section-title">Popular Excursions</h1>
     <div class="row justify-content-around gap-2 align-items-center" style="min-height: 200px;">
        <p id="excSelLocation" class="text-center fs-5 fw-semibold p-2" style="height:30px; color: var(--softred);"><img src="images/icons/icons8-gps-30.png" style="width: 30px; height: 30px;">Havana</p>
       <div class="col-lg-2 p-0 h-100 rounded shadow position-relative" style="overflow: hidden;">

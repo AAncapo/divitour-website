@@ -1,4 +1,4 @@
-<form class="container p-2 rounded" action="<?php //echo $base_url . 'includes/booking.inc.php'?>" method="post" style="background-color: #ffffffcc; pointer-events:all">
+<form class="container p-2 rounded" action="<?php echo $base_url . 'pages/booking.php'?>" method="get" style="background-color: #ffffffcc; pointer-events:all">
     <div class="d-block d-md-flex gap-4 bg-light m-0 rounded align-items-center p-3">
         <div class="col">
             <label for="destInput" class="form-label">DESTINATION</label>
@@ -19,8 +19,16 @@
             <input id="dateInput" type="date" class="form-control">
         </div>
         <div class="col">
-            <label for="psgrInput" class="form-label">PASSENGERS</label>
-            <input id="psgrInput" type="number" class="form-control" name="psgr" min="1" value="1">
+            <div class="row">
+                <div class="col">
+                    <label for="adultsInput" class="form-label">ADULTS</label>
+                    <input id="adultsInput" type="number" class="form-control" name="adults" min="1" value="1">
+                </div>
+                <div class="col">
+                    <label for="kidsInput" class="form-label">KIDS</label>
+                    <input id="kidsInput" type="number" class="form-control" name="kids" min="0" value="0">
+                </div>
+            </div>
         </div>
         <div class="col m-2">
             <button type="submit" class="btn btn-danger w-100 fs-5 fw-semibold p-3">SEARCH</button>
