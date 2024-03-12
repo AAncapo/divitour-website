@@ -18,8 +18,7 @@
       in Cuba"
     />
     <title>
-      DIVITOUR | The best professional agency specializing in scuba and water
-      activities in Cuba
+      DIVITOUR | <?php echo $subtitle ?>
     </title>
     <!-- Bootstrap CSS v5.2.1 -->
     <link
@@ -47,7 +46,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav d-flex align-items-center justify-content-sm-start me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 DESTINATIONS
@@ -65,6 +64,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link fw-semibold" href="#contacts">CONTACT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center fw-semibold" href="<?php echo $base_url.'pages/booking.php' ?>"><img class="w-25 h-25" src="<?php echo $base_url.'images/icons/travel-suitcase-svgrepo-com.svg' ?>" alt="">MY BOOKING</a>
             </li>
           </ul>
           <a class="d-flex me-2" href="https://wa.me/5352529974" target="_blank" style="height: 50px; width:50px;"><img class="w-100 h-100" src=<?php echo $base_url . 'images/icons/icons8-whatsapp.svg'; ?> /></a>

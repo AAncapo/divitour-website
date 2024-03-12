@@ -1,19 +1,21 @@
 <?php
 include('../includes/dbh.inc.php');
-include('../includes/header.inc.php');
-include('../includes/helper_functions.inc.php');
 
 // get destination from table
 if (isset($_GET['dest_id'])) {
   $destid = htmlspecialchars($_GET['dest_id']);
-
+  
+  
   if ($dest_stmt = $connect->prepare('SELECT * FROM destinos where id = ?')) {
     $dest_stmt->bind_param('s',$destid);
-    $dest_stmt->execute();
+    $dest_stmt->execute();  
     
     $result = $dest_stmt->get_result();
     if ($result->num_rows > 0){
       $dest_rec = mysqli_fetch_assoc($result);
+      $subtitle=$dest_rec['nombre'];
+      include('../includes/header.inc.php');
+      include('../includes/helper_functions.inc.php');
 ?>
 
 <!-- Banner -->
@@ -62,7 +64,7 @@ if (isset($_GET['dest_id'])) {
           </h2>
           <div id="<?php echo $servId; ?>" class="accordion-collapse collapse" data-bs-parent="#servCardsAccordion">
             <div class="accordion-body">
-              <p class="card-text d-<?php echo get_display($row['descripcion']); ?>"> <?php echo $row['descripcion'] ?> </p>
+              <p id="servDesc" class="card-text d-<?php echo get_display($row['descripcion']); ?>"> <?php echo $row['descripcion'] ?> </p>
               <!-- <div class="row align-items-center">
                 
                 <?php $value = $row['capacidad']; ?>

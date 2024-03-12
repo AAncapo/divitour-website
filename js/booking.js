@@ -1,0 +1,26 @@
+let servCards = document.querySelectorAll('#servCard');
+let bookedItemsList = document.querySelector('#bookedItemsList');
+
+let totalCost = 0;
+
+servCards.forEach(scard => {
+    let addButton = scard.querySelector('#addReservation');
+    addButton.addEventListener('click',() => {
+        let nombre = scard.querySelector('#servName').textContent;
+        let precio = scard.querySelector('#servCost').textContent;
+        addNewBookedItem(nombre,precio);
+    })
+});
+
+function addNewBookedItem(nombre, precio) {
+    let bitem = `<div class="row w-100 align-items-center py-2">
+                    <p class="col fs-5 fw-semibold text-start m-0">${precio} - ${nombre} </p>
+                    <button id="removeBI" class="col-1 btn btn-danger fw-bold"> - </button>
+                </div>`;
+    bookedItemsList.innerHTML += bitem;
+    return bitem;
+}
+
+function removeBookedItem() {
+
+}

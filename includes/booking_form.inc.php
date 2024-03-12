@@ -2,17 +2,21 @@
     <div class="d-block d-md-flex gap-4 bg-light m-0 rounded align-items-center p-3">
         <div class="col">
             <label for="destInput" class="form-label">DESTINATION</label>
-            <input class="form-control" name="destination" list="destOptions" id="destInput" placeholder="Type your Destination...">
-            <datalist id="destOptions">
-                <option value="Havana">
-                <option value="Varadero">
-                <option value="Jibacoa">
-                <option value="Cayo Largo del Sur">
-                <option value="Cayo Guillermo">
-                <option value="Santa Lucia">
-                <option value="Trinidad">
-                <option value="Peninsula de Zapata">
-            </datalist>
+                <select
+                    class="form-select form-select-lg"
+                    name="destId"
+                    id="destInput"
+                >
+                    <option selected>Select a destination</option>
+                    <option value="varadero,Varadero">Varadero</option>
+                    <option value="havana,Havana">Havana</option>
+                    <option value="jibacoa,Jibacoa">Jibacoa</option>
+                    <option value="cayolargo,Cayo Largo del Sur">Cayo Largo del Sur</option>
+                    <option value="guillermo,Cayo Guillermo">Cayo Guillermo</option>
+                    <option value="trinidad,Trinidad">Trinidad</option>
+                    <option value="zapata,Peninsula de Zapata">Peninsula de Zapata</option>
+                    <option value="stlucia,Santa Lucia">Santa Lucia</option>
+                </select>
         </div>
         <div class="col">
             <label for="dateInput" class="form-label" name="date">DATE</label>

@@ -1,5 +1,6 @@
 <?php
 include('includes/dbh.inc.php');
+$subtitle='The best professional agency specializing in scuba and water activities in Cuba';
 include('includes/header.inc.php');
 ?>
 <!-- Header -->
