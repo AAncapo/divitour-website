@@ -1,16 +1,17 @@
 let servCards = document.querySelectorAll('#servCard');
 let bookedItemsList = document.querySelector('#bookedItemsList');
+const offcanvas = document.querySelector('.offcanvas');
 
 let totalCost = 0;
 
 servCards.forEach(scard => {
-    let addButton = scard.querySelector('#addReservation');
-    addButton.addEventListener('click',() => {
-        let nombre = scard.querySelector('#servName').textContent;
-        let precio = scard.querySelector('#servCost').textContent;
-        addNewBookedItem(nombre,precio);
-    })
+    let nombre = scard.querySelector('#servName').textContent;
+    let offersButton = scard.querySelector('#offersTrigger');
+    offersButton.addEventListener('click',() => {
+        updateOffcanvas(nombre, '0.00 USD');
+    });
 });
+
 
 function addNewBookedItem(nombre, precio) {
     let bitem = `<div class="row w-100 align-items-center py-2">
@@ -23,4 +24,15 @@ function addNewBookedItem(nombre, precio) {
 
 function removeBookedItem() {
 
+}
+
+function updateOffcanvas(title, description) {
+    offcanvas.querySelector('#staticBackdropLabel').textContent = title;
+    offcanvas.querySelector('#offcanvasDesc').textContent = description;
+
+    let addButton = offcanvas.querySelector('#addReservation');
+    addButton.addEventListener('click', () => {
+        addNewBookedItem(title,description);
+        // CLEAR DATA INSIDE OFFCANVAS AND CLOSE
+    });
 }

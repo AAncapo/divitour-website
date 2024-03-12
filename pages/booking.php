@@ -42,18 +42,16 @@
                                     src="<?php echo $row['image_url']; ?>"
                                     class="img-fluid rounded-start"
                                     alt="<?php echo $row['nombre'] ?>"
-                                    
                                 />
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 id="servName" class="card-title"><?php echo $row['nombre'] ?></h5>
                                     <p id="servDesc" class="card-text"><?php echo substr($row['descripcion'],0,strpos($row['descripcion'],'.')) ?></p>
-                                    <p id="servCost" class="text-center fw-bold fs-5">$0.00 USD</p>
-                                    <span>
-                                        <button id="addReservation" class="btn btn-danger">Add Reservation</button>
-                                        <button class="btn btn-outline-danger">View Offers</button>
-                                    </span>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p id="servCost" class="text-center fw-bold fs-5 m-0">$0.00 USD</p>
+                                        <button id="offersTrigger" class="btn btn-outline-danger" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">View Offers</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -141,12 +139,7 @@
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#resumeAccordion">
                         <div class="accordion-body">
                             <div id="bookedItemsList" class="d-flex flex-column">
-
-                                <!-- <div class="row w-100 align-items-center">
-                                    <p class="col fs-5 fw-semibold text-center m-0">$0.00 - Paseando Por </p>
-                                    <button id="removeBI" class="col-1 btn btn-danger fw-bold">-</button>
-                                </div> -->
-
+                                <!-- Booked Items -->
                             </div>
                         </div>
                     </div>
@@ -158,6 +151,17 @@
             </div>
         </div>
     </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p id="offcanvasDesc" ></p>
+            <button id="addReservation" class="btn btn-danger" >Add Reservation</button>
+        </div>
     </div>
 </main>
 <script src="../js/booking.js"></script>
