@@ -38,12 +38,13 @@ if (isset($_GET['dest_id'])) {
 <main class="container-fluid p-0">
   <h1 class="text-center fs-3 fw-semibold" style="color: var(--darkblue-color);">Excursions</h1>
   <!-- Expeditions -->
-  <div class="row w-100" style="background-color: var(--excursions-bg); height:fit-content">
+  <div class="row w-100 m-0" style="background-color: var(--excursions-bg); height:fit-content">
     <!-- Map -->
     <div id="locMap" class="col-5" style="overflow: hidden; min-height:40px;" >
       <img class="w-100 h-100 object-fit-cover" src="<?php echo $base_url . 'pages/destino/images/maps/map-'.$destid.'.jpg'; ?>" alt="">
     </div>
     <div class="col-md-5 col" style="height: fit-content;">
+    
       <!-- Excursiones -->
       <h2 class="fs-4 fw-medium my-5 ps-3" style="color: var(--darkblue-color);">Select an excursion to see more details..</h2>
 <?php if ($stmt = $connect->prepare('SELECT * FROM servicios where destino_id = ?')) {
@@ -65,18 +66,18 @@ if (isset($_GET['dest_id'])) {
           <div id="<?php echo $servId; ?>" class="accordion-collapse collapse" data-bs-parent="#servCardsAccordion">
             <div class="accordion-body">
               <p id="servDesc" class="card-text d-<?php echo get_display($row['descripcion']); ?>"> <?php echo $row['descripcion'] ?> </p>
-              <div class="row align-items-center">
+              <div class="row align-items-center justify-content-start gap-2">
 
                 <!-- Cost -->
                 <?php
                   $base_cost = $row['base_cost'];
                   $over_cost = $row['over_cost'];
-                  if ($base_cost > 0) { ?>
-                  <div class="col d-flex gap-1 align-items-center">
-                    <div style="width: 45px; height:45px;">
+                  if ($base_cost && $base_cost > 0) { ?>
+                  <div class="col d-block d-md-flex gap-1 align-items-center">
+                    <div  class="m-auto m-md-0" style="width: 45px; height:45px;">
                       <img class="w-100 h-100 object-fit-contain" src="../images/icons/money-dollar-svgrepo-com.svg">
                     </div>
-                    <div class="d-block">
+                    <div class="d-flex d-md-block">
                       <div class="d-flex align-items-center gap-1">
                         <p class="fw-bold m-0" style="font-size: 10px; color:gray">FROM</p>
                         <p class="card-text fw-semibold text-center m-0"> <?php echo $base_cost.'.00 EUR' ?></p>
@@ -84,7 +85,7 @@ if (isset($_GET['dest_id'])) {
                   <?php if ($over_cost && $over_cost > 0) { ?>
                       <div class="d-flex align-items-center gap-1">
                         <p class="fw-bold m-0" style="font-size: 10px; color:gray">TO</p>
-                        <p class="card-text fw-semibold text-center m-0"> <?php echo $over_cost.'.00 EUR' ?></p>
+                        <p class="fw-semibold text-center m-0"> <?php echo $over_cost.'.00 EUR' ?></p>
                       </div>
                     <?php } ?>
                     </div>
@@ -95,8 +96,8 @@ if (isset($_GET['dest_id'])) {
                 <?php 
                   $max_pax = explode(",",$row['pax_range'])[1];
                   if ($max_pax > 0) { ?>
-                  <div class="col d-flex gap-1 align-items-center">
-                    <div style="width: 35px; height: 35px;">
+                  <div class="col d-block d-md-flex gap-1 align-items-center">
+                    <div class="m-auto m-md-0" style="width: 35px; height: 35px;">
                       <img class="w-100 h-100 object-fit-contain" src="../images/icons/person-explaining-something-svgrepo-com.svg">
                     </div>
                     <div class="d-block">
@@ -107,16 +108,19 @@ if (isset($_GET['dest_id'])) {
                 <?php } ?>
 
                 <!-- Duration -->
-                <?php $duration = $row['duracion']; ?>
-                <div class="col d-<?php echo get_display($duration,'flex'); ?> gap-1 align-items-center">
-                  <div style="width: 35px; height: 35px;">
-                    <img class="w-100 h-100 object-fit-contain" src="../images/icons/time-svgrepo-com.svg">
-                  </div>
-                  <div class="d-block">
+                <?php 
+                  $duration = $row['duracion']; 
+                  if ($duration && $duration > 0) { ?>
+                  <div class="col d-block d-md-flex gap-1 align-items-center">
+                    <div class="m-auto m-md-0" style="width: 35px; height: 35px;">
+                      <img class="w-100 h-100 object-fit-contain" src="../images/icons/time-svgrepo-com.svg">
+                    </div>
+                    <div class="d-block">
                       <p class="text-center fw-bold m-0" style="font-size: 10px; color:gray">DURATION</p>
                       <p class="card-text fw-semibold text-center"><?php echo $duration ?></p>
+                    </div>
                   </div>
-                </div>
+                <?php } ?>
 
             </div>
             </div>
@@ -141,10 +145,10 @@ if (isset($_GET['dest_id'])) {
           <!-- Hotels -->          
           <div id='hoteles' class="row justify-content-center m-5">
             <h1 class="text-center fs-3 fw-semibold" style="color: var(--darkblue-color);">Hotels Available</h1>
-            <div id="htlCardContainer" class="container-fluid row justify-content-center">
+            <div id="htlCardContainer" class="container-fluid row justify-content-center m-0">
         <?php while ($record = mysqli_fetch_assoc($res)) { ?>
               <!-- Insert Hotel Cards -->
-              <div id="htlCard" class="card shadow m-2" style="min-width: 400px; min-height: 600px; border-width: 0px;">
+              <div id="htlCard" class="card shadow m-2" style="min-width: 300px; min-height: 400px; border-width: 0px;">
                 <div id="htlImage">
                   <img class="card-img-top" src= <?php echo $record['image_url']; ?> />
                 </div>
