@@ -66,7 +66,7 @@
               <a class="nav-link fw-semibold" href="#contacts">CONTACT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center fw-semibold" href=""><img class="w-25 h-25" src="<?php echo $base_url.'images/icons/travel-suitcase-svgrepo-com.svg' ?>" alt="">MY BOOKING</a>
+              <a class="nav-link d-flex align-items-center fw-semibold" href="<?php echo $base_url.'pages/product-search.php' ?>"><img class="w-25 h-25" src="<?php echo $base_url.'images/icons/travel-suitcase-svgrepo-com.svg' ?>" alt="">MY BOOKING</a>
             </li>
           </ul>
           <a class="d-flex me-2" href="https://wa.me/5352529974" target="_blank" style="height: 50px; width:50px;"><img class="w-100 h-100" src=<?php echo $base_url . 'images/icons/icons8-whatsapp.svg'; ?> /></a>

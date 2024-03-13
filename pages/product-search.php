@@ -2,11 +2,10 @@
     include('../includes/dbh.inc.php');
     $subtitle= 'My Booking';
     include('../includes/header.inc.php');
-    $manage_reservation_url = $base_url . 'pages/manage_booking.php'
 ?>
 <main class="container-fluid">
     <div class="container">
-        <?php include('../includes/booking_form.inc.php'); ?>
+        <?php include('../includes/product-search-form.inc.php'); ?>
     </div>
     
     <div class="row">
@@ -69,7 +68,7 @@
                                     </div>
                                     <?php } ?>
                                     </div>
-                                    <button id="offersTrigger" class="btn btn-outline-danger" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">View Offers</button>
+                                    <a href="<?php echo 'manage-booking.php?tbl=servicios&id='. $row['id'] ?>" class="btn btn-outline-danger">View Offers</a>
                                 </div>
                             </div>
                         </div>
@@ -173,7 +172,6 @@
         </div>
     </div> -->
 </main>
-<script src="../js/booking.js"></script>
 <?php
     include('../includes/footer.inc.php');
 ?>
