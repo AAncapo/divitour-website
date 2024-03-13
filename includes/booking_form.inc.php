@@ -7,15 +7,15 @@
                     name="destId"
                     id="destInput"
                 >
-                    <option selected>Select a destination</option>
-                    <option value="varadero,Varadero">Varadero</option>
+                    <option selected value="">Select a destination</option>
                     <option value="havana,Havana">Havana</option>
+                    <option value="varadero,Varadero">Varadero</option>
                     <option value="jibacoa,Jibacoa">Jibacoa</option>
                     <option value="cayolargo,Cayo Largo del Sur">Cayo Largo del Sur</option>
                     <option value="guillermo,Cayo Guillermo">Cayo Guillermo</option>
                     <option value="trinidad,Trinidad">Trinidad</option>
-                    <option value="zapata,Peninsula de Zapata">Peninsula de Zapata</option>
                     <option value="stlucia,Santa Lucia">Santa Lucia</option>
+                    <option value="zapata,Peninsula de Zapata">Peninsula de Zapata</option>
                 </select>
         </div>
         <div class="col">
