@@ -2,9 +2,7 @@
     include('../includes/dbh.inc.php');
     $subtitle= 'My Booking';
     include('../includes/header.inc.php');
-
-    $current_price = 0;
-    $reserved_list = [];
+    $manage_reservation_url = $base_url . 'pages/manage_booking.php'
 ?>
 <main class="container-fluid">
     <div class="container">
@@ -32,7 +30,7 @@
         <?php if ($total_results > 0) {
                 while ($row=mysqli_fetch_assoc($result)) { ?>
 
-                    <div id="servCard" class="card p-0" style="max-width: 540px; overflow: hidden;" >
+                    <div id="servCard" class="card p-0" style="max-width: 540px; height:fit-content; overflow: hidden;" >
                         <div class="row g-0">
                             <div class="col-md-4">
                                 <img
@@ -47,9 +45,31 @@
                                     <h5 id="servName" class="card-title"><?php echo $row['nombre'] ?></h5>
                                     <p id="servDesc" class="card-text"><?php echo substr($row['descripcion'],0,strpos($row['descripcion'],'.')) ?></p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <p id="servCost" class="text-center fw-bold fs-5 m-0">$0.00 USD</p>
-                                        <button id="offersTrigger" class="btn btn-outline-danger" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">View Offers</button>
+                                    <!-- Cost -->
+                                    <?php
+                                    $base_cost = $row['base_cost'];
+                                    $over_cost = $row['over_cost'];
+                                    if ($base_cost && $base_cost > 0) { ?>
+                                    <div class="col d-block d-md-flex gap-1 align-items-center">
+                                        <div  class="m-auto m-md-0" style="width: 45px; height:45px;">
+                                        <img class="w-100 h-100 object-fit-contain" src="../images/icons/money-dollar-svgrepo-com.svg">
+                                        </div>
+                                        <div class="d-flex d-md-block">
+                                        <div class="d-flex align-items-center gap-1">
+                                            <p class="fw-bold m-0" style="font-size: 10px; color:gray">FROM</p>
+                                            <p class="card-text fw-semibold text-center m-0"> <?php echo $base_cost.'.00 EUR' ?></p>
+                                        </div>
+                                    <?php if ($over_cost && $over_cost > 0) { ?>
+                                        <div class="d-flex align-items-center gap-1">
+                                            <p class="fw-bold m-0" style="font-size: 10px; color:gray">TO</p>
+                                            <p class="fw-semibold text-center m-0"> <?php echo $over_cost.'.00 EUR' ?></p>
+                                        </div>
+                                        <?php } ?>
+                                        </div>
                                     </div>
+                                    <?php } ?>
+                                    </div>
+                                    <button id="offersTrigger" class="btn btn-outline-danger" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">View Offers</button>
                                 </div>
                             </div>
                         </div>
@@ -115,10 +135,8 @@
     } 
         ?>
     </div>
-
-
                     <!---------------------- RESUMEN ---------------------->
-    <div class="col-lg-4">
+    <!-- <div class="col-lg-4">
         <p class="fs-4 fw-bold text-center">Resume</p>
         <div class="d-block">
             <div class="accordion" id="resumeAccordion">
@@ -131,7 +149,6 @@
                     <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#resumeAccordion">
                         <div class="accordion-body">
                             <div id="bookedItemsList" class="d-flex flex-column">
-                                <!-- Booked Items -->
                             </div>
                         </div>
                     </div>
@@ -142,19 +159,19 @@
                 <button type="submit" class="btn btn-danger">Process Payment</button>
             </div>
         </div>
+    </div> -->
     </div>
-    </div>
-
-    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                    <!--------------------- OFFCANVAS --------------------->    
+    <!-- <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+            <h5 class="offcanvas-title" id="staticBackdropLabel"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <p id="offcanvasDesc" ></p>
             <button id="addReservation" class="btn btn-danger" >Add Reservation</button>
         </div>
-    </div>
+    </div> -->
 </main>
 <script src="../js/booking.js"></script>
 <?php
