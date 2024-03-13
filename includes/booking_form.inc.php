@@ -3,9 +3,10 @@
         <div class="col">
             <label for="destInput" class="form-label">DESTINATION</label>
                 <select
-                    class="form-select form-select-lg"
+                    class="form-select form-select-lg align-items-center"
                     name="destId"
                     id="destInput"
+                    style="height: 38px; font-size: 16px;"
                 >
                     <option selected value="">Select a destination</option>
                     <option value="havana,Havana">Havana</option>

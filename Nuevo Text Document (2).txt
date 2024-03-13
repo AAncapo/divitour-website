@@ -11,9 +11,11 @@ Que necesita?
 
 (hasta ahora solo tengo esto debo preguntarle a erik si hay algo mas)
 
-pax; -> set by user
+childAgeRange
+paxRange = explode(",", pax_range)
 baseLimit;
 baseCost;
 overCost;
+currentPax; -> set by user
 currentCost = baseCost if pax < baseLimit else overQuota
-childQuota = baseQuota / 2
+childCost = baseCost / 2
