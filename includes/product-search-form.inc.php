@@ -1,4 +1,4 @@
-<form class="container p-2 rounded" action="" method="get" style="background-color: #ffffffcc; pointer-events:all">
+<form class="container p-2 rounded" action="<?php echo $base_url . 'pages/product-search.php'?>" method="get" style="background-color: #ffffffcc; pointer-events:all">
     <div class="d-block d-md-flex gap-4 bg-light m-0 rounded align-items-center p-3">
         <div class="col">
             <label for="destInput" class="form-label">DESTINATION</label>

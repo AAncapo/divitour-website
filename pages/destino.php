@@ -14,8 +14,9 @@ if (isset($_GET['dest_id'])) {
     if ($result->num_rows > 0){
       $dest_rec = mysqli_fetch_assoc($result);
       $subtitle=$dest_rec['nombre'];
+      $destName = $dest_rec['nombre'];
       include('../includes/header.inc.php');
-      include('../includes/helper_functions.inc.php');
+      include('../includes/helper-functions.inc.php');
 ?>
 
 <!-- Banner -->
@@ -66,6 +67,7 @@ if (isset($_GET['dest_id'])) {
           <div id="<?php echo $servId; ?>" class="accordion-collapse collapse" data-bs-parent="#servCardsAccordion">
             <div class="accordion-body">
               <p id="servDesc" class="card-text d-<?php echo get_display($row['descripcion']); ?>"> <?php echo $row['descripcion'] ?> </p>
+              <!-- <button class="toggle-readmore btn btn-primary">Read more</button> -->
               <div class="row align-items-center justify-content-start gap-2">
 
                 <!-- Cost -->
@@ -82,12 +84,12 @@ if (isset($_GET['dest_id'])) {
                         <p class="fw-bold m-0" style="font-size: 10px; color:gray">FROM</p>
                         <p class="card-text fw-semibold text-center m-0"> <?php echo $base_cost.'.00 EUR' ?></p>
                       </div>
-                  <?php if ($over_cost && $over_cost > 0) { ?>
+                  <!-- <?php if ($over_cost && $over_cost > 0) { ?>
                       <div class="d-flex align-items-center gap-1">
                         <p class="fw-bold m-0" style="font-size: 10px; color:gray">TO</p>
                         <p class="fw-semibold text-center m-0"> <?php echo $over_cost.'.00 EUR' ?></p>
                       </div>
-                    <?php } ?>
+                    <?php } ?> -->
                     </div>
                   </div>
                 <?php } ?>
@@ -121,6 +123,7 @@ if (isset($_GET['dest_id'])) {
                     </div>
                   </div>
                 <?php } ?>
+                <a href="<?php echo $base_url.'pages/manage-booking.php?destname='.$destName.'&tbl=servicios&id='. $row['id'] ?>" class="btn btn-outline-danger">View Offers</a>
 
             </div>
             </div>
@@ -163,6 +166,7 @@ if (isset($_GET['dest_id'])) {
                     }
                     ?>
                   <p id="htlDesc" class="card-text"> <?php echo $record['descripcion']; ?> </p>
+                  <a href="<?php echo $base_url.'pages/manage-booking.php?destname='.$destName.'&tbl=servicios&id='. $row['id'] ?>" class="btn btn-outline-danger">View Offers</a>
                 </div>
               </div>
           <?php } ?>
