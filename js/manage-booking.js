@@ -30,5 +30,4 @@ function setCurrentCost (adults, child) {
     let adultsCost = adults * currCost;
     let childsCost = child * (currCost * 0.5);
     curCost.textContent = `TOTAL COST: ${adultsCost + childsCost}.00 EUR`;
-    
 }
