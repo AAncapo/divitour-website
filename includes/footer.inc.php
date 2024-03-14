@@ -5,7 +5,7 @@
     <div class="row w-100 justify-content-center m-0" style="height: 60px;">
       <form class="col-lg-4 d-flex justify-content-around" method="post">
         <input name="email" type="email" class="col form-control rounded-0 rounded-start" id="emailInput" placeholder="  example@mail.com">
-        <button type="submit" class="col-2 fw-semibold btn btn-danger rounded-0 rounded-end" style="background-color: var(--darkred-color);"><p class="d-none d-md-flex w-100 h-100 align-items-center m-0">Subscribe</p><img class="d-flex d-md-none w-100 h-100" src="<?php echo $base_url . 'images/icons/form-next-link-svgrepo-com.svg' ?>"></button>
+        <button type="submit" class="col-2 fw-semibold btn btn-danger rounded-0 rounded-end" style="background-color: var(--darkred-color);"><img class="d-flex w-100 h-100" src="<?php echo $base_url . 'images/icons/form-next-link-svgrepo-com.svg' ?>"></button>
       </form>
     </div>
   </section>

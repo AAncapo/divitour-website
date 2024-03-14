@@ -1,5 +1,5 @@
 <?php
-  $base_url = "/divitur/";
+  $base_url = "/divitour-website/";
 ?>
 
 <!DOCTYPE html>

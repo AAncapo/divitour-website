@@ -109,8 +109,8 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    <!-- fotosub modal -->
-      <!-- <div id="modal" class="modal fade">
+      <!-- fotosub modal -->
+      <div id="modal" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"> </div>
@@ -121,6 +121,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
               src="//js-eu1.hsforms.net/forms/embed/v2.js"
             ></script>
             <script>
+              try
               hbspt.forms.create({
                 region: "eu1",
                 portalId: "144042486",
@@ -139,7 +140,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </section>
 <?php
   }

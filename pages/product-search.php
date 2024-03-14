@@ -98,7 +98,7 @@
                                     <?php } ?>
 
                                     </div>
-                                    <a href="<?php echo 'manage-booking.php?tbl=servicios&id='. $row['id'] ?>" class="btn btn-outline-danger">View Offers</a>
+                                    <a href="<?php echo 'manage-booking.php?destname='.$destName.'&tbl=servicios&id='. $row['id'] ?>" class="btn btn-outline-danger">View Offers</a>
                                 </div>
                             </div>
                         </div>
