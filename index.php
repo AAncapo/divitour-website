@@ -121,7 +121,6 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
               src="//js-eu1.hsforms.net/forms/embed/v2.js"
             ></script>
             <script>
-              try
               hbspt.forms.create({
                 region: "eu1",
                 portalId: "144042486",

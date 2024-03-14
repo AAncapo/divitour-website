@@ -97,21 +97,12 @@ body {
     opacity: 50;
   }
   
-  #eventDesc {
+  .collapsable-text {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
     /* max-height: 40%; */
-    text-overflow: ellipsis;
-  }
-
-  #destDescription {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-    max-height: 40%;
     text-overflow: ellipsis;
   }
 
