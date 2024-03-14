@@ -15,7 +15,7 @@ if (isset($_GET['dest_id'])) {
       $dest_rec = mysqli_fetch_assoc($result);
       $subtitle=$dest_rec['nombre'];
       include('../includes/header.inc.php');
-      include('../includes/helper_functions.inc.php');
+      include('../includes/helper-functions.inc.php');
 ?>
 
 <!-- Banner -->
