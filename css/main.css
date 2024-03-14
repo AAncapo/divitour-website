@@ -76,14 +76,37 @@ body {
 }
 
 .gradient2 {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    /* background-image: linear-gradient(to top, #00000050, #00000000); */
-    background-color: #00000078;
-    opacity: 30;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  /* background-image: linear-gradient(to top, #00000050, #00000000); */
+  background-color: #00000078;
+  opacity: 30;
+}
+
+.collapsable-text {
+  & p {
+    overflow: hidden;
+    height: fit-content;
+    word-wrap: break-word;
   }
+}
+
+.text-collapsed {
+  & p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
+  }
+}
+
+.text-expanded {
+  & p {
+    display: inline;
+  }
+}
 
 /* ========== Destino.php ========== */
 @media screen and (max-width: 500px) {
@@ -97,14 +120,11 @@ body {
     opacity: 50;
   }
   
-  .collapsable-text {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-    /* max-height: 40%; */
-    text-overflow: ellipsis;
-  }
+/* .collapsable-text {
+
+overflow: hidden;
+text-overflow: ellipsis;
+} */
 
   #locMap {
     display: none;
@@ -142,16 +162,9 @@ body {
   }
 }
 
-#htlDesc,#servDesc {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
-  height: fit-content;
-  /* max-height: 50%;  */
-  word-wrap: break-word;
-  text-overflow: ellipsis;
-}
+/* #htlDesc,#servDesc {
+  
+} */
 
 /*********** Footer ************/
 #partnerIcons {

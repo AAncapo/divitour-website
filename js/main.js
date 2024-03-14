@@ -1,19 +1,21 @@
 const collapsableTextElements =  document.querySelectorAll('.collapsable-text');
 
 collapsableTextElements.forEach(ct => {
-  let dots = ct.querySelector('.dots'),
-  moreText = ct.querySelector('.more'),
-  toggleCollapseBtn = ct.querySelector('.toggle-more');
-
+  let toggleCollapseBtn = ct.querySelector('.toggle-more');
+  if (!toggleCollapseBtn) return;
   toggleCollapseBtn.addEventListener('click', () => {
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
+    let isExpanded = ct.classList.contains('text-expanded');
+    if (isExpanded) {
+      //collapse
+      ct.classList.remove('text-expanded');
+      ct.classList.add('text-collapsed');
       toggleCollapseBtn.textContent = "Read more";
-      moreText.style.display = "none" // no --- change display from webkit
     } else {
-      dots.style.display = "none";
+      //expand
+      ct.classList.remove('text-collapsed');
+      ct.classList.add('text-expanded');
       toggleCollapseBtn.textContent = "Read less";
-      moreText.style.display = "inline";
     }
   })
 });
+

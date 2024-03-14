@@ -8,7 +8,7 @@
           </h2>
           <div id="<?php echo $servId; ?>" class="accordion-collapse collapse" data-bs-parent="#servCardsAccordion">
             <div class="accordion-body">
-              <p id="servDesc" class="card-text d-<?php echo get_display($row['descripcion']); ?>"> <?php echo $row['descripcion'] ?> </p>
+              <p id="servDesc" class="card-text d-<?php echo get_display($row['descripcion']); ?> collapsable-text"> <?php echo $row['descripcion'] ?> </p>
               <!-- <button class="toggle-readmore btn btn-primary">Read more</button> -->
               <div class="row align-items-center justify-content-start gap-2">
 
