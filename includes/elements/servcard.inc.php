@@ -18,7 +18,7 @@
                 $base_cost = $row['base_cost'];
                 // $over_cost = $row['over_cost'];
                 if ($base_cost && $base_cost > 0) { ?>
-                <div class="col col-md-2 d-block d-md-flex flex-md-column gap-1 align-items-center">
+                <div class="col col-md-3 d-block d-md-flex flex-md-column gap-1 align-items-center">
                     <div class="m-auto m-md-0" style="width: 45px; height:45px;">
                     <img class="w-100 h-100 object-fit-contain" src="../images/icons/money-dollar-svgrepo-com.svg">
                     </div>
@@ -40,7 +40,7 @@
                 <?php 
                 $max_pax = explode(",",$row['pax_range'])[1];
                 if ($max_pax > 0) { ?>
-                <div class="col col-md-2 d-block d-md-flex flex-md-column gap-1 align-items-center">
+                <div class="col col-md-3 d-block d-md-flex flex-md-column gap-1 align-items-center">
                     <div class="m-auto m-md-0" style="width: 35px; height: 35px;">
                     <img class="w-100 h-100 object-fit-contain" src="../images/icons/person-explaining-something-svgrepo-com.svg">
                     </div>
@@ -55,7 +55,7 @@
                 <?php 
                 $duration = $row['duracion']; 
                 if ($duration && $duration > 0) { ?>
-                <div class="col col-md-2 d-block d-md-flex flex-md-column gap-1 align-items-center">
+                <div class="col col-md-3 d-block d-md-flex flex-md-column gap-1 align-items-center">
                     <div class="m-auto m-md-0" style="width: 35px; height: 35px;">
                     <img class="w-100 h-100 object-fit-contain" src="../images/icons/time-svgrepo-com.svg">
                     </div>
