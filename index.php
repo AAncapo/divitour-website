@@ -88,11 +88,11 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
           $active = "active";
           while ($row = mysqli_fetch_assoc($result)) { ?>
           <div class="carousel-item <?php echo $active; $active=""; ?> h-100">
-            <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" loading="lazy" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
+            <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
             <div class="gradient2"></div>
             <div class="carousel-caption d-md-block w-lg-50" style="min-height: fit-content;">
               <h4 class="fs-sm-4 fs-1 fw-semibold text-start"><?php echo $row['titulo'] ?></h4>
-              <p id="eventDesc" class="fs-5 fw-medium text-start"><?php echo $row['descripcion'] ?></p>
+              <p id="eventDesc" class="fs-5 fw-medium text-start collapsable-text"><?php echo $row['descripcion'] ?></p>
               <p class="fw-medium text-start"><?php echo $row['fecha'] ?></p>
               <button class="btn btn-outline-light ms-0 fs-4 fw-bold p-3 shadow" data-bs-toggle="modal" data-bs-target="#modal" style="letter-spacing: .1em;">Subscribe</button>
             </div>
