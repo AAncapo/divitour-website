@@ -74,7 +74,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
   $stmt->execute();
   $result = $stmt->get_result();
   if ($result->num_rows > 0) { ?>
-  <section id="events" class="contaier-fluid w-100 mb-5 p-0">
+  <section id="events" class="container-fluid w-100 mb-5 p-0">
     <h1 class="text-center mb-2 display-5 fw-bold section-title">Upcoming Events</h1>
       <div id="eventsCarousel" class="carousel slide" data-bs-touch="true" style="height:600px">
         <div class="carousel-indicators">
@@ -87,7 +87,7 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
           <?php 
           $active = "active";
           while ($row = mysqli_fetch_assoc($result)) { ?>
-          <div class="carousel-item <?php echo $active; $active=""; ?> h-100">
+          <div class="carousel-item <?php echo $active; $active = ""; ?> h-100">
             <img src="<?php echo 'images/eventos/' . $row['banner_url']; ?>" class="d-block w-100 h-100 object-fit-cover" alt="<?php echo $row['titulo'] ?>">
             <div class="gradient2"></div>
             <div class="carousel-caption d-md-block w-lg-50" style="min-height: fit-content;">
@@ -115,12 +115,12 @@ if ($stmt = $connect->prepare('SELECT * FROM eventos')) {
         <div class="modal-content">
           <div class="modal-header"> </div>
           <div class="modal-body">
-            <script
+            <script defer
               charset="utf-8"
               type="text/javascript"
               src="//js-eu1.hsforms.net/forms/embed/v2.js"
             ></script>
-            <script>
+            <script defer>
               hbspt.forms.create({
                 region: "eu1",
                 portalId: "144042486",
