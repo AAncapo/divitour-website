@@ -77,7 +77,7 @@ if (isset($_GET['dest_id'])) {
           <div id='hoteles' class="row justify-content-center m-5">
             <h1 class="text-center fs-3 fw-semibold" style="color: var(--darkblue-color);">Hotels Available</h1>
             <div id="htlCardContainer" class="container-fluid row justify-content-center m-0">
-        <?php while ($record = mysqli_fetch_assoc($res)) {
+        <?php while ($row = mysqli_fetch_assoc($res)) {
                 include('../includes/elements/hotelcard.inc.php');
               } ?>
             </div>
